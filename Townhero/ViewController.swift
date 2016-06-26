@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        let rootRef = FIRDatabase.database().reference()
+        
+        rootRef.child("users").setValue("Fe") }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

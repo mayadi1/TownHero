@@ -14,6 +14,10 @@
 		449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */; };
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
+		44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */; };
+		6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */; };
+		8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */; };
+		B6EFB1D2F021021CD1CF7F4C /* Pods_TownheroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869E31D20898F0023F9B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449869E51D20898F0023F9B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,15 @@
 		449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44986A031D20898F0023F9B0 /* TownheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroUITests.swift; sourceTree = "<group>"; };
 		44986A051D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.release.xcconfig"; sourceTree = "<group>"; };
+		73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TownheroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8049905963AD5D7476B8875 /* Pods-TownheroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests.release.xcconfig"; sourceTree = "<group>"; };
+		AEEDB6282F5165F9F7AC03FA /* Pods-Townhero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.debug.xcconfig"; sourceTree = "<group>"; };
+		B3C86BDF821D7BA619C251E2 /* Pods-TownheroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroUITests/Pods-TownheroUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TownheroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA55EB72AB566B7F6AEBC135 /* Pods-TownheroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroUITests/Pods-TownheroUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EFB1D2F021021CD1CF7F4C /* Pods_TownheroUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +98,8 @@
 				449869F71D20898F0023F9B0 /* TownheroTests */,
 				44986A021D20898F0023F9B0 /* TownheroUITests */,
 				449869E11D20898F0023F9B0 /* Products */,
+				8E0A3AEF1AAF240C9F10989C /* Pods */,
+				83F651AB8E462073CAC7E67A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +121,7 @@
 				449869E71D20898F0023F9B0 /* Main.storyboard */,
 				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
 				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
+				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
 				449869EF1D20898F0023F9B0 /* Info.plist */,
 			);
 			path = Townhero;
@@ -125,6 +145,29 @@
 			path = TownheroUITests;
 			sourceTree = "<group>";
 		};
+		83F651AB8E462073CAC7E67A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */,
+				DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */,
+				73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E0A3AEF1AAF240C9F10989C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEEDB6282F5165F9F7AC03FA /* Pods-Townhero.debug.xcconfig */,
+				55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */,
+				A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */,
+				A8049905963AD5D7476B8875 /* Pods-TownheroTests.release.xcconfig */,
+				FA55EB72AB566B7F6AEBC135 /* Pods-TownheroUITests.debug.xcconfig */,
+				B3C86BDF821D7BA619C251E2 /* Pods-TownheroUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44986A081D20898F0023F9B0 /* Build configuration list for PBXNativeTarget "Townhero" */;
 			buildPhases = (
+				0ADD06EE32ADD9F9F2216223 /* [CP] Check Pods Manifest.lock */,
 				449869DC1D20898F0023F9B0 /* Sources */,
 				449869DD1D20898F0023F9B0 /* Frameworks */,
 				449869DE1D20898F0023F9B0 /* Resources */,
+				F2ED8AFC423C455BF459A1D8 /* [CP] Embed Pods Frameworks */,
+				8ABA078A4A1F468AF759EDAE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44986A0B1D20898F0023F9B0 /* Build configuration list for PBXNativeTarget "TownheroTests" */;
 			buildPhases = (
+				9B066EAA88EDDEF5BE4F2FBC /* [CP] Check Pods Manifest.lock */,
 				449869F01D20898F0023F9B0 /* Sources */,
 				449869F11D20898F0023F9B0 /* Frameworks */,
 				449869F21D20898F0023F9B0 /* Resources */,
+				A518D91995CD2055D6DDE4F8 /* [CP] Embed Pods Frameworks */,
+				18698D7D4286F289E38E9384 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44986A0E1D20898F0023F9B0 /* Build configuration list for PBXNativeTarget "TownheroUITests" */;
 			buildPhases = (
+				AF7E3275CEE39DF555814C39 /* [CP] Check Pods Manifest.lock */,
 				449869FB1D20898F0023F9B0 /* Sources */,
 				449869FC1D20898F0023F9B0 /* Frameworks */,
 				449869FD1D20898F0023F9B0 /* Resources */,
+				9CBA78A5FEEA1C5937711B8F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */,
+				44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */,
 				449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */,
 				449869E91D20898F0023F9B0 /* Main.storyboard in Resources */,
 			);
@@ -250,6 +302,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ADD06EE32ADD9F9F2216223 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		18698D7D4286F289E38E9384 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8ABA078A4A1F468AF759EDAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Townhero/Pods-Townhero-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B066EAA88EDDEF5BE4F2FBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9CBA78A5FEEA1C5937711B8F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TownheroUITests/Pods-TownheroUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A518D91995CD2055D6DDE4F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF7E3275CEE39DF555814C39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F2ED8AFC423C455BF459A1D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Townhero/Pods-Townhero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		449869DC1D20898F0023F9B0 /* Sources */ = {
@@ -399,6 +574,7 @@
 		};
 		44986A091D20898F0023F9B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEEDB6282F5165F9F7AC03FA /* Pods-Townhero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Townhero/Info.plist;
@@ -410,6 +586,7 @@
 		};
 		44986A0A1D20898F0023F9B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Townhero/Info.plist;
@@ -421,6 +598,7 @@
 		};
 		44986A0C1D20898F0023F9B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TownheroTests/Info.plist;
@@ -433,6 +611,7 @@
 		};
 		44986A0D1D20898F0023F9B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8049905963AD5D7476B8875 /* Pods-TownheroTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TownheroTests/Info.plist;
@@ -445,6 +624,7 @@
 		};
 		44986A0F1D20898F0023F9B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA55EB72AB566B7F6AEBC135 /* Pods-TownheroUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TownheroUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -456,6 +636,7 @@
 		};
 		44986A101D20898F0023F9B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3C86BDF821D7BA619C251E2 /* Pods-TownheroUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TownheroUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -484,6 +665,7 @@
 				44986A0A1D20898F0023F9B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44986A0B1D20898F0023F9B0 /* Build configuration list for PBXNativeTarget "TownheroTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +674,7 @@
 				44986A0D1D20898F0023F9B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44986A0E1D20898F0023F9B0 /* Build configuration list for PBXNativeTarget "TownheroUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +683,7 @@
 				44986A101D20898F0023F9B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
