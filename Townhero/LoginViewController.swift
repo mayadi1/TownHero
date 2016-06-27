@@ -53,7 +53,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 // Uncomment this when we get feed done and add HomeView as the storyboard id.
                 
-                let mainViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") as! UITabBarController
+                let mainViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("") as! UITabBarController
                 
                 self.presentViewController(mainViewController, animated: true, completion: nil)
                 
