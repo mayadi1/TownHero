@@ -14,11 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-<<<<<<< HEAD
-               BlueprintIdentifier = "FA041DFF8BFCD80C74C2E229B823781D"
-=======
                BlueprintIdentifier = "9976DADC1043299C2FCE31420AA14021"
->>>>>>> 3b5cee5aca877aff42aa67ff133bb198599b341a
                BuildableName = "Pods_Townhero.framework"
                BlueprintName = "Pods-Townhero"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -49,11 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-<<<<<<< HEAD
-            BlueprintIdentifier = "FA041DFF8BFCD80C74C2E229B823781D"
-=======
             BlueprintIdentifier = "9976DADC1043299C2FCE31420AA14021"
->>>>>>> 3b5cee5aca877aff42aa67ff133bb198599b341a
             BuildableName = "Pods_Townhero.framework"
             BlueprintName = "Pods-Townhero"
             ReferencedContainer = "container:Pods.xcodeproj">

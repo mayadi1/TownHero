@@ -1,8 +1,6 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-<<<<<<< HEAD
-=======
 ## Bolts
 
 BSD License
@@ -99,7 +97,6 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
->>>>>>> 3b5cee5aca877aff42aa67ff133bb198599b341a
 ## Firebase
 
 Copyright 2016 Google Inc.
