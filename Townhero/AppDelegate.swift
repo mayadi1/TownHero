@@ -6,6 +6,8 @@
 //  Copyright © 2016 Mohamed. All rights reserved.
 //
 
+
+
 import UIKit
 import Firebase
 
@@ -13,12 +15,16 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-//    override init() {
-//        
-//        FIRApp.configure()
-//    }
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    
+    
+     
+   // 
+    override init() {
+        
+        FIRApp.configure()
+    }
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool{
 //        FIRApp.configure()
         return true
     }

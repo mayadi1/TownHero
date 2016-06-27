@@ -13,7 +13,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+   let usersRef = FIRDatabase.database().reference()
+        
+        
+        usersRef.child("Fef").setValue("efefef")
         // Do any additional setup after loading the view.
     }
 
