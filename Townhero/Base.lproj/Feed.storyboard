@@ -5,63 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Item-->
-        <scene sceneID="eGa-PG-kaQ">
-            <objects>
-                <viewController id="RV9-Kc-egh" customClass="ProfileViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mOq-qt-Zcf"/>
-                        <viewControllerLayoutGuide type="bottom" id="QSp-zV-mo7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7Mm-lU-pWA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="i3V-Md-gS7"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DNK-NA-Udh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1259" y="2739"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="ARe-hu-GBs">
-            <objects>
-                <viewController id="048-5Y-vew" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pbC-N1-XAQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="u6U-Ed-4Lw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2Ol-wL-x2c">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.017656813828499374" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="x6m-0u-EnR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gW2-cK-OF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-815" y="2061"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="aMO-eE-Ta8">
-            <objects>
-                <viewController id="Ve7-HV-hvw" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HPC-tX-wFs"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ddf-sy-Qyr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4fr-ag-iYl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.084040851152848539" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="dyP-Bx-Z3J"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ms4-nh-cBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-414" y="1407"/>
-        </scene>
         <!--Item 1-->
         <scene sceneID="95D-o3-Z19">
             <objects>
@@ -82,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="355"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vTv-fo-OKa" id="y7i-Uk-8yR">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="355"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="354.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with MicroMentor | An initiative of Mercy Corps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQQ-nb-KdZ">
@@ -97,7 +40,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9h-jh-32V">
-                                                    <rect key="frame" x="1" y="283" width="598" height="36"/>
+                                                    <rect key="frame" x="1" y="282.5" width="598" height="36"/>
                                                     <color key="backgroundColor" red="0.55872079409999997" green="0.98051995039999995" blue="0.098908787329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="EJG-yv-pFj"/>
@@ -148,7 +91,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ygT-WK-KqF">
-                                                    <rect key="frame" x="408" y="227" width="34" height="39"/>
+                                                    <rect key="frame" x="408" y="226.5" width="34" height="39"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34" id="ET6-ef-Uu6"/>
                                                         <constraint firstAttribute="width" constant="34" id="PxY-3C-wtc"/>
@@ -167,7 +110,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="5jM-nQ-0mk">
-                                                    <rect key="frame" x="10" y="226" width="35" height="40"/>
+                                                    <rect key="frame" x="10" y="225.5" width="35" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="HbG-bI-fdh"/>
                                                         <constraint firstAttribute="width" constant="35" id="Zwo-Vc-c0s"/>
@@ -182,7 +125,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="It's Flexible! We'll work with your schedule" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pod-Oe-87e">
-                                                    <rect key="frame" x="450" y="222" width="140" height="44"/>
+                                                    <rect key="frame" x="450" y="221.5" width="140" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="KcZ-T2-g0p"/>
@@ -220,7 +163,7 @@ Chicago, IL 60613</string>
                                                     </variation>
                                                 </textView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="19I-Nm-z1N">
-                                                    <rect key="frame" x="290" y="224" width="20" height="44"/>
+                                                    <rect key="frame" x="290" y="223.5" width="20" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="3ze-BX-Ju7"/>
                                                         <constraint firstAttribute="height" constant="44" id="Lss-6u-C67"/>
@@ -355,7 +298,7 @@ Chicago, IL 60613</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XnT-xl-0D7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="742"/>
+            <point key="canvasLocation" x="-714" y="742"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BLa-f6-qGF">
@@ -368,9 +311,6 @@ Chicago, IL 60613</string>
                     </tabBar>
                     <connections>
                         <segue destination="y16-I8-wZq" kind="relationship" relationship="viewControllers" id="DkN-rm-CcS"/>
-                        <segue destination="Ve7-HV-hvw" kind="relationship" relationship="viewControllers" id="zLb-8r-mch"/>
-                        <segue destination="048-5Y-vew" kind="relationship" relationship="viewControllers" id="04r-wY-n2c"/>
-                        <segue destination="RV9-Kc-egh" kind="relationship" relationship="viewControllers" id="bNU-Rb-Ifa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3M-YX-GVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
