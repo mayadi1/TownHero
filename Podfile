@@ -24,11 +24,8 @@ pod 'Firebase/Messaging'
 pod 'Firebase/RemoteConfig'
 pod 'Firebase/AdMob'
 pod 'Firebase/Analytics'
-<<<<<<< HEAD
-=======
 pod ‘FBSDKCoreKit'
 pod ’FBSDKLoginKit'
 pod ’FBSDKShareKit’
->>>>>>> 3b5cee5aca877aff42aa67ff133bb198599b341a
 
 end
