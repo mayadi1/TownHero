@@ -303,7 +303,7 @@ Chicago, IL 60613</string>
         <!--Tab Bar Controller-->
         <scene sceneID="BLa-f6-qGF">
             <objects>
-                <tabBarController id="XoQ-L7-jMv" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarView" id="XoQ-L7-jMv" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="daT-0p-PHT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
