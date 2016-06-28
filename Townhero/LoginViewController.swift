@@ -168,9 +168,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("segue to \(segue.identifier) \(segue.destinationViewController)")
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        print("segue to \(segue.identifier) \(segue.destinationViewController)")
+//    }
 
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
 

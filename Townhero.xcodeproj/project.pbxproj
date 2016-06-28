@@ -22,6 +22,8 @@
 		46ACB1191D20C1F80073537D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ACB1181D20C1F80073537D /* ProfileViewController.swift */; };
 		46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF28801D20EE600034400F /* FeedTableViewCell.swift */; };
 		46CF28851D217C210034400F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CF28841D217C210034400F /* Profile.storyboard */; };
+		46D33A951D22D82200E15ED7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D33A941D22D82200E15ED7 /* TestViewController.swift */; };
+		46D33A971D22D83400E15ED7 /* TestEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D33A961D22D83400E15ED7 /* TestEditViewController.swift */; };
 		6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */; };
 		8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */; };
 		B6EFB1D2F021021CD1CF7F4C /* Pods_TownheroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */; };
@@ -67,6 +69,8 @@
 		46ACB1181D20C1F80073537D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		46CF28801D20EE600034400F /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		46CF28841D217C210034400F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		46D33A941D22D82200E15ED7 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		46D33A961D22D83400E15ED7 /* TestEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEditViewController.swift; sourceTree = "<group>"; };
 		55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.release.xcconfig"; sourceTree = "<group>"; };
 		73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TownheroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,8 +139,10 @@
 				46CF28801D20EE600034400F /* FeedTableViewCell.swift */,
 				449869E51D20898F0023F9B0 /* ViewController.swift */,
 				449869E71D20898F0023F9B0 /* Feed.storyboard */,
-				46CF28841D217C210034400F /* Profile.storyboard */,
 				46ACB1181D20C1F80073537D /* ProfileViewController.swift */,
+				46CF28841D217C210034400F /* Profile.storyboard */,
+				46D33A941D22D82200E15ED7 /* TestViewController.swift */,
+				46D33A961D22D83400E15ED7 /* TestEditViewController.swift */,
 				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
@@ -456,9 +462,11 @@
 			files = (
 				46ACB1191D20C1F80073537D /* ProfileViewController.swift in Sources */,
 				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
+				46D33A951D22D82200E15ED7 /* TestViewController.swift in Sources */,
 				46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */,
 				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
 				46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */,
+				46D33A971D22D83400E15ED7 /* TestEditViewController.swift in Sources */,
 				449869E61D20898F0023F9B0 /* ViewController.swift in Sources */,
 				449869E41D20898F0023F9B0 /* AppDelegate.swift in Sources */,
 			);

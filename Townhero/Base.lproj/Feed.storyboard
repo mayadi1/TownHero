@@ -300,6 +300,16 @@ Chicago, IL 60613</string>
             </objects>
             <point key="canvasLocation" x="-714" y="742"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="lPd-3J-of3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="86t-WG-0Pc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="gns-rT-hKC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d99-JD-vbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-771" y="-42"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BLa-f6-qGF">
             <objects>
@@ -311,6 +321,7 @@ Chicago, IL 60613</string>
                     </tabBar>
                     <connections>
                         <segue destination="y16-I8-wZq" kind="relationship" relationship="viewControllers" id="DkN-rm-CcS"/>
+                        <segue destination="86t-WG-0Pc" kind="relationship" relationship="viewControllers" id="4Y3-ZG-qbl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3M-YX-GVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
