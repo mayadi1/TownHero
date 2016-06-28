@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--Feed-->
         <scene sceneID="95D-o3-Z19">
             <objects>
                 <viewController id="y16-I8-wZq" customClass="FeedViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,10 +25,10 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="355"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vTv-fo-OKa" id="y7i-Uk-8yR">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="354.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="354"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with MicroMentor | An initiative of Mercy Corps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQQ-nb-KdZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="with MicroMentor | An initiative of Mercy Corps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQQ-nb-KdZ">
                                                     <rect key="frame" x="81" y="63" width="472" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Bul-f2-NfS"/>
@@ -39,8 +39,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9h-jh-32V">
-                                                    <rect key="frame" x="1" y="282.5" width="598" height="36"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9h-jh-32V">
+                                                    <rect key="frame" x="1" y="283" width="598" height="36"/>
                                                     <color key="backgroundColor" red="0.55872079409999997" green="0.98051995039999995" blue="0.098908787329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="EJG-yv-pFj"/>
@@ -59,7 +59,7 @@
                                                         </mask>
                                                     </variation>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNe-k3-EWs">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNe-k3-EWs">
                                                     <rect key="frame" x="10" y="132" width="582" height="72"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -78,7 +78,7 @@
                                                         </mask>
                                                     </variation>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-75-Cxv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-75-Cxv">
                                                     <rect key="frame" x="172" y="97" width="69" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="Tew-vT-ycm"/>
@@ -90,8 +90,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ygT-WK-KqF">
-                                                    <rect key="frame" x="408" y="226.5" width="34" height="39"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ygT-WK-KqF">
+                                                    <rect key="frame" x="408" y="227" width="34" height="39"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34" id="ET6-ef-Uu6"/>
                                                         <constraint firstAttribute="width" constant="34" id="PxY-3C-wtc"/>
@@ -109,8 +109,8 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="5jM-nQ-0mk">
-                                                    <rect key="frame" x="10" y="225.5" width="35" height="40"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="5jM-nQ-0mk">
+                                                    <rect key="frame" x="10" y="226" width="35" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="HbG-bI-fdh"/>
                                                         <constraint firstAttribute="width" constant="35" id="Zwo-Vc-c0s"/>
@@ -124,8 +124,8 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="It's Flexible! We'll work with your schedule" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pod-Oe-87e">
-                                                    <rect key="frame" x="450" y="221.5" width="140" height="44"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="It's Flexible! We'll work with your schedule" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pod-Oe-87e">
+                                                    <rect key="frame" x="450" y="222" width="140" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="KcZ-T2-g0p"/>
@@ -142,7 +142,7 @@
                                                         </mask>
                                                     </variation>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1e-mW-t2N">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1e-mW-t2N">
                                                     <rect key="frame" x="53" y="221" width="139" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -162,8 +162,8 @@ Chicago, IL 60613</string>
                                                         </mask>
                                                     </variation>
                                                 </textView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="19I-Nm-z1N">
-                                                    <rect key="frame" x="290" y="223.5" width="20" height="44"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="19I-Nm-z1N">
+                                                    <rect key="frame" x="290" y="224" width="20" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="3ze-BX-Ju7"/>
                                                         <constraint firstAttribute="height" constant="44" id="Lss-6u-C67"/>
@@ -177,7 +177,7 @@ Chicago, IL 60613</string>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-QF-2M7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-QF-2M7">
                                                     <rect key="frame" x="88" y="99" width="71" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="OV3-YA-cRJ"/>
@@ -186,7 +186,7 @@ Chicago, IL 60613</string>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="vbi-qP-XW7"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="FRq-UU-ho4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ongoing-icon" translatesAutoresizingMaskIntoConstraints="NO" id="FRq-UU-ho4">
                                                     <rect key="frame" x="10" y="63" width="65" height="54"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="54" id="ITI-pg-0zz"/>
@@ -195,7 +195,7 @@ Chicago, IL 60613</string>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="pLv-8W-PEM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your knowledge with small business owners" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zq-GI-V46">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Share your knowledge with small business owners" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zq-GI-V46">
                                                     <rect key="frame" x="0.0" y="8" width="600" height="35"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -294,11 +294,14 @@ Chicago, IL 60613</string>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="tc8-cP-Vhh"/>
+                    <tabBarItem key="tabBarItem" title="Feed" id="tc8-cP-Vhh"/>
+                    <connections>
+                        <outlet property="tableView" destination="mhQ-yC-oQy" id="rtn-ci-UCn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XnT-xl-0D7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-714" y="742"/>
+            <point key="canvasLocation" x="-714" y="778"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BLa-f6-qGF">

@@ -15,6 +15,7 @@
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
 		44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */; };
+		449E50321D21BDC2009B8F75 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E50311D21BDC2009B8F75 /* Events.swift */; };
 		462E0EA81D2096CB0093893B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462E0EA71D2096CB0093893B /* Login.storyboard */; };
 		462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EA91D20973A0093893B /* LoginViewController.swift */; };
 		462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EAB1D2097450093893B /* CreateAccountViewController.swift */; };
@@ -60,6 +61,7 @@
 		44986A031D20898F0023F9B0 /* TownheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroUITests.swift; sourceTree = "<group>"; };
 		44986A051D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		449E50311D21BDC2009B8F75 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		462E0EA71D2096CB0093893B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		462E0EA91D20973A0093893B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		462E0EAB1D2097450093893B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -131,16 +133,15 @@
 			isa = PBXGroup;
 			children = (
 				449869E31D20898F0023F9B0 /* AppDelegate.swift */,
-				46ACB1161D20C1970073537D /* FeedViewController.swift */,
-				46CF28801D20EE600034400F /* FeedTableViewCell.swift */,
 				449869E51D20898F0023F9B0 /* ViewController.swift */,
-				449869E71D20898F0023F9B0 /* Feed.storyboard */,
-				46CF28841D217C210034400F /* Profile.storyboard */,
 				46ACB1181D20C1F80073537D /* ProfileViewController.swift */,
-				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
+				449E50301D21B668009B8F75 /* Feed */,
 				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
+				449869E71D20898F0023F9B0 /* Feed.storyboard */,
+				46CF28841D217C210034400F /* Profile.storyboard */,
+				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
 				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
 				449869EF1D20898F0023F9B0 /* Info.plist */,
@@ -164,6 +165,16 @@
 				44986A051D20898F0023F9B0 /* Info.plist */,
 			);
 			path = TownheroUITests;
+			sourceTree = "<group>";
+		};
+		449E50301D21B668009B8F75 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				46ACB1161D20C1970073537D /* FeedViewController.swift */,
+				46CF28801D20EE600034400F /* FeedTableViewCell.swift */,
+				449E50311D21BDC2009B8F75 /* Events.swift */,
+			);
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		83F651AB8E462073CAC7E67A /* Frameworks */ = {
@@ -458,6 +469,7 @@
 				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
 				46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */,
 				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
+				449E50321D21BDC2009B8F75 /* Events.swift in Sources */,
 				46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */,
 				449869E61D20898F0023F9B0 /* ViewController.swift in Sources */,
 				449869E41D20898F0023F9B0 /* AppDelegate.swift in Sources */,

@@ -10,35 +10,70 @@ import UIKit
 import Firebase
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    let usersRef = FIRDatabase.database().reference()
+    
+    @IBOutlet weak var tableView: UITableView!
+    var names = []
+    var meets = [NSDictionary]()
+    var meetsArray = []
+    var event = [Events]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-   let usersRef = FIRDatabase.database().reference()
         
         
-        usersRef.child("Fef").setValue("efefef")
-        // Do any additional setup after loading the view.
+        
+        
+        
+        //Getting info from Meetup
+        let url = NSURL(string: "https://api.meetup.com/2/open_events.json?zip=60654&text=volunteer&time=,1w&key=295a221f3120693541f4c725a227930")
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(url!) { (data: NSData?, response:NSURLResponse?, error:NSError?) -> Void in
+            
+            do {
+                let dictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                let file = dictionary.valueForKey("results") as! NSArray
+              
+                
+//                
+//                ["utc_offset"]
+//                
+//                
+//                
+//                 self.event.append(Events(name: <#T##String#>, address: <#T##String#>, lat: <#T##Double#>, long: <#T##Double#>, des: <#T##String#>, date: <#T##Double#>)
+//            
+            
+            } catch let error as NSError {
+                print("Json ERROR: \(error.localizedDescription)")
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+                
+            })
+            
+        }
+        task.resume()
+        
+        
+        
     }
-
-   
+    
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-    return 20
+        return 5
     }
-
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView .dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as! FeedTableViewCell
         return cell
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
+    
+    
 }
