@@ -8,8 +8,8 @@
 
 import UIKit
 
-class Events: NSObject {
-    let name: String
+ class Events: NSObject {
+    let  name: String
     let address: String
     let lat: Double
     let long: Double
@@ -18,7 +18,7 @@ class Events: NSObject {
     
     
     
-    init(name: String,address: String, lat: Double, long: Double, des: String, date: Double){
+    public init(name: String,address: String, lat: Double, long: Double, des: String, date: Double){
         
         self.name = name
         self.address = address
@@ -26,7 +26,16 @@ class Events: NSObject {
         self.long = long
         self.des = des
         self.date = date
- 
+        
+        
+    }
+    
+    
+   public func info(){
+        
+        
+        print("the event name is:")
+        print(self.name)
         
     }
     

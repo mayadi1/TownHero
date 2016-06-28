@@ -17,7 +17,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var meets = [NSDictionary]()
     var meetsArray = []
     var event = [Events]()
-    
+    var file = []
     
     
     override func viewDidLoad() {
@@ -34,9 +34,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             do {
                 let dictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
-                let file = dictionary.valueForKey("results") as! NSArray
-              
+                self.file = dictionary.valueForKey("results") as! NSArray
                 
+                
+              
+         
 //                
 //                ["utc_offset"]
 //                
@@ -64,16 +66,63 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return self.file.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView .dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as! FeedTableViewCell
+      
+        
+        
+        let event = self.file[indexPath.row] as! NSDictionary
+        
+        
+        
+       // let address = event["venue"]!!["address_1"]
+
+       
+        
+      
+        
+        if let d = event["venue"]{
+            
+        if let address = d.objectForKey("address_1"){
+          
+            
+            let title = event.objectForKey("name") as! String
+            let date = event["time"]
+            if let des = event.objectForKey("description") {
+                cell.config(address as! String, title: title, date: (date?.doubleValue)!, des: des as! String)
+
+            }
+            
+            
+        }
+        }
+ 
+     
         return cell
+
     }
     
-    
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+      let dvc = segue.destinationViewController as! EventDetailViewController
+        
+        let index = tableView.indexPathForSelectedRow
+        
+        
+        print(index)
+       // dvc.selectedEvent = self.file[index!.row] as? NSDictionary
+        
+        
+        
+        
+        
+    }
+
+
+
     
     
 }
