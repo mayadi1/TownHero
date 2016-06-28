@@ -112,7 +112,7 @@
                     <connections>
                         <outlet property="passwordField" destination="DAn-dP-M4S" id="O5v-Aw-S8J"/>
                         <outlet property="userNameField" destination="lrL-xn-5jo" id="C40-WQ-8jO"/>
-                        <segue destination="7qg-Po-j1y" kind="show" identifier="toProfile" id="dWQ-qB-u97"/>
+                        <segue destination="7qg-Po-j1y" kind="show" identifier="toFeed" id="dWQ-qB-u97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7u0-EJ-CEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,7 +247,7 @@
                         <outlet property="emailField" destination="MzI-ZE-oBJ" id="44z-qM-zgF"/>
                         <outlet property="nameField" destination="F3L-2x-0Ds" id="atO-TO-OrQ"/>
                         <outlet property="passwordField" destination="V1J-TF-Uz4" id="rIm-pm-3SW"/>
-                        <segue destination="KVQ-LI-K8D" kind="show" identifier="toProfile" id="ILA-rB-FYN"/>
+                        <segue destination="KVQ-LI-K8D" kind="show" identifier="toFeed" id="ILA-rB-FYN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcZ-M5-WrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
