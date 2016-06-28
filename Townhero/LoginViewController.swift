@@ -21,6 +21,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var passwordField: UITextField!
 
+    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     
     
@@ -30,6 +31,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         
         self.loginButton.hidden = true
+        
+        
+        
+        
         
         // This code will check to see if the user is signed in or not. Located in firebase manage users: Step 1.
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
@@ -62,6 +67,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         self.view!.addGestureRecognizer(tap)
 
+
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if(FBSDKAccessToken.currentAccessToken() != nil) {
+            performSegueWithIdentifier("toFeed", sender: self)
+        } else {
+            print("Must Log In")
+        }
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
@@ -73,15 +90,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 //            print("Facebook Not Logged In")
 //        }
         
+        activitySpinner.startAnimating()
+        
         // Code to deal with users who hit cancel on the facebook login access.
         if (error != nil)
         {
             // If error occurs, login button appears
             self.loginButton.hidden = false
+            activitySpinner.stopAnimating()
         }
         else if(result.isCancelled) {
             // handle the cancel event, show the login button
             self.loginButton.hidden = false
+            activitySpinner.stopAnimating()
             
         } else {  // User hits OK to grant rights to use Facebook Login.
             print("user logged in")
@@ -91,6 +112,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // This is getting an access token for the signed-in user and exchanging it for a Firebase credential:
             
             let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
+            
             
             // Step 5 authenticate with Firebase using the Firebase credential
             FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
@@ -144,6 +166,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             return false
         }
         return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("segue to \(segue.identifier) \(segue.destinationViewController)")
     }
 
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}

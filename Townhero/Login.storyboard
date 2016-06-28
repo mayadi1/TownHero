@@ -36,13 +36,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="townherologo" translatesAutoresizingMaskIntoConstraints="NO" id="giB-TO-0jQ">
-                                <rect key="frame" x="180" y="100" width="240" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="9Kr-pp-E31"/>
-                                    <constraint firstAttribute="width" constant="240" id="TBd-qb-AyH"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R05-h2-KZQ">
                                 <rect key="frame" x="114" y="286" width="372" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,6 +81,16 @@
                                     <segue destination="oOw-F1-RHe" kind="show" id="uWy-Yb-4KO"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="DOo-Qa-i79">
+                                <rect key="frame" x="290" y="173" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="townherologo" translatesAutoresizingMaskIntoConstraints="NO" id="giB-TO-0jQ">
+                                <rect key="frame" x="180" y="100" width="240" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="9Kr-pp-E31"/>
+                                    <constraint firstAttribute="width" constant="240" id="TBd-qb-AyH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -99,9 +102,13 @@
                             <constraint firstItem="giB-TO-0jQ" firstAttribute="top" secondItem="UU4-qj-0hR" secondAttribute="bottom" constant="80" id="BmE-dJ-zAC"/>
                             <constraint firstItem="lrL-xn-5jo" firstAttribute="top" secondItem="giB-TO-0jQ" secondAttribute="bottom" constant="35" id="D3H-19-peR"/>
                             <constraint firstItem="EVM-vs-CoP" firstAttribute="top" secondItem="l23-z7-N3p" secondAttribute="bottom" constant="117" id="HQd-gP-IUK"/>
+                            <constraint firstItem="DOo-Qa-i79" firstAttribute="top" secondItem="UU4-qj-0hR" secondAttribute="bottom" constant="153" id="Ilu-go-hi1"/>
+                            <constraint firstAttribute="trailing" secondItem="DOo-Qa-i79" secondAttribute="trailing" constant="290" id="Nfx-fT-QEG"/>
+                            <constraint firstItem="DOo-Qa-i79" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="290" id="Qjh-o4-zlE"/>
                             <constraint firstItem="l23-z7-N3p" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="V80-km-dHP"/>
                             <constraint firstAttribute="trailing" secondItem="dDQ-h0-80n" secondAttribute="trailing" id="W7S-Xs-ebV"/>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="bcK-2T-W81"/>
+                            <constraint firstItem="lrL-xn-5jo" firstAttribute="top" secondItem="DOo-Qa-i79" secondAttribute="bottom" constant="17" id="dgL-2v-voY"/>
                             <constraint firstItem="4Bd-Sa-B4p" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="eh0-J4-1It"/>
                             <constraint firstAttribute="bottom" secondItem="4Bd-Sa-B4p" secondAttribute="bottom" constant="262" id="j8J-Ht-6mk"/>
                             <constraint firstItem="EVM-vs-CoP" firstAttribute="top" secondItem="dDQ-h0-80n" secondAttribute="bottom" id="jtW-b6-nZ9"/>
@@ -110,6 +117,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activitySpinner" destination="DOo-Qa-i79" id="nCp-4p-ngm"/>
                         <outlet property="passwordField" destination="DAn-dP-M4S" id="O5v-Aw-S8J"/>
                         <outlet property="userNameField" destination="lrL-xn-5jo" id="C40-WQ-8jO"/>
                         <segue destination="7qg-Po-j1y" kind="show" identifier="toFeed" id="dWQ-qB-u97"/>
@@ -247,7 +255,7 @@
                         <outlet property="emailField" destination="MzI-ZE-oBJ" id="44z-qM-zgF"/>
                         <outlet property="nameField" destination="F3L-2x-0Ds" id="atO-TO-OrQ"/>
                         <outlet property="passwordField" destination="V1J-TF-Uz4" id="rIm-pm-3SW"/>
-                        <segue destination="KVQ-LI-K8D" kind="show" identifier="toFeed" id="ILA-rB-FYN"/>
+                        <segue destination="KVQ-LI-K8D" kind="presentation" identifier="toFeed" id="ILA-rB-FYN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcZ-M5-WrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
