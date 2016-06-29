@@ -18,7 +18,7 @@ import UIKit
     
     
     
-    public init(name: String,address: String, lat: Double, long: Double, des: String, date: Double){
+     init(name: String,address: String, lat: Double, long: Double, des: String, date: Double){
         
         self.name = name
         self.address = address
@@ -31,7 +31,7 @@ import UIKit
     }
     
     
-   public func info(){
+    func info(){
         
         
         print("the event name is:")
