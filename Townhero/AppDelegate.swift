@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+
     
-     
    // 
     override init() {
         
@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool{
+        
         let colorView = UIView()
         colorView.backgroundColor = UIColor.whiteColor()
         UITableViewCell.appearance().selectedBackgroundView = colorView
@@ -38,9 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         authUser = FIRAuth.auth()?.currentUser
         
-        let colorView = UIView()
-        colorView.backgroundColor = UIColor.whiteColor()
-        UITableViewCell.appearance().selectedBackgroundView = colorView
+        
 
 //        FIRApp.configure()
         return true
