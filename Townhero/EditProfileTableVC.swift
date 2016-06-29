@@ -35,7 +35,7 @@ class EditProfileTableVC: UITableViewController {
             
             
             let data = NSData(contentsOfURL: photoUrl!)
-            self.userPic.image = UIImage(data: data!)
+//            self.userPic.image = UIImage(data: data!)
         
         
     }
