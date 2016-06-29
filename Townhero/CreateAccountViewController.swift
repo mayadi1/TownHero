@@ -15,8 +15,8 @@ class CreateAccountViewController: UIViewController {
 
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
-    @IBOutlet var usernameField: UITextField!
-    @IBOutlet var passwordField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+
     
     let usersRef = FIRDatabase.database().reference().child("users")
 
@@ -24,7 +24,8 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        self.view!.addGestureRecognizer(tap)
         
     }
     
@@ -39,12 +40,13 @@ class CreateAccountViewController: UIViewController {
                 
                 
                 if let userID = currentUserUID {
-                        self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/fauxstagram.appspot.com/o/daff35_94ba58407fd14cbfb3a0394ff34127be.png_256.png?alt=media&token=10480fef-d3bd-43a1-9f15-24ba577a9f3e")
-                        self.usersRef.child(userID).child("screenname").setValue(self.usernameField.text)
-                        self.usersRef.child(userID).child("userquote").setValue("Enter a message to display on your profile by clicking on the account button.")
+                        self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/townhero-5732d.appspot.com/o/u7ECcv595vgoy64SEnxhOTawcOa2%2Femptyprofilepic.png?alt=media&token=a865bf9d-b8de-4e63-9049-a067de1a75b5")
+                        self.usersRef.child(userID).child("name").setValue(self.nameField.text)
+                        self.usersRef.child(userID).child("email").setValue(self.emailField.text)
+                    
                 }
                 
-                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Feed", bundle: nil)
 
                 
                 let mainViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") as! UITabBarController
@@ -55,7 +57,40 @@ class CreateAccountViewController: UIViewController {
                 print(error?.description)
                 print("User Not Created")
                 
+                let alertController = UIAlertController(title: nil, message: "User already exists", preferredStyle: .Alert)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                    // ...
+                }
+                alertController.addAction(cancelAction)
+                
+                let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                
+                let destroyAction = UIAlertAction(title: "Use Facebook", style: .Default) { (action) in
+                    print(action)
+                }
+                alertController.addAction(destroyAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
             }
         }
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }

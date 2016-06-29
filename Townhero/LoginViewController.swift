@@ -21,6 +21,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var passwordField: UITextField!
 
+    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     
     
@@ -34,28 +35,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         
         
-        // Not working
-//        func regularLoginField() {
-//            if userNameField.text == "" && passwordField.text == ""{
-//                self.view.backgroundColor = UIColor.blackColor()
-//            } else {
-//                self.view.backgroundColor = UIColor.redColor()
-//            }
-//            
-//        }
-//        
         
         // This code will check to see if the user is signed in or not. Located in firebase manage users: Step 1.
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
-            if let user = user {
+            if user != nil {
                 // If the user is signed in, show the home page.
                 
-                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Feed", bundle: nil)
                 // Uncomment this when we get feed done and add HomeView as the storyboard id.
                 
-                let mainViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("") as! UITabBarController
+                let feedViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") as! UITabBarController
                 
-                self.presentViewController(mainViewController, animated: true, completion: nil)
+                self.presentViewController(feedViewController, animated: true, completion: nil)
                 
             } else {
                 // If user is signed out, show the login button.
@@ -73,7 +64,21 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
             
         }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        self.view!.addGestureRecognizer(tap)
+
+
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if(FBSDKAccessToken.currentAccessToken() != nil) {
+            performSegueWithIdentifier("toFeed", sender: self)
+        } else {
+            print("Must Log In")
+        }
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
@@ -85,15 +90,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 //            print("Facebook Not Logged In")
 //        }
         
+        activitySpinner.startAnimating()
+        
         // Code to deal with users who hit cancel on the facebook login access.
         if (error != nil)
         {
             // If error occurs, login button appears
             self.loginButton.hidden = false
+            activitySpinner.stopAnimating()
         }
         else if(result.isCancelled) {
             // handle the cancel event, show the login button
             self.loginButton.hidden = false
+            activitySpinner.stopAnimating()
             
         } else {  // User hits OK to grant rights to use Facebook Login.
             print("user logged in")
@@ -104,10 +113,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
             
+            
             // Step 5 authenticate with Firebase using the Firebase credential
             FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
                 print("user logged into firebase")
-                self.performSegueWithIdentifier("toProfile", sender: self)
+                self.performSegueWithIdentifier("toFeed", sender: self)
 
                 
                 
@@ -134,16 +144,53 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 //                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                    let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileView")
 //                    self.presentViewController(vc, animated: true, completion: nil)
-                       self.performSegueWithIdentifier("toProfile", sender: self)
+                       self.performSegueWithIdentifier("toFeed", sender: self)
                            
                 }
                 else {
                     print("Invalid Login")
                     
+                    let alertController = UIAlertController(title: nil, message: "Invalid login", preferredStyle: .Alert)
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(cancelAction)
+                    
+                    let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    
+                    let destroyAction = UIAlertAction(title: "Use Facebook", style: .Default) { (action) in
+                        print(action)
+                    }
+                    alertController.addAction(destroyAction)
+                    
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
                 }
                 
             }
         }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        print("segue to \(segue.identifier) \(segue.destinationViewController)")
+//    }
 
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
 
