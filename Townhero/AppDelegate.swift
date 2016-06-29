@@ -36,6 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         authUser = FIRAuth.auth()?.currentUser
         
+        let colorView = UIView()
+        colorView.backgroundColor = UIColor.whiteColor()
+        UITableViewCell.appearance().selectedBackgroundView = colorView
+
+//        FIRApp.configure()
         return true
     }
     

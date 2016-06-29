@@ -10,35 +10,125 @@ import UIKit
 import Firebase
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    let usersRef = FIRDatabase.database().reference()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var event = [Events]()
+    var file = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-   let usersRef = FIRDatabase.database().reference()
         
         
-        usersRef.child("Fef").setValue("efefef")
-        // Do any additional setup after loading the view.
-    }
-
+        
+        
+        
+        //Getting info from Meetup
+        let url = NSURL(string: "https://api.meetup.com/2/open_events.json?zip=60654&text=volunteer&time=,1w&key=295a221f3120693541f4c725a227930")
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(url!) { (data: NSData?, response:NSURLResponse?, error:NSError?) -> Void in
+            
+            do {
+                let dictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                self.file = dictionary.valueForKey("results") as! NSArray
+                
+                
+                
+                for item in self.file{
+                    
+                    let event = item as! NSDictionary
+                    
+                    
+                    if let venue = event["venue"]{
+                        
+                        if let  tempAdd = venue.objectForKey("address_1"){
+                            let addres = tempAdd as! String
+                            
+                            let title = event.objectForKey("name") as! String
+                            let tempDate = event["time"]
+                            if let des = event.objectForKey("description") {
+                                
+                                let lat = venue.objectForKey("lat") as! Double
+                                 let lon = venue.objectForKey("lon") as! Double
+                                
+                                
+                                self.event.append(Events(name: title, address: addres, lat: lat, long: lon, des: des as! String , date: (tempDate?.doubleValue)!))
+                                
+                            }
+                        }
+                    }
+                }
+            
+            
+                            
+                    
+                } catch let error as NSError {
+                    print("Json ERROR: \(error.localizedDescription)")
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    
+                    self.tableView.reloadData()
+                    
+                })
+                
+            }
+            task.resume()
+            
+            
+            
+        }
+        
+        
+        
+        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            
+            return self.event.count
+        }
+        
+        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView .dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as! FeedTableViewCell
+            
+            
    
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                        
+                        let tempEvent = self.event[indexPath.row]
+                        
+                        
+                        cell.config(tempEvent.address, title: tempEvent.name, date: tempEvent.date, des: tempEvent.des)
+                        
+                        
+                    
+            
+            return cell
+            
+        }
         
-    return 20
-    }
-
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView .dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as! FeedTableViewCell
-        return cell
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            
+            let dvc = segue.destinationViewController as! EventDetailViewController
+            
+            
+            let index = tableView.indexPathForSelectedRow
+            
+            
+        dvc.passedEvent = self.event[(index?.row)!]
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+        
+        
 }
