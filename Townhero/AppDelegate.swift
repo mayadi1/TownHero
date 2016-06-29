@@ -34,13 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         colorView.backgroundColor = UIColor.whiteColor()
         UITableViewCell.appearance().selectedBackgroundView = colorView
 
-//        FIRApp.configure()
-        //        FIRApp.configure()
-       
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         authUser = FIRAuth.auth()?.currentUser
-        
+        FIRApp.configure()
         return true
     }
     
