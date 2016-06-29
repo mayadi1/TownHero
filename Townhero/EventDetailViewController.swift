@@ -8,24 +8,46 @@
 //
 
 import UIKit
+import MapKit
+
 
 class EventDetailViewController: UIViewController {
 
-    //var selectedEvent: NSDictionary?
+    @IBOutlet weak var directionButton: UIButton!
+    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var whereLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    var passedEvent: Events?
+    
 
     override func viewDidLoad() {
-        
-       
-        
         super.viewDidLoad()
         
-//            let address = self.selectedEvent!.objectForKey("address_1") as! String
-//        
-//        self.addressTextView.text = address
+        
+        
+        
+        self.navigationItem.title = self.passedEvent?.name
+        
+        self.webView.loadHTMLString("\(self.passedEvent?.des)", baseURL: nil)
+        self.dateLabel.text = "\(self.passedEvent?.date)"
+        self.whereLabel.text = self.passedEvent?.address
+        
+        
+        
+        
+        
+
+        
+        
         
         
         
     }
 
+    @IBAction func directionButtonPressed(sender: AnyObject) {
+    }
    
+    
 }

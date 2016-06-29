@@ -13,9 +13,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     let usersRef = FIRDatabase.database().reference()
     
     @IBOutlet weak var tableView: UITableView!
-    var names = []
-    var meets = [NSDictionary]()
-    var meetsArray = []
+    
     var event = [Events]()
     var file = []
     
@@ -37,92 +35,101 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.file = dictionary.valueForKey("results") as! NSArray
                 
                 
-              
-         
-//                
-//                ["utc_offset"]
-//                
-//                
-//                
-//                 self.event.append(Events(name: <#T##String#>, address: <#T##String#>, lat: <#T##Double#>, long: <#T##Double#>, des: <#T##String#>, date: <#T##Double#>)
-//            
-            
-            } catch let error as NSError {
-                print("Json ERROR: \(error.localizedDescription)")
-            }
-            dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
                 
-            })
+                for item in self.file{
+                    
+                    let event = item as! NSDictionary
+                    
+                    
+                    if let venue = event["venue"]{
+                        
+                        if let  tempAdd = venue.objectForKey("address_1"){
+                            let addres = tempAdd as! String
+                            
+                            let title = event.objectForKey("name") as! String
+                            let tempDate = event["time"]
+                            if let des = event.objectForKey("description") {
+                                
+                                let lat = venue.objectForKey("lat") as! Double
+                                 let lon = venue.objectForKey("lon") as! Double
+                                
+                                
+                                self.event.append(Events(name: title, address: addres, lat: lat, long: lon, des: des as! String , date: (tempDate?.doubleValue)!))
+                                
+                            }
+                        }
+                    }
+                }
             
-        }
-        task.resume()
-        
-        
-        
-    }
-    
-    
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.file.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView .dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as! FeedTableViewCell
-      
-        
-        
-        let event = self.file[indexPath.row] as! NSDictionary
-        
-        
-        
-       // let address = event["venue"]!!["address_1"]
-
-       
-        
-      
-        
-        if let d = event["venue"]{
             
-        if let address = d.objectForKey("address_1"){
-          
-            
-            let title = event.objectForKey("name") as! String
-            let date = event["time"]
-            if let des = event.objectForKey("description") {
-                cell.config(address as! String, title: title, date: (date?.doubleValue)!, des: des as! String)
-
+                            
+                    
+                } catch let error as NSError {
+                    print("Json ERROR: \(error.localizedDescription)")
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    
+                    self.tableView.reloadData()
+                    
+                })
+                
             }
+            task.resume()
+            
             
             
         }
+        
+        
+        
+        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            
+            return self.event.count
         }
- 
-     
-        return cell
-
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-      let dvc = segue.destinationViewController as! EventDetailViewController
+        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView .dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as! FeedTableViewCell
+            
+            
+   
+                        
+                        let tempEvent = self.event[indexPath.row]
+                        
+                        
+                        cell.config(tempEvent.address, title: tempEvent.name, date: tempEvent.date, des: tempEvent.des)
+                        
+                        
+                    
+            
+            return cell
+            
+        }
         
-        let index = tableView.indexPathForSelectedRow
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            
+            let dvc = segue.destinationViewController as! EventDetailViewController
+            
+            
+            let index = tableView.indexPathForSelectedRow
+            
+            print("this is the indexPath.row \(index?.row)")
+            
+        dvc.passedEvent = self.event[(index?.row)!]
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
         
         
-        print(index)
-       // dvc.selectedEvent = self.file[index!.row] as? NSDictionary
         
         
         
-        
-        
-    }
-
-
-
-    
-    
 }

@@ -21,7 +21,8 @@ class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var addressLabel: UILabel!
     
-    @IBOutlet weak var desLabel: UILabel!
+    
+    @IBOutlet weak var desLabel: UIWebView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,19 +39,18 @@ class FeedTableViewCell: UITableViewCell {
     
     func config(address: String, title: String, date: Double,des: String){
         
-        self.desLabel.numberOfLines = 0
-        self.titleLabel.numberOfLines = 0
-        self.desLabel.text = des
+        self.titleLabel.numberOfLines = 2
+    
+        
+        self.dateLabel.text = "\(date)"
         self.addressLabel.text = address
         self.titleLabel.text = title
-        self.desLabel.text = "\(date)"
+        
+        self.desLabel.loadHTMLString("\(des)", baseURL: nil)
         
         
         
         
-        
-        
-    }
-    @IBAction func learnMoreButtonPressed(sender: AnyObject) {
-    }
-}
+    }//End of the dunction config
+    
+}//End of the class FeedTableViewCell
