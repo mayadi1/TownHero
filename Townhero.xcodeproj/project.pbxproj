@@ -186,6 +186,10 @@
 			children = (
 				449869E31D20898F0023F9B0 /* AppDelegate.swift */,
 				449869E51D20898F0023F9B0 /* ViewController.swift */,
+				449869E71D20898F0023F9B0 /* Feed.storyboard */,
+				46ACB1181D20C1F80073537D /* ProfileViewController.swift */,
+				46CF28841D217C210034400F /* Profile.storyboard */,
+				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
 				4638C8631D2445D600D0B63A /* Feed */,
