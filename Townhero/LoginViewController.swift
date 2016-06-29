@@ -150,6 +150,26 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 else {
                     print("Invalid Login")
                     
+                    let alertController = UIAlertController(title: nil, message: "Invalid login", preferredStyle: .Alert)
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(cancelAction)
+                    
+                    let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    
+                    let destroyAction = UIAlertAction(title: "Use Facebook", style: .Default) { (action) in
+                        print(action)
+                    }
+                    alertController.addAction(destroyAction)
+                    
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
                 }
                 
             }

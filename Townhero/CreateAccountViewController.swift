@@ -40,7 +40,7 @@ class CreateAccountViewController: UIViewController {
                 
                 
                 if let userID = currentUserUID {
-                        self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/fauxstagram.appspot.com/o/daff35_94ba58407fd14cbfb3a0394ff34127be.png_256.png?alt=media&token=10480fef-d3bd-43a1-9f15-24ba577a9f3e")
+                        self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/townhero-5732d.appspot.com/o/u7ECcv595vgoy64SEnxhOTawcOa2%2Femptyprofilepic.png?alt=media&token=a865bf9d-b8de-4e63-9049-a067de1a75b5")
                         self.usersRef.child(userID).child("name").setValue(self.nameField.text)
                         self.usersRef.child(userID).child("email").setValue(self.emailField.text)
                     
@@ -57,8 +57,26 @@ class CreateAccountViewController: UIViewController {
                 print(error?.description)
                 print("User Not Created")
                 
+                let alertController = UIAlertController(title: nil, message: "User already exists", preferredStyle: .Alert)
                 
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                    // ...
+                }
+                alertController.addAction(cancelAction)
                 
+                let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                
+                let destroyAction = UIAlertAction(title: "Use Facebook", style: .Default) { (action) in
+                    print(action)
+                }
+                alertController.addAction(destroyAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
             }
         }
     }
