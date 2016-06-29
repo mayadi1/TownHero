@@ -11,7 +11,6 @@ import UIKit
 
 class EventDetailViewController: UIViewController {
 
-    @IBOutlet weak var addressTextView: UITextView!
     //var selectedEvent: NSDictionary?
 
     override func viewDidLoad() {
