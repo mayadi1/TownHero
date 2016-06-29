@@ -14,7 +14,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
-    var event = [Events]()
+    var event = [Event]()
     var file = []
     
     
@@ -54,7 +54,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                                  let lon = venue.objectForKey("lon") as! Double
                                 
                                 
-                                self.event.append(Events(name: title, address: addres, lat: lat, long: lon, des: des as! String , date: (tempDate?.doubleValue)!))
+                                self.event.append(Event(name: title, address: addres, lat: lat, long: lon, des: des as! String , date: (tempDate?.doubleValue)!))
                                 
                             }
                         }

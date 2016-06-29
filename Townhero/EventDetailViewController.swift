@@ -19,7 +19,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var whereLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
-    var passedEvent: Events?
+    var passedEvent: Event?
     
 
     override func viewDidLoad() {

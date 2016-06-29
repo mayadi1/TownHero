@@ -25,12 +25,12 @@
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
 		44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */; };
-		449E505E1D22C878009B8F75 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E505D1D22C878009B8F75 /* Event.swift */; };
 		449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E50611D22E738009B8F75 /* MapKit.framework */; };
-		449E50641D22E943009B8F75 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E50631D22E943009B8F75 /* EventDetailViewController.swift */; };
 		462E0EA81D2096CB0093893B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462E0EA71D2096CB0093893B /* Login.storyboard */; };
 		462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EA91D20973A0093893B /* LoginViewController.swift */; };
 		462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EAB1D2097450093893B /* CreateAccountViewController.swift */; };
+		4638C8641D24486F00D0B63A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E505D1D22C878009B8F75 /* Event.swift */; };
+		4638C8651D24487700D0B63A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E50631D22E943009B8F75 /* EventDetailViewController.swift */; };
 		46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ACB1161D20C1970073537D /* FeedViewController.swift */; };
 		46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF28801D20EE600034400F /* FeedTableViewCell.swift */; };
 		46CF28851D217C210034400F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CF28841D217C210034400F /* Profile.storyboard */; };
@@ -133,7 +133,6 @@
 		35E69C031D21B74000271D7A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				46CF28841D217C210034400F /* Profile.storyboard */,
 				35E69C1A1D23802B00271D7A /* Edit Profile */,
 				35E69C181D22E18700271D7A /* PendingActivityVC.swift */,
 				35E69C231D24198B00271D7A /* PendingActivityCell.swift */,
@@ -185,11 +184,9 @@
 			children = (
 				449869E31D20898F0023F9B0 /* AppDelegate.swift */,
 				449869E51D20898F0023F9B0 /* ViewController.swift */,
-				449869E71D20898F0023F9B0 /* Feed.storyboard */,
-				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
-				449E50301D21B668009B8F75 /* Feed */,
+				4638C8631D2445D600D0B63A /* Feed */,
 				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
 				449869E71D20898F0023F9B0 /* Feed.storyboard */,
 				46CF28841D217C210034400F /* Profile.storyboard */,
@@ -219,12 +216,12 @@
 			path = TownheroUITests;
 			sourceTree = "<group>";
 		};
-		449E50301D21B668009B8F75 /* Feed */ = {
+		4638C8631D2445D600D0B63A /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				449E505D1D22C878009B8F75 /* Event.swift */,
-				46CF28801D20EE600034400F /* FeedTableViewCell.swift */,
 				46ACB1161D20C1970073537D /* FeedViewController.swift */,
+				46CF28801D20EE600034400F /* FeedTableViewCell.swift */,
 				449E50631D22E943009B8F75 /* EventDetailViewController.swift */,
 			);
 			name = Feed;
@@ -527,9 +524,11 @@
 				35E69C191D22E18700271D7A /* PendingActivityVC.swift in Sources */,
 				35E69C241D24198B00271D7A /* PendingActivityCell.swift in Sources */,
 				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
+				4638C8641D24486F00D0B63A /* Event.swift in Sources */,
 				35E69C201D24194A00271D7A /* HistoryActivityVC.swift in Sources */,
 				46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */,
 				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
+				4638C8651D24487700D0B63A /* EventDetailViewController.swift in Sources */,
 				35E69C0F1D224CC800271D7A /* EditFullNameVC.swift in Sources */,
 				46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */,
 				449869E61D20898F0023F9B0 /* ViewController.swift in Sources */,

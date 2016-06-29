@@ -34,8 +34,8 @@ class EditProfileTableVC: UITableViewController {
             self.editProfileEmail.text = email
             
             
-            let data = NSData(contentsOfURL: photoUrl!)
-            self.userPic.image = UIImage(data: data!)
+           // let data = NSData(contentsOfURL: photoUrl!)
+            //self.userPic.image = UIImage(data: data!)
         
         
     }
