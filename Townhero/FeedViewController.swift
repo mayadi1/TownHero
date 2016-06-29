@@ -113,7 +113,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let index = tableView.indexPathForSelectedRow
             
-            print("this is the indexPath.row \(index?.row)")
             
         dvc.passedEvent = self.event[(index?.row)!]
             
