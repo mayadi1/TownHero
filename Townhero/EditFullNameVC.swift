@@ -9,8 +9,8 @@
 import UIKit
 
 class EditFullNameVC: UIViewController {
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
+
+    @IBOutlet weak var fullNameTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()

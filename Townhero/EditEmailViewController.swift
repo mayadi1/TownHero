@@ -11,28 +11,45 @@ import UIKit
 class EditEmailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
 
-
+    var passedEmail: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-
+        self.emailTextField.placeholder = passedEmail
         
     }
 
-    @IBAction func onSaveButtonTapped(sender: UIButton) {
-        if isValidEmail(emailTextField.text!) == true {
-            print("Valid Email")
-        } else {
-            print("NOT Valid Email")
-        }
-    }
-    
     func isValidEmail(email2Test:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
         let range = email2Test.rangeOfString(emailRegEx, options:.RegularExpressionSearch)
         return range != nil ? true : false
     }
     
+  
+    
+    @IBAction func onSaveButtonTapped(sender: UIBarButtonItem) {
+       if isValidEmail(emailTextField.text!) == true {
+        
+            emailTextField.text = self.emailTextField.text
+            } else {
+            print("NOT Valid Email")
+        }
+    }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        <#code#>
+//    }
+//    
+    
+//    @IBAction func onSaveButtonTapped(sender: UIButton) {
+//        if isValidEmail(emailTextField.text!) == true {
+//            print("Valid Email")
+//        } else {
+//            print("NOT Valid Email")
+//        }
+//    }
+    
+
     
     /* WORK IN PROGRESS:
        1. I have a button called "Save" not showing up on my right-side title bar
@@ -41,18 +58,7 @@ class EditEmailViewController: UIViewController, UITextFieldDelegate {
  
     */
     
-    
-    
-    
-    
-    
-//    func validateEmail(candidate: String) -> Bool {
-//        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-//        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
-//    }
-//    
-//    validateEmail("test@google.com")     // true
-//    validateEmail("invalid@@google.com") // false
+
 
 
     /*

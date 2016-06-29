@@ -7,40 +7,139 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+import FBSDKCoreKit
 
-class ProfileVC: UITableViewController {
-    @IBOutlet weak var profilePicImageView: UIImageView!
+class ProfileTVC: UITableViewController {
+   
+    @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var organizationImageView: UIImageView!
-
+ 
+    @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        roundImageView(profilePicImageView)
-        roundImageView(organizationImageView)
-
+        
+            userPic.layer.masksToBounds = false
+            userPic.layer.cornerRadius = userPic.frame.height / 2
+            userPic.clipsToBounds = true
+        
+            organizationImageView.layer.masksToBounds = false
+            organizationImageView.layer.cornerRadius = organizationImageView.frame.height / 2
+            organizationImageView.clipsToBounds = true
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            let name = user.displayName
+            let email = user.email
+            let photoUrl = user.photoURL
+            let uid = user.uid
+            
+            
+            self.nameLabel.text = name
+            
+            
+            //  Since we don't want the image to never return nil we comment this out last. Required if you don't want the code below.
+            
+            //            let data = NSData(contentsOfURL: photoUrl!)
+            //            self.userPic.image = UIImage(data: data!)
+            
+            
+            // Reference to the storage service
+            let storage = FIRStorage.storage()
+            // Reference your particular storage service/ Located at the top of storage menu in firebase.
+            let storageRef = storage.referenceForURL("gs://townhero-5732d.appspot.com")
+            
+            // We moved this from below to here since download in memory requires the reference.
+            let profilePicRef = storageRef.child(user.uid+"/profile_pic.jpg")
+            // Since we don't want to keep redownloading and uploading the facebook profile image we have check our firebase storage to see if it exists already. So we download temporarily into phone memory before we check it.
+            
+            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+            profilePicRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+                if (error != nil) {
+                    // Uh-oh, an error occurred!
+                    print("Unable to download image")
+                } else {
+                    // Data for "images/island.jpg" is returned
+                    // ... let islandImage: UIImage! = UIImage(data: data!)
+                    
+                    if(data != nil){
+                        print("User image already exists, no need to download")
+                        self.userPic.image = UIImage(data: data!)
+                    }
+                }
+            }
+            // This checks if the user doesn't have a profile image then move below and run our code for downloading.
+            if(self.userPic.image == nil) {
+                
+                
+                // Request to get the facebook users profile picture - convert to swift from obj-c. Located in facebook developer docs: User, Picture menu. We don't need connection, result, or error type - remove value. Remove first part and make profilePic. Remove user id next to graphPath: and add "me/picture. Add parameters with h,w, and redirect false since we want the picture to return a json. Replace request.startWithCompletionHandler with profilePic.start....
+                var profilePic = FBSDKGraphRequest(graphPath: "me/picture", parameters: ["height":300,"width":300,"redirect":false], HTTPMethod: "GET")
+                profilePic.startWithCompletionHandler({(connection, result, error) -> Void in
+                    // Convert JSON into a dictionary so we can access it.
+                    if (error == nil){
+                        // By using print we can see the structure of the Json below.
+                        print(result)
+                        
+                        let dictionary = result as? NSDictionary
+                        // "data" was inserted since that's the top level in the JSON we printed.
+                        let data = dictionary?.objectForKey("data")
+                        let urlPic = (data?.objectForKey("url")) as! String
+                        
+                        // If an image is downloaded and we are receiving an image....
+                        if let imageData = NSData(contentsOfURL: NSURL(string:urlPic)!)
+                        {
+                            // Refer to the folder we want to update into - Later moved up top out of this area
+                            // let profilePicRef = storageRef.child(user.uid+"/profile_pic.jpg")
+                            
+                            // Upload the image, refer to firebase storage docs: upload files menu.
+                            let uploadTask = profilePicRef.putData(imageData, metadata:nil) {
+                                metadata,error in
+                                
+                                if (error == nil) {
+                                    // metadata can reference size, content, or downloadURL.
+                                    let downloadUrl = metadata!.downloadURL
+                                    
+                                } else {
+                                    print("error in downloading image")
+                                    
+                                    
+                                }
+                            }
+                            // If the image exists and uploads correctly we'll update the image on storyboard.
+                            
+                            self.userPic.image = UIImage(data:imageData)
+                            
+                        }
+                    }
+                    
+                })
+            } //bracket to enclose our checking statement to download or not: if(self.userPic.image == nil)
+            
+        } else {
+            // No user is signed in.
+        }
+        
         
     }
+}
 
-    func roundImageView(imageView: UIImageView) {
-        imageView.layer.masksToBounds = false
-        imageView.layer.cornerRadius = profilePicImageView.frame.height / 2
-        imageView.clipsToBounds = true
-        
-    }
+func roundImageView(imageView: UIImageView) {
     
-    // if Settings row is tapped
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        if indexPath.section == 2 && indexPath.row == 0 {
-//            print("Yankee doodle")
-//            let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-//            let settingsvc = storyboard.instantiateViewControllerWithIdentifier("SettingsTableViewController") as! SettingsVC
-////            mvc.divvyStation = divvyStation
-//            
-//            self.presentViewController(settingsvc, animated: true, completion: nil)
-//        } else if indexPath.section == 0 && indexPath.row == 1 {
-//            
-//        }
-//    }
+//    imageView.layer.masksToBounds = false
+//    imageView.layer.cornerRadius = userPic.frame.height / 2
+//    imageView.clipsToBounds = true
 //    
+}
+
+
+
+
+
+
+
+
+
+    
 
     // MARK: - Table view data source
 
@@ -109,4 +208,4 @@ class ProfileVC: UITableViewController {
     }
     */
 
-}
+

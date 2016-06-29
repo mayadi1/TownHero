@@ -24,6 +24,7 @@ class SettingsVC: UITableViewController {
     }
 
 
+    //LOGOUT BUTTON
     @IBAction func logoutButton(sender: UIButton) {
         try! FIRAuth.auth()!.signOut()
         

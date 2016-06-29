@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+import FBSDKCoreKit
 
-class EditProfileVC: UITableViewController {
+class EditProfileTableVC: UITableViewController {
     @IBOutlet weak var editProfilePicImageView: UIImageView!
     @IBOutlet weak var editProfileEmail: UILabel!
     @IBOutlet weak var editProfileAddress: UILabel!
@@ -21,12 +24,27 @@ class EditProfileVC: UITableViewController {
         editProfilePicImageView.layer.cornerRadius = editProfilePicImageView.frame.height / 2
         editProfilePicImageView.clipsToBounds = true
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+   
+        if let user = FIRAuth.auth()?.currentUser {
+            let name = user.displayName
+            let email = user.email
+            let photoUrl = user.photoURL
+            let uid = user.uid
+            
+            self.editProfileEmail.text = email
+            
+            
+            let data = NSData(contentsOfURL: photoUrl!)
+            self.userPic.image = UIImage(data: data!)
+        
+        
     }
+    
+    
+    
+    
+    
+    
 
 
     // MARK: - Table view data source
@@ -125,5 +143,14 @@ class EditProfileVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editEmailSegue"{
+            let dvc = segue.destinationViewController as! EditEmailViewController
+            dvc.passedEmail = self.editProfileEmail.text
+
+            
+        }
+    }
 
 }
