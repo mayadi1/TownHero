@@ -8,7 +8,7 @@
 
 import UIKit
 
- class Events: NSObject {
+ class Event: NSObject {
     let  name: String
     let address: String
     let lat: Double

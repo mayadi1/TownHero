@@ -31,6 +31,8 @@
 		462E0EA81D2096CB0093893B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462E0EA71D2096CB0093893B /* Login.storyboard */; };
 		462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EA91D20973A0093893B /* LoginViewController.swift */; };
 		462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EAB1D2097450093893B /* CreateAccountViewController.swift */; };
+		4638C8641D24486F00D0B63A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E505D1D22C878009B8F75 /* Event.swift */; };
+		4638C8651D24487700D0B63A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E50631D22E943009B8F75 /* EventDetailViewController.swift */; };
 		46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ACB1161D20C1970073537D /* FeedViewController.swift */; };
 		46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF28801D20EE600034400F /* FeedTableViewCell.swift */; };
 		46CF28851D217C210034400F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CF28841D217C210034400F /* Profile.storyboard */; };
@@ -186,7 +188,7 @@
 				449869E51D20898F0023F9B0 /* ViewController.swift */,
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
-				449E50301D21B668009B8F75 /* Feed */,
+				4638C8631D2445D600D0B63A /* Feed */,
 				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
 				449869E71D20898F0023F9B0 /* Feed.storyboard */,
 				46CF28841D217C210034400F /* Profile.storyboard */,
@@ -216,12 +218,12 @@
 			path = TownheroUITests;
 			sourceTree = "<group>";
 		};
-		449E50301D21B668009B8F75 /* Feed */ = {
+		4638C8631D2445D600D0B63A /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				449E505D1D22C878009B8F75 /* Event.swift */,
-				46CF28801D20EE600034400F /* FeedTableViewCell.swift */,
 				46ACB1161D20C1970073537D /* FeedViewController.swift */,
+				46CF28801D20EE600034400F /* FeedTableViewCell.swift */,
 				449E50631D22E943009B8F75 /* EventDetailViewController.swift */,
 			);
 			name = Feed;
@@ -524,11 +526,11 @@
 				35E69C191D22E18700271D7A /* PendingActivityVC.swift in Sources */,
 				35E69C241D24198B00271D7A /* PendingActivityCell.swift in Sources */,
 				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
-				35E69C251D2448CD00271D7A /* Event.swift in Sources */,
+				4638C8641D24486F00D0B63A /* Event.swift in Sources */,
 				35E69C201D24194A00271D7A /* HistoryActivityVC.swift in Sources */,
 				46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */,
 				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
-				35E69C261D2448D400271D7A /* EventDetailViewController.swift in Sources */,
+				4638C8651D24487700D0B63A /* EventDetailViewController.swift in Sources */,
 				35E69C0F1D224CC800271D7A /* EditFullNameVC.swift in Sources */,
 				46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */,
 				449869E61D20898F0023F9B0 /* ViewController.swift in Sources */,
