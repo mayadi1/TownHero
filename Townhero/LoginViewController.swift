@@ -46,7 +46,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 let feedViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") as! UITabBarController
                 
-                self.presentViewController(feedViewController, animated: true, completion: nil)
+                self.presentViewController(feedViewController, animated: false, completion: nil)
                 
             } else {
                 // If user is signed out, show the login button.
@@ -150,7 +150,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 else {
                     print("Invalid Login")
                     
-                    let alertController = UIAlertController(title: nil, message: "Invalid login", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: nil, message: "\(error?.localizedDescription)", preferredStyle: .Alert)
                     
                     let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
                         // ...
