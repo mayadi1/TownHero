@@ -17,8 +17,6 @@
 		35E69C201D24194A00271D7A /* HistoryActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C1F1D24194A00271D7A /* HistoryActivityVC.swift */; };
 		35E69C221D24197100271D7A /* HistoryActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C211D24197100271D7A /* HistoryActivityCell.swift */; };
 		35E69C241D24198B00271D7A /* PendingActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C231D24198B00271D7A /* PendingActivityCell.swift */; };
-		35E69C251D2448CD00271D7A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E505D1D22C878009B8F75 /* Event.swift */; };
-		35E69C261D2448D400271D7A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E50631D22E943009B8F75 /* EventDetailViewController.swift */; };
 		449869E41D20898F0023F9B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869E31D20898F0023F9B0 /* AppDelegate.swift */; };
 		449869E61D20898F0023F9B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869E51D20898F0023F9B0 /* ViewController.swift */; };
 		449869E91D20898F0023F9B0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869E71D20898F0023F9B0 /* Feed.storyboard */; };
@@ -135,6 +133,7 @@
 		35E69C031D21B74000271D7A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				46CF28841D217C210034400F /* Profile.storyboard */,
 				35E69C1A1D23802B00271D7A /* Edit Profile */,
 				35E69C181D22E18700271D7A /* PendingActivityVC.swift */,
 				35E69C231D24198B00271D7A /* PendingActivityCell.swift */,
@@ -186,16 +185,11 @@
 			children = (
 				449869E31D20898F0023F9B0 /* AppDelegate.swift */,
 				449869E51D20898F0023F9B0 /* ViewController.swift */,
-				449869E71D20898F0023F9B0 /* Feed.storyboard */,
-				46ACB1181D20C1F80073537D /* ProfileViewController.swift */,
-				46CF28841D217C210034400F /* Profile.storyboard */,
-				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
 				4638C8631D2445D600D0B63A /* Feed */,
 				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
 				449869E71D20898F0023F9B0 /* Feed.storyboard */,
-				46CF28841D217C210034400F /* Profile.storyboard */,
 				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
 				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
