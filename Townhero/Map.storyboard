@@ -65,17 +65,6 @@
                                     <constraint firstAttribute="trailing" secondItem="zFc-AT-2HC" secondAttribute="trailing" id="axc-v1-CDb"/>
                                     <constraint firstItem="zFc-AT-2HC" firstAttribute="leading" secondItem="Yjr-IU-U67" secondAttribute="leading" id="pOI-mM-Xny"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="latitude">
-                                        <real key="value" value="45.522449999999999"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="longitude">
-                                        <real key="value" value="-122.67773"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
-                                        <real key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTJ-gM-LXt">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
@@ -117,7 +106,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Post" backgroundImage="colorcirclesmall"/>
+                                <state key="normal" title="Post" backgroundImage="colorcircleshinesmall"/>
                                 <connections>
                                     <action selector="postButtonPressed:" destination="ORO-zF-5UT" eventType="touchUpInside" id="iA0-vC-UgI"/>
                                 </connections>
@@ -158,7 +147,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="colorcirclesmall" width="90" height="90"/>
+        <image name="colorcircleshinesmall" width="90" height="90"/>
         <image name="search-2" width="133" height="60"/>
         <image name="user" width="128" height="128"/>
     </resources>

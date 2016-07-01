@@ -10,7 +10,7 @@ import UIKit
 import Mapbox
 
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MGLMapViewDelegate {
 
     @IBOutlet weak var mapView: MGLMapView!
     
@@ -28,15 +28,21 @@ class MapViewController: UIViewController {
         self.TitleTextField.hidden = true
         self.DescriptionTextField.hidden = true
         
+              let point = MGLPointAnnotation()
+        point.coordinate = CLLocationCoordinate2D(latitude: 41.89374, longitude: -87.6375187)
         
-        let point = MGLPointAnnotation()
-        point.coordinate = CLLocationCoordinate2D(latitude: 45.52258, longitude: -122.6732)
         point.title = "Voodoo Doughnut"
         point.subtitle = "22 SW 3rd Avenue Portland Oregon, U.S.A."
         mapView.addAnnotation(point)
         
         
+          mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 41.89374, longitude: -87.6375187), zoomLevel: 17, animated: false)
         
+        
+        //Zoom Map
+        //    mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false
+        
+
         
        
         
@@ -77,6 +83,7 @@ class MapViewController: UIViewController {
         
     }
     
+
 }//End of the VC Class
 
 
