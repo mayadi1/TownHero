@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     
-   // 
+//    
     override init() {
         
         FIRApp.configure()
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
 
-//        FIRApp.configure()
+//       FIRApp.configure()
         return true
     }
     

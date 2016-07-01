@@ -16,7 +16,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-
+    @IBOutlet weak var addressField: UITextField!
     
     let usersRef = FIRDatabase.database().reference().child("users")
 
@@ -42,7 +42,8 @@ class CreateAccountViewController: UIViewController {
                 if let userID = currentUserUID {
                         self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/townhero-5732d.appspot.com/o/u7ECcv595vgoy64SEnxhOTawcOa2%2Femptyprofilepic.png?alt=media&token=a865bf9d-b8de-4e63-9049-a067de1a75b5")
                         self.usersRef.child(userID).child("name").setValue(self.nameField.text)
-                        self.usersRef.child(userID).child("email").setValue(self.emailField.text)
+                            self.usersRef.child(userID).child("email").setValue(self.emailField.text)
+                            self.usersRef.child(userID).child("address").setValue(self.addressField.text)
                     
                 }
                 

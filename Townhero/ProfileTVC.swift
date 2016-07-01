@@ -20,13 +20,10 @@ class ProfileTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            userPic.layer.masksToBounds = false
-            userPic.layer.cornerRadius = userPic.frame.height / 2
-            userPic.clipsToBounds = true
+        self.userPic.layer.cornerRadius = self.userPic.frame.size.width/2
         
-            organizationImageView.layer.masksToBounds = false
-            organizationImageView.layer.cornerRadius = organizationImageView.frame.height / 2
-            organizationImageView.clipsToBounds = true
+        self.userPic.clipsToBounds = true
+        
         
         if let user = FIRAuth.auth()?.currentUser {
             let name = user.displayName
@@ -36,12 +33,14 @@ class ProfileTVC: UITableViewController {
             
             
             self.nameLabel.text = name
+         //   self.emailLabel.text = email
+
             
             
             //  Since we don't want the image to never return nil we comment this out last. Required if you don't want the code below.
             
-            //            let data = NSData(contentsOfURL: photoUrl!)
-            //            self.userPic.image = UIImage(data: data!)
+//                        let data = NSData(contentsOfURL: photoUrl!)
+//                        self.userPic.image = UIImage(data: data!)
             
             
             // Reference to the storage service
@@ -121,91 +120,34 @@ class ProfileTVC: UITableViewController {
         
         
     }
-}
-
-func roundImageView(imageView: UIImageView) {
     
-//    imageView.layer.masksToBounds = false
-//    imageView.layer.cornerRadius = userPic.frame.height / 2
-//    imageView.clipsToBounds = true
-//    
-}
-
-
-
-
-
-
-
-
-
+    @IBAction func logOutButton(sender: AnyObject) {
+        try! FIRAuth.auth()!.signOut()
+        
+        // Facebook log out by setting access token to nil, then sending back to the initial viewcontroller.
+        
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        
+        try! FIRAuth.auth()!.signOut()
+        print("signed out")
+        
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let ViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+        
+        self.presentViewController(ViewController, animated: true, completion: nil)
+        
+        
+        
+    }
     
-
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 3
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 6
-//    }
-
     /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}

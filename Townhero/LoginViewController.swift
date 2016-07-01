@@ -52,10 +52,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 // If user is signed out, show the login button.
                 
                 // This is the facebook login button.
-                self.loginButton.center = self.view.center
+        //       self.loginButton.center = self.view.center
                 self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
                 self.loginButton.delegate = self
-                self.view!.addSubview(self.loginButton)
+         //      self.view!.addSubview(self.loginButton)
                 
                 self.loginButton.hidden = false
                 
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidAppear(animated)
         
         if(FBSDKAccessToken.currentAccessToken() != nil) {
-            performSegueWithIdentifier("toFeed", sender: self)
+    //        performSegueWithIdentifier("loginToFeed", sender: self)
         } else {
             print("Must Log In")
         }
@@ -117,7 +117,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // Step 5 authenticate with Firebase using the Firebase credential
             FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
                 print("user logged into firebase")
-                self.performSegueWithIdentifier("toFeed", sender: self)
+                self.performSegueWithIdentifier("loginToFeed", sender: self)
 
                 
                 
@@ -144,13 +144,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 //                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                    let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileView")
 //                    self.presentViewController(vc, animated: true, completion: nil)
-                       self.performSegueWithIdentifier("toFeed", sender: self)
+                       self.performSegueWithIdentifier("loginToFeed", sender: self)
                            
                 }
                 else {
                     print("Invalid Login")
                     
-                    let alertController = UIAlertController(title: nil, message: "\(error?.localizedDescription)", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: nil, message: "Invalid login", preferredStyle: .Alert)
                     
                     let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
                         // ...
@@ -161,11 +161,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                         // ...
                     }
                     alertController.addAction(OKAction)
-                    
-                    let destroyAction = UIAlertAction(title: "Use Facebook", style: .Default) { (action) in
-                        print(action)
-                    }
-                    alertController.addAction(destroyAction)
+//
+//                    let destroyAction = UIAlertAction(title: "Use Facebook", style: .Default) { (action) in
+//                        print(action)
+//                      
+//                        
+//                    }
+//                    alertController.addAction(destroyAction)
                     
                     self.presentViewController(alertController, animated: true) {
                         // ...
