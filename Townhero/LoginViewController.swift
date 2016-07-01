@@ -41,10 +41,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             if user != nil {
                 // If the user is signed in, show the home page.
                 
-                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Feed", bundle: nil)
+                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
                 // Uncomment this when we get feed done and add HomeView as the storyboard id.
                 
-                let feedViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") as! UITabBarController
+                let feedViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") 
                 
                 self.presentViewController(feedViewController, animated: false, completion: nil)
                 
