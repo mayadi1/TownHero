@@ -17,6 +17,8 @@
 		35E69C201D24194A00271D7A /* HistoryActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C1F1D24194A00271D7A /* HistoryActivityVC.swift */; };
 		35E69C221D24197100271D7A /* HistoryActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C211D24197100271D7A /* HistoryActivityCell.swift */; };
 		35E69C241D24198B00271D7A /* PendingActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C231D24198B00271D7A /* PendingActivityCell.swift */; };
+		35E69C4E1D25BC9C00271D7A /* SlideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C4D1D25BC9C00271D7A /* SlideVC.swift */; };
+		35E69C941D26C03C00271D7A /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C931D26C03C00271D7A /* UserClass.swift */; };
 		449869E41D20898F0023F9B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869E31D20898F0023F9B0 /* AppDelegate.swift */; };
 		449869E61D20898F0023F9B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869E51D20898F0023F9B0 /* ViewController.swift */; };
 		449869E91D20898F0023F9B0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869E71D20898F0023F9B0 /* Feed.storyboard */; };
@@ -68,6 +70,8 @@
 		35E69C1F1D24194A00271D7A /* HistoryActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryActivityVC.swift; path = ../../TownHero/Townhero/HistoryActivityVC.swift; sourceTree = "<group>"; };
 		35E69C211D24197100271D7A /* HistoryActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryActivityCell.swift; path = ../../TownHero/Townhero/HistoryActivityCell.swift; sourceTree = "<group>"; };
 		35E69C231D24198B00271D7A /* PendingActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PendingActivityCell.swift; path = ../../TownHero/Townhero/PendingActivityCell.swift; sourceTree = "<group>"; };
+		35E69C4D1D25BC9C00271D7A /* SlideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideVC.swift; sourceTree = "<group>"; };
+		35E69C931D26C03C00271D7A /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
 		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869E31D20898F0023F9B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449869E51D20898F0023F9B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,9 +140,11 @@
 				46CF28841D217C210034400F /* Profile.storyboard */,
 				35E69C1A1D23802B00271D7A /* Edit Profile */,
 				35E69C181D22E18700271D7A /* PendingActivityVC.swift */,
+				35E69C931D26C03C00271D7A /* UserClass.swift */,
 				35E69C231D24198B00271D7A /* PendingActivityCell.swift */,
 				35E69C1F1D24194A00271D7A /* HistoryActivityVC.swift */,
 				35E69C211D24197100271D7A /* HistoryActivityCell.swift */,
+				35E69C4D1D25BC9C00271D7A /* SlideVC.swift */,
 				35E69C081D21FC9A00271D7A /* ProfileTVC.swift */,
 				35E69C0C1D2217DF00271D7A /* SettingsTVC.swift */,
 			);
@@ -519,6 +525,7 @@
 				35E69C0D1D2217DF00271D7A /* SettingsTVC.swift in Sources */,
 				35E69C0B1D21FCFA00271D7A /* EditProfileTableVC.swift in Sources */,
 				35E69C091D21FC9A00271D7A /* ProfileTVC.swift in Sources */,
+				35E69C4E1D25BC9C00271D7A /* SlideVC.swift in Sources */,
 				35E69C221D24197100271D7A /* HistoryActivityCell.swift in Sources */,
 				35E69C131D22C35200271D7A /* EditLocationVC.swift in Sources */,
 				35E69C191D22E18700271D7A /* PendingActivityVC.swift in Sources */,
@@ -530,6 +537,7 @@
 				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
 				4638C8651D24487700D0B63A /* EventDetailViewController.swift in Sources */,
 				35E69C0F1D224CC800271D7A /* EditFullNameVC.swift in Sources */,
+				35E69C941D26C03C00271D7A /* UserClass.swift in Sources */,
 				46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */,
 				449869E61D20898F0023F9B0 /* ViewController.swift in Sources */,
 				35E69C111D2253F500271D7A /* EditEmailViewController.swift in Sources */,

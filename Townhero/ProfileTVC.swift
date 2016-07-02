@@ -15,29 +15,41 @@ class ProfileTVC: UITableViewController {
    
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var organizationImageView: UIImageView!
- 
     @IBOutlet weak var nameLabel: UILabel!
+    
+    var townHeroUser: TownHeroUser?
+
+    // observe an event in Firebase. You can observe a single event or multiple event, everytime there is a change to users, then there is a method that gets called. Since Friebase is so quick everytime you come in to the viewAppears, you already make an API call and hit FireBase
+    //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
             userPic.layer.masksToBounds = false
             userPic.layer.cornerRadius = userPic.frame.height / 2
             userPic.clipsToBounds = true
-        
-            organizationImageView.layer.masksToBounds = false
-            organizationImageView.layer.cornerRadius = organizationImageView.frame.height / 2
-            organizationImageView.clipsToBounds = true
-        
+  
+        // Use a Singleton for the current user that's logged in so I don't have to constantly keep retrieving user information from Firebase
         if let user = FIRAuth.auth()?.currentUser {
             let name = user.displayName
             let email = user.email
-            let photoUrl = user.photoURL
             let uid = user.uid
             
+            let photoUrl = user.photoURL
+            let data = NSData(contentsOfURL: photoUrl!)
+            let photo = UIImage(data: data!)
             
-            self.nameLabel.text = name
+//             townHeroUser = TownHeroUser(name: name!, email: email!, photo: photo!, uid: uid)
+              TownHeroUser.sharedInstance.name = name
+              TownHeroUser.sharedInstance.email = email
+              TownHeroUser.sharedInstance.uid = uid
+              TownHeroUser.sharedInstance.photo = photo
             
             
+            
+            self.nameLabel.text = TownHeroUser.sharedInstance.name
+            self.userPic.image = TownHeroUser.sharedInstance.photo
+
             //  Since we don't want the image to never return nil we comment this out last. Required if you don't want the code below.
             
             //            let data = NSData(contentsOfURL: photoUrl!)
@@ -108,7 +120,6 @@ class ProfileTVC: UITableViewController {
                             // If the image exists and uploads correctly we'll update the image on storyboard.
                             
                             self.userPic.image = UIImage(data:imageData)
-                            
                         }
                     }
                     
@@ -118,28 +129,18 @@ class ProfileTVC: UITableViewController {
         } else {
             // No user is signed in.
         }
-        
-        
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toEditProfileSegue"{
+            let dvc = segue.destinationViewController as! EditProfileTableVC
+//            dvc.passedTownHeroUser = townHeroUser!
+            
     }
 }
 
-func roundImageView(imageView: UIImageView) {
-    
-//    imageView.layer.masksToBounds = false
-//    imageView.layer.cornerRadius = userPic.frame.height / 2
-//    imageView.clipsToBounds = true
-//    
-}
 
-
-
-
-
-
-
-
-
-    
 
     // MARK: - Table view data source
 
@@ -208,4 +209,4 @@ func roundImageView(imageView: UIImageView) {
     }
     */
 
-
+}

@@ -12,10 +12,11 @@ class EditEmailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
 
     var passedEmail: String?
+    var passedEmailVCTownHeroUser: TownHeroUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emailTextField.placeholder = passedEmail
+        self.emailTextField.placeholder = passedEmailVCTownHeroUser?.email
         
     }
 
