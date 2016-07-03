@@ -59,6 +59,9 @@
                                 <state key="normal" title="Forgot your login details? Get help signing in.">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="clA-5l-wnd" kind="show" id="Wsz-ex-J5e"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDQ-h0-80n">
                                 <rect key="frame" x="0.0" y="560" width="600" height="40"/>
@@ -186,8 +189,8 @@
         <!--Map-->
         <scene sceneID="j5g-vC-PTo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="idv-th-vHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Map" id="7qg-Po-j1y" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="idv-th-vHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="523" y="125"/>
         </scene>
@@ -373,6 +376,41 @@
                 <exit id="0tC-2k-KOP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="892" y="279"/>
+        </scene>
+        <!--Reset View Controller-->
+        <scene sceneID="IEz-hY-vcy">
+            <objects>
+                <viewController id="clA-5l-wnd" customClass="ResetViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rVQ-QL-B61"/>
+                        <viewControllerLayoutGuide type="bottom" id="kSB-v4-Rn3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CqX-F9-5gd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3B-1T-cUG">
+                                <rect key="frame" x="246" y="178" width="109" height="30"/>
+                                <state key="normal" title="Reset Password"/>
+                                <connections>
+                                    <action selector="recoverPassword:" destination="clA-5l-wnd" eventType="touchUpInside" id="HqM-c6-ftQ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your email address here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFz-Tu-kIv">
+                                <rect key="frame" x="20" y="91" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="RFz-Tu-kIv" id="Kfz-Qu-x34"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Al7-fB-LrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="987"/>
         </scene>
         <!--Map-->
         <scene sceneID="JFA-Bt-q7S">

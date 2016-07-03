@@ -44,9 +44,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
                 // Uncomment this when we get feed done and add HomeView as the storyboard id.
                 
-                let feedViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") 
+                let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
                 
-                self.presentViewController(feedViewController, animated: false, completion: nil)
+                self.presentViewController(MapViewController, animated: false, completion: nil)
                 
             } else {
                 // If user is signed out, show the login button.
