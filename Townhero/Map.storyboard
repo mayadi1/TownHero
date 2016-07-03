@@ -160,7 +160,7 @@
                                         </constraints>
                                         <state key="normal" image="user"/>
                                         <connections>
-                                            <segue destination="YrW-8r-P2w" kind="show" id="8db-ia-UQI"/>
+                                            <segue destination="afR-Kw-U65" kind="presentation" id="JsY-OH-gbF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -219,15 +219,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byv-GV-1BA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917" y="136"/>
+            <point key="canvasLocation" x="2729" y="136"/>
         </scene>
         <!--Profile-->
-        <scene sceneID="1kg-y4-Jgp">
+        <scene sceneID="3nR-eC-jPs">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="YrW-8r-P2w" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kqt-7k-hOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="L3a-8l-coc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eCg-v2-R5G"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3a5-MS-FHO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2388.5" y="434"/>
+            <point key="canvasLocation" x="3761.5" y="617"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="Svz-kN-Md0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="afR-Kw-U65" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TrU-gw-iLN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="L3a-8l-coc" kind="relationship" relationship="rootViewController" id="QWM-8v-S7P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CfA-yR-OdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3160" y="978"/>
         </scene>
     </scenes>
     <resources>
