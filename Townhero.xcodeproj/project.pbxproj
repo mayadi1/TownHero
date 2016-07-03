@@ -19,8 +19,6 @@
 		35E69C241D24198B00271D7A /* PendingActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C231D24198B00271D7A /* PendingActivityCell.swift */; };
 		35E69C4E1D25BC9C00271D7A /* SlideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C4D1D25BC9C00271D7A /* SlideVC.swift */; };
 		35E69C941D26C03C00271D7A /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C931D26C03C00271D7A /* UserClass.swift */; };
-		449869E41D20898F0023F9B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869E31D20898F0023F9B0 /* AppDelegate.swift */; };
-		449869E61D20898F0023F9B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869E51D20898F0023F9B0 /* ViewController.swift */; };
 		449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449869EA1D20898F0023F9B0 /* Assets.xcassets */; };
 		449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */; };
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
@@ -69,8 +67,6 @@
 		35E69C4D1D25BC9C00271D7A /* SlideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideVC.swift; sourceTree = "<group>"; };
 		35E69C931D26C03C00271D7A /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
 		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		449869E31D20898F0023F9B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		449869E51D20898F0023F9B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		449869EA1D20898F0023F9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449869ED1D20898F0023F9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449869EF1D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,8 +177,6 @@
 		449869E21D20898F0023F9B0 /* Townhero */ = {
 			isa = PBXGroup;
 			children = (
-				449869E31D20898F0023F9B0 /* AppDelegate.swift */,
-				449869E51D20898F0023F9B0 /* ViewController.swift */,
 				4638C8631D2445D600D0B63A /* Feed */,
 				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
 				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
@@ -523,9 +517,7 @@
 				35E69C0F1D224CC800271D7A /* EditFullNameVC.swift in Sources */,
 				35E69C941D26C03C00271D7A /* UserClass.swift in Sources */,
 				46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */,
-				449869E61D20898F0023F9B0 /* ViewController.swift in Sources */,
 				35E69C111D2253F500271D7A /* EditEmailViewController.swift in Sources */,
-				449869E41D20898F0023F9B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
