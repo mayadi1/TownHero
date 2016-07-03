@@ -25,10 +25,6 @@
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
 		44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */; };
 		449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E50611D22E738009B8F75 /* MapKit.framework */; };
-		4638C8641D24486F00D0B63A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E505D1D22C878009B8F75 /* Event.swift */; };
-		4638C8651D24487700D0B63A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E50631D22E943009B8F75 /* EventDetailViewController.swift */; };
-		46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ACB1161D20C1970073537D /* FeedViewController.swift */; };
-		46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF28801D20EE600034400F /* FeedTableViewCell.swift */; };
 		46CF28851D217C210034400F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CF28841D217C210034400F /* Profile.storyboard */; };
 		6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */; };
 		8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */; };
@@ -77,11 +73,7 @@
 		44986A031D20898F0023F9B0 /* TownheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroUITests.swift; sourceTree = "<group>"; };
 		44986A051D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		449E505D1D22C878009B8F75 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		449E50611D22E738009B8F75 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		449E50631D22E943009B8F75 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
-		46ACB1161D20C1970073537D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		46CF28801D20EE600034400F /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		46CF28841D217C210034400F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.release.xcconfig"; sourceTree = "<group>"; };
 		73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TownheroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,7 +169,6 @@
 		449869E21D20898F0023F9B0 /* Townhero */ = {
 			isa = PBXGroup;
 			children = (
-				4638C8631D2445D600D0B63A /* Feed */,
 				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
 				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
 				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
@@ -202,17 +193,6 @@
 				44986A051D20898F0023F9B0 /* Info.plist */,
 			);
 			path = TownheroUITests;
-			sourceTree = "<group>";
-		};
-		4638C8631D2445D600D0B63A /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-				449E505D1D22C878009B8F75 /* Event.swift */,
-				46ACB1161D20C1970073537D /* FeedViewController.swift */,
-				46CF28801D20EE600034400F /* FeedTableViewCell.swift */,
-				449E50631D22E943009B8F75 /* EventDetailViewController.swift */,
-			);
-			name = Feed;
 			sourceTree = "<group>";
 		};
 		83F651AB8E462073CAC7E67A /* Frameworks */ = {
@@ -510,13 +490,9 @@
 				35E69C131D22C35200271D7A /* EditLocationVC.swift in Sources */,
 				35E69C191D22E18700271D7A /* PendingActivityVC.swift in Sources */,
 				35E69C241D24198B00271D7A /* PendingActivityCell.swift in Sources */,
-				4638C8641D24486F00D0B63A /* Event.swift in Sources */,
 				35E69C201D24194A00271D7A /* HistoryActivityVC.swift in Sources */,
-				46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */,
-				4638C8651D24487700D0B63A /* EventDetailViewController.swift in Sources */,
 				35E69C0F1D224CC800271D7A /* EditFullNameVC.swift in Sources */,
 				35E69C941D26C03C00271D7A /* UserClass.swift in Sources */,
-				46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */,
 				35E69C111D2253F500271D7A /* EditEmailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
