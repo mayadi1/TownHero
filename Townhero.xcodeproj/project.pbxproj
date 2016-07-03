@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4416699E1D26E19E00493B89 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416699D1D26E19E00493B89 /* Mapbox.framework */; };
+		4416699F1D26E19F00493B89 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4416699D1D26E19E00493B89 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449869EA1D20898F0023F9B0 /* Assets.xcassets */; };
+		449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */; };
+		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
 		449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E50611D22E738009B8F75 /* MapKit.framework */; };
+		462E0EA81D2096CB0093893B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462E0EA71D2096CB0093893B /* Login.storyboard */; };
+		462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EA91D20973A0093893B /* LoginViewController.swift */; };
+		462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EAB1D2097450093893B /* CreateAccountViewController.swift */; };
+		463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463D65ED1D275E5E003BDA69 /* ResetViewController.swift */; };
 		6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */; };
 		8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */; };
 		B6EFB1D2F021021CD1CF7F4C /* Pods_TownheroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */; };
@@ -31,14 +40,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		441669A01D26E19F00493B89 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4416699F1D26E19F00493B89 /* Mapbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4416699D1D26E19E00493B89 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		449869EA1D20898F0023F9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		449869ED1D20898F0023F9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		449869EF1D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449869F41D20898F0023F9B0 /* TownheroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44986A031D20898F0023F9B0 /* TownheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroUITests.swift; sourceTree = "<group>"; };
 		44986A051D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		449E50611D22E738009B8F75 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		462E0EA71D2096CB0093893B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		462E0EA91D20973A0093893B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		462E0EAB1D2097450093893B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		463D65ED1D275E5E003BDA69 /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.release.xcconfig"; sourceTree = "<group>"; };
 		73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TownheroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +88,7 @@
 			files = (
 				449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */,
 				8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */,
+				4416699E1D26E19E00493B89 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +111,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35E69C031D21B74000271D7A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				35E69C1A1D23802B00271D7A /* Edit Profile */,
+			);
+			name = Profile;
+			path = Townhero;
+			sourceTree = "<group>";
+		};
+		35E69C1A1D23802B00271D7A /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Edit Profile";
+			sourceTree = "<group>";
+		};
 		449869D71D20898E0023F9B0 = {
 			isa = PBXGroup;
 			children = (
+				4416699D1D26E19E00493B89 /* Mapbox.framework */,
+				35E69C031D21B74000271D7A /* Profile */,
+				449869F71D20898F0023F9B0 /* TownheroTests */,
+				449869E21D20898F0023F9B0 /* Townhero */,
 				44986A021D20898F0023F9B0 /* TownheroUITests */,
 				449869E11D20898F0023F9B0 /* Products */,
 				8E0A3AEF1AAF240C9F10989C /* Pods */,
@@ -96,6 +149,30 @@
 				449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		449869E21D20898F0023F9B0 /* Townhero */ = {
+			isa = PBXGroup;
+			children = (
+				462E0EA91D20973A0093893B /* LoginViewController.swift */,
+				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
+				463D65ED1D275E5E003BDA69 /* ResetViewController.swift */,
+				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
+				462E0EA71D2096CB0093893B /* Login.storyboard */,
+				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
+				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
+				449869EF1D20898F0023F9B0 /* Info.plist */,
+			);
+			path = Townhero;
+			sourceTree = "<group>";
+		};
+		449869F71D20898F0023F9B0 /* TownheroTests */ = {
+			isa = PBXGroup;
+			children = (
+				449869F81D20898F0023F9B0 /* TownheroTests.swift */,
+				449869FA1D20898F0023F9B0 /* Info.plist */,
+			);
+			path = TownheroTests;
 			sourceTree = "<group>";
 		};
 		44986A021D20898F0023F9B0 /* TownheroUITests */ = {
@@ -144,6 +221,7 @@
 				449869DE1D20898F0023F9B0 /* Resources */,
 				F2ED8AFC423C455BF459A1D8 /* [CP] Embed Pods Frameworks */,
 				8ABA078A4A1F468AF759EDAE /* [CP] Copy Pods Resources */,
+				441669A01D26E19F00493B89 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,6 +321,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */,
+				44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */,
+				449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */,
+				462E0EA81D2096CB0093893B /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +472,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */,
+				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
+				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +507,17 @@
 			targetProxy = 44986A001D20898F0023F9B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				449869ED1D20898F0023F9B0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		44986A061D20898F0023F9B0 /* Debug */ = {
@@ -517,6 +613,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Townhero",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Townhero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -533,6 +630,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Townhero",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Townhero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
