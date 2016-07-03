@@ -12,9 +12,7 @@ import Firebase
 
 class ResetViewController: UIViewController {
 
-    
-    
-    
+
     @IBOutlet weak var emailField: UITextField!
     
     override func viewDidLoad() {
@@ -22,7 +20,6 @@ class ResetViewController: UIViewController {
         
     }
 
-  
     @IBAction func recoverPassword(sender: AnyObject) {
        
         FIRAuth.auth()?.sendPasswordResetWithEmail(self.emailField.text!) { error in
@@ -31,17 +28,15 @@ class ResetViewController: UIViewController {
              
                 NSOperationQueue.mainQueue().addOperationWithBlock {
                     
-                    let alertController = UIAlertController(title: nil, message: "Sent Email", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: nil, message: "Reset email sent", preferredStyle: .Alert)
                     
                     let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
                         // ...
                     }
                     alertController.addAction(OKAction)
-                    self.presentViewController(alertController, animated: true){
-                        
+                    self.presentViewController(alertController, animated: false){
                         
                     }
-                    
                 }
 
             } else {
@@ -52,14 +47,13 @@ class ResetViewController: UIViewController {
                 
                 NSOperationQueue.mainQueue().addOperationWithBlock {
                     
-                    let alertController = UIAlertController(title: nil, message: "No user found", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: nil, message: "No email user found", preferredStyle: .Alert)
                     
-                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
                         // ...
                     }
                     alertController.addAction(OKAction)
-                    self.presentViewController(alertController, animated: true){
-                        
+                    self.presentViewController(alertController, animated: false){
                         
                     }
                 }
@@ -67,43 +61,4 @@ class ResetViewController: UIViewController {
         }
     }
 }
-
-
-
-
-
-
-
-//        let invalidPrompt = UIAlertController(title: nil, message: "Invalid Email", preferredStyle: UIAlertControllerStyle.Alert)
-//        let cancelAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Destructive) { (action) in
-//            let userInput = self.emailField.text
-//            if (userInput!.isEmpty) {
-//               
-//            } else {
-//                
-//                let validPrompt = UIAlertController(title: nil, message: "Email Sent", preferredStyle: UIAlertControllerStyle.Alert)
-//                let okAction = UIAlertAction(title: "Press OK to login", style: UIAlertActionStyle.Default) { (action) in
-//              
-//                
-//            FIRAuth.auth()?.sendPasswordResetWithEmail(userInput!) { (error) in
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                    return
-//                    
-//                    
-//                }
-//            }
-//        }
-//    }
-//            
-//        }
-//        invalidPrompt.addAction(cancelAction)
-//        presentViewController(invalidPrompt, animated: true, completion: nil);
-//        
-//        
-//        
-//    }
-//    
-//    
-//}
 

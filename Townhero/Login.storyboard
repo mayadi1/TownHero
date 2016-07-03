@@ -60,7 +60,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="clA-5l-wnd" kind="show" id="Wsz-ex-J5e"/>
+                                    <segue destination="a3D-8k-Zgq" kind="show" id="Wsz-ex-J5e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDQ-h0-80n">
@@ -389,28 +389,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3B-1T-cUG">
-                                <rect key="frame" x="246" y="178" width="109" height="30"/>
-                                <state key="normal" title="Reset Password"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3B-1T-cUG">
+                                <rect key="frame" x="245.5" y="229" width="109" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="0.38" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="zea-Ni-HNn"/>
+                                </constraints>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="recoverPassword:" destination="clA-5l-wnd" eventType="touchUpInside" id="HqM-c6-ftQ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your email address here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFz-Tu-kIv">
-                                <rect key="frame" x="20" y="91" width="560" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="FIND YOUR ACCOUNT " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSf-O2-EXw">
+                                <rect key="frame" x="0.0" y="80" width="240" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="YWD-EY-J60"/>
+                                    <constraint firstAttribute="width" constant="240" id="rkS-Wr-dNx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter your Town Hero email associated with your account." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xv-Oy-xsB">
+                                <rect key="frame" x="0.0" y="109" width="240" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="SyE-E4-Ost"/>
+                                    <constraint firstAttribute="width" constant="240" id="TS3-QO-FsD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your email address here" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RFz-Tu-kIv">
+                                <rect key="frame" x="0.0" y="169" width="600" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RfO-Wp-4fQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.95197147651006708" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I3B-1T-cUG" firstAttribute="top" secondItem="RFz-Tu-kIv" secondAttribute="bottom" constant="20" id="6ef-o2-vIQ"/>
+                            <constraint firstItem="9xv-Oy-xsB" firstAttribute="leading" secondItem="CqX-F9-5gd" secondAttribute="leading" id="Rzl-lO-n5u"/>
+                            <constraint firstItem="TSf-O2-EXw" firstAttribute="leading" secondItem="CqX-F9-5gd" secondAttribute="leading" id="ZgQ-md-biP"/>
+                            <constraint firstItem="RFz-Tu-kIv" firstAttribute="leading" secondItem="CqX-F9-5gd" secondAttribute="leading" id="bpE-ci-GwH"/>
+                            <constraint firstItem="I3B-1T-cUG" firstAttribute="centerX" secondItem="CqX-F9-5gd" secondAttribute="centerX" id="e80-IR-jrd"/>
+                            <constraint firstItem="RFz-Tu-kIv" firstAttribute="top" secondItem="9xv-Oy-xsB" secondAttribute="bottom" constant="16" id="eeM-Sf-H4m"/>
+                            <constraint firstItem="9xv-Oy-xsB" firstAttribute="top" secondItem="rVQ-QL-B61" secondAttribute="bottom" constant="45" id="p8D-yD-QCk"/>
+                            <constraint firstAttribute="trailing" secondItem="RFz-Tu-kIv" secondAttribute="trailing" id="pdO-oN-5ia"/>
+                            <constraint firstItem="TSf-O2-EXw" firstAttribute="top" secondItem="rVQ-QL-B61" secondAttribute="bottom" constant="16" id="vfp-d2-Dpa"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gPF-uc-2Qe"/>
                     <connections>
                         <outlet property="emailField" destination="RFz-Tu-kIv" id="Kfz-Qu-x34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Al7-fB-LrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="987"/>
+            <point key="canvasLocation" x="70" y="1729"/>
         </scene>
         <!--Map-->
         <scene sceneID="JFA-Bt-q7S">
@@ -419,6 +460,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2Z-nz-oKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1441" y="250"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="alO-HP-5xo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a3D-8k-Zgq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6XB-Qq-UEf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="clA-5l-wnd" kind="relationship" relationship="rootViewController" id="rFK-U4-l5o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqC-0k-EfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="987"/>
         </scene>
     </scenes>
     <resources>
