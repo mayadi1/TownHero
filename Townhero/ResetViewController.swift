@@ -17,7 +17,10 @@ class ResetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+
+
+    
     }
 
     @IBAction func recoverPassword(sender: AnyObject) {
@@ -61,6 +64,13 @@ class ResetViewController: UIViewController {
                 }
             }
         }
+    }
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+        
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let ViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+        
+        self.presentViewController(ViewController, animated: true, completion: nil)           
     }
 }
 
