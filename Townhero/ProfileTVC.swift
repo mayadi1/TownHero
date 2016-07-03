@@ -18,9 +18,13 @@ class ProfileTVC: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     var townHeroUser: TownHeroUser?
+    let ref = FIRDatabase.database().reference()
 
     // observe an event in Firebase. You can observe a single event or multiple event, everytime there is a change to users, then there is a method that gets called. Since Friebase is so quick everytime you come in to the viewAppears, you already make an API call and hit FireBase
     //
+    
+    // When user signs up through Facebook, their Facebook Name, E-mail, and Profile pic should be used to create a new user entry in Firebase and we then work with that user entry in Firebase now instead of directly with the Facebook Auth user
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,21 +38,38 @@ class ProfileTVC: UITableViewController {
             let name = user.displayName
             let email = user.email
             let uid = user.uid
+            // let homeAddress = user.homeAddress
+            // let workAddress = user.workAddress
             
             let photoUrl = user.photoURL
             let data = NSData(contentsOfURL: photoUrl!)
-            let photo = UIImage(data: data!)
+            let profilepicture = UIImage(data: data!)
+            
+            ref.child("users").child(user.uid).updateChildValues(["name": user.displayName!])
+            ref.child("users").child(user.uid).updateChildValues(["email": user.email!])
+            ref.child("users").child(user.uid).updateChildValues(["profilepicture": "\(user.photoURL!)"])
+            ref.child("users").child(user.uid).updateChildValues(["homeAddress": "USER ADDRESS DUMMY"])
+            ref.child("users").child(user.uid).updateChildValues(["workAddress": "USER ADDRESS DUMMY"])
             
 //             townHeroUser = TownHeroUser(name: name!, email: email!, photo: photo!, uid: uid)
-              TownHeroUser.sharedInstance.name = name
-              TownHeroUser.sharedInstance.email = email
-              TownHeroUser.sharedInstance.uid = uid
-              TownHeroUser.sharedInstance.photo = photo
             
+            // Here I instantiate my current user to the singleton TownHeroUser.sharedInstance with his info from FIRAuth
+              TownHeroUser.sharedInstance.email = email
+              TownHeroUser.sharedInstance.name = name
+              TownHeroUser.sharedInstance.profilepicture = profilepicture
+              TownHeroUser.sharedInstance.uid = uid
+            
+//            TownHeroUser.sharedInstance.email = ref.child("users").child(user.uid)
+//            TownHeroUser.sharedInstance.name = name
+//            TownHeroUser.sharedInstance.photo = photo
+//            TownHeroUser.sharedInstance.uid = uid
             
             
             self.nameLabel.text = TownHeroUser.sharedInstance.name
-            self.userPic.image = TownHeroUser.sharedInstance.photo
+            self.userPic.image = TownHeroUser.sharedInstance.profilepicture
+            
+          
+            
 
             //  Since we don't want the image to never return nil we comment this out last. Required if you don't want the code below.
             

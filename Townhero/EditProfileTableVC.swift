@@ -17,25 +17,27 @@ class EditProfileTableVC: UITableViewController {
     @IBOutlet weak var editProfileAddress: UILabel!
     @IBOutlet weak var editProfileFullName: UILabel!
     
+    let ref = FIRDatabase.database().reference()
     var passedTownHeroUser: TownHeroUser?
     var townHeroUser: TownHeroUser?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
         editProfilePicImageView.layer.masksToBounds = false
         editProfilePicImageView.layer.cornerRadius = editProfilePicImageView.frame.height / 2
         editProfilePicImageView.clipsToBounds = true
         
-        
-        self.editProfileFullName.text = passedTownHeroUser?.name
-        self.editProfileEmail.text = passedTownHeroUser?.email
-        self.editProfilePicImageView.image = passedTownHeroUser?.photo
-        
+//        
+//        self.editProfileFullName.text = passedTownHeroUser?.name
+//        self.editProfileEmail.text = passedTownHeroUser?.email
+//        self.editProfilePicImageView.image = passedTownHeroUser?.photo
+//        
         editProfileEmail.text = TownHeroUser.sharedInstance.email
         editProfileFullName.text = TownHeroUser.sharedInstance.name
-        editProfilePicImageView.image = TownHeroUser.sharedInstance.photo
+        editProfilePicImageView.image = TownHeroUser.sharedInstance.profilepicture
         
         
         
@@ -66,7 +68,10 @@ class EditProfileTableVC: UITableViewController {
         
     }
     
-    
+    override func viewWillAppear(animated: Bool) {
+         self.tableView.reloadData()
+        
+    }
     
     
     
@@ -189,7 +194,7 @@ class EditProfileTableVC: UITableViewController {
         if segue.identifier == "editNameSegue" {
             let dvc = segue.destinationViewController as! EditFullNameVC
             
-            dvc.passedFullNameVCTownHeroUser = self.passedTownHeroUser
+//            dvc.passedFullNameVCTownHeroUser = self.passedTownHeroUser
             
         }
         

@@ -13,21 +13,35 @@ import FirebaseDatabase
 class EditFullNameVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var fullNameTextField: UITextField!
-    var passedFullName: String?
-    var passedFullNameVCTownHeroUser: TownHeroUser?
-    var currentUser: FIRUser?
-
     let ref = FIRDatabase.database().reference()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fullNameTextField.delegate = self
-         self.fullNameTextField.placeholder = passedFullNameVCTownHeroUser?.name
-        currentUser = FIRAuth.auth()?.currentUser
+        
+        // Here I set the placeholder text to the name I pulled from the FaceBookAuth in ProfileTVC
+        fullNameTextField.placeholder = TownHeroUser.sharedInstance.name
+        
+        
+//         self.fullNameTextField.placeholder = passedFullNameVCTownHeroUser?.name
+//        currentUser = FIRAuth.auth()?.currentUser
 
-        // Do any additional setup after loading the view.
+      
+        
+        // NOT SURE IF I NEED BELOW CODE
+//        var refHandle = self.ref.child("users").child(user.uid).observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+//            
+//            let userName = snapshot.value as! NSDictionary
+//            print(userName)
+////            let userDetails = userName.objectForKey(self.)
+//            
+//        })
+        
     }
 
+    
+    // ---------------------------------------- TEXTFIELD FUNC TO LIMIT CHARACTERS USER CAN INPUT -----------------------------
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
                    replacementString string: String) -> Bool
     {
@@ -38,21 +52,39 @@ class EditFullNameVC: UIViewController, UITextFieldDelegate {
         return newString.length <= maxLength
     }
 
-    @IBAction func onSaveButtonTapped (sender: UIBarButtonItem) {
+    
+  // ---------------------------------------- SAVING TEXT IN TEXTFIELD TO FBASE -----------------------------
+        @IBAction func onSaveButtonTapped (sender: UIBarButtonItem) {
         
-        ref.child("users").child(currentUser!.uid).updateChildValues(["name": fullNameTextField.text!])
-        
+//        ref.child("users").child(currentUser!.uid).updateChildValues(["name": fullNameTextField.text!])
+
         TownHeroUser.sharedInstance.name = fullNameTextField.text
+         ref.child("users").child(TownHeroUser.sharedInstance.uid).updateChildValues(["name": fullNameTextField.text!])
         
-        // Need to somehow tell the user that their name change was succesfully changed
-//        let saveAlert =
+//         ref.child("users").child("\(TownHeroUser.sharedInstance.uid)/name").setValue(item)
+        
+        
+        let alertController = UIAlertController(title: "Edit Name", message: "Your name has been updated successfully.", preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+            // ....
+        }
+        
+          alertController.addAction(OKAction)
+          self.presentViewController(alertController, animated: true) {
+            
+        }
+        
+//        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+//        let pvc = storyboard.instantiateViewControllerWithIdentifier("EditProfileID") as! EditProfileTableVC
+//        pvc.editProfileFullName.text = TownHeroUser.sharedInstance.name
+//        
+//        self.presentViewController(pvc, animated: true, completion: nil)
+
         
     }
-    
-    
 }
     
-// WORK IN PROGRESS: I need to set the limit on the amount of character that can be entered in a text field to 15 for firstNameTextField & lastNameTextField
+// WORK IN PROGRESS:
 
 
 
