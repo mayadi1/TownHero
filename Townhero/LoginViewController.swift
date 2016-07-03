@@ -24,17 +24,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     var loginButton: FBSDKLoginButton = FBSDKLoginButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loginButton.hidden = true
+        self.facebookLoginButton.hidden = true
         
-        
-        
-        
+        // Setting facebook button to clear background
+       customizeButton(self.facebookLoginButton)
+       
         
         // This code will check to see if the user is signed in or not. Located in firebase manage users: Step 1.
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
@@ -52,12 +53,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 // If user is signed out, show the login button.
                 
                 // This is the facebook login button.
-        //       self.loginButton.center = self.view.center
+               self.loginButton.center = self.view.center
                 self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-                self.loginButton.delegate = self
+                self.facebookLoginButton.delegate = self
          //      self.view!.addSubview(self.loginButton)
-                
-                self.loginButton.hidden = false
+
+                self.facebookLoginButton.hidden = false
                 
                 
                 
@@ -81,27 +82,37 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
+    // Customizing Facebook Login Button
+    func customizeButton(button: UIButton!) {
+        button.setBackgroundImage(nil, forState: .Normal)
+        button.backgroundColor = UIColor.clearColor()
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.clearColor().CGColor
+        
+    }
+    
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
+        activitySpinner.startAnimating()
         
-        self.loginButton.hidden = true
+        self.facebookLoginButton.hidden = true
 //        if self.loginButton.hidden == true {
 //            } else {
 //            print("Facebook Not Logged In")
 //        }
         
-        activitySpinner.startAnimating()
-        
+       
         // Code to deal with users who hit cancel on the facebook login access.
         if (error != nil)
         {
             // If error occurs, login button appears
-            self.loginButton.hidden = false
+            self.facebookLoginButton.hidden = false
             activitySpinner.stopAnimating()
         }
         else if(result.isCancelled) {
             // handle the cancel event, show the login button
-            self.loginButton.hidden = false
+            self.facebookLoginButton.hidden = false
             activitySpinner.stopAnimating()
             
         } else {  // User hits OK to grant rights to use Facebook Login.
@@ -117,7 +128,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // Step 5 authenticate with Firebase using the Firebase credential
             FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
                 print("user logged into firebase")
-                self.performSegueWithIdentifier("loginToFeed", sender: self)
+                self.performSegueWithIdentifier("loginToMap", sender: self)
 
                 
                 
@@ -144,7 +155,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 //                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                    let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileView")
 //                    self.presentViewController(vc, animated: true, completion: nil)
-                       self.performSegueWithIdentifier("loginToFeed", sender: self)
+                       self.performSegueWithIdentifier("loginToMap", sender: self)
                            
                 }
                 else {
@@ -162,13 +173,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     }
                     alertController.addAction(OKAction)
 //
-//                    let destroyAction = UIAlertAction(title: "Use Facebook", style: .Default) { (action) in
-//                        print(action)
-//                      
-//                        
-//                    }
-//                    alertController.addAction(destroyAction)
-                    
                     self.presentViewController(alertController, animated: true) {
                         // ...
                     }
@@ -189,10 +193,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         return true
     }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        print("segue to \(segue.identifier) \(segue.destinationViewController)")
-//    }
 
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
 

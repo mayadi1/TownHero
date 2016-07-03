@@ -29,8 +29,32 @@ class CreateAccountViewController: UIViewController {
         
     }
     
+    func isValidEmail(email2Test:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        let range = email2Test.rangeOfString(emailRegEx, options:.RegularExpressionSearch)
+        return range != nil ? true : false
+    }
+    
     @IBAction func finishButtonTapped(sender: AnyObject) {
         
+        if isValidEmail(emailField.text!) == true {
+            
+            emailField.text = self.emailField.text
+        } else {
+            print("NOT Valid Email")
+            let alertController = UIAlertController(title: nil, message: "Invalid email characters", preferredStyle: .Alert)
+            
+            let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
+                // ...
+            }
+            alertController.addAction(OKAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                // ...
+            }
+        }
+
+    
         FIRAuth.auth()?.createUserWithEmail(emailField.text!, password: passwordField.text!) { (user, error) in
             
             if error == nil {
@@ -38,10 +62,9 @@ class CreateAccountViewController: UIViewController {
                 
                 let currentUserUID = FIRAuth.auth()?.currentUser?.uid
                 
-                
                 if let userID = currentUserUID {
                         self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/townhero-5732d.appspot.com/o/u7ECcv595vgoy64SEnxhOTawcOa2%2Femptyprofilepic.png?alt=media&token=a865bf9d-b8de-4e63-9049-a067de1a75b5")
-                        self.usersRef.child(userID).child("name").setValue(self.nameField.text)
+                            self.usersRef.child(userID).child("name").setValue(self.nameField.text)
                             self.usersRef.child(userID).child("email").setValue(self.emailField.text)
                             self.usersRef.child(userID).child("address").setValue(self.addressField.text)
                     
@@ -52,7 +75,8 @@ class CreateAccountViewController: UIViewController {
                 
                 let mainViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") as! UITabBarController
                 
-                self.presentViewController(mainViewController, animated: true, completion: nil)            }
+                self.presentViewController(mainViewController, animated: true, completion: nil)
+                }
                 
             else {
                 print(error?.description)

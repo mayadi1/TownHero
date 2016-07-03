@@ -84,7 +84,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DOo-Qa-i79">
-                                <rect key="frame" x="282" y="423" width="37" height="37"/>
+                                <rect key="frame" x="282" y="429" width="37" height="37"/>
                             </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="townherologo" translatesAutoresizingMaskIntoConstraints="NO" id="giB-TO-0jQ">
                                 <rect key="frame" x="180" y="182" width="240" height="75"/>
@@ -100,17 +100,6 @@
                                     <constraint firstAttribute="height" constant="91" id="wtT-26-D8A"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNh-7K-cBO" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="200" y="499" width="200" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="kpy-7Q-jOD"/>
-                                    <constraint firstAttribute="width" constant="200" id="vYw-eV-eco"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <outlet property="delegate" destination="B2D-9U-kV7" id="pwJ-TB-rR7"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lrL-xn-5jo">
                                 <rect key="frame" x="35" y="254" width="530" height="40"/>
                                 <constraints>
@@ -125,10 +114,21 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNh-7K-cBO" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="120" y="499" width="360" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kpy-7Q-jOD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <outlet property="delegate" destination="B2D-9U-kV7" id="pwJ-TB-rR7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686274509803" green="0.36470588235294116" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="top" secondItem="DAn-dP-M4S" secondAttribute="bottom" constant="15" id="1yC-wI-0N3"/>
+                            <constraint firstItem="DOo-Qa-i79" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="2ON-Lb-w1g"/>
                             <constraint firstItem="giB-TO-0jQ" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="6T0-Yw-q2W"/>
                             <constraint firstItem="4Bd-Sa-B4p" firstAttribute="top" secondItem="DAn-dP-M4S" secondAttribute="bottom" constant="47" id="7fa-2G-viK"/>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leadingMargin" constant="94" id="8WE-uQ-r4Y"/>
@@ -142,15 +142,15 @@
                             <constraint firstItem="fNh-7K-cBO" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="Dlz-dU-Mew"/>
                             <constraint firstItem="fNh-7K-cBO" firstAttribute="top" secondItem="l23-z7-N3p" secondAttribute="bottom" constant="8" id="Fdw-Di-P2v"/>
                             <constraint firstItem="EVM-vs-CoP" firstAttribute="top" secondItem="l23-z7-N3p" secondAttribute="bottom" constant="109" id="HQd-gP-IUK"/>
-                            <constraint firstItem="DOo-Qa-i79" firstAttribute="top" secondItem="UU4-qj-0hR" secondAttribute="bottom" constant="403" id="Ilu-go-hi1"/>
-                            <constraint firstAttribute="trailing" secondItem="DOo-Qa-i79" secondAttribute="trailing" constant="281" id="Nfx-fT-QEG"/>
+                            <constraint firstAttribute="trailing" secondItem="fNh-7K-cBO" secondAttribute="trailing" constant="120" id="IYG-gH-yMn"/>
+                            <constraint firstItem="DOo-Qa-i79" firstAttribute="top" secondItem="UU4-qj-0hR" secondAttribute="bottom" constant="409" id="Ilu-go-hi1"/>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="35" id="OJ1-nR-BQV"/>
-                            <constraint firstItem="DOo-Qa-i79" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="282" id="Qjh-o4-zlE"/>
                             <constraint firstAttribute="trailing" secondItem="lrL-xn-5jo" secondAttribute="trailing" constant="35" id="Rxx-od-2qF"/>
                             <constraint firstItem="l23-z7-N3p" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="V80-km-dHP"/>
                             <constraint firstAttribute="trailing" secondItem="dDQ-h0-80n" secondAttribute="trailing" id="W7S-Xs-ebV"/>
                             <constraint firstItem="dDQ-h0-80n" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" id="X3o-Qr-JPd"/>
                             <constraint firstItem="OmD-RW-Mcf" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="X8f-dN-E1I"/>
+                            <constraint firstItem="fNh-7K-cBO" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="120" id="ag5-P9-HEM"/>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="bcK-2T-W81"/>
                             <constraint firstItem="DAn-dP-M4S" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="35" id="buK-yi-gAj"/>
                             <constraint firstAttribute="trailing" secondItem="DAn-dP-M4S" secondAttribute="trailing" constant="35" id="dPg-cx-FA3"/>
@@ -177,9 +177,10 @@
                     </view>
                     <connections>
                         <outlet property="activitySpinner" destination="DOo-Qa-i79" id="nCp-4p-ngm"/>
+                        <outlet property="facebookLoginButton" destination="fNh-7K-cBO" id="aIc-fh-c4M"/>
                         <outlet property="passwordField" destination="DAn-dP-M4S" id="O5v-Aw-S8J"/>
                         <outlet property="userNameField" destination="lrL-xn-5jo" id="C40-WQ-8jO"/>
-                        <segue destination="7qg-Po-j1y" kind="show" identifier="loginToFeed" id="dWQ-qB-u97"/>
+                        <segue destination="7qg-Po-j1y" kind="show" identifier="loginToMap" id="dWQ-qB-u97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7u0-EJ-CEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -369,7 +370,7 @@
                         <outlet property="emailField" destination="MzI-ZE-oBJ" id="44z-qM-zgF"/>
                         <outlet property="nameField" destination="F3L-2x-0Ds" id="atO-TO-OrQ"/>
                         <outlet property="passwordField" destination="V1J-TF-Uz4" id="rIm-pm-3SW"/>
-                        <segue destination="KVQ-LI-K8D" kind="show" identifier="signUpToFeed" id="ILA-rB-FYN"/>
+                        <segue destination="KVQ-LI-K8D" kind="show" identifier="signUpToMap" id="ILA-rB-FYN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcZ-M5-WrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -458,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Al7-fB-LrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="1729"/>
+            <point key="canvasLocation" x="70" y="1694"/>
         </scene>
         <!--Map-->
         <scene sceneID="JFA-Bt-q7S">
@@ -471,7 +472,6 @@
         <!--Navigation Controller-->
         <scene sceneID="alO-HP-5xo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kqC-0k-EfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a3D-8k-Zgq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6XB-Qq-UEf">
@@ -483,6 +483,7 @@
                         <segue destination="clA-5l-wnd" kind="relationship" relationship="rootViewController" id="rFK-U4-l5o"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqC-0k-EfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="70" y="987"/>
         </scene>
