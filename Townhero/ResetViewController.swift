@@ -20,87 +20,90 @@ class ResetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-    
-        
-        
-        
     }
 
   
     @IBAction func recoverPassword(sender: AnyObject) {
-        
-        
-        if <#condition#> {
-            <#code#>
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        let invalidPrompt = UIAlertController(title: nil, message: "Invalid Email", preferredStyle: UIAlertControllerStyle.Alert)
-        let cancelAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Destructive) { (action) in
-            let userInput = self.emailField.text
-            if (userInput!.isEmpty) {
-               
+       
+        FIRAuth.auth()?.sendPasswordResetWithEmail(self.emailField.text!) { error in
+            if error == nil {
+                print("success")
+             
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    
+                    let alertController = UIAlertController(title: nil, message: "Sent Email", preferredStyle: .Alert)
+                    
+                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    self.presentViewController(alertController, animated: true){
+                        
+                        
+                    }
+                    
+                }
+
             } else {
                 
-                let validPrompt = UIAlertController(title: nil, message: "Email Sent", preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction = UIAlertAction(title: "Press OK to login", style: UIAlertActionStyle.Default) { (action) in
-              
+                print(error!.localizedDescription)
+                print(error)
+                print("Error email not sent")
                 
-            FIRAuth.auth()?.sendPasswordResetWithEmail(userInput!) { (error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
+                NSOperationQueue.mainQueue().addOperationWithBlock {
                     
+                    let alertController = UIAlertController(title: nil, message: "No user found", preferredStyle: .Alert)
                     
+                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    self.presentViewController(alertController, animated: true){
+                        
+                        
+                    }
                 }
             }
         }
     }
-            
-        }
-        invalidPrompt.addAction(cancelAction)
-        presentViewController(invalidPrompt, animated: true, completion: nil);
-        
-        
-        
-    }
-    
-    
 }
-//    FIRAuth.auth()?.sendPasswordResetWithEmail(emailField.text!) { error in
-//    
-//    if error == nil {
-//    print("success")
-//    
-//    let alertController = UIAlertController(title: nil, message: "Email sent", preferredStyle: .Alert)
-//    
-//    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-//    // ...
+
+
+
+
+
+
+
+//        let invalidPrompt = UIAlertController(title: nil, message: "Invalid Email", preferredStyle: UIAlertControllerStyle.Alert)
+//        let cancelAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Destructive) { (action) in
+//            let userInput = self.emailField.text
+//            if (userInput!.isEmpty) {
+//               
+//            } else {
+//                
+//                let validPrompt = UIAlertController(title: nil, message: "Email Sent", preferredStyle: UIAlertControllerStyle.Alert)
+//                let okAction = UIAlertAction(title: "Press OK to login", style: UIAlertActionStyle.Default) { (action) in
+//              
+//                
+//            FIRAuth.auth()?.sendPasswordResetWithEmail(userInput!) { (error) in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                    return
+//                    
+//                    
+//                }
+//            }
+//        }
 //    }
-//    alertController.addAction(OKAction)
-//    
-//    self.presentViewController(alertController, animated: true){
-//    
+//            
+//        }
+//        invalidPrompt.addAction(cancelAction)
+//        presentViewController(invalidPrompt, animated: true, completion: nil);
+//        
+//        
+//        
 //    }
 //    
-//    return
 //    
-//    
-//    
-//    } else {
-//    
-//    print(error!.localizedDescription)
-//    print(error)
-//    print("Error email not sent")
-//    }
-//    }
 //}
 
