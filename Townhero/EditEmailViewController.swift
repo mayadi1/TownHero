@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class EditEmailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
 
     var passedEmail: String?
+    var passedEmailVCTownHeroUser: TownHeroUser?
+    let ref = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emailTextField.placeholder = passedEmail
-        
+         emailTextField.placeholder = TownHeroUser.sharedInstance.email
     }
 
     func isValidEmail(email2Test:String) -> Bool {
@@ -29,8 +32,9 @@ class EditEmailViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onSaveButtonTapped(sender: UIBarButtonItem) {
        if isValidEmail(emailTextField.text!) == true {
+        TownHeroUser.sharedInstance.name = emailTextField.text
+        ref.child("users").child(TownHeroUser.sharedInstance.uid).updateChildValues(["name": emailTextField.text!])
         
-            emailTextField.text = self.emailTextField.text
             } else {
             print("NOT Valid Email")
         }

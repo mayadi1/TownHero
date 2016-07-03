@@ -7,29 +7,84 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class EditFullNameVC: UIViewController {
+class EditFullNameVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var fullNameTextField: UITextField!
+    let ref = FIRDatabase.database().reference()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fullNameTextField.delegate = self
+        
+        // Here I set the placeholder text to the name I pulled from the FaceBookAuth in ProfileTVC
+        fullNameTextField.placeholder = TownHeroUser.sharedInstance.name
+        
+        
+//         self.fullNameTextField.placeholder = passedFullNameVCTownHeroUser?.name
+//        currentUser = FIRAuth.auth()?.currentUser
 
-        // Do any additional setup after loading the view.
+      
+        
+        // NOT SURE IF I NEED BELOW CODE
+//        var refHandle = self.ref.child("users").child(user.uid).observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+//            
+//            let userName = snapshot.value as! NSDictionary
+//            print(userName)
+////            let userDetails = userName.objectForKey(self.)
+//            
+//        })
+        
     }
 
-   let TEXT_FIELD_LIMIT = 15
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        //An expression works with Swift 2
-        return (textField.text?.characters.count ?? 0) + string.characters.count - range.length < TEXT_FIELD_LIMIT
-        //For Swift 1.2
-        //        return count((textField.text ?? "").utf16) + count(string.utf16) - range.length <= TEXT_FIELD_LIMIT
-    }
     
-    //...
+    // ---------------------------------------- TEXTFIELD FUNC TO LIMIT CHARACTERS USER CAN INPUT -----------------------------
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+                   replacementString string: String) -> Bool
+    {
+        let maxLength = 20
+        let currentString: NSString = fullNameTextField.text!
+        let newString: NSString =
+            currentString.stringByReplacingCharactersInRange(range, withString: string)
+        return newString.length <= maxLength
+    }
+
+    
+  // ---------------------------------------- SAVING TEXT IN TEXTFIELD TO FBASE -----------------------------
+        @IBAction func onSaveButtonTapped (sender: UIBarButtonItem) {
+        
+//        ref.child("users").child(currentUser!.uid).updateChildValues(["name": fullNameTextField.text!])
+
+        TownHeroUser.sharedInstance.name = fullNameTextField.text
+         ref.child("users").child(TownHeroUser.sharedInstance.uid).updateChildValues(["name": fullNameTextField.text!])
+        
+//         ref.child("users").child("\(TownHeroUser.sharedInstance.uid)/name").setValue(item)
+        
+        
+        let alertController = UIAlertController(title: "Edit Name", message: "Your name has been updated successfully.", preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+            // ....
+        }
+        
+          alertController.addAction(OKAction)
+          self.presentViewController(alertController, animated: true) {
+            
+        }
+        
+//        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+//        let pvc = storyboard.instantiateViewControllerWithIdentifier("EditProfileID") as! EditProfileTableVC
+//        pvc.editProfileFullName.text = TownHeroUser.sharedInstance.name
+//        
+//        self.presentViewController(pvc, animated: true, completion: nil)
+
+        
+    }
 }
     
-// WORK IN PROGRESS: I need to set the limit on the amount of character that can be entered in a text field to 15 for firstNameTextField & lastNameTextField
+// WORK IN PROGRESS:
 
 
 
