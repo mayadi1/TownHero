@@ -30,9 +30,11 @@ class ResetViewController: UIViewController {
                     
                     let alertController = UIAlertController(title: nil, message: "Reset email sent", preferredStyle: .Alert)
                     
-                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                        // ...
-                    }
+                    let OKAction = UIAlertAction(title: "Login", style: .Default) { (action) in
+                        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+                        let ViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+                        
+                        self.presentViewController(ViewController, animated: true, completion: nil)                    }
                     alertController.addAction(OKAction)
                     self.presentViewController(alertController, animated: false){
                         
