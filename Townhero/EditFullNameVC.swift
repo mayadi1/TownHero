@@ -59,6 +59,7 @@ class EditFullNameVC: UIViewController, UITextFieldDelegate {
 //        ref.child("users").child(currentUser!.uid).updateChildValues(["name": fullNameTextField.text!])
 
         TownHeroUser.sharedInstance.name = fullNameTextField.text
+            
          ref.child("users").child(TownHeroUser.sharedInstance.uid).updateChildValues(["name": fullNameTextField.text!])
         
 //         ref.child("users").child("\(TownHeroUser.sharedInstance.uid)/name").setValue(item)

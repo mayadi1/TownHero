@@ -11,7 +11,10 @@ import Firebase
 import FirebaseDatabase
 
 class EditLocationVC: UIViewController {
-    @IBOutlet weak var zipcodeTextField: UITextField!
+ 
+    @IBOutlet weak var homeAddress: UITextField!
+    @IBOutlet weak var workAddress: UITextField!
+    
     @IBOutlet weak var currentLocationButton: UIButton!
 
     override func viewDidLoad() {
@@ -28,6 +31,14 @@ class EditLocationVC: UIViewController {
     @IBAction func setCurrentLocation(sender: UIButton) {
    
     }
+    
+    @IBAction func onSaveButtonTapped(sender: UIBarButtonItem) {
+        
+        
+    }
+    
+    
+    
     
     
     

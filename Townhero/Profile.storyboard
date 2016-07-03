@@ -281,13 +281,21 @@
                                     <action selector="setCurrentLocation:" destination="t6o-tF-JNm" eventType="touchUpInside" id="HNw-Gz-7UT"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Work Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-QO-7Kg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Work Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-QO-7Kg">
                                 <rect key="frame" x="0.0" y="94" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XGY-LV-uiD"/>
+                                    <constraint firstAttribute="width" constant="600" id="l9W-hi-gMH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set your home and work address so you can stay updated with the latest events going on in your area." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XB6-L8-G8r">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your home and work address so you can stay updated with the latest events going on in your area." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XB6-L8-G8r">
                                 <rect key="frame" x="9" y="132" width="583" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="T1g-up-nP7"/>
+                                    <constraint firstAttribute="width" constant="583" id="dSR-PF-qbN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -295,14 +303,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DTA-QO-7Kg" firstAttribute="leading" secondItem="LsB-CE-sh3" secondAttribute="leadingMargin" constant="-20" id="DQE-Fu-ae0"/>
+                            <constraint firstItem="XB6-L8-G8r" firstAttribute="leading" secondItem="LsB-CE-sh3" secondAttribute="leadingMargin" constant="-11" id="E1e-bo-o9q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gYE-e7-gTN" secondAttribute="trailing" constant="-20" id="FkP-JG-DAA"/>
+                            <constraint firstItem="DTA-QO-7Kg" firstAttribute="top" secondItem="gYE-e7-gTN" secondAttribute="bottom" id="MS7-nO-mua"/>
+                            <constraint firstItem="XB6-L8-G8r" firstAttribute="top" secondItem="DTA-QO-7Kg" secondAttribute="bottom" constant="8" id="bZ6-pT-EV2"/>
                             <constraint firstItem="gYE-e7-gTN" firstAttribute="leading" secondItem="LsB-CE-sh3" secondAttribute="leadingMargin" constant="-20" id="ens-1p-RYc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DTA-QO-7Kg" secondAttribute="trailing" constant="-20" id="i4O-uN-JgI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XB6-L8-G8r" secondAttribute="trailing" constant="-12" id="jS0-1L-va4"/>
                             <constraint firstItem="gYE-e7-gTN" firstAttribute="top" secondItem="CkD-Sl-9Nn" secondAttribute="bottom" id="vVS-Yd-fAH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0AF-V3-mC8">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Mw1-Wf-wWP">
+                            <connections>
+                                <action selector="onSaveButtonTapped:" destination="t6o-tF-JNm" id="IJU-Jd-B0i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentLocationButton" destination="24T-ew-mt7" id="1rq-Hv-tWj"/>
-                        <outlet property="zipcodeTextField" destination="gYE-e7-gTN" id="KWB-U7-YUV"/>
+                        <outlet property="homeAddress" destination="gYE-e7-gTN" id="WIH-cD-duY"/>
+                        <outlet property="workAddress" destination="DTA-QO-7Kg" id="xBl-cI-Yo5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5D-Kv-6o0" userLabel="First Responder" sceneMemberID="firstResponder"/>
