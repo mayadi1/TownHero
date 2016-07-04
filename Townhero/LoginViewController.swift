@@ -15,12 +15,9 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
-    
-    
+    var i = 0
     @IBOutlet weak var userNameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
-
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     
@@ -42,25 +39,43 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             if user != nil {
                 // If the user is signed in, show the home page.
                 
+                
+                
+                if(self.i == 0){
+            
                 let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
                 // Uncomment this when we get feed done and add HomeView as the storyboard id.
                 
                 let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
                 
                 self.presentViewController(MapViewController, animated: false, completion: nil)
+                }else{
+                    
+                    
+                    let addressStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+                    let ViewController: UIViewController = addressStoryBoard.instantiateViewControllerWithIdentifier("AddressView")
+                    
+                    self.presentViewController(ViewController, animated: true, completion: nil)
+
+                    
+                }
                 
             } else {
                 // If user is signed out, show the login button.
                 
                 // This is the facebook login button.
+             
+               
+                
                self.loginButton.center = self.view.center
                 self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
                 self.facebookLoginButton.delegate = self
-         //      self.view!.addSubview(self.loginButton)
+                
+           //    self.view!.addSubview(self.loginButton)
 
                 self.facebookLoginButton.hidden = false
                 
-                
+            
                 
             }
             
@@ -94,6 +109,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
+        self.i = 1
         activitySpinner.startAnimating()
         
         self.facebookLoginButton.hidden = true
@@ -114,9 +130,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // handle the cancel event, show the login button
             self.facebookLoginButton.hidden = false
             activitySpinner.stopAnimating()
-            
+
         } else {  // User hits OK to grant rights to use Facebook Login.
             print("user logged in")
+           
 
             // Since Firebase cannot see users logged in even with facebook set up correctly, we have to add this code. Located in guides, auth, facebook, step 4.
             
@@ -128,9 +145,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // Step 5 authenticate with Firebase using the Firebase credential
             FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
                 print("user logged into firebase")
-                self.performSegueWithIdentifier("loginToMap", sender: self)
-
                 
+            // When user signed in with Facebook, send to address view controller.
+              
+                
+                let addressStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+                let ViewController: UIViewController = addressStoryBoard.instantiateViewControllerWithIdentifier("AddressView")
+                
+                self.presentViewController(ViewController, animated: true, completion: nil)
                 
                 
             }
@@ -142,9 +164,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         print("user logged out")
     }
     
-    
-   
-    
     @IBAction func loginButtonTapped(sender: AnyObject) {
   
             FIRAuth.auth()?.signInWithEmail(userNameField.text!, password: passwordField.text!) { (user, error) in
@@ -152,16 +171,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 if error == nil {
                     print("User Logged In")
                     
-//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                    let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileView")
-//                    self.presentViewController(vc, animated: true, completion: nil)
-                       self.performSegueWithIdentifier("loginToMap", sender: self)
+                    self.performSegueWithIdentifier("loginToMap", sender: self)
                            
                 }
                 else {
                     print("Invalid Login")
                     
-                    let alertController = UIAlertController(title: nil, message: "Invalid login", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: nil, message: "\(error!.localizedDescription)", preferredStyle: .Alert)
                     
                     let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
                         // ...
