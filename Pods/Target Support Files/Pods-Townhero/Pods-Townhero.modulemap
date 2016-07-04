@@ -1,0 +1,6 @@
+framework module Pods_Townhero {
+  umbrella header "Pods-Townhero-umbrella.h"
+
+  export *
+  module * { export * }
+}
