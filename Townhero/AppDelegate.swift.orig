@@ -23,11 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     
-<<<<<<< HEAD
 //    
-=======
-   // 
->>>>>>> 88c82b18da6b7546661cd7ca615f7f870996e27f
     override init() {
         
         FIRApp.configure()

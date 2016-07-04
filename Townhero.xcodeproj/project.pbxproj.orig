@@ -7,8 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		4416699E1D26E19E00493B89 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416699D1D26E19E00493B89 /* Mapbox.framework */; };
 		4416699F1D26E19F00493B89 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4416699D1D26E19E00493B89 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		441669A21D26E1DF00493B89 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441669A11D26E1DF00493B89 /* Map.storyboard */; };
+		441669A41D26E21D00493B89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441669A31D26E21D00493B89 /* ViewController.swift */; };
+=======
+		35E69C091D21FC9A00271D7A /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C081D21FC9A00271D7A /* ProfileTVC.swift */; };
+		35E69C0B1D21FCFA00271D7A /* EditProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C0A1D21FCFA00271D7A /* EditProfileTableVC.swift */; };
+		35E69C0D1D2217DF00271D7A /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C0C1D2217DF00271D7A /* SettingsTVC.swift */; };
+		35E69C0F1D224CC800271D7A /* EditFullNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C0E1D224CC800271D7A /* EditFullNameVC.swift */; };
+		35E69C111D2253F500271D7A /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C101D2253F500271D7A /* EditEmailViewController.swift */; };
+		35E69C131D22C35200271D7A /* EditLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C121D22C35200271D7A /* EditLocationVC.swift */; };
+		35E69C191D22E18700271D7A /* PendingActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C181D22E18700271D7A /* PendingActivityVC.swift */; };
+		35E69C201D24194A00271D7A /* HistoryActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C1F1D24194A00271D7A /* HistoryActivityVC.swift */; };
+		35E69C221D24197100271D7A /* HistoryActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C211D24197100271D7A /* HistoryActivityCell.swift */; };
+		35E69C241D24198B00271D7A /* PendingActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C231D24198B00271D7A /* PendingActivityCell.swift */; };
+		35E69C4E1D25BC9C00271D7A /* SlideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C4D1D25BC9C00271D7A /* SlideVC.swift */; };
+		35E69C941D26C03C00271D7A /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C931D26C03C00271D7A /* UserClass.swift */; };
+>>>>>>> ProfileNew
 		449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449869EA1D20898F0023F9B0 /* Assets.xcassets */; };
 		449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */; };
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
@@ -20,8 +37,10 @@
 		462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EA91D20973A0093893B /* LoginViewController.swift */; };
 		462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EAB1D2097450093893B /* CreateAccountViewController.swift */; };
 		463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463D65ED1D275E5E003BDA69 /* ResetViewController.swift */; };
+		46F2866E1D29DA6B0050D1EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */; };
 =======
->>>>>>> origin/pod
+		46CF28851D217C210034400F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CF28841D217C210034400F /* Profile.storyboard */; };
+>>>>>>> ProfileNew
 		6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */; };
 		8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */; };
 		B6EFB1D2F021021CD1CF7F4C /* Pods_TownheroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */; };
@@ -60,7 +79,24 @@
 
 /* Begin PBXFileReference section */
 		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
 		4416699D1D26E19E00493B89 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		441669A11D26E1DF00493B89 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		441669A31D26E21D00493B89 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+=======
+		35E69C081D21FC9A00271D7A /* ProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
+		35E69C0A1D21FCFA00271D7A /* EditProfileTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableVC.swift; sourceTree = "<group>"; };
+		35E69C0C1D2217DF00271D7A /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
+		35E69C0E1D224CC800271D7A /* EditFullNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFullNameVC.swift; sourceTree = "<group>"; };
+		35E69C101D2253F500271D7A /* EditEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
+		35E69C121D22C35200271D7A /* EditLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLocationVC.swift; sourceTree = "<group>"; };
+		35E69C181D22E18700271D7A /* PendingActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingActivityVC.swift; sourceTree = "<group>"; };
+		35E69C1F1D24194A00271D7A /* HistoryActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryActivityVC.swift; path = ../../TownHero/Townhero/HistoryActivityVC.swift; sourceTree = "<group>"; };
+		35E69C211D24197100271D7A /* HistoryActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryActivityCell.swift; path = ../../TownHero/Townhero/HistoryActivityCell.swift; sourceTree = "<group>"; };
+		35E69C231D24198B00271D7A /* PendingActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PendingActivityCell.swift; path = ../../TownHero/Townhero/PendingActivityCell.swift; sourceTree = "<group>"; };
+		35E69C4D1D25BC9C00271D7A /* SlideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideVC.swift; sourceTree = "<group>"; };
+		35E69C931D26C03C00271D7A /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
+>>>>>>> ProfileNew
 		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869EA1D20898F0023F9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449869ED1D20898F0023F9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,8 +114,10 @@
 		462E0EA91D20973A0093893B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		462E0EAB1D2097450093893B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		463D65ED1D275E5E003BDA69 /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
+		46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 =======
->>>>>>> origin/pod
+		46CF28841D217C210034400F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+>>>>>>> ProfileNew
 		55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.release.xcconfig"; sourceTree = "<group>"; };
 		73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TownheroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,10 +159,20 @@
 
 /* Begin PBXGroup section */
 <<<<<<< HEAD
+=======
 		35E69C031D21B74000271D7A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				46CF28841D217C210034400F /* Profile.storyboard */,
 				35E69C1A1D23802B00271D7A /* Edit Profile */,
+				35E69C081D21FC9A00271D7A /* ProfileTVC.swift */,
+				35E69C181D22E18700271D7A /* PendingActivityVC.swift */,
+				35E69C931D26C03C00271D7A /* UserClass.swift */,
+				35E69C231D24198B00271D7A /* PendingActivityCell.swift */,
+				35E69C1F1D24194A00271D7A /* HistoryActivityVC.swift */,
+				35E69C211D24197100271D7A /* HistoryActivityCell.swift */,
+				35E69C4D1D25BC9C00271D7A /* SlideVC.swift */,
+				35E69C0C1D2217DF00271D7A /* SettingsTVC.swift */,
 			);
 			name = Profile;
 			path = Townhero;
@@ -133,12 +181,15 @@
 		35E69C1A1D23802B00271D7A /* Edit Profile */ = {
 			isa = PBXGroup;
 			children = (
+				35E69C0A1D21FCFA00271D7A /* EditProfileTableVC.swift */,
+				35E69C0E1D224CC800271D7A /* EditFullNameVC.swift */,
+				35E69C101D2253F500271D7A /* EditEmailViewController.swift */,
+				35E69C121D22C35200271D7A /* EditLocationVC.swift */,
 			);
 			name = "Edit Profile";
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> origin/pod
+>>>>>>> ProfileNew
 		449869D71D20898E0023F9B0 = {
 			isa = PBXGroup;
 			children = (
@@ -168,15 +219,15 @@
 <<<<<<< HEAD
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
+				46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */,
 				463D65ED1D275E5E003BDA69 /* ResetViewController.swift */,
-				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
-				462E0EA71D2096CB0093893B /* Login.storyboard */,
-=======
-				449869E31D20898F0023F9B0 /* AppDelegate.swift */,
 				441669A31D26E21D00493B89 /* ViewController.swift */,
 				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
+				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				441669A11D26E1DF00493B89 /* Map.storyboard */,
->>>>>>> origin/pod
+=======
+				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
+>>>>>>> ProfileNew
 				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
 				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
 				449869EF1D20898F0023F9B0 /* Info.plist */,
@@ -339,13 +390,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-=======
 				441669A21D26E1DF00493B89 /* Map.storyboard in Resources */,
->>>>>>> origin/pod
 				449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */,
 				44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */,
 				449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */,
+<<<<<<< HEAD
+				462E0EA81D2096CB0093893B /* Login.storyboard in Resources */,
+=======
+>>>>>>> ProfileNew
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,10 +549,22 @@
 				463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */,
 				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
 				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
-=======
+				46F2866E1D29DA6B0050D1EF /* AppDelegate.swift in Sources */,
 				441669A41D26E21D00493B89 /* ViewController.swift in Sources */,
-				449869E41D20898F0023F9B0 /* AppDelegate.swift in Sources */,
->>>>>>> origin/pod
+=======
+				35E69C0D1D2217DF00271D7A /* SettingsTVC.swift in Sources */,
+				35E69C0B1D21FCFA00271D7A /* EditProfileTableVC.swift in Sources */,
+				35E69C091D21FC9A00271D7A /* ProfileTVC.swift in Sources */,
+				35E69C4E1D25BC9C00271D7A /* SlideVC.swift in Sources */,
+				35E69C221D24197100271D7A /* HistoryActivityCell.swift in Sources */,
+				35E69C131D22C35200271D7A /* EditLocationVC.swift in Sources */,
+				35E69C191D22E18700271D7A /* PendingActivityVC.swift in Sources */,
+				35E69C241D24198B00271D7A /* PendingActivityCell.swift in Sources */,
+				35E69C201D24194A00271D7A /* HistoryActivityVC.swift in Sources */,
+				35E69C0F1D224CC800271D7A /* EditFullNameVC.swift in Sources */,
+				35E69C941D26C03C00271D7A /* UserClass.swift in Sources */,
+				35E69C111D2253F500271D7A /* EditEmailViewController.swift in Sources */,
+>>>>>>> ProfileNew
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

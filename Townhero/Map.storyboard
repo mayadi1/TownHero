@@ -231,10 +231,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jLh-CD-9ZR" kind="relationship" relationship="rootViewController" id="U6P-5z-eVA"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfA-yR-OdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3160" y="978"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="8zO-Jn-HZU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="jLh-CD-9ZR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ezy-GX-VR2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2t-i2-fCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3664.5" y="925"/>
         </scene>
     </scenes>
     <resources>
