@@ -6,27 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		449869E41D20898F0023F9B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869E31D20898F0023F9B0 /* AppDelegate.swift */; };
-		449869E61D20898F0023F9B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869E51D20898F0023F9B0 /* ViewController.swift */; };
-		449869E91D20898F0023F9B0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869E71D20898F0023F9B0 /* Feed.storyboard */; };
-		449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449869EA1D20898F0023F9B0 /* Assets.xcassets */; };
-		449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */; };
-		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
-		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
-		44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */; };
-		462E0EA81D2096CB0093893B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462E0EA71D2096CB0093893B /* Login.storyboard */; };
-		462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EA91D20973A0093893B /* LoginViewController.swift */; };
-		462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EAB1D2097450093893B /* CreateAccountViewController.swift */; };
-		46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ACB1161D20C1970073537D /* FeedViewController.swift */; };
-		46ACB1191D20C1F80073537D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ACB1181D20C1F80073537D /* ProfileViewController.swift */; };
-		46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF28801D20EE600034400F /* FeedTableViewCell.swift */; };
-		46CF28851D217C210034400F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CF28841D217C210034400F /* Profile.storyboard */; };
-		6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */; };
-		8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */; };
-		B6EFB1D2F021021CD1CF7F4C /* Pods_TownheroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		449869F51D20898F0023F9B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -44,37 +23,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		441669A01D26E19F00493B89 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		449869E31D20898F0023F9B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		449869E51D20898F0023F9B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		449869E81D20898F0023F9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Feed.storyboard; sourceTree = "<group>"; };
-		449869EA1D20898F0023F9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		449869ED1D20898F0023F9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		449869EF1D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		449869F41D20898F0023F9B0 /* TownheroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		449869F81D20898F0023F9B0 /* TownheroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroTests.swift; sourceTree = "<group>"; };
-		449869FA1D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		44986A031D20898F0023F9B0 /* TownheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroUITests.swift; sourceTree = "<group>"; };
-		44986A051D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		462E0EA71D2096CB0093893B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		462E0EA91D20973A0093893B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		462E0EAB1D2097450093893B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		46ACB1161D20C1970073537D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		46ACB1181D20C1F80073537D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		46CF28801D20EE600034400F /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		46CF28841D217C210034400F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.release.xcconfig"; sourceTree = "<group>"; };
-		73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TownheroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A8049905963AD5D7476B8875 /* Pods-TownheroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests.release.xcconfig"; sourceTree = "<group>"; };
-		AEEDB6282F5165F9F7AC03FA /* Pods-Townhero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.debug.xcconfig"; sourceTree = "<group>"; };
-		B3C86BDF821D7BA619C251E2 /* Pods-TownheroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroUITests/Pods-TownheroUITests.release.xcconfig"; sourceTree = "<group>"; };
-		DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TownheroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA55EB72AB566B7F6AEBC135 /* Pods-TownheroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroUITests/Pods-TownheroUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Townhero.app; path = "/Users/cindybarnsdale/Documents/Development - Salar (Do not delete)/Swift 2.0/Mobile Makers/Week 6 Final Project/Townhero/build/Debug-iphoneos/Townhero.app"; sourceTree = "<absolute>"; };
+		449869F41D20898F0023F9B0 /* TownheroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TownheroTests.xctest; path = "/Users/cindybarnsdale/Documents/Development - Salar (Do not delete)/Swift 2.0/Mobile Makers/Week 6 Final Project/Townhero/build/Debug-iphoneos/TownheroTests.xctest"; sourceTree = "<absolute>"; };
+		449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TownheroUITests.xctest; path = "/Users/cindybarnsdale/Documents/Development - Salar (Do not delete)/Swift 2.0/Mobile Makers/Week 6 Final Project/Townhero/build/Debug-iphoneos/TownheroUITests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6EFB1D2F021021CD1CF7F4C /* Pods_TownheroUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,85 +70,7 @@
 		449869D71D20898E0023F9B0 = {
 			isa = PBXGroup;
 			children = (
-				449869E21D20898F0023F9B0 /* Townhero */,
-				449869F71D20898F0023F9B0 /* TownheroTests */,
-				44986A021D20898F0023F9B0 /* TownheroUITests */,
-				449869E11D20898F0023F9B0 /* Products */,
-				8E0A3AEF1AAF240C9F10989C /* Pods */,
-				83F651AB8E462073CAC7E67A /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		449869E11D20898F0023F9B0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				449869E01D20898F0023F9B0 /* Townhero.app */,
-				449869F41D20898F0023F9B0 /* TownheroTests.xctest */,
-				449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		449869E21D20898F0023F9B0 /* Townhero */ = {
-			isa = PBXGroup;
-			children = (
-				449869E31D20898F0023F9B0 /* AppDelegate.swift */,
-				46ACB1161D20C1970073537D /* FeedViewController.swift */,
-				46CF28801D20EE600034400F /* FeedTableViewCell.swift */,
-				449869E51D20898F0023F9B0 /* ViewController.swift */,
-				449869E71D20898F0023F9B0 /* Feed.storyboard */,
-				46CF28841D217C210034400F /* Profile.storyboard */,
-				46ACB1181D20C1F80073537D /* ProfileViewController.swift */,
-				462E0EA71D2096CB0093893B /* Login.storyboard */,
-				462E0EA91D20973A0093893B /* LoginViewController.swift */,
-				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
-				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
-				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
-				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
-				449869EF1D20898F0023F9B0 /* Info.plist */,
-			);
-			path = Townhero;
-			sourceTree = "<group>";
-		};
-		449869F71D20898F0023F9B0 /* TownheroTests */ = {
-			isa = PBXGroup;
-			children = (
-				449869F81D20898F0023F9B0 /* TownheroTests.swift */,
-				449869FA1D20898F0023F9B0 /* Info.plist */,
-			);
-			path = TownheroTests;
-			sourceTree = "<group>";
-		};
-		44986A021D20898F0023F9B0 /* TownheroUITests */ = {
-			isa = PBXGroup;
-			children = (
-				44986A031D20898F0023F9B0 /* TownheroUITests.swift */,
-				44986A051D20898F0023F9B0 /* Info.plist */,
-			);
-			path = TownheroUITests;
-			sourceTree = "<group>";
-		};
-		83F651AB8E462073CAC7E67A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */,
-				DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */,
-				73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8E0A3AEF1AAF240C9F10989C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AEEDB6282F5165F9F7AC03FA /* Pods-Townhero.debug.xcconfig */,
-				55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */,
-				A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */,
-				A8049905963AD5D7476B8875 /* Pods-TownheroTests.release.xcconfig */,
-				FA55EB72AB566B7F6AEBC135 /* Pods-TownheroUITests.debug.xcconfig */,
-				B3C86BDF821D7BA619C251E2 /* Pods-TownheroUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +86,7 @@
 				449869DE1D20898F0023F9B0 /* Resources */,
 				F2ED8AFC423C455BF459A1D8 /* [CP] Embed Pods Frameworks */,
 				8ABA078A4A1F468AF759EDAE /* [CP] Copy Pods Resources */,
+				441669A01D26E19F00493B89 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,7 +170,7 @@
 				Base,
 			);
 			mainGroup = 449869D71D20898E0023F9B0;
-			productRefGroup = 449869E11D20898F0023F9B0 /* Products */;
+			productRefGroup = 449869D71D20898E0023F9B0;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -301,12 +186,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46CF28851D217C210034400F /* Profile.storyboard in Resources */,
-				449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */,
-				44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */,
-				449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */,
-				462E0EA81D2096CB0093893B /* Login.storyboard in Resources */,
-				449869E91D20898F0023F9B0 /* Feed.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,13 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46ACB1191D20C1F80073537D /* ProfileViewController.swift in Sources */,
-				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
-				46CF28811D20EE600034400F /* FeedTableViewCell.swift in Sources */,
-				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
-				46ACB1171D20C1970073537D /* FeedViewController.swift in Sources */,
-				449869E61D20898F0023F9B0 /* ViewController.swift in Sources */,
-				449869E41D20898F0023F9B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +340,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +347,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,25 +364,6 @@
 			targetProxy = 44986A001D20898F0023F9B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		449869E71D20898F0023F9B0 /* Feed.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				449869E81D20898F0023F9B0 /* Base */,
-			);
-			name = Feed.storyboard;
-			sourceTree = "<group>";
-		};
-		449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				449869ED1D20898F0023F9B0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		44986A061D20898F0023F9B0 /* Debug */ = {
@@ -602,9 +453,13 @@
 		};
 		44986A091D20898F0023F9B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEEDB6282F5165F9F7AC03FA /* Pods-Townhero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Townhero",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Townhero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero;
@@ -614,9 +469,13 @@
 		};
 		44986A0A1D20898F0023F9B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Townhero",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Townhero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero;
@@ -626,7 +485,6 @@
 		};
 		44986A0C1D20898F0023F9B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TownheroTests/Info.plist;
@@ -639,7 +497,6 @@
 		};
 		44986A0D1D20898F0023F9B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8049905963AD5D7476B8875 /* Pods-TownheroTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TownheroTests/Info.plist;
@@ -652,7 +509,6 @@
 		};
 		44986A0F1D20898F0023F9B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA55EB72AB566B7F6AEBC135 /* Pods-TownheroUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TownheroUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -664,7 +520,6 @@
 		};
 		44986A101D20898F0023F9B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3C86BDF821D7BA619C251E2 /* Pods-TownheroUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TownheroUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
