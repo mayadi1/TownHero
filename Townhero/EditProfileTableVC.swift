@@ -11,12 +11,15 @@ import Firebase
 import FirebaseStorage
 import FBSDKCoreKit
 
-class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
+class EditProfileTableVC: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var editProfilePicImageView: UIImageView!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     var verifyPasswordTextField: UITextField?
+    
+   
+    
 
     let user = FIRAuth.auth()?.currentUser
     let ref = FIRDatabase.database().reference()
@@ -31,6 +34,12 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         addressTextField.delegate = self
         
+        editProfilePicImageView.userInteractionEnabled = true
+        let aSelector: Selector = "TapFunc"
+        let profilePicTapGesture = UITapGestureRecognizer(target: self, action: aSelector)
+        profilePicTapGesture.numberOfTapsRequired = 1
+        editProfilePicImageView.addGestureRecognizer(profilePicTapGesture)
+        
         
         editProfilePicImageView.layer.masksToBounds = false
         editProfilePicImageView.layer.cornerRadius = editProfilePicImageView.frame.height / 2
@@ -39,11 +48,64 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
         
         emailTextField.placeholder = TownHeroUser.sharedInstance.email
         fullNameTextField.placeholder = TownHeroUser.sharedInstance.name
-        editProfilePicImageView.image = TownHeroUser.sharedInstance.profilepicture
+//        editProfilePicImageView.image = TownHeroUser.sharedInstance.profilepicture
         
         
     }
     
+    func TapFunc() {
+        print("Profile Pic Tapped")
+          let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+        
+        let photoOptionAlertController = UIAlertController(title: "Edit Profile Picture", message: nil, preferredStyle: .Alert)
+        
+        let cameraAction = UIAlertAction(title: "Take a Camera Shot", style: .Default, handler: { (UIAlertAction) in
+            
+            imagePicker.sourceType = .Camera
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+            
+        })
+        
+        let photoLibraryAction = UIAlertAction(title: "Choose from Photo Library", style: .Default, handler: { (UIAlertAction) in
+             imagePicker.sourceType = .PhotoLibrary
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) in
+            // ..
+        }
+        
+        photoOptionAlertController.addAction(cameraAction)
+        photoOptionAlertController.addAction(photoLibraryAction)
+        photoOptionAlertController.addAction(cancelAction)
+        
+        self.presentViewController(photoOptionAlertController, animated: true, completion: nil)
+    }
+   
+    // CAMERA FUNCTION
+//    print("Profile Pic Tapped")
+//    let imagePicker = UIImagePickerController()
+//    imagePicker.delegate = self
+//    imagePicker.allowsEditing = true
+//    
+//    
+//    if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+//    imagePicker.sourceType = .Camera
+//
+//    }else{
+//    imagePicker.sourceType = .PhotoLibrary
+//    }
+//    self.presentViewController(imagePicker, animated: true, completion: nil)
+    
+    
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        editProfilePicImageView.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
     
@@ -63,7 +125,7 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                     return
                 }
                 else if self.fullNameTextField.text != "" {
-                    print("Profile Updated")
+                    print("\(self.user?.displayName)")
                     let verifyNameAlertController = UIAlertController(title: "Edit Name", message: "Name Has Been Updated!", preferredStyle: .Alert)
                     let verifyNameAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
                         // ...
@@ -96,6 +158,17 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                                 return
                             }else{
                                 print("Email Updated")
+                                
+                                let updateEmailAlertController = UIAlertController(title: "Edit Email", message: "Email Has Been Successfully Updated!", preferredStyle: .Alert)
+                                let updateEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                                    // ...
+                                })
+                                
+                                updateEmailAlertController.addAction(updateEmailAction)
+                                
+                                self.presentViewController(updateEmailAlertController, animated: true, completion: nil)
+                                
+                                
                                 self.view.endEditing(true)
                             }
                         })

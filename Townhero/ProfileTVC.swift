@@ -10,8 +10,18 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FBSDKCoreKit
+import SideMenu
+
+
+
 
 class ProfileTVC: UITableViewController {
+    
+    
+   
+    let menuLeftNavigationController = UISideMenuNavigationController()
+    // UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration of it here like setting its viewControllers.
+    
     
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,8 +38,11 @@ class ProfileTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         
-        self.userPic.layer.cornerRadius = 19
+        userPic.layer.masksToBounds = false
+        userPic.layer.cornerRadius = userPic.frame.height / 2
+        userPic.clipsToBounds = true
         
         // Use a Singleton for the current user that's logged in so I don't have to constantly keep retrieving user information from Firebase
         if let user = FIRAuth.auth()?.currentUser {
@@ -53,22 +66,26 @@ class ProfileTVC: UITableViewController {
             if let homeAddress: String? = user.accessibilityLabel {
                 TownHeroUser.sharedInstance.userAddress = homeAddress
             }
-            
-            
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toEditProfileSegue"{
-            let dvc = segue.destinationViewController as! EditProfileTableVC
-            //            dvc.passedTownHeroUser = townHeroUser!
-            
-        }
+    @IBAction func logoutButton(sender: UIButton) {
+        try! FIRAuth.auth()!.signOut()
+        
+        // Facebook log out by setting access token to nil, then sending back to the initial viewcontroller.
+        
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let ViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+        
+        self.presentViewController(ViewController, animated: true, completion: nil)
+        
+        
+        
     }
     
-    
-    
-    
+
     
     
 }//End of the ProfileTVC class

@@ -10,6 +10,7 @@ import UIKit
 import Mapbox
 import CoreLocation
 import AddressBookUI
+import SideMenu
 
 class MapViewController: UIViewController, MGLMapViewDelegate {
     
@@ -37,6 +38,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var doneButtonOutlet: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
 
         let point = MGLPointAnnotation()
@@ -141,7 +144,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         self.servicesButton.hidden = true
         
         self.view.endEditing(false)
-        
         
     }
     

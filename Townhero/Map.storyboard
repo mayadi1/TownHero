@@ -160,7 +160,7 @@
                                         </constraints>
                                         <state key="normal" image="user"/>
                                         <connections>
-                                            <segue destination="afR-Kw-U65" kind="presentation" id="JsY-OH-gbF"/>
+                                            <segue destination="qXW-L1-K6r" kind="presentation" id="mgl-yz-KKo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -219,25 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byv-GV-1BA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2729" y="136"/>
-        </scene>
-        <!--Side Menu Navigation Controller-->
-        <scene sceneID="Svz-kN-Md0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="afR-Kw-U65" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TrU-gw-iLN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="715-QF-BrW" kind="relationship" relationship="rootViewController" id="hED-Vg-m5P"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CfA-yR-OdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3127" y="1003"/>
+            <point key="canvasLocation" x="2961" y="32"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ntH-3P-70A">
@@ -247,7 +229,156 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTm-7f-XCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3689" y="837"/>
+            <point key="canvasLocation" x="2517" y="411"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="IVs-oN-6A7">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8s-Ch-klh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController navigationBarHidden="YES" id="qXW-L1-K6r" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IWM-kp-K5n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="715-QF-BrW" kind="relationship" relationship="rootViewController" id="8YS-yY-19B"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2801" y="910"/>
+        </scene>
+        <!--Dummy Profile-->
+        <scene sceneID="NFf-ph-nvk">
+            <objects>
+                <viewController id="ElP-EO-KzG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DC3-dx-BGQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="uda-BN-Ewq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nJj-Ez-XF8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dummy Profile" id="SJn-eS-wYq">
+                        <barButtonItem key="rightBarButtonItem" title="Dummy Edit" id="MFN-ix-krZ">
+                            <connections>
+                                <segue destination="T3O-4w-csi" kind="show" id="RXc-l3-U46"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3r-oT-rpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3478" y="1876"/>
+        </scene>
+        <!--Dummy Edit Profile-->
+        <scene sceneID="Oaf-FO-4r3">
+            <objects>
+                <viewController id="T3O-4w-csi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sIh-IJ-wOF"/>
+                        <viewControllerLayoutGuide type="bottom" id="WBf-wJ-9PB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AnZ-Xd-vT2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dummy Edit Profile" id="eJg-JS-d0f">
+                        <barButtonItem key="rightBarButtonItem" title="Edit Name" id="2U0-z1-KCW">
+                            <connections>
+                                <segue destination="6c8-Je-xM6" kind="show" id="99f-u3-eGx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipJ-sW-KZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4121" y="1876"/>
+        </scene>
+        <!--CHANGE MY NAME-->
+        <scene sceneID="qUL-3M-rEU">
+            <objects>
+                <viewController id="6c8-Je-xM6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3CN-Ux-A75"/>
+                        <viewControllerLayoutGuide type="bottom" id="7iV-mp-iar"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WJ8-r4-gMc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CHANGE MY NAME" id="cpR-Mg-dFw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehs-9I-D4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4840" y="1876"/>
+        </scene>
+        <!--Dummy Profile-->
+        <scene sceneID="Sdh-aJ-70b">
+            <objects>
+                <viewController id="iVj-UW-HOt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nwz-bV-8qp"/>
+                        <viewControllerLayoutGuide type="bottom" id="F6e-1u-UCJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hnc-6y-gvw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dummy Profile" id="DS8-UJ-mvU">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="K0y-22-PNw">
+                            <connections>
+                                <segue destination="Lp4-NI-DgT" kind="push" id="ga5-op-t5b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l4l-pB-j5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3519" y="957"/>
+        </scene>
+        <!--Dummy Edit-->
+        <scene sceneID="sbu-2Z-AVs">
+            <objects>
+                <viewController id="Lp4-NI-DgT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tys-Xp-wxf"/>
+                        <viewControllerLayoutGuide type="bottom" id="9bo-zr-E1D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dvy-La-WEM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dummy Edit" id="flL-iX-Xgm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAD-sc-p6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4250" y="965"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="UYN-Dh-jOR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="azS-LG-UgM" customClass="UISideMenuNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qLj-bh-kdO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ElP-EO-KzG" kind="relationship" relationship="rootViewController" id="USG-f1-wCj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mns-41-rN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2666" y="1876"/>
         </scene>
     </scenes>
     <resources>

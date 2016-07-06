@@ -17,6 +17,7 @@
 		35E69C191D22E18700271D7A /* PendingActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C181D22E18700271D7A /* PendingActivityVC.swift */; };
 		35E69C4E1D25BC9C00271D7A /* SlideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C4D1D25BC9C00271D7A /* SlideVC.swift */; };
 		35E69C941D26C03C00271D7A /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C931D26C03C00271D7A /* UserClass.swift */; };
+		35EADA151D2C100000083C6A /* GestureRecognizerPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EADA141D2C100000083C6A /* GestureRecognizerPic.swift */; };
 		4416699E1D26E19E00493B89 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416699D1D26E19E00493B89 /* Mapbox.framework */; };
 		4416699F1D26E19F00493B89 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4416699D1D26E19E00493B89 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		441669A21D26E1DF00493B89 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441669A11D26E1DF00493B89 /* Map.storyboard */; };
@@ -80,6 +81,7 @@
 		35E69C181D22E18700271D7A /* PendingActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingActivityVC.swift; sourceTree = "<group>"; };
 		35E69C4D1D25BC9C00271D7A /* SlideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideVC.swift; sourceTree = "<group>"; };
 		35E69C931D26C03C00271D7A /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
+		35EADA141D2C100000083C6A /* GestureRecognizerPic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureRecognizerPic.swift; sourceTree = "<group>"; };
 		4416699D1D26E19E00493B89 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		441669A11D26E1DF00493B89 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		441669A31D26E21D00493B89 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				35E69C0A1D21FCFA00271D7A /* EditProfileTableVC.swift */,
+				35EADA141D2C100000083C6A /* GestureRecognizerPic.swift */,
 				35E69C0E1D224CC800271D7A /* EditFullNameVC.swift */,
 				35E69C101D2253F500271D7A /* EditEmailViewController.swift */,
 				35E69C0C1D2217DF00271D7A /* SettingsTVC.swift */,
@@ -327,7 +330,6 @@
 				TargetAttributes = {
 					449869DF1D20898F0023F9B0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = Z65JLH99GY;
 					};
 					449869F31D20898F0023F9B0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -519,6 +521,7 @@
 			files = (
 				463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */,
 				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
+				35EADA151D2C100000083C6A /* GestureRecognizerPic.swift in Sources */,
 				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
 				46F2866E1D29DA6B0050D1EF /* AppDelegate.swift in Sources */,
 				441669A41D26E21D00493B89 /* ViewController.swift in Sources */,
