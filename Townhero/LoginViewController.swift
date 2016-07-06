@@ -15,7 +15,6 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
-    var i = 0
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
@@ -23,67 +22,69 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
+    let usersRef = FIRDatabase.database().reference().child("Users")
+    
+    
     var loginButton: FBSDKLoginButton = FBSDKLoginButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.facebookLoginButton.hidden = true
+     //   self.facebookLoginButton.hidden = true
         
         // Setting facebook button to clear background
-       customizeButton(self.facebookLoginButton)
-       
+        customizeButton(self.facebookLoginButton)
+        
         
         // This code will check to see if the user is signed in or not. Located in firebase manage users: Step 1.
+        
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
-            if user != nil {
-                // If the user is signed in, show the home page.
+            if user == nil{
                 
+            }else{
+                let condition = self.usersRef.child("\(user!.uid)")
                 
-                
-                if(self.i == 0){
-            
-                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-                // Uncomment this when we get feed done and add HomeView as the storyboard id.
-                
-                let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
-                
-                self.presentViewController(MapViewController, animated: false, completion: nil)
-                }else{
+                condition.observeEventType(.Value, withBlock:  { (snapshot) in
                     
+                    if user != nil && snapshot.exists() {
+                        
+                        
+                        self.facebookLoginButton.hidden = false
+                        //         If the user is signed in, show the map page.
+                        
+                        let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+                        
+                        let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
+                        
+                        self.presentViewController(MapViewController, animated: false, completion: nil)
+                        
+                        
+                        
+                    } else {
+                        //                 If user is signed out, show the login button.
+                        //
+                        //                 This is the facebook login button.
+                        //
+                        
+                        
+                        //   self.loginButton.center = self.view.center
+                        self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+                        self.facebookLoginButton.delegate = self
+                        
+                        //    self.view!.addSubview(self.loginButton)
+                        
+                        self.facebookLoginButton.hidden = false
+                    }
                     
-                    let addressStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-                    let ViewController: UIViewController = addressStoryBoard.instantiateViewControllerWithIdentifier("AddressView")
-                    
-                    self.presentViewController(ViewController, animated: true, completion: nil)
-
-                    
-                }
-                
-            } else {
-                // If user is signed out, show the login button.
-                
-                // This is the facebook login button.
-             
-               
-                
-               self.loginButton.center = self.view.center
-                self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-                self.facebookLoginButton.delegate = self
-                
-           //    self.view!.addSubview(self.loginButton)
-
-                self.facebookLoginButton.hidden = false
-                
-            
-                
+                })
             }
-            
         }
+        
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         self.view!.addGestureRecognizer(tap)
-
-
+        
+        
         
     }
     
@@ -91,7 +92,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidAppear(animated)
         
         if(FBSDKAccessToken.currentAccessToken() != nil) {
-    //        performSegueWithIdentifier("loginToFeed", sender: self)
+            //        performSegueWithIdentifier("loginToFeed", sender: self)
         } else {
             print("Must Log In")
         }
@@ -109,16 +110,16 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
-        self.i = 1
+        
         activitySpinner.startAnimating()
         
         self.facebookLoginButton.hidden = true
-//        if self.loginButton.hidden == true {
-//            } else {
-//            print("Facebook Not Logged In")
-//        }
+        //        if self.loginButton.hidden == true {
+        //            } else {
+        //            print("Facebook Not Logged In")
+        //        }
         
-       
+        
         // Code to deal with users who hit cancel on the facebook login access.
         if (error != nil)
         {
@@ -130,11 +131,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // handle the cancel event, show the login button
             self.facebookLoginButton.hidden = false
             activitySpinner.stopAnimating()
-
+            
         } else {  // User hits OK to grant rights to use Facebook Login.
             print("user logged in")
-           
-
+            
+            
             // Since Firebase cannot see users logged in even with facebook set up correctly, we have to add this code. Located in guides, auth, facebook, step 4.
             
             // This is getting an access token for the signed-in user and exchanging it for a Firebase credential:
@@ -146,13 +147,39 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
                 print("user logged into firebase")
                 
-            // When user signed in with Facebook, send to address view controller.
-              
+                // When user signed in with Facebook, send to address view controller.
+                let user = FIRAuth.auth()?.currentUser
                 
-                let addressStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-                let ViewController: UIViewController = addressStoryBoard.instantiateViewControllerWithIdentifier("AddressView")
+                let condition = self.usersRef.child("\(user!.uid)")
                 
-                self.presentViewController(ViewController, animated: true, completion: nil)
+                
+                condition.observeEventType(.Value, withBlock:  { (snapshot) in
+                    
+                    
+                    if snapshot.exists() {
+                        
+                        let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+                        // Uncomment this when we get feed done and add HomeView as the storyboard id.
+                        
+                        let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
+                        
+                        self.presentViewController(MapViewController, animated: false, completion: nil)
+                        
+                        
+                        
+                    } else {
+                        
+                        let addressStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+                        let ViewController: UIViewController = addressStoryBoard.instantiateViewControllerWithIdentifier("AddressView")
+                        
+                        self.presentViewController(ViewController, animated: false, completion: nil)
+                    }
+                    
+                    
+                })
+                
+                
+                
                 
                 
             }
@@ -165,37 +192,37 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     @IBAction func loginButtonTapped(sender: AnyObject) {
-  
-            FIRAuth.auth()?.signInWithEmail(userNameField.text!, password: passwordField.text!) { (user, error) in
+        
+        FIRAuth.auth()?.signInWithEmail(userNameField.text!, password: passwordField.text!) { (user, error) in
+            
+            if error == nil {
+                print("User Logged In")
                 
-                if error == nil {
-                    print("User Logged In")
-                    
-                    self.performSegueWithIdentifier("loginToMap", sender: self)
-                           
-                }
-                else {
-                    print("Invalid Login")
-                    
-                    let alertController = UIAlertController(title: nil, message: "\(error!.localizedDescription)", preferredStyle: .Alert)
-                    
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-                        // ...
-                    }
-                    alertController.addAction(cancelAction)
-                    
-                    let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
-                        // ...
-                    }
-                    alertController.addAction(OKAction)
-//
-                    self.presentViewController(alertController, animated: true) {
-                        // ...
-                    }
-                }
+                self.performSegueWithIdentifier("loginToMap", sender: self)
                 
             }
+            else {
+                print("Invalid Login")
+                
+                let alertController = UIAlertController(title: nil, message: "\(error!.localizedDescription)", preferredStyle: .Alert)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                    // ...
+                }
+                alertController.addAction(cancelAction)
+                
+                let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                //
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
+            }
+            
         }
+    }
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -209,8 +236,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         return true
     }
-
+    
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
-
+    
 }
 

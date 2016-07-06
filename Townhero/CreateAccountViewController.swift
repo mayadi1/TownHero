@@ -21,6 +21,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var addressField: UITextField!
+    @IBOutlet weak var zipField: UITextField!
     
     
     let usersRef = FIRDatabase.database().reference().child("users")

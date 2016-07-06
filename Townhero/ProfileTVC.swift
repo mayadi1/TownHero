@@ -11,7 +11,7 @@ import Firebase
 import FirebaseStorage
 import FBSDKCoreKit
 
-class ProfileTVC: UITableViewController {
+class ProfileTVC: UITableViewController, SettingsDelegate {
    
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var organizationImageView: UIImageView!
@@ -153,12 +153,25 @@ class ProfileTVC: UITableViewController {
     }
     
     
+    
+    func settingsDidDismiss() {
+       self.parentViewController?.parentViewController?.dismissViewControllerAnimated(false, completion: nil)
+        
+    }
+    
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toEditProfileSegue"{
             let dvc = segue.destinationViewController as! EditProfileTableVC
+        }
+        if segue.identifier == "toSettingsVC" {
+            let dvc = segue.destinationViewController as! SettingsVC
+            dvc.delegate = self
+        }
 //            dvc.passedTownHeroUser = townHeroUser!
             
-    }
+    
 }
 
 

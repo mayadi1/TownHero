@@ -515,7 +515,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="kgL-jR-W9c" kind="show" id="Hdg-aD-yC2"/>
+                                            <segue destination="kgL-jR-W9c" kind="show" identifier="toSettingsVC" id="Hdg-aD-yC2"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="CNL-2x-JAg">
