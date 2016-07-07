@@ -28,10 +28,28 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func nextButtonPressed(sender: AnyObject) {
+        if nameField.text != "" && addressField.text != "" && zipField.text != "" {
+            
+            
+            let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            // Uncomment this when we get feed done and add HomeView as the storyboard id.
+            
+            let CreateAccountViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("CreateLogin")
+            
+            self.presentViewController(CreateAccountViewController, animated: true, completion: nil)
+        } else {
+          
+            
+            let alertController = UIAlertController(title: nil, message: "Missing Fields", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Try Again", style: .Cancel) { (action) in
+            }
+                alertController.addAction(cancelAction)
         
+                self.presentViewController(alertController, animated: true, completion: nil)
+
+        }
     }
-    
-   
     @IBAction func alreadyHaveAccountPressed(sender: AnyObject) {
         if((self.presentingViewController) != nil){
             self.dismissViewControllerAnimated(true, completion: nil)

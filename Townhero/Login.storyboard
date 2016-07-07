@@ -283,7 +283,6 @@
                                 <connections>
                                     <action selector="finishButtonTapped:" destination="oOw-F1-RHe" eventType="touchUpInside" id="gPA-xJ-AQ6"/>
                                     <action selector="nextButtonPressed:" destination="EI1-Ka-oXZ" eventType="touchUpInside" id="C9C-Kv-YZw"/>
-                                    <segue destination="oOw-F1-RHe" kind="show" id="yh3-68-SHE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFx-7E-JZL">
