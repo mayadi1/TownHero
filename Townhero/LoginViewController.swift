@@ -24,13 +24,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     let usersRef = FIRDatabase.database().reference().child("Users")
     
-    
     var loginButton: FBSDKLoginButton = FBSDKLoginButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     //   self.facebookLoginButton.hidden = true
+    //    self.facebookLoginButton.hidden = true
         
         // Setting facebook button to clear background
         customizeButton(self.facebookLoginButton)
@@ -41,7 +40,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
             if user == nil{
                 
-            }else{
+            } else {
+                
+                // Taking the users child and analyzing if the user is logged in and if they have an address already in the system.
                 let condition = self.usersRef.child("\(user!.uid)")
                 
                 condition.observeEventType(.Value, withBlock:  { (snapshot) in
@@ -49,7 +50,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     if user != nil && snapshot.exists() {
                         
                         
-                        self.facebookLoginButton.hidden = false
+                        self.facebookLoginButton.hidden = true
                         //         If the user is signed in, show the map page.
                         
                         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
@@ -62,18 +63,17 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                         
                     } else {
                         //                 If user is signed out, show the login button.
-                        //
                         //                 This is the facebook login button.
-                        //
                         
+                        self.facebookLoginButton.hidden = false
                         
-                        //   self.loginButton.center = self.view.center
+                        self.loginButton.center = self.view.center
                         self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
                         self.facebookLoginButton.delegate = self
                         
                         //    self.view!.addSubview(self.loginButton)
                         
-                        self.facebookLoginButton.hidden = false
+                        
                     }
                     
                 })
@@ -200,6 +200,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 self.performSegueWithIdentifier("loginToMap", sender: self)
                 
+                let myValue:NSString = self.userNameField.text!
+                
+                NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"Username")
+                NSUserDefaults.standardUserDefaults().synchronize()
             }
             else {
                 print("Invalid Login")

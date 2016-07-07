@@ -47,7 +47,6 @@ class AddressViewController: UIViewController{
         usersRef.child("\(user!.uid)").child("\(self.zipField.text!)").setValue(self.addressField.text)
         
         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-        // Uncomment this when we get feed done and add HomeView as the storyboard id.
         
         let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
         

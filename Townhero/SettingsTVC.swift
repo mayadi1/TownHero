@@ -47,10 +47,7 @@ class SettingsVC: UITableViewController {
         self.presentViewController(ViewController, animated: true, completion: nil)
         
         
-        
-//        
 //        self.dismissViewControllerAnimated(true) {
-//           
 //            self.delegate?.settingsDidDismiss()
 //        }
     }

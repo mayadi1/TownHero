@@ -17,19 +17,20 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     var selectedPhoto: UIImage!
     
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet var nameField: UITextField!
-    @IBOutlet var emailField: UITextField!
+    
+    @IBOutlet weak var emailField: UITextField!
+
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var addressField: UITextField!
-    @IBOutlet weak var zipField: UITextField!
+  
+    var passNameField: String?
+    var passAddressField: String?
+    var passZipField: String?
     
-    
-    let usersRef = FIRDatabase.database().reference().child("users")
+    let usersRef = FIRDatabase.database().reference().child("Users")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let pushedTap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.selectPhoto(_:)))
         pushedTap.numberOfTapsRequired = 1
@@ -37,14 +38,12 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
-        
-        
-        
+
         
         // Used to dismiss keyboard
         
-                let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
-                self.view!.addGestureRecognizer(tap)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        self.view!.addGestureRecognizer(tap)
         
     }
     
@@ -80,8 +79,11 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         data = UIImageJPEGRepresentation(newImage, 0.1)!
         
         
+        
+        
         FIRAuth.auth()?.createUserWithEmail(emailField.text!, password: passwordField.text!) { (user, error) in
             
+           
             if error == nil {
                 print("User Created")
                 
@@ -89,32 +91,26 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                 
                 if let userID = currentUserUID {
                     //                        self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/townhero-5732d.appspot.com/o/u7ECcv595vgoy64SEnxhOTawcOa2%2Femptyprofilepic.png?alt=media&token=a865bf9d-b8de-4e63-9049-a067de1a75b5")
-                    self.usersRef.child(userID).child("name").setValue(self.nameField.text)
+                    self.usersRef.child(userID).child("name").setValue(self.passNameField!)
                     self.usersRef.child(userID).child("email").setValue(self.emailField.text)
-                    self.usersRef.child(userID).child("address").setValue(self.addressField.text)
+                    self.usersRef.child(userID).child("address").setValue(self.passAddressField!)
+                    self.usersRef.child(userID).child("zip").setValue(self.passZipField)
+                    
+                    
                     
                     let rootRef = FIRDatabase.database().reference()
                     
                     let changeRequest = user?.profileChangeRequest()
-             //       changeRequest?.photoURL = self.profileImage.image
-                    changeRequest?.displayName = self.nameField.text
-              //      changeRequest?.displayName = self.emailField.text
+                  //  changeRequest?.photoURL = NSURL(string: )
+                    changeRequest?.displayName = self.passNameField!
+                    //      changeRequest?.displayName = self.emailField.text
                     changeRequest?.commitChangesWithCompletion({ (error) in
                         if let error = error {
                             print(error.localizedDescription)
                             
-                            
-                            
-                            
                             return
                         }
-                        
-                        
                     })
-                    
-                    
-                    
-                    
                     
                     let filePath = "profileImage/\(user!.uid)"
                     let metadata =  FIRStorageMetadata()
@@ -126,7 +122,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                             return
                         }
                         self.fileUrl = metadata?.downloadURLs![0].absoluteString
-                        rootRef.child("users").child("\(user!.uid)").child("userProfilePic").setValue(self.fileUrl)
+                        rootRef.child("Users").child("\(user!.uid)").child("userProfilePic").setValue(self.fileUrl)
                         let changeRequestPhoto = user!.profileChangeRequest()
                         changeRequestPhoto.photoURL = NSURL(string: self.fileUrl)
                         changeRequestPhoto.commitChangesWithCompletion({ (error) in
@@ -141,37 +137,33 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                         
                     })
                     
-                    
-                    let alertController = UIAlertController(title: "Welcome", message: "Sign up completed", preferredStyle: .Alert)
-                    
-                    
-                    let OKAction = UIAlertAction(title: "Login", style: .Default) { (action:UIAlertAction!) in
+                            let alertController = UIAlertController(title: "Welcome", message: "Sign up completed", preferredStyle: .Alert)
+                            
+                            
+                            let OKAction = UIAlertAction(title: "Login", style: .Default) { (action:UIAlertAction!) in
+                                
+                                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+                                
+                                
+                                let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
+                                
+                                self.presentViewController(MapViewController, animated: false, completion: nil)
+                            }
+                            alertController.addAction(OKAction)
+                            
+                            self.presentViewController(alertController, animated: true, completion:nil)
+                            
+                        
                         
                         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
                         
                         
-                        let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
+                        let mainViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
                         
-                        self.presentViewController(MapViewController, animated: false, completion: nil)
-                    }
-                    alertController.addAction(OKAction)
+                        self.presentViewController(mainViewController, animated: true, completion: nil)
                     
-                    self.presentViewController(alertController, animated: true, completion:nil)
-                    
-                    
-                    
+                        }
                 }
-                
-                
-                
-                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-                
-                
-                let mainViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
-                
-                self.presentViewController(mainViewController, animated: true, completion: nil)
-            }
-                
             else {
                 print(error?.description)
                 print("User Not Created")
@@ -248,6 +240,10 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         return newImage
     }
     
+    @IBAction func alreadyHaveAccountPressed(sender: AnyObject) {
+                self.view.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+   
     
     
 }
