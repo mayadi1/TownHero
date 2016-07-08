@@ -17,18 +17,25 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     var verifyPasswordTextField: UITextField?
+<<<<<<< HEAD
     
     
     
     var check = 0
+=======
+
+>>>>>>> origin/MoBranch
     let user = FIRAuth.auth()?.currentUser
     let ref = FIRDatabase.database().reference()
     
     var passedTownHeroUser: TownHeroUser?
     var townHeroUser: TownHeroUser?
     
+<<<<<<< HEAD
     let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
     
+=======
+>>>>>>> origin/MoBranch
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +44,7 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
         addressTextField.delegate = self
         
         
+<<<<<<< HEAD
         
         
         editProfilePicImageView.userInteractionEnabled = true
@@ -48,6 +56,8 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
         
         addressTextField.placeholder = TownHeroUser.sharedInstance.userAddress
         
+=======
+>>>>>>> origin/MoBranch
         editProfilePicImageView.layer.masksToBounds = false
         editProfilePicImageView.layer.cornerRadius = editProfilePicImageView.frame.height / 2
         editProfilePicImageView.clipsToBounds = true
@@ -56,21 +66,35 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
         emailTextField.placeholder = TownHeroUser.sharedInstance.email
         fullNameTextField.placeholder = TownHeroUser.sharedInstance.name
         editProfilePicImageView.image = TownHeroUser.sharedInstance.profilepicture
+<<<<<<< HEAD
         addressTextField.placeholder = TownHeroUser.sharedInstance.userAddress
+=======
+>>>>>>> origin/MoBranch
         
         
     }
     
+<<<<<<< HEAD
     // This func is for editing the full name, email, and address
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         let changeTextRequest = self.user!.profileChangeRequest()
         
+=======
+    
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        let changeTextRequest = self.user!.profileChangeRequest()
+        
+        
+>>>>>>> origin/MoBranch
         // IF NAMETEXTFIELD IS BEING EDITED ---------------------------------------------------------------------------------------------------
         
         if fullNameTextField.editing {
             fullNameTextField.autocorrectionType = .No
             changeTextRequest.displayName = fullNameTextField.text
             changeTextRequest.commitChangesWithCompletion({ (error) in
+<<<<<<< HEAD
                 // UPDATE NAME IN FB AUTH
                 if let error = error{
                     print(error.localizedDescription)
@@ -88,6 +112,18 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                         let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
                         self.ref.child("Users").child(userID).child("name").setValue(self.fullNameTextField.text)
                         self.fullNameTextField.placeholder = self.fullNameTextField.text
+=======
+                if let error = error{
+                    print(error.localizedDescription)
+                    self.resignFirstResponder()
+                    return
+                }
+                else if self.fullNameTextField.text != "" {
+                    print("Profile Updated")
+                    let verifyNameAlertController = UIAlertController(title: "Edit Name", message: "Name Has Been Updated!", preferredStyle: .Alert)
+                    let verifyNameAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                        // ...
+>>>>>>> origin/MoBranch
                     })
                     
                     verifyNameAlertController.addAction(verifyNameAction)
@@ -103,6 +139,7 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
         
         if emailTextField.editing {
             
+<<<<<<< HEAD
             FIRAuth.auth()?.signInWithEmail((user?.email)!, password: verifyPasswordTextField!.text!, completion: { (user, error) in
                 if let error = error{
                     print(error.localizedDescription)
@@ -133,10 +170,35 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                     })
                 }
             })
+=======
+                FIRAuth.auth()?.signInWithEmail((user?.email)!, password: verifyPasswordTextField!.text!, completion: { (user, error) in
+                    if let error = error{
+                        print(error.localizedDescription)
+                        
+                        
+                    }else{
+                        
+                        user?.updateEmail(self.emailTextField.text!, completion: { (error) in
+                            if let error = error{
+                                print(error.localizedDescription)
+                                self.resignFirstResponder()
+                                return
+                            }else{
+                                print("Email Updated")
+                                self.view.endEditing(true)
+                            }
+                        })
+                        ///
+                    }
+                })
+            }
+        
+>>>>>>> origin/MoBranch
             return true
         }
         
         
+<<<<<<< HEAD
         if addressTextField.editing {
             
             self.check = 1
@@ -208,4 +270,39 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
 
     
     //End of the editProfile Class
+=======
+        func textFieldDidBeginEditing(textField: UITextField) {
+            if (emailTextField.editing && self.verifyPasswordTextField?.text == nil){
+                let verifyEmailAlertController = UIAlertController(title: "Verify Current Password", message: nil, preferredStyle: .Alert)
+                let verifyEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                    //                if let emailVerify = verifyEmailTextField?.text {
+                    //                    print(" Email = \(emailVerify)")
+                    //                } else {
+                    //                    print("No Username entered")
+                    //                }
+                    //                if let passwordVerify = verifyPasswordTextField.text {
+                    //                    print("Password = \(passwordVerify)")
+                    //                } else {
+                    //                    print("No password entered")
+                    //                }
+                })
+                
+                
+                verifyEmailAlertController.addTextFieldWithConfigurationHandler({ (UITextField) in
+                    self.verifyPasswordTextField = UITextField
+                    self.verifyPasswordTextField!.placeholder = "Current Password"
+                    self.verifyPasswordTextField!.autocorrectionType = .No
+                    self.verifyPasswordTextField?.secureTextEntry = true
+                    
+                })
+                
+                verifyEmailAlertController.addAction(verifyEmailAction)
+                
+                self.presentViewController(verifyEmailAlertController, animated: true, completion: nil)
+            }
+            
+        }
+        
+        //End of the editProfile Class
+>>>>>>> origin/MoBranch
 }

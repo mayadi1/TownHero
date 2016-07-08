@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FBSDKCoreKit
+<<<<<<< HEAD
 import SideMenu
 import FirebaseDatabase
 
@@ -22,14 +23,22 @@ class ProfileTVC: UITableViewController {
     var delegate: SettingsDelegate?
     let menuLeftNavigationController = UISideMenuNavigationController()
     // UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration of it here like setting its viewControllers.
+=======
+
+class ProfileTVC: UITableViewController {
+    
+>>>>>>> origin/MoBranch
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
     var townHeroUser: TownHeroUser?
     let ref = FIRDatabase.database().reference()
+<<<<<<< HEAD
     let userRef = FIRDatabase.database().reference().child("Users")
     
     
+=======
+>>>>>>> origin/MoBranch
     
     // observe an event in Firebase. You can observe a single event or multiple event, everytime there is a change to users, then there is a method that gets called. Since Friebase is so quick everytime you come in to the viewAppears, you already make an API call and hit FireBase
     //
@@ -40,9 +49,14 @@ class ProfileTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD
         userPic.layer.masksToBounds = false
         userPic.layer.cornerRadius = userPic.frame.height / 2
         userPic.clipsToBounds = true
+=======
+        
+        self.userPic.layer.cornerRadius = 19
+>>>>>>> origin/MoBranch
         
         // Use a Singleton for the current user that's logged in so I don't have to constantly keep retrieving user information from Firebase
         if let user = FIRAuth.auth()?.currentUser {
@@ -50,7 +64,10 @@ class ProfileTVC: UITableViewController {
             TownHeroUser.sharedInstance.name = user.displayName
             TownHeroUser.sharedInstance.uid = user.uid
             
+<<<<<<< HEAD
             
+=======
+>>>>>>> origin/MoBranch
             if user.photoURL != nil {
                 if let data = NSData(contentsOfURL: user.photoURL!){
                     self.userPic!.image = UIImage.init(data: data)
@@ -58,6 +75,7 @@ class ProfileTVC: UITableViewController {
             }
             TownHeroUser.sharedInstance.profilepicture = self.userPic.image
             
+<<<<<<< HEAD
             self.nameLabel.text = TownHeroUser.sharedInstance.name
             self.userPic.image = TownHeroUser.sharedInstance.profilepicture
             
@@ -127,4 +145,33 @@ class ProfileTVC: UITableViewController {
 //            
 //        }
     }
+=======
+            
+            
+            self.nameLabel.text = TownHeroUser.sharedInstance.name
+            self.userPic.image = TownHeroUser.sharedInstance.profilepicture
+           
+
+            if let homeAddress: String? = user.accessibilityLabel {
+                TownHeroUser.sharedInstance.userAddress = homeAddress
+            }
+            
+            
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toEditProfileSegue"{
+            let dvc = segue.destinationViewController as! EditProfileTableVC
+            //            dvc.passedTownHeroUser = townHeroUser!
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+>>>>>>> origin/MoBranch
 }//End of the ProfileTVC class

@@ -181,7 +181,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
         }
     
+<<<<<<< HEAD
     func dismissKeyboard() {
+=======
+    override func dismissKeyboard() {
+>>>>>>> origin/MoBranch
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }

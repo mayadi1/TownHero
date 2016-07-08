@@ -18,7 +18,11 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     
+<<<<<<< HEAD
     let usersRef = FIRDatabase.database().reference().child("Users")
+=======
+    let usersRef = FIRDatabase.database().reference().child("users")
+>>>>>>> origin/MoBranch
 
     
     override func viewDidLoad() {
@@ -118,7 +122,11 @@ class CreateAccountViewController: UIViewController {
         }
     }
     
+<<<<<<< HEAD
     func dismissKeyboard() {
+=======
+    override func dismissKeyboard() {
+>>>>>>> origin/MoBranch
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
