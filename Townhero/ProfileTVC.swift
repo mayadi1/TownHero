@@ -70,9 +70,10 @@ class ProfileTVC: UITableViewController {
 //        })
 //        
         let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
-        ref.child("Users").child(userID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+        ref.child("Users").child(userID).observeEventType(.Value, withBlock: { (snapshot) in
             let dataDict = snapshot.value as! [String: AnyObject]
             
+
             let address = dataDict["address"] as! String
             print(address)
           
