@@ -9,7 +9,7 @@
         <!--Delegate-->
         <scene sceneID="4Bb-Z9-zAy">
             <objects>
-                <viewController storyboardIdentifier="LoginView" id="B2D-9U-kV7" customClass="LoginViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B2D-9U-kV7" customClass="LoginViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UU4-qj-0hR"/>
                         <viewControllerLayoutGuide type="bottom" id="EVM-vs-CoP"/>

@@ -11,7 +11,7 @@ import Firebase
 import FirebaseStorage
 import FBSDKCoreKit
 
-class EditProfileTableVC: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var editProfilePicImageView: UIImageView!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -34,6 +34,7 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate, UIImagePic
         emailTextField.delegate = self
         addressTextField.delegate = self
         
+        
         editProfilePicImageView.userInteractionEnabled = true
         let aSelector: Selector = "TapFunc"
         let profilePicTapGesture = UITapGestureRecognizer(target: self, action: aSelector)
@@ -41,6 +42,8 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate, UIImagePic
         editProfilePicImageView.addGestureRecognizer(profilePicTapGesture)
         
         
+        addressTextField.placeholder = TownHeroUser.sharedInstance.userAddress
+     
         editProfilePicImageView.layer.masksToBounds = false
         editProfilePicImageView.layer.cornerRadius = editProfilePicImageView.frame.height / 2
         editProfilePicImageView.clipsToBounds = true
@@ -48,66 +51,11 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate, UIImagePic
         
         emailTextField.placeholder = TownHeroUser.sharedInstance.email
         fullNameTextField.placeholder = TownHeroUser.sharedInstance.name
-//        editProfilePicImageView.image = TownHeroUser.sharedInstance.profilepicture
+        editProfilePicImageView.image = TownHeroUser.sharedInstance.profilepicture
+        addressTextField.placeholder = TownHeroUser.sharedInstance.userAddress
         
         
     }
-    
-    func TapFunc() {
-        print("Profile Pic Tapped")
-          let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = true
-        
-        let photoOptionAlertController = UIAlertController(title: "Edit Profile Picture", message: nil, preferredStyle: .Alert)
-        
-        let cameraAction = UIAlertAction(title: "Take a Camera Shot", style: .Default, handler: { (UIAlertAction) in
-            
-            imagePicker.sourceType = .Camera
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-            
-        })
-        
-        let photoLibraryAction = UIAlertAction(title: "Choose from Photo Library", style: .Default, handler: { (UIAlertAction) in
-             imagePicker.sourceType = .PhotoLibrary
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) in
-            // ..
-        }
-        
-        photoOptionAlertController.addAction(cameraAction)
-        photoOptionAlertController.addAction(photoLibraryAction)
-        photoOptionAlertController.addAction(cancelAction)
-        
-        self.presentViewController(photoOptionAlertController, animated: true, completion: nil)
-    }
-   
-    // CAMERA FUNCTION
-//    print("Profile Pic Tapped")
-//    let imagePicker = UIImagePickerController()
-//    imagePicker.delegate = self
-//    imagePicker.allowsEditing = true
-//    
-//    
-//    if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-//    imagePicker.sourceType = .Camera
-//
-//    }else{
-//    imagePicker.sourceType = .PhotoLibrary
-//    }
-//    self.presentViewController(imagePicker, animated: true, completion: nil)
-    
-    
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        editProfilePicImageView.image = image
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         let changeTextRequest = self.user!.profileChangeRequest()

@@ -11,6 +11,7 @@ import Mapbox
 import CoreLocation
 import AddressBookUI
 import SideMenu
+import Firebase
 
 class MapViewController: UIViewController, MGLMapViewDelegate {
     
@@ -36,8 +37,12 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var DescriptionTextField: UITextField!
     
     @IBOutlet weak var doneButtonOutlet: UIButton!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         
         

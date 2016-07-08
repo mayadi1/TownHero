@@ -18,7 +18,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     
-    let usersRef = FIRDatabase.database().reference().child("users")
+    let usersRef = FIRDatabase.database().reference().child("Users")
 
     
     override func viewDidLoad() {
