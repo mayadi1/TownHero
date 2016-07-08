@@ -19,8 +19,6 @@
 		35E69C941D26C03C00271D7A /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C931D26C03C00271D7A /* UserClass.swift */; };
 		35EADA151D2C100000083C6A /* GestureRecognizerPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EADA141D2C100000083C6A /* GestureRecognizerPic.swift */; };
 		35EADA171D2E252900083C6A /* EditProfile+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EADA161D2E252900083C6A /* EditProfile+handlers.swift */; };
-		4416699E1D26E19E00493B89 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416699D1D26E19E00493B89 /* Mapbox.framework */; };
-		4416699F1D26E19F00493B89 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4416699D1D26E19E00493B89 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		441669A21D26E1DF00493B89 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441669A11D26E1DF00493B89 /* Map.storyboard */; };
 		441669A41D26E21D00493B89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441669A31D26E21D00493B89 /* ViewController.swift */; };
 		449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449869EA1D20898F0023F9B0 /* Assets.xcassets */; };
@@ -63,7 +61,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4416699F1D26E19F00493B89 /* Mapbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,7 +81,6 @@
 		35E69C931D26C03C00271D7A /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
 		35EADA141D2C100000083C6A /* GestureRecognizerPic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureRecognizerPic.swift; sourceTree = "<group>"; };
 		35EADA161D2E252900083C6A /* EditProfile+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditProfile+handlers.swift"; sourceTree = "<group>"; };
-		4416699D1D26E19E00493B89 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		441669A11D26E1DF00493B89 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		441669A31D26E21D00493B89 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,7 +117,6 @@
 			files = (
 				449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */,
 				8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */,
-				4416699E1D26E19E00493B89 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +170,6 @@
 		449869D71D20898E0023F9B0 = {
 			isa = PBXGroup;
 			children = (
-				4416699D1D26E19E00493B89 /* Mapbox.framework */,
 				35E69C031D21B74000271D7A /* Profile */,
 				449869F71D20898F0023F9B0 /* TownheroTests */,
 				449869E21D20898F0023F9B0 /* Townhero */,
