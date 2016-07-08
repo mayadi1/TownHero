@@ -19,12 +19,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
-    
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     let usersRef = FIRDatabase.database().reference().child("Users")
     
     var loginButton: FBSDKLoginButton = FBSDKLoginButton()
+    
+    var backgroundColours = [UIColor()]
+    var backgroundLoop = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         
         // This code will check to see if the user is signed in or not. Located in firebase manage users: Step 1.
+        
+        
+        backgroundColours = [UIColor.redColor(), UIColor.purpleColor()]
+        backgroundLoop = 0
+        self.animateBackgroundColour()
+        
+        
         
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
             if user == nil{
@@ -214,6 +223,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
             else {
                 print("Invalid Login")
+                print(error?.code)
                 
                 let alertController = UIAlertController(title: nil, message: "\(error!.localizedDescription)", preferredStyle: .Alert)
                 
@@ -234,6 +244,21 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
         }
     }
+    
+    
+    func animateBackgroundColour () {
+        if backgroundLoop < backgroundColours.count - 1 {
+            backgroundLoop += 1
+        } else {
+            backgroundLoop = 0
+        }
+        UIView.animateWithDuration(15, delay: 0, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            self.view.backgroundColor =  self.backgroundColours[self.backgroundLoop];
+        }) {(Bool) -> Void in
+            self.animateBackgroundColour();
+        }
+    }
+    
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.

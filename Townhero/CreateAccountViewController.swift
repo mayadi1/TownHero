@@ -169,6 +169,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                 else {
                     print(error?.description)
                     print("User Not Created")
+                    print(error?.code)
                     
                     let alertController = UIAlertController(title: nil, message: "\(error!.localizedDescription)", preferredStyle: .Alert)
                     
