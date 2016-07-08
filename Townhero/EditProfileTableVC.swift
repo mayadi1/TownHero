@@ -71,6 +71,7 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
             fullNameTextField.autocorrectionType = .No
             changeTextRequest.displayName = fullNameTextField.text
             changeTextRequest.commitChangesWithCompletion({ (error) in
+                // UPDATE NAME IN FB AUTH
                 if let error = error{
                     print(error.localizedDescription)
                     self.resignFirstResponder()
@@ -79,9 +80,11 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                 }
                 else if self.fullNameTextField.text != "" {
                     print("\(self.user?.displayName)")
+                    // UPDATE NAME HAS BEEN CHANGED
                     let verifyNameAlertController = UIAlertController(title: "Edit Name", message: "Name Has Been Updated!", preferredStyle: .Alert)
                     let verifyNameAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
                         // ...
+                        // UPDATE NAME IN FB DATABASE
                         let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
                         self.ref.child("Users").child(userID).child("name").setValue(self.fullNameTextField.text)
                         self.fullNameTextField.placeholder = self.fullNameTextField.text
@@ -143,6 +146,16 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                 self.check = 0
                 self.addressTextField.placeholder = self.addressTextField.text
                 addressTextField.endEditing(true)
+                
+                let verifyNameAlertController = UIAlertController(title: "Edit Address", message: "Address Has Been Updated!", preferredStyle: .Alert)
+                let verifyNameAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                    // ...
+                })
+                
+                verifyNameAlertController.addAction(verifyNameAction)
+                
+                self.presentViewController(verifyNameAlertController, animated: true, completion: nil)
+                self.view.endEditing(true)
                 
                 self.view.endEditing(true)
                 return true
