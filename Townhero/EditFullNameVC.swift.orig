@@ -83,6 +83,11 @@ class EditFullNameVC: UIViewController, UITextFieldDelegate {
 
         
     }
+<<<<<<< HEAD
+    
+    
+=======
+>>>>>>> Address2
 }
     
 // WORK IN PROGRESS:

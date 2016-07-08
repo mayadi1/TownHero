@@ -11,15 +11,25 @@ import Firebase
 import FirebaseStorage
 import FBSDKCoreKit
 
+<<<<<<< HEAD
 class ProfileTVC: UITableViewController {
+    
+    @IBOutlet weak var userPic: UIImageView!
+=======
+class ProfileTVC: UITableViewController, SettingsDelegate {
    
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var organizationImageView: UIImageView!
+>>>>>>> Address2
     @IBOutlet weak var nameLabel: UILabel!
     
     var townHeroUser: TownHeroUser?
     let ref = FIRDatabase.database().reference()
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> Address2
     // observe an event in Firebase. You can observe a single event or multiple event, everytime there is a change to users, then there is a method that gets called. Since Friebase is so quick everytime you come in to the viewAppears, you already make an API call and hit FireBase
     //
     
@@ -29,6 +39,24 @@ class ProfileTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD
+        
+        self.userPic.layer.cornerRadius = 19
+        
+        // Use a Singleton for the current user that's logged in so I don't have to constantly keep retrieving user information from Firebase
+        if let user = FIRAuth.auth()?.currentUser {
+            TownHeroUser.sharedInstance.email = user.email
+            TownHeroUser.sharedInstance.name = user.displayName
+            TownHeroUser.sharedInstance.uid = user.uid
+            
+            if user.photoURL != nil {
+                if let data = NSData(contentsOfURL: user.photoURL!){
+                    self.userPic!.image = UIImage.init(data: data)
+                }
+            }
+            TownHeroUser.sharedInstance.profilepicture = self.userPic.image
+            
+=======
             userPic.layer.masksToBounds = false
             userPic.layer.cornerRadius = userPic.frame.height / 2
             userPic.clipsToBounds = true
@@ -45,12 +73,12 @@ class ProfileTVC: UITableViewController {
             let data = NSData(contentsOfURL: photoUrl!)
             let profilepicture = UIImage(data: data!)
             
-            ref.child("users").child(user.uid).updateChildValues(["name": user.displayName!])
-            ref.child("users").child(user.uid).updateChildValues(["email": user.email!])
-            ref.child("users").child(user.uid).updateChildValues(["profilepicture": "\(user.photoURL!)"])
-            ref.child("users").child(user.uid).updateChildValues(["homeAddress": "USER ADDRESS DUMMY"])
-            ref.child("users").child(user.uid).updateChildValues(["workAddress": "USER ADDRESS DUMMY"])
-            
+//            ref.child("users").child(user.uid).updateChildValues(["name": user.displayName!])
+//        ref.child("users").child(user.uid).updateChildValues(["email": user.email!])
+//            ref.child("users").child(user.uid).updateChildValues(["profilepicture": "\(user.photoURL!)"])
+//            ref.child("users").child(user.uid).updateChildValues(["homeAddress": "USER ADDRESS DUMMY"])
+//            ref.child("users").child(user.uid).updateChildValues(["workAddress": "USER ADDRESS DUMMY"])
+//            
 //             townHeroUser = TownHeroUser(name: name!, email: email!, photo: photo!, uid: uid)
             
             // Here I instantiate my current user to the singleton TownHeroUser.sharedInstance with his info from FIRAuth
@@ -63,10 +91,28 @@ class ProfileTVC: UITableViewController {
 //            TownHeroUser.sharedInstance.name = name
 //            TownHeroUser.sharedInstance.photo = photo
 //            TownHeroUser.sharedInstance.uid = uid
+>>>>>>> Address2
             
             
             self.nameLabel.text = TownHeroUser.sharedInstance.name
             self.userPic.image = TownHeroUser.sharedInstance.profilepicture
+<<<<<<< HEAD
+           
+
+            if let homeAddress: String? = user.accessibilityLabel {
+                TownHeroUser.sharedInstance.userAddress = homeAddress
+            }
+            
+            
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toEditProfileSegue"{
+            let dvc = segue.destinationViewController as! EditProfileTableVC
+            //            dvc.passedTownHeroUser = townHeroUser!
+            
+=======
             
           
             
@@ -149,16 +195,36 @@ class ProfileTVC: UITableViewController {
             
         } else {
             // No user is signed in.
+>>>>>>> Address2
         }
     }
+    
+    
+    
+<<<<<<< HEAD
+    
+    
+    
+}//End of the ProfileTVC class
+=======
+    func settingsDidDismiss() {
+       self.parentViewController?.parentViewController?.dismissViewControllerAnimated(false, completion: nil)
+        
+    }
+    
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toEditProfileSegue"{
             let dvc = segue.destinationViewController as! EditProfileTableVC
+        }
+        if segue.identifier == "toSettingsVC" {
+            let dvc = segue.destinationViewController as! SettingsVC
+            dvc.delegate = self
+        }
 //            dvc.passedTownHeroUser = townHeroUser!
             
-    }
+    
 }
 
 
@@ -231,3 +297,4 @@ class ProfileTVC: UITableViewController {
     */
 
 }
+>>>>>>> Address2

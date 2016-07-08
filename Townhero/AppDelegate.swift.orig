@@ -40,6 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         authUser = FIRAuth.auth()?.currentUser
         
         
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        if let name = defaults.stringForKey("Users") {
+//            defaults.synchronize()
+//            print(name)
+//        }
 
 //       FIRApp.configure()
         return true
@@ -76,6 +81,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        defaults.setObject("Users", forKey: "name")
+//        defaults.synchronize()
+//    }
+    
 
 }
 

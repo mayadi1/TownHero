@@ -17,8 +17,8 @@ class TownHeroUser {
     var email: String!
     var profilepicture: UIImage!
     var uid: String!
-    var userAddress: String!
-    
+    var homeAddress: String!
+    var workAddress: String!
     
     //Static allows only 1 instance of TownHeroUser to be available
     static let sharedInstance = TownHeroUser()
@@ -36,3 +36,4 @@ class TownHeroUser {
 //    }
     
 }
+// 
