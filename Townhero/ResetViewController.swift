@@ -2,8 +2,8 @@
 //  ResetViewController.swift
 //  Townhero
 //
-//  Created by Cindy Barnsdale on 7/1/16.
-//  Copyright © 2016 Mohamed. All rights reserved.
+//  Created by Salar Kohnechi on 7/1/16.
+//  Copyright © 2016 Salar Kohnechi. All rights reserved.
 //
 
 import UIKit

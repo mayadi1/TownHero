@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		353C96641D2A1CCE00F6C152 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 353C96631D2A1CCE00F6C152 /* Profile.storyboard */; };
 		35E69C091D21FC9A00271D7A /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C081D21FC9A00271D7A /* ProfileTVC.swift */; };
 		35E69C0B1D21FCFA00271D7A /* EditProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C0A1D21FCFA00271D7A /* EditProfileTableVC.swift */; };
 		35E69C0D1D2217DF00271D7A /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C0C1D2217DF00271D7A /* SettingsTVC.swift */; };
@@ -17,26 +16,22 @@
 		35E69C191D22E18700271D7A /* PendingActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C181D22E18700271D7A /* PendingActivityVC.swift */; };
 		35E69C4E1D25BC9C00271D7A /* SlideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C4D1D25BC9C00271D7A /* SlideVC.swift */; };
 		35E69C941D26C03C00271D7A /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E69C931D26C03C00271D7A /* UserClass.swift */; };
-		35EADA151D2C100000083C6A /* GestureRecognizerPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EADA141D2C100000083C6A /* GestureRecognizerPic.swift */; };
-		35EADA171D2E252900083C6A /* EditProfile+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EADA161D2E252900083C6A /* EditProfile+handlers.swift */; };
 		441669A21D26E1DF00493B89 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441669A11D26E1DF00493B89 /* Map.storyboard */; };
-		441669A41D26E21D00493B89 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441669A31D26E21D00493B89 /* MapViewController.swift */; };
-		446911931D2EB65900EBEC44 /* PinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446911921D2EB65900EBEC44 /* PinDetailViewController.swift */; };
-		449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449869EA1D20898F0023F9B0 /* Assets.xcassets */; };
 		449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */; };
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
 		44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */; };
 		449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E50611D22E738009B8F75 /* MapKit.framework */; };
-		44F95E9B1D2C1EDA0093F3B7 /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9A1D2C1EDA0093F3B7 /* Nature.swift */; };
-		44F95E9D1D2C1EE70093F3B7 /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9C1D2C1EE70093F3B7 /* Parking.swift */; };
-		44F95E9F1D2C1EF20093F3B7 /* Safety.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9E1D2C1EF20093F3B7 /* Safety.swift */; };
-		44F95EA11D2C1EFC0093F3B7 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95EA01D2C1EFC0093F3B7 /* Services.swift */; };
-		44FB2A3A1D2F8F0100215CFC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44FB2A391D2F8F0100215CFC /* Info.plist */; };
+		44FB2A3C1D2F96D800215CFC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44FB2A3B1D2F96D800215CFC /* Info.plist */; };
+		460B40291D2EA16F00B28D5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460B40281D2EA16F00B28D5F /* Assets.xcassets */; };
+		462E0EA81D2096CB0093893B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462E0EA71D2096CB0093893B /* Login.storyboard */; };
 		462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EA91D20973A0093893B /* LoginViewController.swift */; };
 		462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EAB1D2097450093893B /* CreateAccountViewController.swift */; };
 		463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463D65ED1D275E5E003BDA69 /* ResetViewController.swift */; };
+		46904DCE1D2DF39A00DC3302 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46904DCD1D2DF39A00DC3302 /* SignUpViewController.swift */; };
+		46CF28851D217C210034400F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CF28841D217C210034400F /* Profile.storyboard */; };
 		46F2866E1D29DA6B0050D1EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */; };
+		46F286701D2A08C20050D1EF /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2866F1D2A08C20050D1EF /* AddressViewController.swift */; };
 		6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */; };
 		8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */; };
 		B6EFB1D2F021021CD1CF7F4C /* Pods_TownheroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */; };
@@ -59,22 +54,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		441669A01D26E19F00493B89 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		353C96631D2A1CCE00F6C152 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		35E69C081D21FC9A00271D7A /* ProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
 		35E69C0A1D21FCFA00271D7A /* EditProfileTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableVC.swift; sourceTree = "<group>"; };
 		35E69C0C1D2217DF00271D7A /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
@@ -84,13 +65,8 @@
 		35E69C181D22E18700271D7A /* PendingActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingActivityVC.swift; sourceTree = "<group>"; };
 		35E69C4D1D25BC9C00271D7A /* SlideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideVC.swift; sourceTree = "<group>"; };
 		35E69C931D26C03C00271D7A /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
-		35EADA141D2C100000083C6A /* GestureRecognizerPic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureRecognizerPic.swift; sourceTree = "<group>"; };
-		35EADA161D2E252900083C6A /* EditProfile+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditProfile+handlers.swift"; sourceTree = "<group>"; };
 		441669A11D26E1DF00493B89 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		441669A31D26E21D00493B89 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		446911921D2EB65900EBEC44 /* PinDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDetailViewController.swift; sourceTree = "<group>"; };
 		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		449869EA1D20898F0023F9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449869ED1D20898F0023F9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449869F41D20898F0023F9B0 /* TownheroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869F81D20898F0023F9B0 /* TownheroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroTests.swift; sourceTree = "<group>"; };
@@ -100,15 +76,16 @@
 		44986A051D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		449E50611D22E738009B8F75 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		44F95E9A1D2C1EDA0093F3B7 /* Nature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nature.swift; sourceTree = "<group>"; };
-		44F95E9C1D2C1EE70093F3B7 /* Parking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
-		44F95E9E1D2C1EF20093F3B7 /* Safety.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Safety.swift; sourceTree = "<group>"; };
-		44F95EA01D2C1EFC0093F3B7 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		44FB2A391D2F8F0100215CFC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44FB2A3B1D2F96D800215CFC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		460B40281D2EA16F00B28D5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		462E0EA71D2096CB0093893B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		462E0EA91D20973A0093893B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		462E0EAB1D2097450093893B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		463D65ED1D275E5E003BDA69 /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
+		46904DCD1D2DF39A00DC3302 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		46CF28841D217C210034400F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		46F2866F1D2A08C20050D1EF /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.release.xcconfig"; sourceTree = "<group>"; };
 		73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TownheroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A104963BD68D304D080ED305 /* Pods-TownheroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TownheroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TownheroTests/Pods-TownheroTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,12 +128,13 @@
 		35E69C031D21B74000271D7A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				353C96631D2A1CCE00F6C152 /* Profile.storyboard */,
+				46CF28841D217C210034400F /* Profile.storyboard */,
 				35E69C1A1D23802B00271D7A /* Edit Profile */,
 				35E69C081D21FC9A00271D7A /* ProfileTVC.swift */,
 				35E69C181D22E18700271D7A /* PendingActivityVC.swift */,
 				35E69C931D26C03C00271D7A /* UserClass.swift */,
 				35E69C4D1D25BC9C00271D7A /* SlideVC.swift */,
+				35E69C0C1D2217DF00271D7A /* SettingsTVC.swift */,
 			);
 			name = Profile;
 			path = Townhero;
@@ -166,11 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				35E69C0A1D21FCFA00271D7A /* EditProfileTableVC.swift */,
-				35EADA161D2E252900083C6A /* EditProfile+handlers.swift */,
-				35EADA141D2C100000083C6A /* GestureRecognizerPic.swift */,
 				35E69C0E1D224CC800271D7A /* EditFullNameVC.swift */,
 				35E69C101D2253F500271D7A /* EditEmailViewController.swift */,
-				35E69C0C1D2217DF00271D7A /* SettingsTVC.swift */,
 				35E69C121D22C35200271D7A /* EditLocationVC.swift */,
 			);
 			name = "Edit Profile";
@@ -202,17 +177,17 @@
 		449869E21D20898F0023F9B0 /* Townhero */ = {
 			isa = PBXGroup;
 			children = (
+				46F2866F1D2A08C20050D1EF /* AddressViewController.swift */,
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
+				46904DCD1D2DF39A00DC3302 /* SignUpViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
 				46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */,
-				441669A31D26E21D00493B89 /* MapViewController.swift */,
-				44F95EA21D2C1F0A0093F3B7 /* PostInfo */,
 				463D65ED1D275E5E003BDA69 /* ResetViewController.swift */,
-				449869EA1D20898F0023F9B0 /* Assets.xcassets */,
+				460B40281D2EA16F00B28D5F /* Assets.xcassets */,
+				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				441669A11D26E1DF00493B89 /* Map.storyboard */,
-				446911921D2EB65900EBEC44 /* PinDetailViewController.swift */,
 				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
-				44FB2A391D2F8F0100215CFC /* Info.plist */,
+				44FB2A3B1D2F96D800215CFC /* Info.plist */,
 				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
 			);
 			path = Townhero;
@@ -234,17 +209,6 @@
 				44986A051D20898F0023F9B0 /* Info.plist */,
 			);
 			path = TownheroUITests;
-			sourceTree = "<group>";
-		};
-		44F95EA21D2C1F0A0093F3B7 /* PostInfo */ = {
-			isa = PBXGroup;
-			children = (
-				44F95E9A1D2C1EDA0093F3B7 /* Nature.swift */,
-				44F95E9C1D2C1EE70093F3B7 /* Parking.swift */,
-				44F95E9E1D2C1EF20093F3B7 /* Safety.swift */,
-				44F95EA01D2C1EFC0093F3B7 /* Services.swift */,
-			);
-			name = PostInfo;
 			sourceTree = "<group>";
 		};
 		83F651AB8E462073CAC7E67A /* Frameworks */ = {
@@ -284,7 +248,6 @@
 				449869DE1D20898F0023F9B0 /* Resources */,
 				F2ED8AFC423C455BF459A1D8 /* [CP] Embed Pods Frameworks */,
 				8ABA078A4A1F468AF759EDAE /* [CP] Copy Pods Resources */,
-				441669A01D26E19F00493B89 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,7 +311,7 @@
 				TargetAttributes = {
 					449869DF1D20898F0023F9B0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6KKRC5GQMV;
+						DevelopmentTeam = EQ39KCD6SJ;
 					};
 					449869F31D20898F0023F9B0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -386,11 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				441669A21D26E1DF00493B89 /* Map.storyboard in Resources */,
-				353C96641D2A1CCE00F6C152 /* Profile.storyboard in Resources */,
-				44FB2A3A1D2F8F0100215CFC /* Info.plist in Resources */,
+				46CF28851D217C210034400F /* Profile.storyboard in Resources */,
 				449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */,
 				44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */,
-				449869EB1D20898F0023F9B0 /* Assets.xcassets in Resources */,
+				460B40291D2EA16F00B28D5F /* Assets.xcassets in Resources */,
+				462E0EA81D2096CB0093893B /* Login.storyboard in Resources */,
+				44FB2A3C1D2F96D800215CFC /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,25 +504,19 @@
 			files = (
 				463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */,
 				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
-				35EADA151D2C100000083C6A /* GestureRecognizerPic.swift in Sources */,
 				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
-				44F95E9F1D2C1EF20093F3B7 /* Safety.swift in Sources */,
 				46F2866E1D29DA6B0050D1EF /* AppDelegate.swift in Sources */,
 				35E69C0D1D2217DF00271D7A /* SettingsTVC.swift in Sources */,
 				35E69C0B1D21FCFA00271D7A /* EditProfileTableVC.swift in Sources */,
-				35EADA171D2E252900083C6A /* EditProfile+handlers.swift in Sources */,
 				35E69C091D21FC9A00271D7A /* ProfileTVC.swift in Sources */,
 				35E69C4E1D25BC9C00271D7A /* SlideVC.swift in Sources */,
+				46F286701D2A08C20050D1EF /* AddressViewController.swift in Sources */,
 				35E69C131D22C35200271D7A /* EditLocationVC.swift in Sources */,
 				35E69C191D22E18700271D7A /* PendingActivityVC.swift in Sources */,
 				35E69C0F1D224CC800271D7A /* EditFullNameVC.swift in Sources */,
 				35E69C941D26C03C00271D7A /* UserClass.swift in Sources */,
 				35E69C111D2253F500271D7A /* EditEmailViewController.swift in Sources */,
-				44F95E9D1D2C1EE70093F3B7 /* Parking.swift in Sources */,
-				44F95E9B1D2C1EDA0093F3B7 /* Nature.swift in Sources */,
-				44F95EA11D2C1EFC0093F3B7 /* Services.swift in Sources */,
-				441669A41D26E21D00493B89 /* MapViewController.swift in Sources */,
-				446911931D2EB65900EBEC44 /* PinDetailViewController.swift in Sources */,
+				46904DCE1D2DF39A00DC3302 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +662,7 @@
 				);
 				INFOPLIST_FILE = Townhero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -724,7 +682,7 @@
 				);
 				INFOPLIST_FILE = Townhero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
