@@ -91,7 +91,7 @@ extension EditProfileTableVC: UIImagePickerControllerDelegate, UINavigationContr
     func handleRegister() {
         //successfully authenticated user
         let imageName = NSUUID().UUIDString
-        let storageRef = FIRStorage.storage().reference().child("profile_images").child("\(imageName).png")
+        let storageRef = FIRStorage.storage().reference().child("profileImage").child("\(imageName).png")
         
         if let uploadData = UIImagePNGRepresentation(self.editProfilePicImageView.image!) {
             
@@ -103,7 +103,6 @@ extension EditProfileTableVC: UIImagePickerControllerDelegate, UINavigationContr
                 }
             })
         }
-        
     }
 }
 

@@ -29,6 +29,8 @@ class ProfileTVC: UITableViewController {
     let ref = FIRDatabase.database().reference()
     let userRef = FIRDatabase.database().reference().child("Users")
     
+    
+    
     // observe an event in Firebase. You can observe a single event or multiple event, everytime there is a change to users, then there is a method that gets called. Since Friebase is so quick everytime you come in to the viewAppears, you already make an API call and hit FireBase
     //
     

@@ -23,16 +23,20 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
 
     let user = FIRAuth.auth()?.currentUser
     let ref = FIRDatabase.database().reference()
-    
+
     var passedTownHeroUser: TownHeroUser?
     var townHeroUser: TownHeroUser?
     
+    let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fullNameTextField.delegate = self
         emailTextField.delegate = self
         addressTextField.delegate = self
+        
+   
         
         
         editProfilePicImageView.userInteractionEnabled = true
@@ -57,10 +61,10 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
         
     }
     
+    // This func is for editing the full name, email, and address
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         let changeTextRequest = self.user!.profileChangeRequest()
-        
-        
+
         // IF NAMETEXTFIELD IS BEING EDITED ---------------------------------------------------------------------------------------------------
         
         if fullNameTextField.editing {
@@ -120,17 +124,34 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                                 self.view.endEditing(true)
                             }
                         })
-                        ///
                     }
                 })
             }
         
             return true
+        if addressTextField.editing {
+            let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
+            
+            let key = ref.child("Users").child(userID).childByAutoId().key
+//            let post = ["uid": "\(user.uid)",
+//                        "caption": "\(self.captionTextField!.text!)",
+//                        "location": "\(self.locationTextField!.text!)",
+//                        "friends": "\(self.taggedFriendsTextField!.text!)",
+//                        "imageFilename": "\(final)",
+//                        "postDateTime":"\(now)",
+//                        "postID":"\(key)"]
+//            let childUpdates = ["/user/\(user.uid)/posts/\(key)": post,
+//                                "/posts/\(key)/": post]
+//            ref.updateChildValues(childUpdates)
+            
+            
+            }
         }
-        
-        
-        func textFieldDidBeginEditing(textField: UITextField) {
+    
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
             if (emailTextField.editing && self.verifyPasswordTextField?.text == nil){
+                emailTextField.autocorrectionType = .No
                 let verifyEmailAlertController = UIAlertController(title: "Verify Current Password", message: nil, preferredStyle: .Alert)
                 let verifyEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
                     //                if let emailVerify = verifyEmailTextField?.text {
@@ -160,6 +181,8 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
             }
             
         }
+    
+    
         
         //End of the editProfile Class
 }
