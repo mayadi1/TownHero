@@ -2,8 +2,8 @@
 //  LoginViewController.swift
 //  InstaClone
 //
-//  Created by Cindy Barnsdale on 6/20/16.
-//  Copyright © 2016 Caleb Talbot. All rights reserved.
+//  Created by Salar Kohnechi on 6/20/16.
+//  Copyright © 2016 Salar Kohnechi All rights reserved.
 //
 
 import UIKit
@@ -41,7 +41,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             if user == nil{
                 
             } else {
-                
+            
                 // Taking the users child and analyzing if the user is logged in and if they have an address already in the system.
                 let condition = self.usersRef.child("\(user!.uid)")
                 
@@ -53,11 +53,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                         self.facebookLoginButton.hidden = true
                         //         If the user is signed in, show the map page.
                         
-                        let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+                 
                         
-                        let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
+                       
+                            self.performSegueWithIdentifier("loginToMap", sender: self)
                         
-                        self.presentViewController(MapViewController, animated: false, completion: nil)
+                      
+                        
+//                        let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+//                        
+//                        let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
+//                        
+//                        self.presentViewController(MapViewController, animated: false, completion: nil)
                         
                         
                         

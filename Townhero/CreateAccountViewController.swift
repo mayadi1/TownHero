@@ -2,8 +2,8 @@
 //  CreateAccountViewController.swift
 //  InstaClone
 //
-//  Created by Cindy Barnsdale on 6/20/16.
-//  Copyright © 2016 Caleb Talbot. All rights reserved.
+//  Created by Salar Kohnechi on 6/20/16.
+//  Copyright © 2016 Salar Kohnechi. All rights reserved.
 //
 
 import UIKit
@@ -19,9 +19,12 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var emailField: UITextField!
-
+    
     @IBOutlet weak var passwordField: UITextField!
-  
+    
+    @IBOutlet weak var verifyPassword: UITextField!
+    
+    
     var passNameField: String?
     var passAddressField: String?
     var passZipField: String?
@@ -38,7 +41,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
-
+        
         
         // Used to dismiss keyboard
         
@@ -78,81 +81,80 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         let newImage = self.ResizeImage(self.profileImage.image!,targetSize: CGSizeMake(390, 390.0))
         data = UIImageJPEGRepresentation(newImage, 0.1)!
         
-        
-        
-        
-        FIRAuth.auth()?.createUserWithEmail(emailField.text!, password: passwordField.text!) { (user, error) in
+        if passwordField.text == verifyPassword.text {
             
-           
-            if error == nil {
-                print("User Created")
+            
+            FIRAuth.auth()?.createUserWithEmail(emailField.text!, password: passwordField.text!) { (user, error) in
                 
-                let currentUserUID = FIRAuth.auth()?.currentUser?.uid
                 
-                if let userID = currentUserUID {
-                    //                        self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/townhero-5732d.appspot.com/o/u7ECcv595vgoy64SEnxhOTawcOa2%2Femptyprofilepic.png?alt=media&token=a865bf9d-b8de-4e63-9049-a067de1a75b5")
-                    self.usersRef.child(userID).child("name").setValue(self.passNameField!)
-                    self.usersRef.child(userID).child("email").setValue(self.emailField.text)
-                    self.usersRef.child(userID).child("address").setValue(self.passAddressField!)
-                    self.usersRef.child(userID).child("zip").setValue(self.passZipField)
+                if error == nil {
+                    print("User Created")
                     
+                    let currentUserUID = FIRAuth.auth()?.currentUser?.uid
                     
-                    
-                    let rootRef = FIRDatabase.database().reference()
-                    
-                    let changeRequest = user?.profileChangeRequest()
-                  //  changeRequest?.photoURL = NSURL(string: )
-                    changeRequest?.displayName = self.passNameField!
-                    //      changeRequest?.displayName = self.emailField.text
-                    changeRequest?.commitChangesWithCompletion({ (error) in
-                        if let error = error {
-                            print(error.localizedDescription)
-                            
-                            return
-                        }
-                    })
-                    
-                    let filePath = "profileImage/\(user!.uid)"
-                    let metadata =  FIRStorageMetadata()
-                    metadata.contentType = "image/jpeg"
-                    
-                    self.storageRef.child(filePath).putData(data, metadata: metadata, completion: { (metadata, error) in
-                        if let error = error{
-                            print("\(error.description)")
-                            return
-                        }
-                        self.fileUrl = metadata?.downloadURLs![0].absoluteString
-                        rootRef.child("Users").child("\(user!.uid)").child("userProfilePic").setValue(self.fileUrl)
-                        let changeRequestPhoto = user!.profileChangeRequest()
-                        changeRequestPhoto.photoURL = NSURL(string: self.fileUrl)
-                        changeRequestPhoto.commitChangesWithCompletion({ (error) in
-                            if let error = error{
+                    if let userID = currentUserUID {
+                        //                        self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/townhero-5732d.appspot.com/o/u7ECcv595vgoy64SEnxhOTawcOa2%2Femptyprofilepic.png?alt=media&token=a865bf9d-b8de-4e63-9049-a067de1a75b5")
+                        self.usersRef.child(userID).child("name").setValue(self.passNameField!)
+                        self.usersRef.child(userID).child("email").setValue(self.emailField.text)
+                        self.usersRef.child(userID).child("address").setValue(self.passAddressField!)
+                        self.usersRef.child(userID).child("zip").setValue(self.passZipField)
+                        
+                        
+                        let rootRef = FIRDatabase.database().reference()
+                        
+                        let changeRequest = user?.profileChangeRequest()
+                        //  changeRequest?.photoURL = NSURL(string: )
+                        changeRequest?.displayName = self.passNameField!
+                        //      changeRequest?.displayName = self.emailField.text
+                        changeRequest?.commitChangesWithCompletion({ (error) in
+                            if let error = error {
                                 print(error.localizedDescription)
-                                return
-                            }else{
-                                print("Profile Updated")
                                 
+                                return
                             }
                         })
                         
-                    })
-                    
-                            let alertController = UIAlertController(title: "Welcome", message: "Sign up completed", preferredStyle: .Alert)
-                            
-                            
-                            let OKAction = UIAlertAction(title: "Login", style: .Default) { (action:UIAlertAction!) in
-                                
-                                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-                                
-                                
-                                let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
-                                
-                                self.presentViewController(MapViewController, animated: false, completion: nil)
+                        let filePath = "profileImage/\(user!.uid)"
+                        let metadata =  FIRStorageMetadata()
+                        metadata.contentType = "image/jpeg"
+                        
+                        self.storageRef.child(filePath).putData(data, metadata: metadata, completion: { (metadata, error) in
+                            if let error = error{
+                                print("\(error.description)")
+                                return
                             }
-                            alertController.addAction(OKAction)
+                            self.fileUrl = metadata?.downloadURLs![0].absoluteString
+                            rootRef.child("Users").child("\(user!.uid)").child("userProfilePic").setValue(self.fileUrl)
+                            let changeRequestPhoto = user!.profileChangeRequest()
+                            changeRequestPhoto.photoURL = NSURL(string: self.fileUrl)
+                            changeRequestPhoto.commitChangesWithCompletion({ (error) in
+                                if let error = error{
+                                    print(error.localizedDescription)
+                                    return
+                                }else{
+                                    print("Profile Updated")
+                                    
+                                }
+                            })
                             
-                            self.presentViewController(alertController, animated: true, completion:nil)
+                        })
+                        
+                        let alertController = UIAlertController(title: "Welcome", message: "Sign up completed", preferredStyle: .Alert)
+                        
+                        
+                        let OKAction = UIAlertAction(title: "Login", style: .Default) { (action:UIAlertAction!) in
                             
+                            let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+                            
+                            
+                            let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
+                            
+                            self.presentViewController(MapViewController, animated: false, completion: nil)
+                        }
+                        alertController.addAction(OKAction)
+                        
+                        self.presentViewController(alertController, animated: true, completion:nil)
+                        
                         
                         
                         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
@@ -161,32 +163,43 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                         let mainViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
                         
                         self.presentViewController(mainViewController, animated: true, completion: nil)
+                        
+                    }
+                }
+                else {
+                    print(error?.description)
+                    print("User Not Created")
                     
-                        }
-                }
-            else {
-                print(error?.description)
-                print("User Not Created")
-                
-                let alertController = UIAlertController(title: nil, message: "\(error!.localizedDescription)", preferredStyle: .Alert)
-                
-                let cancelAction = UIAlertAction(title: "Login", style: .Cancel) { (action) in
-                    let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-                    let ViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+                    let alertController = UIAlertController(title: nil, message: "\(error!.localizedDescription)", preferredStyle: .Alert)
                     
-                    self.presentViewController(ViewController, animated: true, completion: nil)
-                }
-                alertController.addAction(cancelAction)
-                
-                let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
-                    // ...
-                }
-                alertController.addAction(OKAction)
-                
-                self.presentViewController(alertController, animated: true) {
-                    // ...
+                    let cancelAction = UIAlertAction(title: "Login", style: .Cancel) { (action) in
+                        let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+                        let ViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+                        
+                        self.presentViewController(ViewController, animated: true, completion: nil)
+                    }
+                    alertController.addAction(cancelAction)
+                    
+                    let OKAction = UIAlertAction(title: "Try Again", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
                 }
             }
+        } else {
+            
+            let alertController = UIAlertController(title: nil, message: "Passwords do not match", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Try Again", style: .Cancel){ (action) in
+            }
+            alertController.addAction(cancelAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
         }
     }
     
@@ -241,9 +254,9 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func alreadyHaveAccountPressed(sender: AnyObject) {
-                self.view.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+        self.view.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
-   
+    
     
     
 }
