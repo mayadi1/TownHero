@@ -56,15 +56,15 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                  
                         
                        
-                            self.performSegueWithIdentifier("loginToMap", sender: self)
+//                            self.performSegueWithIdentifier("loginToMap", sender: self)
                         
                       
                         
-//                        let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-//                        
-//                        let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
-//                        
-//                        self.presentViewController(MapViewController, animated: false, completion: nil)
+                        let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+                        
+                        let MapViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView")
+                        
+                        self.presentViewController(MapViewController, animated: false, completion: nil)
                         
                         
                         

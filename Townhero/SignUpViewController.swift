@@ -24,6 +24,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         zipField.delegate = self
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        self.view!.addGestureRecognizer(tap)
+        
     }
     
     
@@ -65,6 +68,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let newString: NSString =
             currentString.stringByReplacingCharactersInRange(range, withString: string)
         return newString.length <= maxLength
+    }
+    
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @IBAction func alreadyHaveAccountPressed(sender: AnyObject) {
