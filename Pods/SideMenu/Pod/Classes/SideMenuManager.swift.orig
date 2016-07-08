@@ -53,7 +53,7 @@ public class SideMenuManager {
     public static var menuWidth: CGFloat = max(round(min((appScreenRect.width), (appScreenRect.height)) * 0.89), 240)
 =======
     public static var menuWidth: CGFloat = max(round(min((appScreenRect.width), (appScreenRect.height)) * 0.75), 240)
->>>>>>> origin/MoBranch
+>>>>>>> MoBranch
     
     /// Duration of the animation when the menu is presented without gestures. Default is 0.35 seconds.
     public static var menuAnimationPresentDuration = 0.35
