@@ -16,21 +16,9 @@ target 'Townhero' do
     inherit! :search_paths
     # Pods for testing
   end
-pod 'Firebase'
-pod ‘Firebase/Auth’
-pod 'Firebase/Database'
-pod 'Firebase/Storage’
-pod 'Firebase/Messaging'
-pod 'Firebase/RemoteConfig'
-pod 'Firebase/AdMob'
-pod 'Firebase/Analytics'
-pod ‘FBSDKCoreKit'
-pod ’FBSDKLoginKit'
-pod ’FBSDKShareKit’
 
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'SideMenu'
 end

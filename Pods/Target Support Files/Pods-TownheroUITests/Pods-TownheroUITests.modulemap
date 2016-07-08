@@ -1,6 +1,0 @@
-framework module Pods_TownheroUITests {
-  umbrella header "Pods-TownheroUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
