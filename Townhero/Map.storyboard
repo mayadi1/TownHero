@@ -234,7 +234,6 @@
         <!--Side Menu Navigation Controller-->
         <scene sceneID="IVs-oN-6A7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o8s-Ch-klh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="qXW-L1-K6r" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -246,6 +245,7 @@
                         <segue destination="715-QF-BrW" kind="relationship" relationship="rootViewController" id="8YS-yY-19B"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8s-Ch-klh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2632" y="804"/>
         </scene>

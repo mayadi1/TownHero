@@ -105,19 +105,36 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
             
             FIRAuth.auth()?.signInWithEmail((user?.email)!, password: verifyPasswordTextField!.text!, completion: { (user, error) in
                 if let error = error{
+                    
                     print(error.localizedDescription)
                     
+                    let passwordFailedAlertController = UIAlertController(title: nil, message: "\(error.localizedDescription)", preferredStyle: .Alert)
+                    let passwordFailAction = UIAlertAction(title: "Done", style: .Cancel, handler: { (UIAlertAction) in
+                        //..
+                    })
+                        
+                        
+                        passwordFailedAlertController.addAction(passwordFailAction)
+                    
+                    self.presentViewController(passwordFailedAlertController, animated: true, completion: nil)
+   
                     
                 }else{
                     
                     user?.updateEmail(self.emailTextField.text!, completion: { (error) in
                         if let error = error{
                             print(error.localizedDescription)
+                            
+                            self.view.endEditing(true)
+                            
                             self.resignFirstResponder()
                             return
+                            
                         }else{
                             print("Email Updated")
-                            
+                            let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
+                            self.ref.child("Users").child(userID).child("email").setValue(self.emailTextField.text)
+                            self.emailTextField.placeholder = self.emailTextField.text
                             let updateEmailAlertController = UIAlertController(title: "Edit Email", message: "Email Has Been Successfully Updated!", preferredStyle: .Alert)
                             let updateEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
                                 // ...
@@ -157,7 +174,6 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                 self.presentViewController(verifyNameAlertController, animated: true, completion: nil)
                 self.view.endEditing(true)
                 
-                self.view.endEditing(true)
                 return true
                 
             }
@@ -173,19 +189,27 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
         if (emailTextField.editing && self.verifyPasswordTextField?.text == nil){
             emailTextField.autocorrectionType = .No
-            let verifyEmailAlertController = UIAlertController(title: "Verify Current Password", message: nil, preferredStyle: .Alert)
-            let verifyEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
-                //                if let emailVerify = verifyEmailTextField?.text {
-                //                    print(" Email = \(emailVerify)")
-                //                } else {
-                //                    print("No Username entered")
-                //                }
-                //                if let passwordVerify = verifyPasswordTextField.text {
-                //                    print("Password = \(passwordVerify)")
-                //                } else {
-                //                    print("No password entered")
-                //                }
-            })
+                let verifyEmailAlertController = UIAlertController(title: "Change Email", message: "Please Verify your Password", preferredStyle: .Alert)
+            
+                let verifyEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                    
+                    FIRAuth.auth()?.signInWithEmail((self.user?.email)!, password: self.verifyPasswordTextField!.text!, completion: { (user, error) in
+                        
+                        if let error = error{
+                            
+                            // NEED TO HAVE VERIFICATION PASSWORD POP UP AGAIN AFTER EACH FAILED ATTEMPT
+                            print(error.localizedDescription)
+                            
+                            let passwordFailedAlertController = UIAlertView(title: nil, message: error.localizedDescription, delegate: nil, cancelButtonTitle: "Done")
+                            
+                            
+                            passwordFailedAlertController.show()
+                            
+                            
+                           
+                                }
+                            })
+                         })
             
             
             verifyEmailAlertController.addTextFieldWithConfigurationHandler({ (UITextField) in
