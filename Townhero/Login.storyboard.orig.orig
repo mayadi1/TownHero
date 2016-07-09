@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="B2D-9U-kV7">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -51,11 +52,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="p4r-jk-cGL"/>
-                                    </mask>
-                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bd-Sa-B4p">
                                 <rect key="frame" x="10" y="407" width="580" height="26"/>
@@ -65,6 +61,26 @@
                                 </state>
                                 <connections>
                                     <segue destination="a3D-8k-Zgq" kind="show" id="Wsz-ex-J5e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDQ-h0-80n">
+                                <rect key="frame" x="0.0" y="560" width="600" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="0.40228987068965516" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ckQ-c6-2bV"/>
+                                    <constraint firstAttribute="width" constant="600" id="pH8-ix-3Ec"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Don't have an account? Sign Up.">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pH8-ix-3Ec"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="oOw-F1-RHe" kind="show" id="uWy-Yb-4KO"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DOo-Qa-i79">
@@ -151,12 +167,11 @@
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="35" id="OJ1-nR-BQV"/>
                             <constraint firstAttribute="trailing" secondItem="lrL-xn-5jo" secondAttribute="trailing" constant="35" id="Rxx-od-2qF"/>
                             <constraint firstItem="l23-z7-N3p" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="V80-km-dHP"/>
-                            <constraint firstAttribute="trailing" secondItem="fNh-7K-cBO" secondAttribute="trailing" constant="100" id="VJl-g3-KKD"/>
                             <constraint firstAttribute="trailing" secondItem="dDQ-h0-80n" secondAttribute="trailing" id="W7S-Xs-ebV"/>
                             <constraint firstItem="dDQ-h0-80n" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" id="X3o-Qr-JPd"/>
                             <constraint firstItem="OmD-RW-Mcf" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="X8f-dN-E1I"/>
+                            <constraint firstItem="fNh-7K-cBO" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="120" id="ag5-P9-HEM"/>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="bcK-2T-W81"/>
-                            <constraint firstItem="fNh-7K-cBO" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="100" id="bhK-vX-9rb"/>
                             <constraint firstItem="DAn-dP-M4S" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="35" id="buK-yi-gAj"/>
                             <constraint firstAttribute="trailing" secondItem="DAn-dP-M4S" secondAttribute="trailing" constant="35" id="dPg-cx-FA3"/>
                             <constraint firstItem="lrL-xn-5jo" firstAttribute="top" secondItem="DOo-Qa-i79" secondAttribute="bottom" constant="-222" id="dgL-2v-voY"/>
@@ -217,7 +232,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="E792677C-A74E-48CD-8505-50B33EFEAC65" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D60479A6-2246-4D3C-90CB-EF57337039BE" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
                                 <rect key="frame" x="240" y="63" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -360,12 +375,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V1J-TF-Uz4">
-                                <rect key="frame" x="35" y="309" width="530" height="40"/>
-                                <constraints>
+                                <rect key="frame" x="35" y="309" width="530" height="40"/>                                <constraints>
                                     <constraint firstAttribute="width" constant="372" id="7v9-Gi-l9P"/>
                                     <constraint firstAttribute="height" constant="40" id="MoK-O3-sx2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -422,6 +437,7 @@
                                 <state key="normal" title="Already have an account? Sign In.">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="r8i-N8-Fpv"/>
@@ -668,22 +684,19 @@
                                     <action selector="goBackButtonTapped:" destination="RJM-Mo-P3s" eventType="touchUpInside" id="Qs1-48-fr0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etC-JU-qe3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etC-JU-qe3">
                                 <rect key="frame" x="468" y="160" width="97" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="133" id="5D6-fs-mhW"/>
                                     <constraint firstAttribute="height" constant="40" id="9g0-fG-RIP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="5D6-fs-mhW"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="RJM-Mo-P3s" id="ijh-Fq-9K6"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATf-qk-d1M">
                                 <rect key="frame" x="35" y="213" width="530" height="40"/>
@@ -748,7 +761,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="E792677C-A74E-48CD-8505-50B33EFEAC65" width="128" height="128">
+        <image name="D60479A6-2246-4D3C-90CB-EF57337039BE" width="128" height="128">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1850,7 +1863,7 @@ AIAAAAEBAAMAAAABAIAAAAECAAMAAAAEAAEAtgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAAB
 AAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABAIAAAAEXAAQAAAABAAEAAAEcAAMAAAAB
 AAEAAAFSAAMAAAABAAIAAAFTAAMAAAAEAAEAvodzAAcAAAxIAAEAxgAAAAAACAAIAAgACAABAAEAAQAB
 AAAMSExpbm8CEAAAbW50clJHQiBYWVogB84AAgAJAAYAMQAAYWNzcE1TRlQAAAAASUVDIHNSR0IAAAAA
-AAAAAAAAAAEAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAARY3BydAAAAVAAAAAzZGVzYwAAAYQAAABsd3RwdAAAAfAAAAAUYmtwdAAAAgQAAAAU
 clhZWgAAAhgAAAAUZ1hZWgAAAiwAAAAUYlhZWgAAAkAAAAAUZG1uZAAAAlQAAABwZG1kZAAAAsQAAACI
 dnVlZAAAA0wAAACGdmlldwAAA9QAAAAkbHVtaQAAA/gAAAAUbWVhcwAABAwAAAAkdGVjaAAABDAAAAAM

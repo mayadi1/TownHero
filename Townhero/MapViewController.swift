@@ -56,7 +56,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         
         
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+//        locationManager.startUpdatingLocation()
         
         mapView.showsUserLocation = true
         
@@ -127,6 +127,8 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             
             let colorPointAnnotation = annotation as! ColorPointAnnotation
             pinView?.pinTintColor = colorPointAnnotation.pinColor
+            pinView!.rightCalloutAccessoryView = UIButton(type: .InfoDark)
+            
             pinView?.canShowCallout = true
             
             
@@ -151,7 +153,16 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
-        mapView.setRegion(MKCoordinateRegionMake(view.annotation!.coordinate, MKCoordinateSpanMake(0.05, 0.05)), animated: true)
+        //change this to Coordinates for better search
+        
+        
+        
+        
+        let addressStoryBoard: UIStoryboard = UIStoryboard(name: "InfoPin", bundle: nil)
+        let ViewController: UIViewController = addressStoryBoard.instantiateViewControllerWithIdentifier("InfoPin")
+        
+        
+        self.presentViewController(ViewController, animated: false, completion: nil)
         //
         
         

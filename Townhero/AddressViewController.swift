@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 
-class AddressViewController: UIViewController{
+class AddressViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var addressField: UITextField!
@@ -44,7 +44,11 @@ class AddressViewController: UIViewController{
         
         let user = FIRAuth.auth()?.currentUser
         
-        usersRef.child("\(user!.uid)").child("\(self.zipField.text!)").setValue(self.addressField.text)
+        usersRef.child("\(user!.uid)").child("address").setValue(self.addressField.text)
+        usersRef.child("\(user!.uid)").child("email").setValue(user?.email)
+        usersRef.child("\(user!.uid)").child("name").setValue(user?.displayName)
+        usersRef.child("\(user!.uid)").child("zip").setValue(self.zipField.text)
+        usersRef.child("\(user!.uid)").child("userProfilePic").setValue(user?.photoURL?.absoluteString)
         
         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
         
@@ -90,6 +94,17 @@ class AddressViewController: UIViewController{
         
     }
 
+    
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+                   replacementString string: String) -> Bool
+    {
+        let maxLength = 5
+        let currentString: NSString = textField.text!
+        let newString: NSString =
+            currentString.stringByReplacingCharactersInRange(range, withString: string)
+        return newString.length <= maxLength
+    }
     
 }//End of the class
     

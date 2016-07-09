@@ -11,197 +11,225 @@ import Firebase
 import FirebaseStorage
 import FBSDKCoreKit
 
-class EditProfileTableVC: UITableViewController {
+class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var editProfilePicImageView: UIImageView!
-    @IBOutlet weak var editProfileEmail: UILabel!
-    @IBOutlet weak var editProfileAddress: UILabel!
-    @IBOutlet weak var editProfileFullName: UILabel!
+    @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    var verifyPasswordTextField: UITextField?
     
+    
+    
+    var check = 0
+    let user = FIRAuth.auth()?.currentUser
     let ref = FIRDatabase.database().reference()
+    
     var passedTownHeroUser: TownHeroUser?
     var townHeroUser: TownHeroUser?
+    
+    let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        fullNameTextField.delegate = self
+        emailTextField.delegate = self
+        addressTextField.delegate = self
+        
+        
+        
+        
+        editProfilePicImageView.userInteractionEnabled = true
+        let aSelector: Selector = Selector("TapFunc")
+        let profilePicTapGesture = UITapGestureRecognizer(target: self, action: aSelector)
+        profilePicTapGesture.numberOfTapsRequired = 1
+        editProfilePicImageView.addGestureRecognizer(profilePicTapGesture)
+        
+        
+        addressTextField.placeholder = TownHeroUser.sharedInstance.userAddress
         
         editProfilePicImageView.layer.masksToBounds = false
         editProfilePicImageView.layer.cornerRadius = editProfilePicImageView.frame.height / 2
         editProfilePicImageView.clipsToBounds = true
         
-//        
-//        self.editProfileFullName.text = passedTownHeroUser?.name
-//        self.editProfileEmail.text = passedTownHeroUser?.email
-//        self.editProfilePicImageView.image = passedTownHeroUser?.photo
-//        
-        editProfileEmail.text = TownHeroUser.sharedInstance.email
-        editProfileFullName.text = TownHeroUser.sharedInstance.name
+        
+        emailTextField.placeholder = TownHeroUser.sharedInstance.email
+        fullNameTextField.placeholder = TownHeroUser.sharedInstance.name
         editProfilePicImageView.image = TownHeroUser.sharedInstance.profilepicture
+        addressTextField.placeholder = TownHeroUser.sharedInstance.userAddress
         
-        
-        
-        
-//        townHeroUser?.name = (passedTownHeroUser?.name)!
-//        townHeroUser?.email = (passedTownHeroUser?.email)!
-//        townHeroUser?.photo = (passedTownHeroUser?.photo)!
-//        townHeroUser?.uid = (passedTownHeroUser?.uid)!
-//        
-//        townHeroUser = passedTownHeroUser
-        
-        
-        
-        //
-        //        if let user = FIRAuth.auth()?.currentUser {
-        //            let name = user.displayName
-        //            let email = user.email
-        //            let photoUrl = user.photoURL
-        //            let uid = user.uid
-        //
-        //            self.editProfileEmail.text = email
-        //            self.editProfileFullName.text = name
-        //
-        //            // Retrieve profile pic from FB and set it to editProfile
-        //            let data = NSData(contentsOfURL: photoUrl!)
-        //            self.editProfilePicImageView.image = UIImage(data: data!)
-        //
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-         self.tableView.reloadData()
+    // This func is for editing the full name, email, and address
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        let changeTextRequest = self.user!.profileChangeRequest()
         
-    }
-    
-    
-    
-    
-    
-    
-    // MARK: - Table view data source
-    
-    //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    //        // #warning Incomplete implementation, return the number of sections
-    //        return 0
-    //    }
-    //
-    //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        // #warning Incomplete implementation, return the number of rows
-    //        return 0
-    //    }
-    
-    /*
-     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     */
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     
-     // CODE ON HOW TO INSTANTIATE SEGUE PROGRAMATICALLY IN STATIC CELLS
-     /*
-     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-     if indexPath.section == 0 && indexPath.row == 1 {
-     print("Yankee doodle")
-     let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-     let editFullNameVC = storyboard.instantiateViewControllerWithIdentifier("EditFullNameViewController") as! EditFullNameVC
-     //            mvc.divvyStation = divvyStation
-     
-     self.presentViewController(editFullNameVC, animated: true, completion: nil)
-     }
-     else if indexPath.section == 0 && indexPath.row == 2 {
-     print("Yankee doodle")
-     let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-     let editEmailVC = storyboard.instantiateViewControllerWithIdentifier("EditEmailViewController") as! EditEmailViewController
-     //            mvc.divvyStation = divvyStation
-     
-     self.presentViewController(editEmailVC, animated: true, completion: nil)
-     }
-     else if indexPath.section == 0 && indexPath.row == 3 {
-     print("Yankee doodle")
-     let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-     let editLocationVC = storyboard.instantiateViewControllerWithIdentifier("EditLocationViewController") as! EditLocationVC
-     //            mvc.divvyStation = divvyStation
-     
-     self.presentViewController(editLocationVC, animated: true, completion: nil)
-     }
-     */
-     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
+        // IF NAMETEXTFIELD IS BEING EDITED ---------------------------------------------------------------------------------------------------
+        
+        if fullNameTextField.editing {
+            fullNameTextField.autocorrectionType = .No
+            changeTextRequest.displayName = fullNameTextField.text
+            changeTextRequest.commitChangesWithCompletion({ (error) in
+                // UPDATE NAME IN FB AUTH
+                if let error = error{
+                    print(error.localizedDescription)
+                    self.resignFirstResponder()
+                
+                    return
+                }
+                else if self.fullNameTextField.text != "" {
+                    print("\(self.user?.displayName)")
+                    // UPDATE NAME HAS BEEN CHANGED
+                    let verifyNameAlertController = UIAlertController(title: "Edit Name", message: "Name Has Been Updated!", preferredStyle: .Alert)
+                    let verifyNameAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                        // ...
+                        // UPDATE NAME IN FB DATABASE
+                        let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
+                        self.ref.child("Users").child(userID).child("name").setValue(self.fullNameTextField.text)
+                        self.fullNameTextField.placeholder = self.fullNameTextField.text
+                    })
+                    
+                    verifyNameAlertController.addAction(verifyNameAction)
+                    
+                    self.presentViewController(verifyNameAlertController, animated: true, completion: nil)
+                    self.view.endEditing(true)
+                }
+            })
+            
+            return true
+        }
+        // IF EMAILTEXTFIELD IS BEING EDITED ------------------------------------------------------------------------------------------------
+        
+        if emailTextField.editing {
+            
+            FIRAuth.auth()?.signInWithEmail((user?.email)!, password: verifyPasswordTextField!.text!, completion: { (user, error) in
+                if let error = error{
+                    
+                    print(error.localizedDescription)
+                    
+                    let passwordFailedAlertController = UIAlertController(title: nil, message: "\(error.localizedDescription)", preferredStyle: .Alert)
+                    let passwordFailAction = UIAlertAction(title: "Done", style: .Cancel, handler: { (UIAlertAction) in
+                        //..
+                    })
+                        
+                        
+                        passwordFailedAlertController.addAction(passwordFailAction)
+                    
+                    self.presentViewController(passwordFailedAlertController, animated: true, completion: nil)
    
-     
-    */
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "editEmailSegue"{
-            
-            
-            let dvc = segue.destinationViewController as! EditEmailViewController
-            
-            dvc.passedEmailVCTownHeroUser = self.passedTownHeroUser
-            
-            
-            
-            
+                    
+                }else{
+                    
+                    user?.updateEmail(self.emailTextField.text!, completion: { (error) in
+                        if let error = error{
+                            print(error.localizedDescription)
+                            
+                            self.view.endEditing(true)
+                            
+                            self.resignFirstResponder()
+                            return
+                            
+                        }else{
+                            print("Email Updated")
+                            let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
+                            self.ref.child("Users").child(userID).child("email").setValue(self.emailTextField.text)
+                            self.emailTextField.placeholder = self.emailTextField.text
+                            let updateEmailAlertController = UIAlertController(title: "Edit Email", message: "Email Has Been Successfully Updated!", preferredStyle: .Alert)
+                            let updateEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                                // ...
+                            })
+                            
+                            updateEmailAlertController.addAction(updateEmailAction)
+                            
+                            self.presentViewController(updateEmailAlertController, animated: true, completion: nil)
+                            
+                            
+                            self.view.endEditing(true)
+                        }
+                    })
+                }
+            })
+            return true
         }
         
-        if segue.identifier == "editNameSegue" {
-            let dvc = segue.destinationViewController as! EditFullNameVC
+        
+        if addressTextField.editing {
             
-//            dvc.passedFullNameVCTownHeroUser = self.passedTownHeroUser
+            self.check = 1
+            if self.check == 1 {
+                let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
+                ref.child("Users").child(userID).child("address").setValue(self.addressTextField.text)
+                self.check = 0
+                self.addressTextField.placeholder = self.addressTextField.text
+                addressTextField.endEditing(true)
+                
+                let verifyNameAlertController = UIAlertController(title: "Edit Address", message: "Address Has Been Updated!", preferredStyle: .Alert)
+                let verifyNameAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                    // ...
+                })
+                
+                verifyNameAlertController.addAction(verifyNameAction)
+                
+                self.presentViewController(verifyNameAlertController, animated: true, completion: nil)
+                self.view.endEditing(true)
+                
+                return true
+                
+            }
             
+
+            
+           return true
+        }
+        return true
+    }
+    
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if (emailTextField.editing && self.verifyPasswordTextField?.text == nil){
+            emailTextField.autocorrectionType = .No
+                let verifyEmailAlertController = UIAlertController(title: "Change Email", message: "Please Verify your Password", preferredStyle: .Alert)
+            
+                let verifyEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                    
+                    FIRAuth.auth()?.signInWithEmail((self.user?.email)!, password: self.verifyPasswordTextField!.text!, completion: { (user, error) in
+                        
+                        if let error = error{
+                            
+                            // NEED TO HAVE VERIFICATION PASSWORD POP UP AGAIN AFTER EACH FAILED ATTEMPT
+                            print(error.localizedDescription)
+                            
+                            let passwordFailedAlertController = UIAlertView(title: nil, message: error.localizedDescription, delegate: nil, cancelButtonTitle: "Done")
+                            
+                            
+                            passwordFailedAlertController.show()
+                            
+                            
+                           
+                                }
+                            })
+                         })
+            
+            
+            verifyEmailAlertController.addTextFieldWithConfigurationHandler({ (UITextField) in
+                self.verifyPasswordTextField = UITextField
+                self.verifyPasswordTextField!.placeholder = "Current Password"
+                self.verifyPasswordTextField!.autocorrectionType = .No
+                self.verifyPasswordTextField?.secureTextEntry = true
+                
+            })
+            
+            verifyEmailAlertController.addAction(verifyEmailAction)
+            
+            self.presentViewController(verifyEmailAlertController, animated: true, completion: nil)
         }
         
     }
+    
+    
+    
+
+    
+    //End of the editProfile Class
 }
-
-
-
-
-

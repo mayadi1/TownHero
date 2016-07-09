@@ -10,16 +10,27 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FBSDKCoreKit
+import SideMenu
+import FirebaseDatabase
 
-class ProfileTVC: UITableViewController, SettingsDelegate {
-   
+protocol SettingsDelegate {
+    func settingsDidDismiss()
+}
+
+class ProfileTVC: UITableViewController {
+    
+    var delegate: SettingsDelegate?
+    let menuLeftNavigationController = UISideMenuNavigationController()
+    // UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration of it here like setting its viewControllers.
     @IBOutlet weak var userPic: UIImageView!
-    @IBOutlet weak var organizationImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
     var townHeroUser: TownHeroUser?
     let ref = FIRDatabase.database().reference()
-
+    let userRef = FIRDatabase.database().reference().child("Users")
+    
+    
+    
     // observe an event in Firebase. You can observe a single event or multiple event, everytime there is a change to users, then there is a method that gets called. Since Friebase is so quick everytime you come in to the viewAppears, you already make an API call and hit FireBase
     //
     
@@ -29,218 +40,91 @@ class ProfileTVC: UITableViewController, SettingsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            userPic.layer.masksToBounds = false
-            userPic.layer.cornerRadius = userPic.frame.height / 2
-            userPic.clipsToBounds = true
-  
+        userPic.layer.masksToBounds = false
+        userPic.layer.cornerRadius = userPic.frame.height / 2
+        userPic.clipsToBounds = true
+        
         // Use a Singleton for the current user that's logged in so I don't have to constantly keep retrieving user information from Firebase
         if let user = FIRAuth.auth()?.currentUser {
-            let name = user.displayName
-            let email = user.email
-            let uid = user.uid
-            // let homeAddress = user.homeAddress
-            // let workAddress = user.workAddress
+            TownHeroUser.sharedInstance.email = user.email
+            TownHeroUser.sharedInstance.name = user.displayName
+            TownHeroUser.sharedInstance.uid = user.uid
             
-            let photoUrl = user.photoURL
-            let data = NSData(contentsOfURL: photoUrl!)
-            let profilepicture = UIImage(data: data!)
             
-//            ref.child("users").child(user.uid).updateChildValues(["name": user.displayName!])
-//        ref.child("users").child(user.uid).updateChildValues(["email": user.email!])
-//            ref.child("users").child(user.uid).updateChildValues(["profilepicture": "\(user.photoURL!)"])
-//            ref.child("users").child(user.uid).updateChildValues(["homeAddress": "USER ADDRESS DUMMY"])
-//            ref.child("users").child(user.uid).updateChildValues(["workAddress": "USER ADDRESS DUMMY"])
-//            
-//             townHeroUser = TownHeroUser(name: name!, email: email!, photo: photo!, uid: uid)
-            
-            // Here I instantiate my current user to the singleton TownHeroUser.sharedInstance with his info from FIRAuth
-              TownHeroUser.sharedInstance.email = email
-              TownHeroUser.sharedInstance.name = name
-              TownHeroUser.sharedInstance.profilepicture = profilepicture
-              TownHeroUser.sharedInstance.uid = uid
-            
-//            TownHeroUser.sharedInstance.email = ref.child("users").child(user.uid)
-//            TownHeroUser.sharedInstance.name = name
-//            TownHeroUser.sharedInstance.photo = photo
-//            TownHeroUser.sharedInstance.uid = uid
-            
+            if user.photoURL != nil {
+                if let data = NSData(contentsOfURL: user.photoURL!){
+                    self.userPic!.image = UIImage.init(data: data)
+                }
+            }
+            TownHeroUser.sharedInstance.profilepicture = self.userPic.image
             
             self.nameLabel.text = TownHeroUser.sharedInstance.name
             self.userPic.image = TownHeroUser.sharedInstance.profilepicture
             
-          
-            
-
-            //  Since we don't want the image to never return nil we comment this out last. Required if you don't want the code below.
-            
-            //            let data = NSData(contentsOfURL: photoUrl!)
-            //            self.userPic.image = UIImage(data: data!)
-            
-            
-            // Reference to the storage service
-            let storage = FIRStorage.storage()
-            // Reference your particular storage service/ Located at the top of storage menu in firebase.
-            let storageRef = storage.referenceForURL("gs://townhero-5732d.appspot.com")
-            
-            // We moved this from below to here since download in memory requires the reference.
-            let profilePicRef = storageRef.child(user.uid+"/profile_pic.jpg")
-            // Since we don't want to keep redownloading and uploading the facebook profile image we have check our firebase storage to see if it exists already. So we download temporarily into phone memory before we check it.
-            
-            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-            profilePicRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
-                if (error != nil) {
-                    // Uh-oh, an error occurred!
-                    print("Unable to download image")
-                } else {
-                    // Data for "images/island.jpg" is returned
-                    // ... let islandImage: UIImage! = UIImage(data: data!)
-                    
-                    if(data != nil){
-                        print("User image already exists, no need to download")
-                        self.userPic.image = UIImage(data: data!)
-                    }
-                }
-            }
-            // This checks if the user doesn't have a profile image then move below and run our code for downloading.
-            if(self.userPic.image == nil) {
-                
-                
-                // Request to get the facebook users profile picture - convert to swift from obj-c. Located in facebook developer docs: User, Picture menu. We don't need connection, result, or error type - remove value. Remove first part and make profilePic. Remove user id next to graphPath: and add "me/picture. Add parameters with h,w, and redirect false since we want the picture to return a json. Replace request.startWithCompletionHandler with profilePic.start....
-                var profilePic = FBSDKGraphRequest(graphPath: "me/picture", parameters: ["height":300,"width":300,"redirect":false], HTTPMethod: "GET")
-                profilePic.startWithCompletionHandler({(connection, result, error) -> Void in
-                    // Convert JSON into a dictionary so we can access it.
-                    if (error == nil){
-                        // By using print we can see the structure of the Json below.
-                        print(result)
-                        
-                        let dictionary = result as? NSDictionary
-                        // "data" was inserted since that's the top level in the JSON we printed.
-                        let data = dictionary?.objectForKey("data")
-                        let urlPic = (data?.objectForKey("url")) as! String
-                        
-                        // If an image is downloaded and we are receiving an image....
-                        if let imageData = NSData(contentsOfURL: NSURL(string:urlPic)!)
-                        {
-                            // Refer to the folder we want to update into - Later moved up top out of this area
-                            // let profilePicRef = storageRef.child(user.uid+"/profile_pic.jpg")
-                            
-                            // Upload the image, refer to firebase storage docs: upload files menu.
-                            let uploadTask = profilePicRef.putData(imageData, metadata:nil) {
-                                metadata,error in
-                                
-                                if (error == nil) {
-                                    // metadata can reference size, content, or downloadURL.
-                                    let downloadUrl = metadata!.downloadURL
-                                    
-                                } else {
-                                    print("error in downloading image")
-                                    
-                                    
-                                }
-                            }
-                            // If the image exists and uploads correctly we'll update the image on storyboard.
-                            
-                            self.userPic.image = UIImage(data:imageData)
-                        }
-                    }
-                    
-                })
-            } //bracket to enclose our checking statement to download or not: if(self.userPic.image == nil)
-            
-        } else {
-            // No user is signed in.
+            //       TownHeroUser.sharedInstance.userAddress = // Firebase Address current User
         }
-    }
-    
-    
-    
-    func settingsDidDismiss() {
-       self.parentViewController?.parentViewController?.dismissViewControllerAnimated(false, completion: nil)
         
-    }
-    
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toEditProfileSegue"{
-            let dvc = segue.destinationViewController as! EditProfileTableVC
-        }
-        if segue.identifier == "toSettingsVC" {
-            let dvc = segue.destinationViewController as! SettingsVC
-            dvc.delegate = self
-        }
-//            dvc.passedTownHeroUser = townHeroUser!
+        // PULLING ADDRESS FROM FIRDATABASE
+//        let refHandle = ref.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+//            let dataDict = snapshot.value as! [String: AnyObject]
+//        })
+//        
+        let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
+        ref.child("Users").child(userID).observeEventType(.Value, withBlock: { (snapshot) in
+            let dataDict = snapshot.value as! [String: AnyObject]
             
+
+            let address = dataDict["address"] as! String
+            print(address)
+          
+            TownHeroUser.sharedInstance.userAddress = address
+//            print(TownHeroUser.sharedInstance.userAddress)
+        })
+    }
     
-}
-
-
-
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 3
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 6
-//    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+ 
+    
+    @IBAction func logoutButton(sender: UIButton) {
+        
+        try! FIRAuth.auth()!.signOut()
+        
+        // Facebook log out by setting access token to nil, then sending back to the initial viewcontroller.
+        
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        
+        try! FIRAuth.auth()!.signOut()
+        print("signed out")
+        
+        
+        self.view.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+//        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+//        let ViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+//        self.presentViewController(ViewController, animated: true, completion: nil)
+        
+        
+        
+//        try! FIRAuth.auth()!.signOut()
+//        
+//        // Facebook log out by setting access token to nil, then sending back to the initial viewcontroller.
+//        
+//        FBSDKAccessToken.setCurrentAccessToken(nil)
+//        
+//        
+//                let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+//                let ViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+//        
+        //        self.parentViewController!.parentViewController!.presentingViewController!.presentViewController(ViewController, animated: true) {
+        //                   self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        //        }
+        
+        //        self.navigationController?.dismissViewControllerAnimated(true, completion: {
+        //            self.parentViewController!.parentViewController!.presentingViewController!.presentViewController(ViewController, animated: true, completion: nil)
+        
+//        self.dismissViewControllerAnimated(true) {
+//            self.delegate?.settingsDidDismiss()
+//            
+//        }
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+}//End of the ProfileTVC class

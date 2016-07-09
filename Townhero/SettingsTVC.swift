@@ -10,14 +10,9 @@ import UIKit
 import Firebase
 import FBSDKCoreKit
 
-protocol SettingsDelegate {
-   func settingsDidDismiss()
-}
 
 class SettingsVC: UITableViewController {
 
-    var delegate: SettingsDelegate?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,16 +35,12 @@ class SettingsVC: UITableViewController {
         try! FIRAuth.auth()!.signOut()
         print("signed out")
         
-        
-        
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
         let ViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+        
         self.presentViewController(ViewController, animated: true, completion: nil)
         
         
-//        self.dismissViewControllerAnimated(true) {
-//            self.delegate?.settingsDidDismiss()
-//        }
     }
     
     
