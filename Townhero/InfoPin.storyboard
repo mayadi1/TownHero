@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ybe-ON-G53">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -37,6 +36,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="Ybe-ON-G53" eventType="touchUpInside" id="rD6-wH-ZVS"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2em-3o-5FK">
                                 <rect key="frame" x="30" y="340" width="540" height="139"/>
@@ -60,6 +62,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="Ybe-ON-G53" eventType="touchUpInside" id="lOp-jB-yYy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -84,10 +89,63 @@
                             <constraint firstItem="8Sd-LV-tC1" firstAttribute="top" secondItem="gwA-HY-Hck" secondAttribute="bottom" constant="8" id="yqh-Dr-PYZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="desTestField" destination="2em-3o-5FK" id="MwZ-xa-0hE"/>
+                        <outlet property="imageView" destination="KMd-BY-XwN" id="6eW-y8-hMq"/>
+                        <outlet property="titleTextField" destination="Gft-d6-xZa" id="BBa-4a-kZl"/>
+                        <segue destination="E2k-MC-IlQ" kind="show" identifier="image" id="121-yo-Ua0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKU-uw-Pn8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1463" y="398"/>
+            <point key="canvasLocation" x="-1697" y="347"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="5l3-m5-99w">
+            <objects>
+                <viewController id="E2k-MC-IlQ" customClass="ImageViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R7F-xG-C84"/>
+                        <viewControllerLayoutGuide type="bottom" id="j2R-Xg-E0M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMR-uV-5rq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="biB-KQ-zw0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="532"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySH-p9-RgF">
+                                <rect key="frame" x="30" y="540" width="540" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="0.4043372845" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kHl-cU-w4L"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="E2k-MC-IlQ" eventType="touchUpInside" id="yZ0-Tc-ruB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="biB-KQ-zw0" secondAttribute="trailing" id="Dz1-FQ-fWv"/>
+                            <constraint firstItem="ySH-p9-RgF" firstAttribute="top" secondItem="biB-KQ-zw0" secondAttribute="bottom" constant="8" symbolic="YES" id="RDc-Ik-r8S"/>
+                            <constraint firstItem="biB-KQ-zw0" firstAttribute="top" secondItem="zMR-uV-5rq" secondAttribute="top" id="Tl0-Aw-gFp"/>
+                            <constraint firstItem="ySH-p9-RgF" firstAttribute="leading" secondItem="zMR-uV-5rq" secondAttribute="leadingMargin" constant="10" id="W6C-zt-yDA"/>
+                            <constraint firstItem="biB-KQ-zw0" firstAttribute="centerX" secondItem="ySH-p9-RgF" secondAttribute="centerX" id="pKe-PC-Lg0"/>
+                            <constraint firstAttribute="bottom" secondItem="ySH-p9-RgF" secondAttribute="bottom" constant="20" symbolic="YES" id="sgy-bV-bSY"/>
+                            <constraint firstItem="biB-KQ-zw0" firstAttribute="leading" secondItem="zMR-uV-5rq" secondAttribute="leading" id="xgV-nf-tf0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="biB-KQ-zw0" id="DKV-u4-uEB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nzj-cU-poC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1000" y="347"/>
         </scene>
     </scenes>
 </document>

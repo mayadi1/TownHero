@@ -154,20 +154,66 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         //change this to Coordinates for better search
+
+        
+        for item in natures{
+            
+            if item.des == (view.annotation?.subtitle)! && item.title == (view.annotation?.title)!
+            {
+                let storyboard = UIStoryboard(name: "InfoPin", bundle: nil)
+                let pvc = storyboard.instantiateViewControllerWithIdentifier("InfoPin") as! InfoPin
+                pvc.nature = item
+                pvc.kind = "nature"
+                self.presentViewController(pvc, animated: true, completion: nil)
+                
+            }
+            
+        }
         
         
+        for item in parkings{
+            
+            if item.des == (view.annotation?.subtitle)! && item.title == (view.annotation?.title)!
+            {
+                let storyboard = UIStoryboard(name: "InfoPin", bundle: nil)
+                let pvc = storyboard.instantiateViewControllerWithIdentifier("InfoPin") as! InfoPin
+                pvc.parking = item
+                pvc.kind = "parking"
+                self.presentViewController(pvc, animated: true, completion: nil)
+                
+            }
+            
+        }
         
+        for item in safetys{
+            
+            if item.des == (view.annotation?.subtitle)! && item.title == (view.annotation?.title)!
+            {
+                let storyboard = UIStoryboard(name: "InfoPin", bundle: nil)
+                let pvc = storyboard.instantiateViewControllerWithIdentifier("InfoPin") as! InfoPin
+                pvc.safety = item
+                pvc.kind = "safety"
+                self.presentViewController(pvc, animated: true, completion: nil)
+                
+            }
+            
+        }
         
-        let addressStoryBoard: UIStoryboard = UIStoryboard(name: "InfoPin", bundle: nil)
-        let ViewController: UIViewController = addressStoryBoard.instantiateViewControllerWithIdentifier("InfoPin")
+        for item in services{
+            
+            if item.des == (view.annotation?.subtitle)! && item.title == (view.annotation?.title)!
+            {
+                let storyboard = UIStoryboard(name: "InfoPin", bundle: nil)
+                let pvc = storyboard.instantiateViewControllerWithIdentifier("InfoPin") as! InfoPin
+                pvc.services = item
+                pvc.kind = "service"
+                self.presentViewController(pvc, animated: true, completion: nil)
+                
+            }
+            
+        }
         
-        
-        self.presentViewController(ViewController, animated: false, completion: nil)
-        //
-        
-        
-        //
-        
+
     }
     
     func addMapNotation1(tempParking: Parking) -> Void{
@@ -363,6 +409,8 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showView"{
             let dvc = segue.destinationViewController as! PinDetailViewController
+            
+    //Sometimes there is a dely when getting lat and Long so if self.lat is nil or lon is nil call get the info again
             dvc.lat = self.lat
             dvc.long = self.long
         }

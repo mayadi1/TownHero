@@ -400,7 +400,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvY-na-6mA">
-                                                    <rect key="frame" x="8" y="5" width="64" height="30"/>
+                                                    <rect key="frame" x="8" y="5" width="566" height="30"/>
                                                     <state key="normal" title="Logout"/>
                                                     <connections>
                                                         <action selector="logoutButton:" destination="U75-nW-bdG" eventType="touchUpInside" id="Eqo-5C-33T"/>

@@ -83,8 +83,10 @@ class ProfileTVC: UITableViewController {
     }
     
  
-    
+   
+
     @IBAction func logoutButton(sender: UIButton) {
+    
         
         try! FIRAuth.auth()!.signOut()
         
