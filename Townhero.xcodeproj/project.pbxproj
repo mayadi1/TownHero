@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35E363C01D333E3F001DCE56 /* NotificationsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */; };
+		35FBC94E1D33628C00240BB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */; };
 		441669A21D26E1DF00493B89 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441669A11D26E1DF00493B89 /* Map.storyboard */; };
 		441669A41D26E21D00493B89 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441669A31D26E21D00493B89 /* MapViewController.swift */; };
 		44556E041D31BDB200E640FB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44556E031D31BDB200E640FB /* ImageViewController.swift */; };
@@ -15,7 +17,6 @@
 		449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */; };
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
-		44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */; };
 		449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E50611D22E738009B8F75 /* MapKit.framework */; };
 		44F95E9B1D2C1EDA0093F3B7 /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9A1D2C1EDA0093F3B7 /* Nature.swift */; };
 		44F95E9D1D2C1EE70093F3B7 /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9C1D2C1EE70093F3B7 /* Parking.swift */; };
@@ -24,7 +25,6 @@
 		44FAC7491D302DA00079745B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FAC7481D302DA00079745B /* Profile.storyboard */; };
 		44FAC7551D302DAA0079745B /* EditProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74A1D302DAA0079745B /* EditProfileTableVC.swift */; };
 		44FAC7561D302DAA0079745B /* EditProfile+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74B1D302DAA0079745B /* EditProfile+handlers.swift */; };
-		44FAC7571D302DAA0079745B /* GestureRecognizerPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74C1D302DAA0079745B /* GestureRecognizerPic.swift */; };
 		44FAC7581D302DAA0079745B /* EditFullNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74D1D302DAA0079745B /* EditFullNameVC.swift */; };
 		44FAC7591D302DAA0079745B /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74E1D302DAA0079745B /* EditEmailViewController.swift */; };
 		44FAC75A1D302DAA0079745B /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74F1D302DAA0079745B /* SettingsTVC.swift */; };
@@ -69,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTVC.swift; sourceTree = "<group>"; };
+		35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		441669A11D26E1DF00493B89 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		441669A31D26E21D00493B89 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		44556E031D31BDB200E640FB /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +85,6 @@
 		449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44986A031D20898F0023F9B0 /* TownheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroUITests.swift; sourceTree = "<group>"; };
 		44986A051D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		449E50611D22E738009B8F75 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44F95E9A1D2C1EDA0093F3B7 /* Nature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nature.swift; sourceTree = "<group>"; };
 		44F95E9C1D2C1EE70093F3B7 /* Parking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		44FAC7481D302DA00079745B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		44FAC74A1D302DAA0079745B /* EditProfileTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableVC.swift; sourceTree = "<group>"; };
 		44FAC74B1D302DAA0079745B /* EditProfile+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditProfile+handlers.swift"; sourceTree = "<group>"; };
-		44FAC74C1D302DAA0079745B /* GestureRecognizerPic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureRecognizerPic.swift; sourceTree = "<group>"; };
 		44FAC74D1D302DAA0079745B /* EditFullNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFullNameVC.swift; sourceTree = "<group>"; };
 		44FAC74E1D302DAA0079745B /* EditEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		44FAC74F1D302DAA0079745B /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
@@ -152,6 +152,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35E363BE1D333607001DCE56 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				44FAC7481D302DA00079745B /* Profile.storyboard */,
+				44FAC74A1D302DAA0079745B /* EditProfileTableVC.swift */,
+				44FAC74B1D302DAA0079745B /* EditProfile+handlers.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		449869D71D20898E0023F9B0 = {
 			isa = PBXGroup;
 			children = (
@@ -177,16 +187,15 @@
 		449869E21D20898F0023F9B0 /* Townhero */ = {
 			isa = PBXGroup;
 			children = (
-				44FAC74A1D302DAA0079745B /* EditProfileTableVC.swift */,
-				44FAC74B1D302DAA0079745B /* EditProfile+handlers.swift */,
-				44FAC74C1D302DAA0079745B /* GestureRecognizerPic.swift */,
+				35E363BE1D333607001DCE56 /* Profile */,
+				44FAC7511D302DAA0079745B /* ProfileTVC.swift */,
+				35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */,
+				44FAC7531D302DAA0079745B /* UserClass.swift */,
 				44FAC74D1D302DAA0079745B /* EditFullNameVC.swift */,
 				44FAC74E1D302DAA0079745B /* EditEmailViewController.swift */,
 				44FAC74F1D302DAA0079745B /* SettingsTVC.swift */,
 				44FAC7501D302DAA0079745B /* EditLocationVC.swift */,
-				44FAC7511D302DAA0079745B /* ProfileTVC.swift */,
 				44FAC7521D302DAA0079745B /* PendingActivityVC.swift */,
-				44FAC7531D302DAA0079745B /* UserClass.swift */,
 				44FAC7541D302DAA0079745B /* SlideVC.swift */,
 				46F2866F1D2A08C20050D1EF /* AddressViewController.swift */,
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
@@ -203,12 +212,11 @@
 				44FAC7601D3070520079745B /* Assets.xcassets */,
 				460B40281D2EA16F00B28D5F /* Assets.xcassets */,
 				44FAC7661D30AFBB0079745B /* InfoPin.storyboard */,
-				44FAC7481D302DA00079745B /* Profile.storyboard */,
 				441669A11D26E1DF00493B89 /* Map.storyboard */,
 				44556E051D32F9D500E640FB /* Search.storyboard */,
 				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
-				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
+				35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */,
 				449869EF1D20898F0023F9B0 /* Info.plist */,
 			);
 			path = Townhero;
@@ -344,6 +352,14 @@
 					449869DF1D20898F0023F9B0 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6KKRC5GQMV;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					449869F31D20898F0023F9B0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -382,7 +398,7 @@
 			files = (
 				441669A21D26E1DF00493B89 /* Map.storyboard in Resources */,
 				449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */,
-				44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */,
+				35FBC94E1D33628C00240BB8 /* GoogleService-Info.plist in Resources */,
 				460B40291D2EA16F00B28D5F /* Assets.xcassets in Resources */,
 				44556E061D32F9D500E640FB /* Search.storyboard in Resources */,
 				44FAC7671D30AFBB0079745B /* InfoPin.storyboard in Resources */,
@@ -536,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E363C01D333E3F001DCE56 /* NotificationsTVC.swift in Sources */,
 				463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */,
 				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
 				44F95E9F1D2C1EF20093F3B7 /* Safety.swift in Sources */,
@@ -548,7 +565,6 @@
 				44FAC7581D302DAA0079745B /* EditFullNameVC.swift in Sources */,
 				44F95E9B1D2C1EDA0093F3B7 /* Nature.swift in Sources */,
 				44FAC75D1D302DAA0079745B /* PendingActivityVC.swift in Sources */,
-				44FAC7571D302DAA0079745B /* GestureRecognizerPic.swift in Sources */,
 				44F95EA11D2C1EFC0093F3B7 /* Services.swift in Sources */,
 				441669A41D26E21D00493B89 /* MapViewController.swift in Sources */,
 				44FD72DB1D2FF3DC00C6C44C /* Color.swift in Sources */,
@@ -708,9 +724,10 @@
 				INFOPLIST_FILE = Townhero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -720,7 +737,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Townhero",
@@ -729,9 +746,10 @@
 				INFOPLIST_FILE = Townhero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

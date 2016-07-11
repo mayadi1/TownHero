@@ -192,7 +192,7 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                 let verifyEmailAlertController = UIAlertController(title: "Change Email", message: "Please Verify your Password", preferredStyle: .Alert)
             
                 let verifyEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
-                    
+                    //TODO: Fix break with incorrect password
                     FIRAuth.auth()?.signInWithEmail((self.user?.email)!, password: self.verifyPasswordTextField!.text!, completion: { (user, error) in
                         
                         if let error = error{

@@ -51,6 +51,11 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let token = FIRInstanceID.instanceID().token()!
+//        
+//        
+//        print("//////////////")
+//        print(token)
         
         
         
