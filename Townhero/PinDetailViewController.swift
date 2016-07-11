@@ -83,7 +83,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         
-    
+        
         
         //[String: [String]]
         if self.imageView.image != nil{
@@ -108,7 +108,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
                 }
                 self.fileUrl = metadata?.downloadURLs![0].absoluteString
                 
-                 let tempDic: Dictionary<String, Array<String>>  = ["title": ["\(self.titleTextField.text!)"], "description": ["\(self.descriptionTextField.text)"], "cordinates": ["\(self.lat)", "\(self.long)"], "photoURL": ["\(self.fileUrl)"]]
+                let tempDic: Dictionary<String, Array<String>>  = ["title": ["\(self.titleTextField.text!)"], "description": ["\(self.descriptionTextField.text)"], "cordinates": ["\(self.lat)", "\(self.long)"], "photoURL": ["\(self.fileUrl)"]]
                 
                 self.rootRef.child("Post").child(self.zipCode!).child("\(self.view.backgroundColor!)").childByAutoId().setValue(tempDic)
                 
@@ -118,7 +118,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
             
         }else{
             //there is no image UIaler request an iamge if needed
-              let tempDic: Dictionary<String, Array<String>>  = ["title": ["\(self.titleTextField.text!)"], "description": ["\(self.descriptionTextField.text)"], "cordinates": ["\(self.lat)", "\(self.long)"], "photoURL": ["No photo yet"]]
+            let tempDic: Dictionary<String, Array<String>>  = ["title": ["\(self.titleTextField.text!)"], "description": ["\(self.descriptionTextField.text)"], "cordinates": ["\(self.lat)", "\(self.long)"], "photoURL": ["No photo yet"]]
             
             self.rootRef.child("Post").child(self.zipCode!).child("\(self.view.backgroundColor!)").childByAutoId().setValue(tempDic)
             
@@ -126,12 +126,12 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         
         
         
-      
         
         
         
         
-       
+        
+        
         
         
         

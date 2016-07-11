@@ -17,11 +17,11 @@ import Firebase
 class InfoPin: UIViewController {
     
     
-
+    
     
     let rootRef = FIRDatabase.database().reference()
     let user = FIRAuth.auth()?.currentUser
-
+    
     var nature: Nature?
     var parking: Parking?
     var safety: Safety?
@@ -39,7 +39,7 @@ class InfoPin: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         
         let pushedTap = UITapGestureRecognizer(target: self, action: #selector(InfoPin.selectPhoto(_:)))
         pushedTap.numberOfTapsRequired = 1
@@ -49,30 +49,30 @@ class InfoPin: UIViewController {
         swipeDown.direction = UISwipeGestureRecognizerDirection.Down
         self.view.addGestureRecognizer(swipeDown)
         
-
-            if kind == "service"{
-                self.titleTextField.text = services?.title
-                self.desTestField.text = services?.des
-                self.photoURL = services?.photo
+        
+        if kind == "service"{
+            self.titleTextField.text = services?.title
+            self.desTestField.text = services?.des
+            self.photoURL = services?.photo
+            
+            if self.photoURL != "No photo yet"{
                 
-                if self.photoURL != "No photo yet"{
+                if let data = NSData(contentsOfURL: NSURL(string: self.photoURL!)!){
+                    self.image = UIImage.init(data: data)
                     
-                    if let data = NSData(contentsOfURL: NSURL(string: self.photoURL!)!){
-                        self.image = UIImage.init(data: data)
-                        
-                        var newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
-                        self.imageView.image = newImage
-                        
-                        }
-                    }
-                
+                    var newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
+                    self.imageView.image = newImage
+                    
+                }
+            }
+            
         }
         
         if kind == "safety"{
             self.titleTextField.text = safety?.title
             self.desTestField.text = safety?.des
             self.photoURL = safety?.photo
-           
+            
             if self.photoURL != "No photo yet"{
                 
                 if let data = NSData(contentsOfURL: NSURL(string: self.photoURL!)!){
@@ -100,7 +100,7 @@ class InfoPin: UIViewController {
                     
                 }
             }
-
+            
         }
         
         if kind == "nature"{
@@ -188,12 +188,12 @@ class InfoPin: UIViewController {
         print("R")
         
         if self.image != nil {
-        let storyboard = UIStoryboard(name: "InfoPin", bundle: nil)
-        let pvc = storyboard.instantiateViewControllerWithIdentifier("imagePin") as! ImageViewController
-        pvc.passedImage = self.image
-        self.presentViewController(pvc, animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "InfoPin", bundle: nil)
+            let pvc = storyboard.instantiateViewControllerWithIdentifier("imagePin") as! ImageViewController
+            pvc.passedImage = self.image
+            self.presentViewController(pvc, animated: true, completion: nil)
         }
         
-  
+        
     }
 }//End of the class

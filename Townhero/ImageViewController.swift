@@ -9,7 +9,7 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     var passedImage: UIImage?
     
@@ -22,18 +22,18 @@ class ImageViewController: UIViewController {
         
         self.imageView.image = self.passedImage
         
-
+        
     }
-
-  
     
-
+    
+    
+    
     @IBAction func doneButtonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(false) { 
+        self.dismissViewControllerAnimated(false) {
             
         }
     }
-
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -58,5 +58,5 @@ class ImageViewController: UIViewController {
             }
         }
     }
-
+    
 }

@@ -35,6 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     var buttoPressedName: String?
     
     
+    var get = 0
     
     var natures = [Nature]()
     var parkings = [Parking]()
@@ -51,17 +52,12 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let token = FIRInstanceID.instanceID().token()!
-//        
-//        
-//        print("//////////////")
-//        print(token)
         
         
-        
+        self.get = 1
         
         locationManager.requestWhenInUseAuthorization()
-//        locationManager.startUpdatingLocation()
+        //        locationManager.startUpdatingLocation()
         
         mapView.showsUserLocation = true
         
@@ -90,9 +86,13 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        self.mapView.setRegion(MKCoordinateRegionMake(self.mapView.userLocation.coordinate, MKCoordinateSpanMake(0.005, 0.005)), animated: true)
+        
+        if self.get == 1 {
+            self.mapView.setRegion(MKCoordinateRegionMake(self.mapView.userLocation.coordinate, MKCoordinateSpanMake(0.005, 0.005)), animated: true)}
         
         let geoCoder = CLGeocoder()
+        
+        
         let location = CLLocation(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
         
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
@@ -102,13 +102,16 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             placeMark = placemarks?[0]
             
             
-            if let city = placeMark.addressDictionary!["City"] as? NSString {
-                if let Zip = placeMark.addressDictionary!["ZIP"] as? NSString {
-                    self.addresslabel.text = (city as String) + ", " + (placeMark.addressDictionary!["ZIP"] as? String)!
-                    self.zipCode = Zip as String
-                    self.didCall = self.didCall + 1
-                    if self.didCall == 1 {
-                        self.retrievePosts()}
+            if self.get == 1 {
+                self.get = self.get + 1
+                if let city = placeMark.addressDictionary!["City"] as? NSString {
+                    if let Zip = placeMark.addressDictionary!["ZIP"] as? NSString {
+                        self.addresslabel.text = (city as String) + ", " + (placeMark.addressDictionary!["ZIP"] as? String)!
+                        self.zipCode = Zip as String
+                        self.didCall = self.didCall + 1
+                        if self.didCall == 1 {
+                            self.retrievePosts()}
+                    }
                 }
             }
             
@@ -159,7 +162,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         //change this to Coordinates for better search
-
+        
         
         for item in natures{
             
@@ -218,7 +221,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             
         }
         
-
+        
     }
     
     func addMapNotation1(tempParking: Parking) -> Void{
@@ -226,7 +229,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         
         let point = ColorPointAnnotation(pinColor: UIColor.blueColor())
         
-     
+        
         point.coordinate.latitude = Double(tempParking.lat!)!
         point.coordinate.longitude = Double(tempParking.long!)!
         
@@ -241,11 +244,11 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     func addMapNotation2(tempParking: Nature) -> Void{
         
-         let point = ColorPointAnnotation(pinColor: UIColor.greenColor())
+        let point = ColorPointAnnotation(pinColor: UIColor.greenColor())
         
         point.coordinate.latitude = Double(tempParking.lat!)!
         point.coordinate.longitude = Double(tempParking.long!)!
-
+        
         point.title = tempParking.title
         point.subtitle = tempParking.des
         
@@ -257,7 +260,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     func addMapNotation3(tempParking: Safety) -> Void{
         
-          let point = ColorPointAnnotation(pinColor: UIColor.redColor())
+        let point = ColorPointAnnotation(pinColor: UIColor.redColor())
         point.coordinate.latitude = Double(tempParking.lat!)!
         point.coordinate.longitude = Double(tempParking.long!)!
         
@@ -273,7 +276,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     func addMapNotation4(tempParking: Service) -> Void{
         
-         let point = ColorPointAnnotation(pinColor: UIColor.yellowColor())
+        let point = ColorPointAnnotation(pinColor: UIColor.yellowColor())
         point.coordinate.latitude = Double(tempParking.lat!)!
         point.coordinate.longitude = Double(tempParking.long!)!
         
@@ -286,7 +289,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         
     }//End of addMapNotation func
     
-  
+    
     
     
     //Load Posts
@@ -301,7 +304,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             
             var tempArray = tempDic["cordinates"]
             
-     
+            
             
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
@@ -331,10 +334,10 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
             var tempPhoto = tempDic["photoURL"]
-
+            
             
             var tempParking = Nature(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
-
+            
             
             
             self.natures.append(tempParking)
@@ -351,15 +354,15 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             
             
             var tempArray = tempDic["cordinates"]
-
+            
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
             var tempPhoto = tempDic["photoURL"]
-
+            
             
             var tempParking = Safety(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
-
+            
             
             
             self.safetys.append(tempParking)
@@ -380,9 +383,9 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
             var tempPhoto = tempDic["photoURL"]
-
+            
             var tempParking = Service(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
-
+            
             
             
             self.services.append(tempParking)
@@ -424,15 +427,15 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         if segue.identifier == "showView"{
             let dvc = segue.destinationViewController as! PinDetailViewController
             
-    //Sometimes there is a dely when getting lat and Long so if self.lat is nil or lon is nil call get the info again
+            //Sometimes there is a dely when getting lat and Long so if self.lat is nil or lon is nil call get the info again
             dvc.lat = self.lat
             dvc.long = self.long
         }
         
     }
     
-
-
+    
+    
     
 }//End of the VC Class
 
