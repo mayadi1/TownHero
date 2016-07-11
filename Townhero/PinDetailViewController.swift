@@ -19,6 +19,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var addImageView: UIImageView!
     @IBOutlet weak var descriptionTextField: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
     
@@ -37,6 +38,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
         
         let pushedTap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.selectPhoto(_:)))
         pushedTap.numberOfTapsRequired = 1
@@ -81,9 +83,10 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         
+    
         
         //[String: [String]]
-        if self.imageView != nil{
+        if self.imageView.image != nil{
             var data = NSData()
             let newImage = self.ResizeImage(self.imageView.image!,targetSize: CGSizeMake(390, 390.0))
             data = UIImageJPEGRepresentation(newImage, 0.1)!
@@ -215,6 +218,8 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
     
     func selectPhoto(tap: UITapGestureRecognizer) {
         
+        self.addImageView.hidden = true
+        
         self.imagePicker.delegate = self
         self.imagePicker.allowsEditing = true
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
@@ -265,6 +270,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.addImageView.hidden = false
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }//End of PinDetailViewController class

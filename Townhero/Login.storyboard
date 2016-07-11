@@ -217,7 +217,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EE81CF36-E6B3-4B34-A5D1-CC36B94BA83B" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="552A835D-49FC-4AEE-A866-6DF5143FF92F" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
                                 <rect key="frame" x="240" y="63" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -748,7 +748,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EE81CF36-E6B3-4B34-A5D1-CC36B94BA83B" width="128" height="128">
+        <image name="552A835D-49FC-4AEE-A866-6DF5143FF92F" width="128" height="128">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

@@ -301,8 +301,9 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
+            var tempPhoto = tempDic["photoURL"]
             
-            var tempParking = Parking(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1])
+            var tempParking = Parking(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
             
             
             self.parkings.append(tempParking)
@@ -324,8 +325,11 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
+            var tempPhoto = tempDic["photoURL"]
+
             
-            var tempParking = Nature(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1])
+            var tempParking = Nature(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
+
             
             
             self.natures.append(tempParking)
@@ -346,8 +350,11 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
+            var tempPhoto = tempDic["photoURL"]
+
             
-            var tempParking = Safety(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1])
+            var tempParking = Safety(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
+
             
             
             self.safetys.append(tempParking)
@@ -367,8 +374,10 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
-            
-            var tempParking = Service(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1])
+            var tempPhoto = tempDic["photoURL"]
+
+            var tempParking = Service(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
+
             
             
             self.services.append(tempParking)

@@ -16,13 +16,15 @@ class Safety {
     var des: String?
     var lat: String?
     var long: String?
+    var photo: String?
     
-    init(tempTitle: String, tempDes: String, tempLat: String, tempLong: String){
+    init(tempTitle: String, tempDes: String, tempLat: String, tempLong: String, tempPhoto: String){
         
         self.title = tempTitle
         self.des = tempDes
         self.lat = tempLat
         self.long = tempLong
+        self.photo = tempPhoto
     }
     
 }

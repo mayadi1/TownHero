@@ -10,6 +10,7 @@
 		441669A21D26E1DF00493B89 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441669A11D26E1DF00493B89 /* Map.storyboard */; };
 		441669A41D26E21D00493B89 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441669A31D26E21D00493B89 /* MapViewController.swift */; };
 		44556E041D31BDB200E640FB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44556E031D31BDB200E640FB /* ImageViewController.swift */; };
+		44556E061D32F9D500E640FB /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44556E051D32F9D500E640FB /* Search.storyboard */; };
 		446911931D2EB65900EBEC44 /* PinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446911921D2EB65900EBEC44 /* PinDetailViewController.swift */; };
 		449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */; };
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
@@ -71,6 +72,7 @@
 		441669A11D26E1DF00493B89 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		441669A31D26E21D00493B89 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		44556E031D31BDB200E640FB /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		44556E051D32F9D500E640FB /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		446911921D2EB65900EBEC44 /* PinDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDetailViewController.swift; sourceTree = "<group>"; };
 		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869ED1D20898F0023F9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -195,14 +197,15 @@
 				44FD72DA1D2FF3DC00C6C44C /* Color.swift */,
 				44F95EA21D2C1F0A0093F3B7 /* PostInfo */,
 				441669A31D26E21D00493B89 /* MapViewController.swift */,
-				44FAC7621D30ADBB0079745B /* InfoPin.swift */,
 				446911921D2EB65900EBEC44 /* PinDetailViewController.swift */,
+				44FAC7621D30ADBB0079745B /* InfoPin.swift */,
 				44556E031D31BDB200E640FB /* ImageViewController.swift */,
 				44FAC7601D3070520079745B /* Assets.xcassets */,
 				460B40281D2EA16F00B28D5F /* Assets.xcassets */,
 				44FAC7661D30AFBB0079745B /* InfoPin.storyboard */,
 				44FAC7481D302DA00079745B /* Profile.storyboard */,
 				441669A11D26E1DF00493B89 /* Map.storyboard */,
+				44556E051D32F9D500E640FB /* Search.storyboard */,
 				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
 				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
@@ -381,6 +384,7 @@
 				449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */,
 				44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */,
 				460B40291D2EA16F00B28D5F /* Assets.xcassets in Resources */,
+				44556E061D32F9D500E640FB /* Search.storyboard in Resources */,
 				44FAC7671D30AFBB0079745B /* InfoPin.storyboard in Resources */,
 				44FAC7611D3070520079745B /* Assets.xcassets in Resources */,
 				44FAC7491D302DA00079745B /* Profile.storyboard in Resources */,

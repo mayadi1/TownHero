@@ -11,16 +11,21 @@ import UIKit
 class ImageViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    var passedImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(InfoPin.respondToSwipeGesture(_:)))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        self.imageView.image = self.passedImage
+        
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  
     
 
     @IBAction func doneButtonPressed(sender: AnyObject) {
@@ -31,6 +36,27 @@ class ImageViewController: UIViewController {
 
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                print("Swiped right")
+            case UISwipeGestureRecognizerDirection.Down:
+                self.dismissViewControllerAnimated(true, completion: {
+                    
+                })
+            case UISwipeGestureRecognizerDirection.Left:
+                print("Swiped left")
+            case UISwipeGestureRecognizerDirection.Up:
+                print("Swiped up")
+            default:
+                break
+            }
+        }
     }
 
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Khu-cK-SHf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="VQu-6S-wZj">
+            <objects>
+                <viewController id="Khu-cK-SHf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HVn-WL-qZi"/>
+                        <viewControllerLayoutGuide type="bottom" id="MjN-EO-Kdq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xcz-v1-5Up">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="qwN-h2-26v" id="5YW-Sp-Bc4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0b3-Md-j9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="qwN-h2-26v">
+                    <connections>
+                        <outlet property="delegate" destination="Khu-cK-SHf" id="y7e-Zg-iaQ"/>
+                        <outlet property="searchContentsController" destination="Khu-cK-SHf" id="Yck-qI-PhA"/>
+                        <outlet property="searchResultsDataSource" destination="Khu-cK-SHf" id="Tbe-BC-KIC"/>
+                        <outlet property="searchResultsDelegate" destination="Khu-cK-SHf" id="aJX-85-ff7"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="205" y="947"/>
+        </scene>
+    </scenes>
+</document>
