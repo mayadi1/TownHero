@@ -14,7 +14,6 @@
 		44556E041D31BDB200E640FB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44556E031D31BDB200E640FB /* ImageViewController.swift */; };
 		44556E061D32F9D500E640FB /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44556E051D32F9D500E640FB /* Search.storyboard */; };
 		446911931D2EB65900EBEC44 /* PinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446911921D2EB65900EBEC44 /* PinDetailViewController.swift */; };
-		449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */; };
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
 		449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E50611D22E738009B8F75 /* MapKit.framework */; };
@@ -37,11 +36,14 @@
 		44FAC7631D30ADBC0079745B /* InfoPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC7621D30ADBB0079745B /* InfoPin.swift */; };
 		44FAC7671D30AFBB0079745B /* InfoPin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FAC7661D30AFBB0079745B /* InfoPin.storyboard */; };
 		44FD72DB1D2FF3DC00C6C44C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FD72DA1D2FF3DC00C6C44C /* Color.swift */; };
-		460B40291D2EA16F00B28D5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460B40281D2EA16F00B28D5F /* Assets.xcassets */; };
 		462E0EA81D2096CB0093893B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462E0EA71D2096CB0093893B /* Login.storyboard */; };
 		462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EA91D20973A0093893B /* LoginViewController.swift */; };
 		462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EAB1D2097450093893B /* CreateAccountViewController.swift */; };
 		463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463D65ED1D275E5E003BDA69 /* ResetViewController.swift */; };
+		46729BFC1D341336009EF063 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46729BFA1D341336009EF063 /* TutorialViewController.swift */; };
+		46729BFD1D341336009EF063 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46729BFB1D341336009EF063 /* TutorialPageViewController.swift */; };
+		46729BFF1D34135F009EF063 /* Instructions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46729BFE1D34135F009EF063 /* Instructions.storyboard */; };
+		46729C011D3415D4009EF063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46729C001D3415D4009EF063 /* LaunchScreen.storyboard */; };
 		46904DCE1D2DF39A00DC3302 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46904DCD1D2DF39A00DC3302 /* SignUpViewController.swift */; };
 		46F2866E1D29DA6B0050D1EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */; };
 		46F286701D2A08C20050D1EF /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2866F1D2A08C20050D1EF /* AddressViewController.swift */; };
@@ -77,7 +79,6 @@
 		44556E051D32F9D500E640FB /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		446911921D2EB65900EBEC44 /* PinDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDetailViewController.swift; sourceTree = "<group>"; };
 		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		449869ED1D20898F0023F9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449869EF1D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449869F41D20898F0023F9B0 /* TownheroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869F81D20898F0023F9B0 /* TownheroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroTests.swift; sourceTree = "<group>"; };
@@ -105,11 +106,14 @@
 		44FAC7621D30ADBB0079745B /* InfoPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPin.swift; sourceTree = "<group>"; };
 		44FAC7661D30AFBB0079745B /* InfoPin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoPin.storyboard; sourceTree = "<group>"; };
 		44FD72DA1D2FF3DC00C6C44C /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		460B40281D2EA16F00B28D5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		462E0EA71D2096CB0093893B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		462E0EA91D20973A0093893B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		462E0EAB1D2097450093893B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		463D65ED1D275E5E003BDA69 /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
+		46729BFA1D341336009EF063 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		46729BFB1D341336009EF063 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		46729BFE1D34135F009EF063 /* Instructions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Instructions.storyboard; sourceTree = "<group>"; };
+		46729C001D3415D4009EF063 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46904DCD1D2DF39A00DC3302 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46F2866F1D2A08C20050D1EF /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
@@ -197,8 +201,10 @@
 				44FAC7501D302DAA0079745B /* EditLocationVC.swift */,
 				44FAC7521D302DAA0079745B /* PendingActivityVC.swift */,
 				44FAC7541D302DAA0079745B /* SlideVC.swift */,
-				46F2866F1D2A08C20050D1EF /* AddressViewController.swift */,
+				46729BFA1D341336009EF063 /* TutorialViewController.swift */,
+				46729BFB1D341336009EF063 /* TutorialPageViewController.swift */,
 				462E0EA91D20973A0093893B /* LoginViewController.swift */,
+				46F2866F1D2A08C20050D1EF /* AddressViewController.swift */,
 				46904DCD1D2DF39A00DC3302 /* SignUpViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
 				46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */,
@@ -210,12 +216,12 @@
 				44FAC7621D30ADBB0079745B /* InfoPin.swift */,
 				44556E031D31BDB200E640FB /* ImageViewController.swift */,
 				44FAC7601D3070520079745B /* Assets.xcassets */,
-				460B40281D2EA16F00B28D5F /* Assets.xcassets */,
+				46729BFE1D34135F009EF063 /* Instructions.storyboard */,
 				44FAC7661D30AFBB0079745B /* InfoPin.storyboard */,
 				441669A11D26E1DF00493B89 /* Map.storyboard */,
 				44556E051D32F9D500E640FB /* Search.storyboard */,
 				462E0EA71D2096CB0093893B /* Login.storyboard */,
-				449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */,
+				46729C001D3415D4009EF063 /* LaunchScreen.storyboard */,
 				35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */,
 				449869EF1D20898F0023F9B0 /* Info.plist */,
 			);
@@ -396,15 +402,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46729C011D3415D4009EF063 /* LaunchScreen.storyboard in Resources */,
 				441669A21D26E1DF00493B89 /* Map.storyboard in Resources */,
-				449869EE1D20898F0023F9B0 /* LaunchScreen.storyboard in Resources */,
 				35FBC94E1D33628C00240BB8 /* GoogleService-Info.plist in Resources */,
-				460B40291D2EA16F00B28D5F /* Assets.xcassets in Resources */,
 				44556E061D32F9D500E640FB /* Search.storyboard in Resources */,
 				44FAC7671D30AFBB0079745B /* InfoPin.storyboard in Resources */,
 				44FAC7611D3070520079745B /* Assets.xcassets in Resources */,
 				44FAC7491D302DA00079745B /* Profile.storyboard in Resources */,
 				462E0EA81D2096CB0093893B /* Login.storyboard in Resources */,
+				46729BFF1D34135F009EF063 /* Instructions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +560,7 @@
 			files = (
 				35E363C01D333E3F001DCE56 /* NotificationsTVC.swift in Sources */,
 				463D65EE1D275E5E003BDA69 /* ResetViewController.swift in Sources */,
+				46729BFD1D341336009EF063 /* TutorialPageViewController.swift in Sources */,
 				462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */,
 				44F95E9F1D2C1EF20093F3B7 /* Safety.swift in Sources */,
 				44FAC7551D302DAA0079745B /* EditProfileTableVC.swift in Sources */,
@@ -562,6 +569,7 @@
 				44556E041D31BDB200E640FB /* ImageViewController.swift in Sources */,
 				44FAC75E1D302DAA0079745B /* UserClass.swift in Sources */,
 				44F95E9D1D2C1EE70093F3B7 /* Parking.swift in Sources */,
+				46729BFC1D341336009EF063 /* TutorialViewController.swift in Sources */,
 				44FAC7581D302DAA0079745B /* EditFullNameVC.swift in Sources */,
 				44F95E9B1D2C1EDA0093F3B7 /* Nature.swift in Sources */,
 				44FAC75D1D302DAA0079745B /* PendingActivityVC.swift in Sources */,
@@ -611,17 +619,6 @@
 			targetProxy = 44986A001D20898F0023F9B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		449869EC1D20898F0023F9B0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				449869ED1D20898F0023F9B0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		44986A061D20898F0023F9B0 /* Debug */ = {
@@ -737,7 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Townhero",

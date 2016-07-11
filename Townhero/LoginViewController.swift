@@ -45,7 +45,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         // This code will check to see if the user is signed in or not. Located in firebase manage users: Step 1.
         
         
-        backgroundColours = [UIColor.redColor(), UIColor.purpleColor()]
+        backgroundColours = [UIColor.init(red: 255/255, green: 45/255, blue: 60/255, alpha: 1), UIColor.purpleColor()]
         backgroundLoop = 0
         self.animateBackgroundColour()
         

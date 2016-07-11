@@ -21,6 +21,7 @@ import FirebaseMessaging
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var defaults: NSUserDefaults?
     var window: UIWindow?
     var authUser: FIRUser?
     
@@ -57,13 +58,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(notificationSettings)
         
         
-        //        let defaults = NSUserDefaults.standardUserDefaults()
-        //        if let name = defaults.stringForKey("Users") {
-        //            defaults.synchronize()
-        //            print(name)
-        //        }
+        self.defaults = NSUserDefaults.standardUserDefaults()
+        let firstLaunch = defaults!.boolForKey("FirstLaunch")
         
-        //       FIRApp.configure()
+        if firstLaunch  {
+            print("Not first launch.")
+            
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+            
+        }
+        else {
+            print("First launch, setting NSUserDefault.")
+            
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            let storyboard = UIStoryboard(name: "Instructions", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InstructView") as UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            self.defaults!.setBool(true, forKey: "FirstLaunch")
+            
+        }
+
         return true
     }
     
