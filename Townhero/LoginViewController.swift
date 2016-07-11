@@ -31,10 +31,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewWillAppear(animated: Bool) {
         activitySpinner.stopAnimating()
         self.facebookLoginButton.hidden = false
+        
+        
+   
+        
+        
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        
         
        // self.facebookLoginButton.hidden = true
         
@@ -167,6 +176,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // Step 5 authenticate with Firebase using the Firebase credential
             FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
                 print("user logged into firebase")
+                
+                
+              
                 
                 // When user signed in with Facebook, send to address view controller.
                 let user = FIRAuth.auth()?.currentUser

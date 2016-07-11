@@ -13,6 +13,8 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var containerView: UIView!
     
+    var defaults: NSUserDefaults?
+
     var tutorialPageViewController: TutorialPageViewController? {
         didSet {
             tutorialPageViewController?.tutorialDelegate = self
@@ -22,7 +24,9 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pageControl.addTarget(self, action: "didChangePageControlValue", forControlEvents: .ValueChanged)
+
+
+        pageControl.addTarget(self, action: #selector(TutorialViewController.didChangePageControlValue), forControlEvents: .ValueChanged)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -53,6 +57,11 @@ extension TutorialViewController: TutorialPageViewControllerDelegate {
     func tutorialPageViewController(tutorialPageViewController: TutorialPageViewController,
         didUpdatePageIndex index: Int) {
         pageControl.currentPage = index
+    }
+   
+    @IBAction func getStartedPressed(sender: AnyObject) {
+        
+        
     }
     
 }

@@ -14,7 +14,6 @@
 		446911931D2EB65900EBEC44 /* PinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446911921D2EB65900EBEC44 /* PinDetailViewController.swift */; };
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
-		44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */; };
 		449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E50611D22E738009B8F75 /* MapKit.framework */; };
 		44F95E9B1D2C1EDA0093F3B7 /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9A1D2C1EDA0093F3B7 /* Nature.swift */; };
 		44F95E9D1D2C1EE70093F3B7 /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9C1D2C1EE70093F3B7 /* Parking.swift */; };
@@ -40,6 +39,7 @@
 		46214FBE1D33300500CBC007 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46214FBC1D33300500CBC007 /* TutorialPageViewController.swift */; };
 		46214FC01D33301F00CBC007 /* Instructions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46214FBF1D33301F00CBC007 /* Instructions.storyboard */; };
 		46214FC21D33303500CBC007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46214FC11D33303500CBC007 /* LaunchScreen.storyboard */; };
+		46214FC41D33536100CBC007 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46214FC31D33536100CBC007 /* GoogleService-Info.plist */; };
 		462E0EA81D2096CB0093893B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462E0EA71D2096CB0093893B /* Login.storyboard */; };
 		462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EA91D20973A0093893B /* LoginViewController.swift */; };
 		462E0EAC1D2097450093893B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E0EAB1D2097450093893B /* CreateAccountViewController.swift */; };
@@ -84,7 +84,6 @@
 		449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44986A031D20898F0023F9B0 /* TownheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroUITests.swift; sourceTree = "<group>"; };
 		44986A051D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		449E50611D22E738009B8F75 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44F95E9A1D2C1EDA0093F3B7 /* Nature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nature.swift; sourceTree = "<group>"; };
 		44F95E9C1D2C1EE70093F3B7 /* Parking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		46214FBC1D33300500CBC007 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		46214FBF1D33301F00CBC007 /* Instructions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Instructions.storyboard; sourceTree = "<group>"; };
 		46214FC11D33303500CBC007 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		46214FC31D33536100CBC007 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		462E0EA71D2096CB0093893B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		462E0EA91D20973A0093893B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		462E0EAB1D2097450093893B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 				44556E051D32F9D500E640FB /* Search.storyboard */,
 				462E0EA71D2096CB0093893B /* Login.storyboard */,
 				46214FC11D33303500CBC007 /* LaunchScreen.storyboard */,
-				44986A131D2089CD0023F9B0 /* GoogleService-Info.plist */,
+				46214FC31D33536100CBC007 /* GoogleService-Info.plist */,
 				449869EF1D20898F0023F9B0 /* Info.plist */,
 			);
 			path = Townhero;
@@ -349,7 +349,7 @@
 				TargetAttributes = {
 					449869DF1D20898F0023F9B0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = EQ39KCD6SJ;
+						DevelopmentTeam = 6KKRC5GQMV;
 					};
 					449869F31D20898F0023F9B0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -387,8 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				441669A21D26E1DF00493B89 /* Map.storyboard in Resources */,
-				44986A141D2089CD0023F9B0 /* GoogleService-Info.plist in Resources */,
 				46214FC21D33303500CBC007 /* LaunchScreen.storyboard in Resources */,
+				46214FC41D33536100CBC007 /* GoogleService-Info.plist in Resources */,
 				44556E061D32F9D500E640FB /* Search.storyboard in Resources */,
 				44FAC7671D30AFBB0079745B /* InfoPin.storyboard in Resources */,
 				44FAC7611D3070520079745B /* Assets.xcassets in Resources */,
@@ -705,7 +705,7 @@
 				INFOPLIST_FILE = Townhero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -726,7 +726,7 @@
 				INFOPLIST_FILE = Townhero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Townhero.Townhero2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

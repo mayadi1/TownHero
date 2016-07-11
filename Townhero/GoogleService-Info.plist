@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>87835894618-qv20gn52a7sbud5i1l5728083p506nvs.apps.googleusercontent.com</string>
+	<string>426464212185-diiducs3kqh6hqitqk2vi5kugrqbo1sb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.87835894618-qv20gn52a7sbud5i1l5728083p506nvs</string>
+	<string>com.googleusercontent.apps.426464212185-diiducs3kqh6hqitqk2vi5kugrqbo1sb</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDT8Q4LcEVzhFf5aWddXiCVKFWUUyVggD8</string>
+	<string>AIzaSyBIKnz0nbmVljEZZTyeibtHWr4BW8zU0PE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>87835894618</string>
+	<string>426464212185</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.Townhero.Townhero</string>
+	<string>com.Townhero.Townhero2</string>
 	<key>PROJECT_ID</key>
-	<string>townhero-5732d</string>
+	<string>townhero-f6889</string>
 	<key>STORAGE_BUCKET</key>
-	<string>townhero-5732d.appspot.com</string>
+	<string>townhero-f6889.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:87835894618:ios:755a0b94c1d3e3c6</string>
+	<string>1:426464212185:ios:555b0e9809e0249a</string>
 	<key>DATABASE_URL</key>
-	<string>https://townhero-5732d.firebaseio.com</string>
+	<string>https://townhero-f6889.firebaseio.com</string>
 </dict>
 </plist>
