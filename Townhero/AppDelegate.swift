@@ -13,6 +13,7 @@ import Firebase
 import FBSDKCoreKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseMessaging
 
 var authUser: FIRUser?
 

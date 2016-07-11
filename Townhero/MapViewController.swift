@@ -35,6 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     var buttoPressedName: String?
     
     
+    var get = 0
     
     var natures = [Nature]()
     var parkings = [Parking]()
@@ -53,7 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         super.viewDidLoad()
         
         
-        
+        self.get = 1
         
         locationManager.requestWhenInUseAuthorization()
 //        locationManager.startUpdatingLocation()
@@ -85,9 +86,13 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        self.mapView.setRegion(MKCoordinateRegionMake(self.mapView.userLocation.coordinate, MKCoordinateSpanMake(0.005, 0.005)), animated: true)
+        
+        if self.get == 1 {
+            self.mapView.setRegion(MKCoordinateRegionMake(self.mapView.userLocation.coordinate, MKCoordinateSpanMake(0.005, 0.005)), animated: true)}
         
         let geoCoder = CLGeocoder()
+        
+        
         let location = CLLocation(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
         
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
@@ -97,6 +102,8 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             placeMark = placemarks?[0]
             
             
+            if self.get == 1 {
+                self.get = self.get + 1
             if let city = placeMark.addressDictionary!["City"] as? NSString {
                 if let Zip = placeMark.addressDictionary!["ZIP"] as? NSString {
                     self.addresslabel.text = (city as String) + ", " + (placeMark.addressDictionary!["ZIP"] as? String)!
@@ -106,7 +113,8 @@ class MapViewController: UIViewController, MKMapViewDelegate{
                         self.retrievePosts()}
                 }
             }
-            
+        }
+        
         })
         
     }
