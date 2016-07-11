@@ -24,7 +24,6 @@
 		44FAC7491D302DA00079745B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FAC7481D302DA00079745B /* Profile.storyboard */; };
 		44FAC7551D302DAA0079745B /* EditProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74A1D302DAA0079745B /* EditProfileTableVC.swift */; };
 		44FAC7561D302DAA0079745B /* EditProfile+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74B1D302DAA0079745B /* EditProfile+handlers.swift */; };
-		44FAC7571D302DAA0079745B /* GestureRecognizerPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74C1D302DAA0079745B /* GestureRecognizerPic.swift */; };
 		44FAC7581D302DAA0079745B /* EditFullNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74D1D302DAA0079745B /* EditFullNameVC.swift */; };
 		44FAC7591D302DAA0079745B /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74E1D302DAA0079745B /* EditEmailViewController.swift */; };
 		44FAC75A1D302DAA0079745B /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAC74F1D302DAA0079745B /* SettingsTVC.swift */; };
@@ -92,7 +91,6 @@
 		44FAC7481D302DA00079745B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		44FAC74A1D302DAA0079745B /* EditProfileTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableVC.swift; sourceTree = "<group>"; };
 		44FAC74B1D302DAA0079745B /* EditProfile+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditProfile+handlers.swift"; sourceTree = "<group>"; };
-		44FAC74C1D302DAA0079745B /* GestureRecognizerPic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureRecognizerPic.swift; sourceTree = "<group>"; };
 		44FAC74D1D302DAA0079745B /* EditFullNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFullNameVC.swift; sourceTree = "<group>"; };
 		44FAC74E1D302DAA0079745B /* EditEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		44FAC74F1D302DAA0079745B /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 			children = (
 				44FAC74A1D302DAA0079745B /* EditProfileTableVC.swift */,
 				44FAC74B1D302DAA0079745B /* EditProfile+handlers.swift */,
-				44FAC74C1D302DAA0079745B /* GestureRecognizerPic.swift */,
 				44FAC74D1D302DAA0079745B /* EditFullNameVC.swift */,
 				44FAC74E1D302DAA0079745B /* EditEmailViewController.swift */,
 				44FAC74F1D302DAA0079745B /* SettingsTVC.swift */,
@@ -553,7 +550,6 @@
 				44FAC7581D302DAA0079745B /* EditFullNameVC.swift in Sources */,
 				44F95E9B1D2C1EDA0093F3B7 /* Nature.swift in Sources */,
 				44FAC75D1D302DAA0079745B /* PendingActivityVC.swift in Sources */,
-				44FAC7571D302DAA0079745B /* GestureRecognizerPic.swift in Sources */,
 				44F95EA11D2C1EFC0093F3B7 /* Services.swift in Sources */,
 				441669A41D26E21D00493B89 /* MapViewController.swift in Sources */,
 				44FD72DB1D2FF3DC00C6C44C /* Color.swift in Sources */,
