@@ -45,8 +45,7 @@
 		46729BFF1D34135F009EF063 /* Instructions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46729BFE1D34135F009EF063 /* Instructions.storyboard */; };
 		46729C011D3415D4009EF063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46729C001D3415D4009EF063 /* LaunchScreen.storyboard */; };
 		46904DCE1D2DF39A00DC3302 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46904DCD1D2DF39A00DC3302 /* SignUpViewController.swift */; };
-		46E2FCCE1D3436D90017DF2C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2FCCD1D3436D90017DF2C /* SearchViewController.swift */; };
-		46E2FCD01D34A0890017DF2C /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2FCCF1D34A0890017DF2C /* SearchItem.swift */; };
+		46E2FCD21D34B83B0017DF2C /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2FCD11D34B83B0017DF2C /* SearchTableViewController.swift */; };
 		46F2866E1D29DA6B0050D1EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */; };
 		46F286701D2A08C20050D1EF /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2866F1D2A08C20050D1EF /* AddressViewController.swift */; };
 		6050A23E1A99A0339E23BCD1 /* Pods_TownheroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */; };
@@ -117,8 +116,7 @@
 		46729BFE1D34135F009EF063 /* Instructions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Instructions.storyboard; sourceTree = "<group>"; };
 		46729C001D3415D4009EF063 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46904DCD1D2DF39A00DC3302 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		46E2FCCD1D3436D90017DF2C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		46E2FCCF1D34A0890017DF2C /* SearchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		46E2FCD11D34B83B0017DF2C /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46F2866F1D2A08C20050D1EF /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		55EA364BC389999756967013 /* Pods-Townhero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Townhero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Townhero/Pods-Townhero.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,10 +209,9 @@
 				46F2866F1D2A08C20050D1EF /* AddressViewController.swift */,
 				46904DCD1D2DF39A00DC3302 /* SignUpViewController.swift */,
 				462E0EAB1D2097450093893B /* CreateAccountViewController.swift */,
-				46E2FCCF1D34A0890017DF2C /* SearchItem.swift */,
-				46E2FCCD1D3436D90017DF2C /* SearchViewController.swift */,
 				46F2866D1D29DA6B0050D1EF /* AppDelegate.swift */,
 				463D65ED1D275E5E003BDA69 /* ResetViewController.swift */,
+				46E2FCD11D34B83B0017DF2C /* SearchTableViewController.swift */,
 				44FD72DA1D2FF3DC00C6C44C /* Color.swift */,
 				44F95EA21D2C1F0A0093F3B7 /* PostInfo */,
 				441669A31D26E21D00493B89 /* MapViewController.swift */,
@@ -583,17 +580,16 @@
 				441669A41D26E21D00493B89 /* MapViewController.swift in Sources */,
 				44FD72DB1D2FF3DC00C6C44C /* Color.swift in Sources */,
 				46F286701D2A08C20050D1EF /* AddressViewController.swift in Sources */,
+				46E2FCD21D34B83B0017DF2C /* SearchTableViewController.swift in Sources */,
 				446911931D2EB65900EBEC44 /* PinDetailViewController.swift in Sources */,
 				44FAC75C1D302DAA0079745B /* ProfileTVC.swift in Sources */,
 				44FAC75F1D302DAA0079745B /* SlideVC.swift in Sources */,
 				44FAC7631D30ADBC0079745B /* InfoPin.swift in Sources */,
 				44FAC75B1D302DAA0079745B /* EditLocationVC.swift in Sources */,
-				46E2FCD01D34A0890017DF2C /* SearchItem.swift in Sources */,
 				46904DCE1D2DF39A00DC3302 /* SignUpViewController.swift in Sources */,
 				44FAC7561D302DAA0079745B /* EditProfile+handlers.swift in Sources */,
 				44FAC7591D302DAA0079745B /* EditEmailViewController.swift in Sources */,
 				44FAC75A1D302DAA0079745B /* SettingsTVC.swift in Sources */,
-				46E2FCCE1D3436D90017DF2C /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
