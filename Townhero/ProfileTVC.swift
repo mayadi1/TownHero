@@ -15,7 +15,23 @@ import FirebaseDatabase
 
 protocol SettingsDelegate {
     func settingsDidDismiss()
+
 }
+
+@objc protocol mapDelegate {
+    optional func safetySwitch()
+    optional func parkingSwitch()
+    optional func envirementSwitch()
+    optional func serviceSwitch()
+
+    
+//    optional func
+}
+
+
+
+
+
 
 class ProfileTVC: UITableViewController {
     
@@ -26,6 +42,8 @@ class ProfileTVC: UITableViewController {
     
     
     var delegate: SettingsDelegate?
+    var mapdelegate: mapDelegate?
+
     let menuLeftNavigationController = UISideMenuNavigationController()
     // UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration of it here like setting its viewControllers.
     @IBOutlet weak var userPic: UIImageView!
@@ -50,6 +68,8 @@ class ProfileTVC: UITableViewController {
         //        NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"Username")
         //
         //
+//        
+//        self.mapdelegate = parentViewController?.parentViewController?.presentingViewController
         
         
         let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("safetySwitch")
@@ -203,6 +223,25 @@ class ProfileTVC: UITableViewController {
     }
     
     @IBAction func safetySwitchPressed(sender: AnyObject) {
+        if !safetySwitch.on && !self.parkingSwitch.on && !self.envirementSwitch.on && !self.serviceSwitch.on{
+            print("no you can't turn all off, at least have one on plz")
+            
+            
+            let alert = UIAlertController(title: "Alert", message: "All pins disabled.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let cancel = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Cancel,  handler: { (UIAlertAction) in
+                
+                return
+            })
+            
+            alert.addAction(cancel)
+            self.presentViewController(alert, animated: true, completion: {
+                
+            })
+            
+            
+        }
+        
         
         let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("safetySwitch")
         
@@ -223,10 +262,30 @@ class ProfileTVC: UITableViewController {
             NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"safetySwitch")
         }
         
+        self.mapdelegate?.safetySwitch!()
+
     }
     
     
     @IBAction func parkingSwitchPressed(sender: AnyObject) {
+        if !safetySwitch.on && !self.parkingSwitch.on && !self.envirementSwitch.on && !self.serviceSwitch.on{
+            print("no you can't turn all off, at least have one on plz")
+            
+            
+            let alert = UIAlertController(title: "Alert", message: "All pins disabled.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let cancel = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Cancel,  handler: { (UIAlertAction) in
+                
+                return
+            })
+            
+            alert.addAction(cancel)
+            self.presentViewController(alert, animated: true, completion: {
+                
+            })
+            
+            
+        }
         
         let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("parkingSwitch")
         
@@ -244,11 +303,29 @@ class ProfileTVC: UITableViewController {
             let myValue:NSString = "1"
             NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"parkingSwitch")
         }
+        self.mapdelegate?.parkingSwitch!()
     }
     
     
     @IBAction func envirementSwitchPressed(sender: AnyObject) {
-        
+        if !safetySwitch.on && !self.parkingSwitch.on && !self.envirementSwitch.on && !self.serviceSwitch.on{
+            print("no you can't turn all off, at least have one on plz")
+            
+            
+            let alert = UIAlertController(title: "Alert", message: "All pins disabled.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let cancel = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Cancel,  handler: { (UIAlertAction) in
+                
+                return
+            })
+            
+            alert.addAction(cancel)
+            self.presentViewController(alert, animated: true, completion: {
+                
+            })
+            
+            
+        }
         let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("envirementSwitch")
         
         if let myOutput10 = myOutput1 {
@@ -269,10 +346,29 @@ class ProfileTVC: UITableViewController {
         
         
         
-        
+        self.mapdelegate?.envirementSwitch!()
     }
     
     @IBAction func serviceSwitchPressed(sender: AnyObject) {
+        if !safetySwitch.on && !self.parkingSwitch.on && !self.envirementSwitch.on && !self.serviceSwitch.on{
+            print("no you can't turn all off, at least have one on plz")
+            
+            
+            let alert = UIAlertController(title: "Alert", message: "All pins disabled.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let cancel = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Cancel,  handler: { (UIAlertAction) in
+                
+                return
+            })
+            
+            alert.addAction(cancel)
+            self.presentViewController(alert, animated: true, completion: {
+                
+            })
+            
+            
+        }
+        
         
         let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("serviceSwitch")
         
@@ -291,6 +387,7 @@ class ProfileTVC: UITableViewController {
             NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"serviceSwitch")
             
         }
+        self.mapdelegate?.serviceSwitch!()
     }
     
     

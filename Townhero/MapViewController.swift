@@ -13,9 +13,10 @@ import MapKit
 import FirebaseStorage
 import FirebaseAuth
 import Firebase
+import SideMenu
 
 
-class MapViewController: UIViewController, MKMapViewDelegate{
+class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
     
     var lat = 0.0
     var long = 0.0
@@ -50,52 +51,6 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     let locationManager = CLLocationManager()
     
-    override func viewWillAppear(animated: Bool) {
-        let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("safetySwitch")
-        let myOutput2: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("parkingSwitch")
-        let myOutput3: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("envirementSwitch")
-        let myOutput4: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("serviceSwitch")
-        
-        if let myOutput10 = myOutput1 {
-            
-            if myOutput10 as! String != "1"{
-                
-                for item in safetys{
-                    
-                    var point =  MKPointAnnotation()
-                    point.coordinate.longitude = Double(item.long!)!
-                    point.coordinate.latitude = Double(item.lat!)!
-                    
-                    self.mapView.removeAnnotation(point)
-                    
-                    
-                }
-            }
-            
-        }
-        
-        
-        if let myOutput20 = myOutput2 {
-            
-            
-        }
-        
-        
-        
-        if let myOutput30 = myOutput3 {
-            
-        }
-        
-        
-        
-        if let myOutput40 = myOutput4 {
-            
-            
-        }
-        
-        
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -273,6 +228,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     func addMapNotation1(tempParking: Parking) -> Void{
         
+        let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("parkingSwitch")
         
         let point = ColorPointAnnotation(pinColor: UIColor.blueColor())
         
@@ -284,12 +240,28 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         point.title = tempParking.title
         point.subtitle = tempParking.des
         
-        self.mapView.addAnnotation(point)
-        self.mapView.reloadInputViews()
+        
+        
+        if let myOutput10 = myOutput1 {
+            
+            if myOutput10 as! String == "1"{
+                
+            }else{
+                
+                
+                
+                self.mapView.addAnnotation(point)
+                self.mapView.reloadInputViews()
+                
+            }
+            
+        }
         
     }//End of addMapNotation func
     
     func addMapNotation2(tempParking: Nature) -> Void{
+        let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("envirementSwitch")
+        
         
         let point = ColorPointAnnotation(pinColor: UIColor.greenColor())
         
@@ -299,13 +271,24 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         point.title = tempParking.title
         point.subtitle = tempParking.des
         
-        
-        self.mapView.addAnnotation(point)
-        self.mapView.reloadInputViews()
-        
+        if let myOutput10 = myOutput1 {
+            
+            if myOutput10 as! String == "1"{
+                
+            }else{
+                
+                
+                
+                self.mapView.addAnnotation(point)
+                self.mapView.reloadInputViews()
+                
+            }
+            
+        }
     }//End of addMapNotation func
     
     func addMapNotation3(tempParking: Safety) -> Void{
+        let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("safetySwitch")
         
         let point = ColorPointAnnotation(pinColor: UIColor.redColor())
         point.coordinate.latitude = Double(tempParking.lat!)!
@@ -315,13 +298,26 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         point.subtitle = tempParking.des
         
         
-        self.mapView.addAnnotation(point)
-        self.mapView.reloadInputViews()
+        if let myOutput10 = myOutput1 {
+            
+            if myOutput10 as! String == "1"{
+                
+            }else{
+                
+                
+                
+                self.mapView.addAnnotation(point)
+                self.mapView.reloadInputViews()
+                
+            }
+            
+        }
         
     }//End of addMapNotation func
     
     
     func addMapNotation4(tempParking: Service) -> Void{
+        let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("serviceSwitch")
         
         let point = ColorPointAnnotation(pinColor: UIColor.yellowColor())
         point.coordinate.latitude = Double(tempParking.lat!)!
@@ -330,9 +326,20 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         point.title = tempParking.title
         point.subtitle = tempParking.des
         
-        
-        self.mapView.addAnnotation(point)
-        self.mapView.reloadInputViews()
+        if let myOutput10 = myOutput1 {
+            
+            if myOutput10 as! String == "1"{
+                
+            }else{
+                
+                
+                
+                self.mapView.addAnnotation(point)
+                self.mapView.reloadInputViews()
+                
+            }
+            
+        }
         
     }//End of addMapNotation func
     
@@ -431,7 +438,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             var tempCor = tempDic["cordinates"]
             var tempPhoto = tempDic["photoURL"]
             
-            var tempParking = Service(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
+            let tempParking = Service(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
             
             
             
@@ -479,9 +486,189 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             dvc.long = self.long
         }
         
+        
+        if segue.identifier == "sideBarSegue" {
+            
+            let ptr = segue.destinationViewController as! UISideMenuNavigationController
+            
+            print(ptr.childViewControllers)
+            let tabBarChildren = ptr.childViewControllers.first?.childViewControllers
+            for child in tabBarChildren! {
+                if let profile = child as? ProfileTVC {
+                    profile.mapdelegate = self
+                }
+            }
+            
+        }
+        
     }
     
     
+    
+    
+    
+    
+    func safetySwitch(){
+        let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("safetySwitch")
+        
+        if let myOutput10 = myOutput1 {
+            
+            if myOutput10 as! String == "0"{
+                print("I am presseD  0")
+                
+                for item in safetys{
+                    
+                    let point = ColorPointAnnotation(pinColor: UIColor.redColor())
+                    
+                    
+                    point.coordinate.latitude = Double(item.lat!)!
+                    point.coordinate.longitude = Double(item.long!)!
+                    
+                    
+                    point.title = item.title
+                    point.subtitle = item.des
+                    self.mapView.addAnnotation(point)
+                    self.mapView.reloadInputViews()
+                    
+                }
+            }else{
+                let points = self.mapView.annotations
+                for item in safetys{
+                    for tempPoint in points{
+                        if tempPoint.coordinate.latitude == Double(item.lat!)! && tempPoint.coordinate.longitude == Double(item.long!)! {
+                                self.mapView.removeAnnotation(tempPoint)
+                                self.mapView.reloadInputViews()
+                            }//End  of if statement
+                    }//End of the loop
+                }//End of the parent loop
+            }//End of the else statement
+        }
+        
+        
+    }
+    
+    func parkingSwitch(){
+        let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("parkingSwitch")
+        
+        if let myOutput10 = myOutput1 {
+            
+            if myOutput10 as! String == "0"{
+                print("I am presseD  0")
+                
+                for item in parkings{
+                    
+                    let point = ColorPointAnnotation(pinColor: UIColor.blueColor())
+                    
+                    
+                    point.coordinate.latitude = Double(item.lat!)!
+                    point.coordinate.longitude = Double(item.long!)!
+                    
+                    
+                    point.title = item.title
+                    point.subtitle = item.des
+                    self.mapView.addAnnotation(point)
+                    self.mapView.reloadInputViews()
+                    
+                }
+            }else{
+                let points = self.mapView.annotations
+                for item in parkings{
+                    for tempPoint in points{
+                        if tempPoint.coordinate.latitude == Double(item.lat!)! && tempPoint.coordinate.longitude == Double(item.long!)! {
+                            self.mapView.removeAnnotation(tempPoint)
+                            self.mapView.reloadInputViews()
+                        }//End  of if statement
+                    }//End of the loop
+                }//End of the parent loop
+            }//End of the else statement
+        }
+        
+        
+    }
+    
+    func envirementSwitch(){
+        let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("envirementSwitch")
+        
+        if let myOutput10 = myOutput1 {
+            
+            if myOutput10 as! String == "0"{
+                print("I am presseD  0")
+                
+                for item in natures{
+                    
+                    let point = ColorPointAnnotation(pinColor: UIColor.greenColor())
+                    
+                    
+                    point.coordinate.latitude = Double(item.lat!)!
+                    point.coordinate.longitude = Double(item.long!)!
+                    
+                    
+                    point.title = item.title
+                    point.subtitle = item.des
+                    self.mapView.addAnnotation(point)
+                    self.mapView.reloadInputViews()
+                    
+                }
+            }else{
+                let points = self.mapView.annotations
+                for item in natures{
+                    for tempPoint in points{
+                        if tempPoint.coordinate.latitude == Double(item.lat!)! && tempPoint.coordinate.longitude == Double(item.long!)! {
+                            self.mapView.removeAnnotation(tempPoint)
+                            self.mapView.reloadInputViews()
+                        }//End  of if statement
+                    }//End of the loop
+                }//End of the parent loop
+            }//End of the else statement
+        }
+        
+        
+    }
+    
+    func serviceSwitch(){
+        let myOutput1: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("serviceSwitch")
+        
+        if let myOutput10 = myOutput1 {
+            
+            if myOutput10 as! String == "0"{
+                print("I am presseD  0")
+                
+                for item in services{
+                    
+                    let point = ColorPointAnnotation(pinColor: UIColor.yellowColor())
+                    
+                    
+                    point.coordinate.latitude = Double(item.lat!)!
+                    point.coordinate.longitude = Double(item.long!)!
+                    
+                    
+                    point.title = item.title
+                    point.subtitle = item.des
+                    self.mapView.addAnnotation(point)
+                    self.mapView.reloadInputViews()
+                    
+                }
+            }else{
+                let points = self.mapView.annotations
+                for item in services{
+                    for tempPoint in points{
+                        if tempPoint.coordinate.latitude == Double(item.lat!)! && tempPoint.coordinate.longitude == Double(item.long!)! {
+                            self.mapView.removeAnnotation(tempPoint)
+                            self.mapView.reloadInputViews()
+                        }//End  of if statement
+                    }//End of the loop
+                }//End of the parent loop
+            }//End of the else statement
+        }
+        
+        
+    }
+    
+
+
+  
+
+
     
     
 }//End of the VC Class

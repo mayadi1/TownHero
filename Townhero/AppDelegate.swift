@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             
-            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginView") 
             
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
@@ -77,6 +77,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else {
             print("First launch, setting NSUserDefault.")
+            
+            let myValue:NSString = "0"
+            NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"safetySwitch")
+            NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"parkingSwitch")
+            NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"envirementSwitch")
+            NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"serviceSwitch")
+            
             
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             

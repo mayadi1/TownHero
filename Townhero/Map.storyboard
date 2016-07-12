@@ -45,6 +45,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Rx-Ue-VE8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ORO-zF-5UT" id="1KB-zy-xpi"/>
+                                </connections>
+                            </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aTJ-gM-LXt">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <subviews>
@@ -62,7 +68,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, Zip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkw-Gr-eQh">
                                         <rect key="frame" x="80" y="0.0" width="440" height="60"/>
-                                        <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="0.4043372845" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -75,7 +81,7 @@
                                         </constraints>
                                         <state key="normal" image="user"/>
                                         <connections>
-                                            <segue destination="afR-Kw-U65" kind="presentation" id="JsY-OH-gbF"/>
+                                            <segue destination="afR-Kw-U65" kind="presentation" identifier="sideBarSegue" id="JsY-OH-gbF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -85,12 +91,6 @@
                                     <constraint firstItem="qkw-Gr-eQh" firstAttribute="leading" secondItem="CJP-jT-iE7" secondAttribute="trailing" id="tTA-cw-qqk"/>
                                 </constraints>
                             </stackView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Rx-Ue-VE8">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="540"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ORO-zF-5UT" id="1KB-zy-xpi"/>
-                                </connections>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -100,7 +100,7 @@
                             <constraint firstItem="8Rx-Ue-VE8" firstAttribute="leading" secondItem="Zdj-XW-ywW" secondAttribute="leading" id="ei7-jY-MAi"/>
                             <constraint firstAttribute="trailing" secondItem="aTJ-gM-LXt" secondAttribute="trailing" id="iy2-9e-zXt"/>
                             <constraint firstAttribute="trailing" secondItem="8Rx-Ue-VE8" secondAttribute="trailing" id="n5Z-aw-a81"/>
-                            <constraint firstItem="aTJ-gM-LXt" firstAttribute="top" secondItem="8Rx-Ue-VE8" secondAttribute="bottom" id="oq6-pt-cYD"/>
+                            <constraint firstItem="aTJ-gM-LXt" firstAttribute="top" secondItem="8Rx-Ue-VE8" secondAttribute="bottom" constant="-60" id="oq6-pt-cYD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7XH-SS-mhX"/>
@@ -117,7 +117,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2235" y="-337"/>
+            <point key="canvasLocation" x="-2323" y="-327"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Svz-kN-Md0">
