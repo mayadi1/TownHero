@@ -13,6 +13,7 @@ import MapKit
 import FirebaseStorage
 import FirebaseAuth
 import Firebase
+import SideMenu
 
 
 class MapViewController: UIViewController, MKMapViewDelegate{
@@ -430,6 +431,24 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             //Sometimes there is a dely when getting lat and Long so if self.lat is nil or lon is nil call get the info again
             dvc.lat = self.lat
             dvc.long = self.long
+        }
+        
+        
+        if segue.identifier == "searchIdentifier"{
+            let dvc2 = segue.destinationViewController as! UISideMenuNavigationController
+            let tabChildren = dvc2.childViewControllers
+            
+            for child in tabChildren{
+                
+                if let search = child as? SearchTableViewController{
+                    
+                    search.natures = self.natures
+                    search.safetys = self.safetys
+                    search.parkings = self.parkings
+                    search.services = self.services
+                }
+            }
+            
         }
         
     }

@@ -10,13 +10,43 @@ import UIKit
 
 class SearchTableViewController: UITableViewController, UISearchResultsUpdating {
 
-    let appleProducts = ["Mac", "iPhone", "Apple Watch", "iPad"]
+    var appleProducts = ["Mac", "iPhone", "Apple Watch", "iPad"]
     var filteredAppleProducts = [String]()
     var resultSearchController = UISearchController()
+    
+    var natures = [Nature]()
+    var parkings = [Parking]()
+    var safetys = [Safety]()
+    var services = [Service]()
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        for item in natures{
+            
+            self.appleProducts.append(item.title!)
+        }
+        
+        for item in parkings{
+            
+            self.appleProducts.append(item.title!)
+        }
+        
+        for item in safetys{
+            
+            self.appleProducts.append(item.title!)
+        }
+        
+        for item in services{
+            
+            self.appleProducts.append(item.title!)
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         // Creating a search bar
         self.resultSearchController = UISearchController(searchResultsController: nil)
         self.resultSearchController.searchResultsUpdater = self
