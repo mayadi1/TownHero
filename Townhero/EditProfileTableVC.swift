@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import FirebaseStorage
-import FBSDKCoreKit
 
 class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var editProfilePicImageView: UIImageView!
@@ -200,12 +199,12 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                         // NEED TO HAVE VERIFICATION PASSWORD POP UP AGAIN AFTER EACH FAILED ATTEMPT
                         print(error.localizedDescription)
                         
-                        let alert = UIAlertController(title: "Alert", message: "All pins disabled.", preferredStyle: UIAlertControllerStyle.Alert)
-                        let a = UIAlertAction
+                        let passwordFailedAlertController = UIAlertView(title: nil, message: error.localizedDescription, delegate: nil, cancelButtonTitle: "Done")
                         
-                        alert.addAction(a)
-                        self.presentViewController(alert, animated: true, completion: nil)
-
+                        
+                        passwordFailedAlertController.show()
+                        
+                        
                         
                     }
                 })
