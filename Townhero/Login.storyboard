@@ -8,7 +8,7 @@
         <!--Delegate-->
         <scene sceneID="4Bb-Z9-zAy">
             <objects>
-                <viewController storyboardIdentifier="LoginView" id="B2D-9U-kV7" customClass="LoginViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="B2D-9U-kV7" customClass="LoginViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UU4-qj-0hR"/>
                         <viewControllerLayoutGuide type="bottom" id="EVM-vs-CoP"/>
@@ -208,7 +208,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="CsQ-Kh-Nga">
             <objects>
-                <viewController id="EI1-Ka-oXZ" customClass="SignUpViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EI1-Ka-oXZ" customClass="SignUpViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZFq-mN-CxX"/>
                         <viewControllerLayoutGuide type="bottom" id="ePo-iM-gvK"/>
@@ -217,7 +217,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="05CEC659-FBB1-44AC-957A-894CDA739FF7" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BF007C8A-4DD1-4AF8-98D0-9D5A71B6F323" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
                                 <rect key="frame" x="240" y="63" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -350,7 +350,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="nba-Fj-oqu">
             <objects>
-                <viewController storyboardIdentifier="CreateLogin" id="oOw-F1-RHe" customClass="CreateAccountViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateLogin" id="oOw-F1-RHe" customClass="CreateAccountViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jjC-H2-y4F"/>
                         <viewControllerLayoutGuide type="bottom" id="W4g-DN-IYq"/>
@@ -529,7 +529,7 @@
         <!--Reset View Controller-->
         <scene sceneID="IEz-hY-vcy">
             <objects>
-                <viewController id="clA-5l-wnd" customClass="ResetViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="clA-5l-wnd" customClass="ResetViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rVQ-QL-B61"/>
                         <viewControllerLayoutGuide type="bottom" id="kSB-v4-Rn3"/>
@@ -638,7 +638,7 @@
         <!--Address View Controller-->
         <scene sceneID="eGX-ik-znJ">
             <objects>
-                <viewController storyboardIdentifier="AddressView" id="RJM-Mo-P3s" customClass="AddressViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddressView" id="RJM-Mo-P3s" customClass="AddressViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BfN-2b-dHS"/>
                         <viewControllerLayoutGuide type="bottom" id="RI8-7h-SRg"/>
@@ -747,7 +747,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="05CEC659-FBB1-44AC-957A-894CDA739FF7" width="128" height="128">
+        <image name="BF007C8A-4DD1-4AF8-98D0-9D5A71B6F323" width="128" height="128">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1849,7 +1849,7 @@ AIAAAAEBAAMAAAABAIAAAAECAAMAAAAEAAEAtgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAAB
 AAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABAIAAAAEXAAQAAAABAAEAAAEcAAMAAAAB
 AAEAAAFSAAMAAAABAAIAAAFTAAMAAAAEAAEAvodzAAcAAAxIAAEAxgAAAAAACAAIAAgACAABAAEAAQAB
 AAAMSExpbm8CEAAAbW50clJHQiBYWVogB84AAgAJAAYAMQAAYWNzcE1TRlQAAAAASUVDIHNSR0IAAAAA
-AAAAAAAAAAEAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAARY3BydAAAAVAAAAAzZGVzYwAAAYQAAABsd3RwdAAAAfAAAAAUYmtwdAAAAgQAAAAU
 clhZWgAAAhgAAAAUZ1hZWgAAAiwAAAAUYlhZWgAAAkAAAAAUZG1uZAAAAlQAAABwZG1kZAAAAsQAAACI
 dnVlZAAAA0wAAACGdmlldwAAA9QAAAAkbHVtaQAAA/gAAAAUbWVhcwAABAwAAAAkdGVjaAAABDAAAAAM

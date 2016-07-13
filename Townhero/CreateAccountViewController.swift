@@ -23,7 +23,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var passwordField: UITextField!
     
     @IBOutlet weak var verifyPassword: UITextField!
-    
+    var checkImage: Bool?
     
     var passNameField: String?
     var passAddressField: String?
@@ -76,11 +76,15 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func finishButtonTapped(sender: AnyObject) {
         
+  
         var data = NSData()
         let newImage = self.ResizeImage(self.profileImage.image!,targetSize: CGSizeMake(390, 390.0))
         data = UIImageJPEGRepresentation(newImage, 0.1)!
         
         if passwordField.text == verifyPassword.text {
+        
+            
+            
             
             
             FIRAuth.auth()?.createUserWithEmail(emailField.text!, password: passwordField.text!) { (user, error) in
@@ -199,7 +203,8 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
             
             self.presentViewController(alertController, animated: true, completion: nil)
             
-        }
+            }
+        
     }
     
     override func dismissKeyboard() {
@@ -216,13 +221,16 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        self.checkImage = true
         self.selectedPhoto = info[UIImagePickerControllerEditedImage] as? UIImage
         self.profileImage.image = selectedPhoto
         picker.dismissViewControllerAnimated(true, completion: nil)
         
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.checkImage = false
         self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     
