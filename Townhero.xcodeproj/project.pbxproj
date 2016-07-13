@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18E6F9241D36B2A200A0456E /* LiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6F9231D36B2A200A0456E /* LiveChatViewController.swift */; };
 		35E363C01D333E3F001DCE56 /* NotificationsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */; };
 		35FBC94E1D33628C00240BB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */; };
 		441669A21D26E1DF00493B89 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441669A11D26E1DF00493B89 /* Map.storyboard */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18E6F9231D36B2A200A0456E /* LiveChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChatViewController.swift; sourceTree = "<group>"; };
 		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTVC.swift; sourceTree = "<group>"; };
 		35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				44FAC7481D302DA00079745B /* Profile.storyboard */,
+				18E6F9231D36B2A200A0456E /* LiveChatViewController.swift */,
 				44FAC74A1D302DAA0079745B /* EditProfileTableVC.swift */,
 				44FAC74B1D302DAA0079745B /* EditProfile+handlers.swift */,
 			);
@@ -569,6 +572,7 @@
 				44FAC7551D302DAA0079745B /* EditProfileTableVC.swift in Sources */,
 				462E0EAA1D20973A0093893B /* LoginViewController.swift in Sources */,
 				46F2866E1D29DA6B0050D1EF /* AppDelegate.swift in Sources */,
+				18E6F9241D36B2A200A0456E /* LiveChatViewController.swift in Sources */,
 				44556E041D31BDB200E640FB /* ImageViewController.swift in Sources */,
 				44FAC75E1D302DAA0079745B /* UserClass.swift in Sources */,
 				44F95E9D1D2C1EE70093F3B7 /* Parking.swift in Sources */,

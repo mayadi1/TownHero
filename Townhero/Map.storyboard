@@ -36,7 +36,7 @@
         <!--Map View Controller-->
         <scene sceneID="13L-MG-FJw">
             <objects>
-                <viewController storyboardIdentifier="TabBarView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ORO-zF-5UT" customClass="MapViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabBarView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ORO-zF-5UT" customClass="MapViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yfx-Mb-Ckr"/>
                         <viewControllerLayoutGuide type="bottom" id="tjE-KE-miS"/>
@@ -68,7 +68,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, Zip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkw-Gr-eQh">
                                         <rect key="frame" x="80" y="0.0" width="440" height="60"/>
-                                        <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="0.78685344827586212" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -91,8 +91,8 @@
                                     <constraint firstItem="qkw-Gr-eQh" firstAttribute="leading" secondItem="CJP-jT-iE7" secondAttribute="trailing" id="tTA-cw-qqk"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yls-HJ-4sG">
-                                <rect key="frame" x="549" y="489" width="50" height="50"/>
+                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yls-HJ-4sG">
+                                <rect key="frame" x="540" y="482" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PiY-6b-fA6"/>
                                     <constraint firstAttribute="width" constant="50" id="wdK-hG-R5R"/>
@@ -106,8 +106,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yls-HJ-4sG" secondAttribute="trailing" constant="1" id="AZH-Kt-Wtb"/>
-                            <constraint firstItem="aTJ-gM-LXt" firstAttribute="top" secondItem="yls-HJ-4sG" secondAttribute="bottom" constant="1" id="Dfs-Bh-jT2"/>
+                            <constraint firstAttribute="trailing" secondItem="yls-HJ-4sG" secondAttribute="trailing" constant="10" id="AZH-Kt-Wtb"/>
+                            <constraint firstItem="aTJ-gM-LXt" firstAttribute="top" secondItem="yls-HJ-4sG" secondAttribute="bottom" constant="8" id="Dfs-Bh-jT2"/>
                             <constraint firstItem="aTJ-gM-LXt" firstAttribute="leading" secondItem="Zdj-XW-ywW" secondAttribute="leading" id="TdP-1F-QNN"/>
                             <constraint firstItem="tjE-KE-miS" firstAttribute="top" secondItem="aTJ-gM-LXt" secondAttribute="bottom" id="UHG-9d-5CX"/>
                             <constraint firstItem="8Rx-Ue-VE8" firstAttribute="top" secondItem="Yfx-Mb-Ckr" secondAttribute="bottom" constant="-20" id="cUN-0E-UUk"/>
@@ -121,6 +121,7 @@
                     <connections>
                         <outlet property="addresslabel" destination="qkw-Gr-eQh" id="g3j-EA-6dJ"/>
                         <outlet property="mapView" destination="8Rx-Ue-VE8" id="8IA-XO-Gcd"/>
+                        <outlet property="userLZoomIn" destination="yls-HJ-4sG" id="hJv-HF-xsJ"/>
                         <segue destination="p9d-U5-jiW" kind="show" identifier="showView" id="DhX-T4-bmt"/>
                     </connections>
                 </viewController>
@@ -165,7 +166,7 @@
         <!--Pin Detail View Controller-->
         <scene sceneID="daL-uA-LSP">
             <objects>
-                <viewController storyboardIdentifier="showView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p9d-U5-jiW" customClass="PinDetailViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p9d-U5-jiW" customClass="PinDetailViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aVc-Su-XPH"/>
                         <viewControllerLayoutGuide type="bottom" id="BrM-Qj-Y9r"/>

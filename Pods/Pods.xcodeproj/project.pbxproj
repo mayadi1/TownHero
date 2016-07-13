@@ -50,6 +50,7 @@
 		180BFD5C4CF58060C6E4673D16922EF9 /* FBSDKGameRequestContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3695F9297B3B7D4B8EF85E3F7FDFAEED /* FBSDKGameRequestContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1877520854C1B04C797C8FD94308AB48 /* FBSDKDynamicFrameworkLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B924FE571CE07709A2CD809CCC0BDD /* FBSDKDynamicFrameworkLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		188A670E26DA49268A133953AF0BF038 /* FBSDKShareOpenGraphValueContainer+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B25644EC7175ED44787C0D9454F1D32 /* FBSDKShareOpenGraphValueContainer+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		189F1E411D37022F00F23A13 /* EditPin+handlersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F1E401D37022F00F23A13 /* EditPin+handlersViewController.swift */; };
 		1A1DBDBFC387F891086033E7C529931C /* FBSDKCheckmarkIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA1504F49F537A2499EAEC99496AE8C /* FBSDKCheckmarkIcon.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1A41AA1660DA17FD9EEE7CC544D1C0A4 /* _FBSDKTemporaryErrorRecoveryAttempter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45025C6601F68CABEAA32DC98EFCB323 /* _FBSDKTemporaryErrorRecoveryAttempter.m */; };
 		1CB502050DF3C6883099DE59CE3416C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F46212FACCC307CCCDFE7D8E61F711 /* Foundation.framework */; };
@@ -471,6 +472,7 @@
 		16860E9ECE88EB69796F739C179CBD4F /* BFExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFExecutor.h; path = Bolts/Common/BFExecutor.h; sourceTree = "<group>"; };
 		177130781EF33AD591E13AF3147EB9CF /* FBSDKSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKSettings.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKSettings.m; sourceTree = "<group>"; };
 		1786BB1C4A0893902D715D930BE64900 /* FBSDKLikeActionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLikeActionController.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeActionController.m; sourceTree = "<group>"; };
+		189F1E401D37022F00F23A13 /* EditPin+handlersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditPin+handlersViewController.swift"; sourceTree = "<group>"; };
 		19127AE23F0F8D83184069F5132D89D6 /* FBSDKCoreKit+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKCoreKit+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKCoreKit+Internal.h"; sourceTree = "<group>"; };
 		19C10C2D37DD406AB83F65CD05F59B3B /* FBSDKBridgeAPIProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocol.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIProtocol.h; sourceTree = "<group>"; };
 		19CB44C13E10BEAC31681B57F35501C7 /* FBSDKGraphRequestMetadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestMetadata.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestMetadata.h; sourceTree = "<group>"; };
@@ -1255,6 +1257,7 @@
 				400B4B6EB28594D8F843C1138883BF7F /* Pods-Townhero */,
 				1699C9A57DA2ED6D6C6ECA9001C95376 /* Pods-TownheroTests */,
 				19F481D31F47C591F6D1E6DDE62CF2A5 /* Pods-TownheroUITests */,
+				189F1E401D37022F00F23A13 /* EditPin+handlersViewController.swift */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -2302,6 +2305,7 @@
 				D9B2E2CE9E2DF615FE197377486BB214 /* BFCancellationTokenRegistration.m in Sources */,
 				99FA28E0A77EBF35E1C94E6C5851DB44 /* BFCancellationTokenSource.m in Sources */,
 				652EE84BA55F2A6BD325768B753565D8 /* BFExecutor.m in Sources */,
+				189F1E411D37022F00F23A13 /* EditPin+handlersViewController.swift in Sources */,
 				A411DDDACF2FE64E4123D2654049E331 /* BFMeasurementEvent.m in Sources */,
 				60CAF8D6E879B1585D61B55EE807A113 /* BFTask+Exceptions.m in Sources */,
 				E3F3CBC9723823D11DCF58CDFA25AA77 /* BFTask.m in Sources */,
@@ -2918,6 +2922,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30AA5A1700F59280D1E0EB45E0B58A2D /* Bolts.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2937,6 +2942,7 @@
 				PRODUCT_NAME = Bolts;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2947,6 +2953,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30AA5A1700F59280D1E0EB45E0B58A2D /* Bolts.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

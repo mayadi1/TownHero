@@ -18,6 +18,7 @@ import SideMenu
 
 class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searchDelegate{
     
+    @IBOutlet weak var userLZoomIn: UIButton!
     var lat = 0.0
     var long = 0.0
     let rootRef = FIRDatabase.database().reference()
@@ -34,26 +35,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
     var zipCode: String?
     var didCall = 0
     let locationManager = CLLocationManager()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Local Notification
+        //            let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        //            UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        //
+        //
+        //        let notification = UILocalNotification()
+        //        notification.fireDate = NSDate(timeIntervalSinceNow: 4)
+        //        notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
+        //        notification.alertAction = "be awesome!"
+        //        notification.soundName = UILocalNotificationDefaultSoundName
+        //        notification.userInfo = ["CustomField1": "w00t"]
+        //        UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
-            let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-            UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-
-        
-        let notification = UILocalNotification()
-        notification.fireDate = NSDate(timeIntervalSinceNow: 4)
-        notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
-        notification.alertAction = "be awesome!"
-        notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = ["CustomField1": "w00t"]
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
-
         
         
-            self.get = 1
+        self.get = 1
         
         locationManager.requestWhenInUseAuthorization()
         //        locationManager.startUpdatingLocation()
@@ -67,7 +68,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         self.mapView.addGestureRecognizer(uilgr)
         
         self.mapView.delegate = self
-
+        
         
     }
     
@@ -121,21 +122,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         
         let reuseId = "pin"
         var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
-        if pinView == nil {
-            
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            
-            let colorPointAnnotation = annotation as! ColorPointAnnotation
-            pinView?.pinTintColor = colorPointAnnotation.pinColor
-            pinView!.rightCalloutAccessoryView = UIButton(type: .InfoDark)
-            
-            pinView?.canShowCallout = true
-            
-            
-        }
-        else {
-            pinView?.annotation = annotation
-        }
+        
+        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        
+        let colorPointAnnotation = annotation as! ColorPointAnnotation
+        
+        pinView?.pinTintColor = colorPointAnnotation.pinColor
+        pinView!.rightCalloutAccessoryView = UIButton(type: .InfoDark)
+        
+        pinView?.canShowCallout = true
         
         return pinView
     }
@@ -332,7 +327,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         let condition1 = rootRef.child("Post").child(self.zipCode!).child("UIDeviceRGBColorSpace 0 0 1 1")
         condition1.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
-
+            
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
@@ -372,7 +367,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         let condition3 = rootRef.child("Post").child(self.zipCode!).child("UIDeviceRGBColorSpace 1 0 0 1")
         condition3.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
-   
+            
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
@@ -462,7 +457,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
             }
             
         }
-     
+        
         if segue.identifier == "searchIdentifier"{
             let dvc2 = segue.destinationViewController as! UISideMenuNavigationController
             let tabChildren = dvc2.childViewControllers
@@ -506,6 +501,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                     
                     point.title = item.title
                     point.subtitle = item.des
+                    print(point.pinColor)
                     self.mapView.addAnnotation(point)
                     self.mapView.reloadInputViews()
                     
@@ -515,9 +511,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                 for item in safetys{
                     for tempPoint in points{
                         if tempPoint.coordinate.latitude == Double(item.lat!)! && tempPoint.coordinate.longitude == Double(item.long!)! {
-                                self.mapView.removeAnnotation(tempPoint)
-                                self.mapView.reloadInputViews()
-                            }//End  of if statement
+                            self.mapView.removeAnnotation(tempPoint)
+                            self.mapView.reloadInputViews()
+                        }//End  of if statement
                     }//End of the loop
                 }//End of the parent loop
             }//End of the else statement
@@ -545,8 +541,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                     
                     point.title = item.title
                     point.subtitle = item.des
+                    print(point.pinColor)
+                    
                     self.mapView.addAnnotation(point)
                     self.mapView.reloadInputViews()
+                    
                     
                 }
             }else{
@@ -584,9 +583,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                     
                     point.title = item.title
                     point.subtitle = item.des
+                    print(point.pinColor)
+                    
                     self.mapView.addAnnotation(point)
                     self.mapView.reloadInputViews()
-                    
                 }
             }else{
                 let points = self.mapView.annotations
@@ -613,18 +613,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                 print("I am presseD  0")
                 
                 for item in services{
-                    
-                    let point = ColorPointAnnotation(pinColor: UIColor.yellowColor())
-                    
-                    
-                    point.coordinate.latitude = Double(item.lat!)!
-                    point.coordinate.longitude = Double(item.long!)!
-                    
-                    
-                    point.title = item.title
-                    point.subtitle = item.des
-                    self.mapView.addAnnotation(point)
-                    self.mapView.reloadInputViews()
+                    self.addMapNotation4(item)
                     
                 }
             }else{
@@ -643,14 +632,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         
     }
     
-
-
-  
+    
+    
+    
     func zoomToResult(name: String){
-        print(name)
-        
-        
-        
         for item in safetys{
             
             if item.title == name{
@@ -658,11 +643,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                 let point = MKPointAnnotation()
                 point.coordinate.longitude = Double(item.long!)!
                 point.coordinate.latitude = Double(item.lat!)!
-
+                
                 self.mapView.setRegion(MKCoordinateRegionMake(point.coordinate, MKCoordinateSpanMake(0.00001, 0.00001)), animated: true)
                 
             }
-            
+            self.userLZoomIn.hidden = true
         }
         
         
@@ -713,11 +698,40 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         
         
     }
-
+    
+    //check if the user location is in the view or not
+    func checkIfUserInView() {
+        
+        
+        if self.mapView.userLocationVisible{
+            self.userLZoomIn.hidden = true
+            
+        }else{
+            self.userLZoomIn.hidden = false
+            
+            
+        }
+    }
+    
     
     @IBAction func userLocationZoomIn(sender: AnyObject) {
         self.mapView.setRegion(MKCoordinateRegionMake(self.mapView.userLocation.coordinate, MKCoordinateSpanMake(0.005, 0.005)), animated: true)
+        
+        
     }
+    
+    
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        self.userLZoomIn.hidden = false
+        
+        self.checkIfUserInView()
+    }
+    
+    func mapViewDidFinishLoadingMap(mapView: MKMapView) {
+        self.userLZoomIn.hidden = true
+    }
+    
     
     
     

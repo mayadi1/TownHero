@@ -8,7 +8,7 @@
         <!--Info Pin-->
         <scene sceneID="F3h-vZ-4RA">
             <objects>
-                <viewController storyboardIdentifier="InfoPin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ybe-ON-G53" customClass="InfoPin" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoPin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ybe-ON-G53" customClass="InfoPin" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kJL-1f-S3E"/>
                         <viewControllerLayoutGuide type="bottom" id="KhN-CY-6zv"/>
@@ -116,7 +116,7 @@
         <!--Image View Controller-->
         <scene sceneID="5l3-m5-99w">
             <objects>
-                <viewController storyboardIdentifier="imagePin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E2k-MC-IlQ" customClass="ImageViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="imagePin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E2k-MC-IlQ" customClass="ImageViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R7F-xG-C84"/>
                         <viewControllerLayoutGuide type="bottom" id="j2R-Xg-E0M"/>
@@ -139,7 +139,7 @@
                                     <constraint firstAttribute="height" constant="40" id="kHl-cU-w4L"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Go back"/>
                                 <connections>
                                     <action selector="doneButtonPressed:" destination="E2k-MC-IlQ" eventType="touchUpInside" id="yZ0-Tc-ruB"/>
                                 </connections>

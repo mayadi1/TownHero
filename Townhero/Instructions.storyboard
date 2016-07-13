@@ -7,7 +7,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="0HJ-M1-5Z0">
             <objects>
-                <viewController storyboardIdentifier="InstructView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gjb-cV-ex8" customClass="TutorialViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstructView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gjb-cV-ex8" customClass="TutorialViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FN8-2S-wlo"/>
                         <viewControllerLayoutGuide type="bottom" id="211-Dy-ZQs"/>
@@ -75,7 +75,7 @@
         <!--Tutorial Page View Controller-->
         <scene sceneID="0aP-7b-wK4">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="A7T-Ec-iyt" customClass="TutorialPageViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="A7T-Ec-iyt" customClass="TutorialPageViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfP-Ta-ha7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="19" y="-274"/>
