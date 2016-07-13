@@ -79,7 +79,7 @@
 		44556E031D31BDB200E640FB /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		44556E051D32F9D500E640FB /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		446911921D2EB65900EBEC44 /* PinDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDetailViewController.swift; sourceTree = "<group>"; };
-		449869E01D20898F0023F9B0 /* Townhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Townhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		449869E01D20898F0023F9B0 /* TownHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TownHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869EF1D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449869F41D20898F0023F9B0 /* TownheroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		449869F81D20898F0023F9B0 /* TownheroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroTests.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		449869E11D20898F0023F9B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				449869E01D20898F0023F9B0 /* Townhero.app */,
+				449869E01D20898F0023F9B0 /* TownHero.app */,
 				449869F41D20898F0023F9B0 /* TownheroTests.xctest */,
 				449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */,
 			);
@@ -287,9 +287,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		449869DF1D20898F0023F9B0 /* Townhero */ = {
+		449869DF1D20898F0023F9B0 /* TownHero */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 44986A081D20898F0023F9B0 /* Build configuration list for PBXNativeTarget "Townhero" */;
+			buildConfigurationList = 44986A081D20898F0023F9B0 /* Build configuration list for PBXNativeTarget "TownHero" */;
 			buildPhases = (
 				0ADD06EE32ADD9F9F2216223 /* [CP] Check Pods Manifest.lock */,
 				449869DC1D20898F0023F9B0 /* Sources */,
@@ -302,9 +302,9 @@
 			);
 			dependencies = (
 			);
-			name = Townhero;
+			name = TownHero;
 			productName = Townhero;
-			productReference = 449869E01D20898F0023F9B0 /* Townhero.app */;
+			productReference = 449869E01D20898F0023F9B0 /* TownHero.app */;
 			productType = "com.apple.product-type.application";
 		};
 		449869F31D20898F0023F9B0 /* TownheroTests */ = {
@@ -393,7 +393,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				449869DF1D20898F0023F9B0 /* Townhero */,
+				449869DF1D20898F0023F9B0 /* TownHero */,
 				449869F31D20898F0023F9B0 /* TownheroTests */,
 				449869FE1D20898F0023F9B0 /* TownheroUITests */,
 			);
@@ -614,12 +614,12 @@
 /* Begin PBXTargetDependency section */
 		449869F61D20898F0023F9B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 449869DF1D20898F0023F9B0 /* Townhero */;
+			target = 449869DF1D20898F0023F9B0 /* TownHero */;
 			targetProxy = 449869F51D20898F0023F9B0 /* PBXContainerItemProxy */;
 		};
 		44986A011D20898F0023F9B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 449869DF1D20898F0023F9B0 /* Townhero */;
+			target = 449869DF1D20898F0023F9B0 /* TownHero */;
 			targetProxy = 44986A001D20898F0023F9B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -818,7 +818,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		44986A081D20898F0023F9B0 /* Build configuration list for PBXNativeTarget "Townhero" */ = {
+		44986A081D20898F0023F9B0 /* Build configuration list for PBXNativeTarget "TownHero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				44986A091D20898F0023F9B0 /* Debug */,
