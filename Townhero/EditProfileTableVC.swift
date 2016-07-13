@@ -75,7 +75,7 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                 if let error = error{
                     print(error.localizedDescription)
                     self.resignFirstResponder()
-                
+                    
                     return
                 }
                 else if self.fullNameTextField.text != "" {
@@ -112,12 +112,12 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                     let passwordFailAction = UIAlertAction(title: "Done", style: .Cancel, handler: { (UIAlertAction) in
                         //..
                     })
-                        
-                        
-                        passwordFailedAlertController.addAction(passwordFailAction)
+                    
+                    
+                    passwordFailedAlertController.addAction(passwordFailAction)
                     
                     self.presentViewController(passwordFailedAlertController, animated: true, completion: nil)
-   
+                    
                     
                 }else{
                     
@@ -178,9 +178,9 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                 
             }
             
-
             
-           return true
+            
+            return true
         }
         return true
     }
@@ -189,27 +189,27 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
         if (emailTextField.editing && self.verifyPasswordTextField?.text == nil){
             emailTextField.autocorrectionType = .No
-                let verifyEmailAlertController = UIAlertController(title: "Change Email", message: "Please Verify your Password", preferredStyle: .Alert)
+            let verifyEmailAlertController = UIAlertController(title: "Change Email", message: "Please Verify your Password", preferredStyle: .Alert)
             
-                let verifyEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
-                    //TODO: Fix break with incorrect password
-                    FIRAuth.auth()?.signInWithEmail((self.user?.email)!, password: self.verifyPasswordTextField!.text!, completion: { (user, error) in
+            let verifyEmailAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                //TODO: Fix break with incorrect password
+                FIRAuth.auth()?.signInWithEmail((self.user?.email)!, password: self.verifyPasswordTextField!.text!, completion: { (user, error) in
+                    
+                    if let error = error{
                         
-                        if let error = error{
-                            
-                            // NEED TO HAVE VERIFICATION PASSWORD POP UP AGAIN AFTER EACH FAILED ATTEMPT
-                            print(error.localizedDescription)
-                            
-                            let passwordFailedAlertController = UIAlertView(title: nil, message: error.localizedDescription, delegate: nil, cancelButtonTitle: "Done")
-                            
-                            
-                            passwordFailedAlertController.show()
-                            
-                            
-                           
-                                }
-                            })
-                         })
+                        // NEED TO HAVE VERIFICATION PASSWORD POP UP AGAIN AFTER EACH FAILED ATTEMPT
+                        print(error.localizedDescription)
+                        
+                        let alert = UIAlertController(title: "Alert", message: "All pins disabled.", preferredStyle: UIAlertControllerStyle.Alert)
+                        let a = UIAlertAction
+                        
+                        alert.addAction(a)
+                        self.presentViewController(alert, animated: true, completion: nil)
+
+                        
+                    }
+                })
+            })
             
             
             verifyEmailAlertController.addTextFieldWithConfigurationHandler({ (UITextField) in
@@ -229,7 +229,7 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
     
     
     
-
+    
     
     //End of the editProfile Class
 }

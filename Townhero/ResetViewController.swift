@@ -72,5 +72,9 @@ class ResetViewController: UIViewController {
         
         self.presentViewController(ViewController, animated: true, completion: nil)           
     }
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
 }
 

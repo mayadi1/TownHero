@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool{
         
         //        FIRApp.configure()
-        
+                
         let colorView = UIView()
         colorView.backgroundColor = UIColor.whiteColor()
         UITableViewCell.appearance().selectedBackgroundView = colorView

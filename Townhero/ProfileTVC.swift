@@ -19,13 +19,11 @@ protocol SettingsDelegate {
 }
 
 @objc protocol mapDelegate {
+    //    optional func
     optional func safetySwitch()
     optional func parkingSwitch()
     optional func envirementSwitch()
     optional func serviceSwitch()
-
-    
-//    optional func
 }
 
 

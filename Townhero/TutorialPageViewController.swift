@@ -18,6 +18,9 @@ class TutorialPageViewController: UIPageViewController {
             self.newColoredViewController("Red"),
             self.newColoredViewController("Blue")]
     }()
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

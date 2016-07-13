@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KMd-BY-XwN">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_Image_Available" translatesAutoresizingMaskIntoConstraints="NO" id="KMd-BY-XwN">
                                 <rect key="frame" x="30" y="60" width="540" height="228"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sd-LV-tC1">
@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="40" id="oBJ-Xc-1pO"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Go back"/>
                                 <connections>
                                     <action selector="doneButtonPressed:" destination="Ybe-ON-G53" eventType="touchUpInside" id="rD6-wH-ZVS"/>
                                 </connections>
@@ -70,6 +70,9 @@
                                 <state key="normal" title="Flag">
                                     <color key="titleColor" red="1" green="0.037461778039999998" blue="0.0403095651" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="flagButtonPressed:" destination="Ybe-ON-G53" eventType="touchUpInside" id="4NK-A0-hiH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -163,4 +166,7 @@
             <point key="canvasLocation" x="-1102" y="348"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="No_Image_Available" width="512" height="512"/>
+    </resources>
 </document>

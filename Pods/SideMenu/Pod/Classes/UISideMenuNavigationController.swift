@@ -78,7 +78,7 @@ public class UISideMenuNavigationController: UINavigationController {
         // we're presenting a view controller from the menu, so we need to hide the menu so it isn't  g when the presented view is dismissed.
         if !isBeingDismissed() {
             view.hidden = true
-            SideMenuTransition.hideMenuStart()
+            //SideMenuTransition.hideMenuStart()
         }
     }
     

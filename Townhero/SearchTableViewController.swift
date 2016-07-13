@@ -1,18 +1,56 @@
 //
 //  SearchTableViewController.swift
-//  
+//
 //
 //  Created by Cindy Barnsdale on 7/12/16.
 //
 //
 
 import UIKit
+import MapKit
+import SideMenu
+
+protocol searchDelegate {
+    func zoomToResult(title: String)
+    
+}
 
 class SearchTableViewController: UITableViewController, UISearchResultsUpdating {
-
-    let appleProducts = ["Mac", "iPhone", "Apple Watch", "iPad"]
+    
+    
+    var searchD: searchDelegate?
+    var appleProducts = [String]()
     var filteredAppleProducts = [String]()
     var resultSearchController = UISearchController()
+    
+    var natures = [Nature]()
+    var parkings = [Parking]()
+    var safetys = [Safety]()
+    var services = [Service]()
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        for item in natures{
+            
+            self.appleProducts.append(item.title!)
+        }
+        
+        for item in parkings{
+            
+            self.appleProducts.append(item.title!)
+        }
+        
+        for item in safetys{
+            
+            self.appleProducts.append(item.title!)
+        }
+        
+        for item in services{
+            
+            self.appleProducts.append(item.title!)
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,27 +67,27 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         
         self.tableView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // If search bar is active
         if self.resultSearchController.active {
-        // Return filtered results array
+            // Return filtered results array
             return self.filteredAppleProducts.count
-        
+            
         } else {
-        // Otherwise show all results array.
+            // Otherwise show all results array.
             return self.appleProducts.count
         }
     }
@@ -59,10 +97,10 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         
         // If search is active by user
         if self.resultSearchController.active {
-        // show filtered results
+            // show filtered results
             cell!.textLabel?.text = self.filteredAppleProducts[indexPath.row]
         } else {
-        // show all possible results
+            // show all possible results
             cell!.textLabel?.text = self.appleProducts[indexPath.row]
         }
         
@@ -88,7 +126,15 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         self.tableView.reloadData()
         
     }
-
-
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+   
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+        self.searchD?.zoomToResult((cell?.textLabel?.text)!)
+  
+    }
+    
+    
 } // end
+
+

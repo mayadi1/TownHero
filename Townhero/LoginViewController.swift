@@ -275,5 +275,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
 }
 

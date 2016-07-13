@@ -40,6 +40,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         self.hideKeyboardWhenTappedAround()
         
         
+   
         let pushedTap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.selectPhoto(_:)))
         pushedTap.numberOfTapsRequired = 1
         imageView.addGestureRecognizer(pushedTap)
@@ -84,60 +85,63 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
     @IBAction func doneButtonPressed(sender: AnyObject) {
         
         
-        
-        //[String: [String]]
-        if self.imageView.image != nil{
-            var data = NSData()
-            let newImage = self.ResizeImage(self.imageView.image!,targetSize: CGSizeMake(390, 390.0))
-            data = UIImageJPEGRepresentation(newImage, 0.1)!
+        if self.titleTextField.text == "" || self.descriptionTextField.text == "" && (self.view.backgroundColor != UIColor.redColor() || self.view.backgroundColor != UIColor.greenColor() || self.view.backgroundColor != UIColor.blueColor() || self.view.backgroundColor != UIColor.yellowColor()){
             
-            let currentDate = NSDate()
+            let alert = UIAlertController(title: "Alert", message: "You can't report if Title, Description and choice of catalog empty ", preferredStyle: UIAlertControllerStyle.Alert)
             
-            
-            print("tjhis si the time")
-            print(currentDate.toLongTimeString())
-            
-            let filePath = "postImage/\(user!.uid)/\(currentDate.toLongTimeString())"
-            let metadata =  FIRStorageMetadata()
-            metadata.contentType = "image/jpeg"
-            
-            self.storageRef.child(filePath).putData(data, metadata: metadata, completion: { (metadata, error) in
-                if let error = error{
-                    print("\(error.description)")
-                    return
-                }
-                self.fileUrl = metadata?.downloadURLs![0].absoluteString
+            let cancel = UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Cancel,  handler: { (UIAlertAction) in
                 
-                let tempDic: Dictionary<String, Array<String>>  = ["title": ["\(self.titleTextField.text!)"], "description": ["\(self.descriptionTextField.text)"], "cordinates": ["\(self.lat)", "\(self.long)"], "photoURL": ["\(self.fileUrl)"]]
-                
-                self.rootRef.child("Post").child(self.zipCode!).child("\(self.view.backgroundColor!)").childByAutoId().setValue(tempDic)
+                return
+            })
+            
+            alert.addAction(cancel)
+            self.presentViewController(alert, animated: true, completion: {
                 
             })
             
-            
-            
         }else{
-            //there is no image UIaler request an iamge if needed
-            let tempDic: Dictionary<String, Array<String>>  = ["title": ["\(self.titleTextField.text!)"], "description": ["\(self.descriptionTextField.text)"], "cordinates": ["\(self.lat)", "\(self.long)"], "photoURL": ["No photo yet"]]
             
-            self.rootRef.child("Post").child(self.zipCode!).child("\(self.view.backgroundColor!)").childByAutoId().setValue(tempDic)
-            
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        self.dismissViewControllerAnimated(true) {
-            
+            //[String: [String]]
+            if self.imageView.image != nil{
+                var data = NSData()
+                let newImage = self.ResizeImage(self.imageView.image!,targetSize: CGSizeMake(390, 390.0))
+                data = UIImageJPEGRepresentation(newImage, 0.1)!
+                
+                let currentDate = NSDate()
+                
+                
+                print("tjhis si the time")
+                print(currentDate.toLongTimeString())
+                
+                let filePath = "postImage/\(user!.uid)/\(currentDate.toLongTimeString())"
+                let metadata =  FIRStorageMetadata()
+                metadata.contentType = "image/jpeg"
+                
+                self.storageRef.child(filePath).putData(data, metadata: metadata, completion: { (metadata, error) in
+                    if let error = error{
+                        print("\(error.description)")
+                        return
+                    }
+                    self.fileUrl = metadata?.downloadURLs![0].absoluteString
+                    
+                    let tempDic: Dictionary<String, Array<String>>  = ["title": ["\(self.titleTextField.text!)"], "description": ["\(self.descriptionTextField.text)"], "cordinates": ["\(self.lat)", "\(self.long)"], "photoURL": ["\(self.fileUrl)"]]
+                    
+                    self.rootRef.child("Post").child(self.zipCode!).child("\(self.view.backgroundColor!)").childByAutoId().setValue(tempDic)
+                    
+                })
+                
+                
+                
+            }else{
+                //there is no image UIaler request an iamge if needed
+                let tempDic: Dictionary<String, Array<String>>  = ["title": ["\(self.titleTextField.text!)"], "description": ["\(self.descriptionTextField.text)"], "cordinates": ["\(self.lat)", "\(self.long)"], "photoURL": ["No photo yet"]]
+                
+                self.rootRef.child("Post").child(self.zipCode!).child("\(self.view.backgroundColor!)").childByAutoId().setValue(tempDic)
+                
+            }
+            self.dismissViewControllerAnimated(true) {
+                
+            }
         }
     }
     
@@ -188,7 +192,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         if sender.currentTitle == "Parking"{
             self.view.backgroundColor = UIColor.blueColor()
         }
-        if sender.currentTitle == "Envirement"{
+        if sender.currentTitle == "Environment"{
             self.view.backgroundColor = UIColor.greenColor()
         }
     }
@@ -273,6 +277,17 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         self.addImageView.hidden = false
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func goBackButtonPressed(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true) { 
+            
+        }
+    }
+    
+    
+    
+    
 }//End of PinDetailViewController class
 
 extension UIViewController {
@@ -334,4 +349,8 @@ extension NSDate
         
         return "\(day)" + ", " + timeString
     }
+    
+    
+    
+    
 }

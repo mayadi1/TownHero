@@ -23,10 +23,10 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KG7-uS-DNX">
-                                <rect key="frame" x="20" y="475" width="560" height="63"/>
+                                <rect key="frame" x="0.0" y="537" width="600" height="63"/>
                                 <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="560" id="FOq-ff-De7"/>
+                                    <constraint firstAttribute="width" constant="600" id="FOq-ff-De7"/>
                                     <constraint firstAttribute="height" constant="63" id="bm0-Og-Jyy"/>
                                 </constraints>
                                 <state key="normal" title="Get Started">
@@ -37,18 +37,18 @@
                                     <segue destination="Na0-Ek-3zR" kind="show" id="j8X-Dh-KrX"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Xvt-1d-6RY">
-                                <rect key="frame" x="281" y="543" width="39" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Xvt-1d-6RY">
+                                <rect key="frame" x="273" y="498" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" red="0.85675080128205128" green="0.0" blue="0.03206736238006308" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Xvt-1d-6RY" firstAttribute="centerX" secondItem="w7O-um-obi" secondAttribute="centerX" id="008-iA-J54"/>
+                            <constraint firstItem="Xvt-1d-6RY" firstAttribute="centerX" secondItem="w7O-um-obi" secondAttribute="centerX" constant="-7.5" id="008-iA-J54"/>
                             <constraint firstItem="U86-eW-DBU" firstAttribute="top" secondItem="FN8-2S-wlo" secondAttribute="bottom" id="9hR-ba-ImR"/>
-                            <constraint firstItem="211-Dy-ZQs" firstAttribute="top" secondItem="Xvt-1d-6RY" secondAttribute="bottom" constant="20" id="9mN-Hh-fuO"/>
-                            <constraint firstItem="Xvt-1d-6RY" firstAttribute="top" secondItem="KG7-uS-DNX" secondAttribute="bottom" constant="5" id="Jva-9n-RXY"/>
+                            <constraint firstItem="211-Dy-ZQs" firstAttribute="top" secondItem="Xvt-1d-6RY" secondAttribute="bottom" constant="71" id="9mN-Hh-fuO"/>
+                            <constraint firstItem="Xvt-1d-6RY" firstAttribute="top" secondItem="KG7-uS-DNX" secondAttribute="bottom" constant="-108" id="Jva-9n-RXY"/>
                             <constraint firstAttribute="trailing" secondItem="U86-eW-DBU" secondAttribute="trailing" id="Xhg-vc-F6h"/>
                             <constraint firstItem="KG7-uS-DNX" firstAttribute="centerX" secondItem="w7O-um-obi" secondAttribute="centerX" id="ZqF-su-KzN"/>
                             <constraint firstItem="211-Dy-ZQs" firstAttribute="top" secondItem="U86-eW-DBU" secondAttribute="bottom" id="eAc-87-5bd"/>
@@ -93,20 +93,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi there!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zt8-8q-uy8">
-                                <rect key="frame" x="217" y="40" width="167" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <rect key="frame" x="244" y="40" width="113" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapexample" translatesAutoresizingMaskIntoConstraints="NO" id="Nhb-PE-9wB">
-                                <rect key="frame" x="180" y="175" width="240" height="420"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="420" id="apM-GU-6Om"/>
-                                    <constraint firstAttribute="width" constant="240" id="t3b-4S-FRu"/>
-                                </constraints>
-                            </imageView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Post anything you like by pressing on the map, or browse what others have reported." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHl-DY-ccv">
-                                <rect key="frame" x="105" y="102" width="391" height="57"/>
+                                <rect key="frame" x="105" y="84" width="391" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="EDg-wi-n7S"/>
                                     <constraint firstAttribute="width" constant="391" id="tIc-OB-ZCn"/>
@@ -115,6 +108,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapexample" translatesAutoresizingMaskIntoConstraints="NO" id="Nhb-PE-9wB">
+                                <rect key="frame" x="180" y="157" width="240" height="420"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="420" id="apM-GU-6Om"/>
+                                    <constraint firstAttribute="width" constant="240" id="t3b-4S-FRu"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -143,15 +143,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Postpin" translatesAutoresizingMaskIntoConstraints="NO" id="NqC-61-LGF">
-                                <rect key="frame" x="180" y="175" width="240" height="420"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="5J7-UR-ltc"/>
-                                    <constraint firstAttribute="height" constant="420" id="FqC-1l-7JP"/>
-                                </constraints>
-                            </imageView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="which best matches your post: safety, environment, parking, or service." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnF-iT-Mvc">
-                                <rect key="frame" x="105" y="102" width="391" height="57"/>
+                                <rect key="frame" x="105" y="84" width="391" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="fNM-Lz-ncd"/>
                                     <constraint firstAttribute="width" constant="391" id="o5r-Ub-91T"/>
@@ -161,11 +154,18 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J29-RF-mX5">
-                                <rect key="frame" x="129" y="40" width="343" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <rect key="frame" x="185" y="40" width="231" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Postpin" translatesAutoresizingMaskIntoConstraints="NO" id="NqC-61-LGF">
+                                <rect key="frame" x="180" y="157" width="240" height="420"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5J7-UR-ltc"/>
+                                    <constraint firstAttribute="height" constant="420" id="FqC-1l-7JP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="0.85021551724137934" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -195,28 +195,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need to be notified?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugM-65-Wpl">
-                                <rect key="frame" x="100" y="41" width="400" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <rect key="frame" x="166" y="41" width="269" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Turn on and off categories which you might be interested in hearing from others in your zip." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTo-Ha-T34">
-                                <rect key="frame" x="105" y="103" width="391" height="57"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notifications" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-gY-4dX">
+                                <rect key="frame" x="180" y="162" width="240" height="420"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="391" id="EoV-oJ-pBW"/>
+                                    <constraint firstAttribute="width" constant="240" id="8OG-CA-ZGm"/>
+                                    <constraint firstAttribute="height" constant="420" id="9J1-Ze-EwY"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Turn on and off categories which you might be interested in hearing from others in your zip." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTo-Ha-T34">
+                                <rect key="frame" x="109" y="85" width="382" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="382" id="EoV-oJ-pBW"/>
                                     <constraint firstAttribute="height" constant="57" id="mqO-ef-whe"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notifications" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-gY-4dX">
-                                <rect key="frame" x="180" y="180" width="240" height="420"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="8OG-CA-ZGm"/>
-                                    <constraint firstAttribute="height" constant="420" id="9J1-Ze-EwY"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

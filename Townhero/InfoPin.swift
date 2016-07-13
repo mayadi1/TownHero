@@ -26,12 +26,12 @@ class InfoPin: UIViewController {
     var parking: Parking?
     var safety: Safety?
     var services: Service?
+    
     var kind: String?
     
     var image: UIImage?
     
     var photoURL: String?
-    
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -60,7 +60,7 @@ class InfoPin: UIViewController {
                 if let data = NSData(contentsOfURL: NSURL(string: self.photoURL!)!){
                     self.image = UIImage.init(data: data)
                     
-                    var newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
+                    let newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
                     self.imageView.image = newImage
                     
                 }
@@ -78,7 +78,7 @@ class InfoPin: UIViewController {
                 if let data = NSData(contentsOfURL: NSURL(string: self.photoURL!)!){
                     self.image = UIImage.init(data: data)
                     
-                    var newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
+                    let newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
                     self.imageView.image = newImage
                     
                 }
@@ -95,7 +95,7 @@ class InfoPin: UIViewController {
                 if let data = NSData(contentsOfURL: NSURL(string: self.photoURL!)!){
                     self.image = UIImage.init(data: data)
                     
-                    var newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
+                    let newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
                     self.imageView.image = newImage
                     
                 }
@@ -112,7 +112,7 @@ class InfoPin: UIViewController {
                 if let data = NSData(contentsOfURL: NSURL(string: self.photoURL!)!){
                     self.image = UIImage.init(data: data)
                     
-                    var newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
+                    let newImage = self.ResizeImage(self.image!,targetSize: CGSizeMake(540, 228.0))
                     self.imageView.image = newImage
                     
                 }
@@ -126,6 +126,23 @@ class InfoPin: UIViewController {
     }
     
     @IBAction func shareButtonPressed(sender: AnyObject) {
+        
+        let textToShare = "Check out this report!"
+        
+       
+        if self.image != nil{
+    
+            let activityVC = UIActivityViewController(activityItems: [self.image!, "\(textToShare)", self.titleTextField.text!, self.desTestField.text!], applicationActivities: nil)
+            
+            activityVC.popoverPresentationController?.sourceView = sender as? UIView
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }else{
+            let objectsToShare = [textToShare, self.titleTextField.text, self.desTestField.text]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            activityVC.popoverPresentationController?.sourceView = sender as? UIView
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }
     }
     
     
@@ -193,6 +210,46 @@ class InfoPin: UIViewController {
             pvc.passedImage = self.image
             self.presentViewController(pvc, animated: true, completion: nil)
         }
+        
+        
+    }
+    @IBAction func flagButtonPressed(sender: AnyObject) {
+        
+        let alertController = UIAlertController(title: "Help Us Understand What's Happening", message: "What's going on?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let saveAction = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: {
+            alert -> Void in
+            
+            
+            print(alertController.textFields?.first)
+            print(alertController.textFields)
+            
+            
+            if let text = alertController.textFields?.last?.text{
+                let tempArray = [self.titleTextField.text, self.desTestField.text, text]
+                self.rootRef.child("Flag").child((self.user?.uid)!).childByAutoId().setValue(tempArray)
+
+            }
+            
+ 
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {
+            (action : UIAlertAction!) -> Void in
+            
+            self.view.endEditing(false)
+            
+        })
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField : UITextField!) -> Void in
+            textField.placeholder = "Explain..."
+        }
+       
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
         
         
     }

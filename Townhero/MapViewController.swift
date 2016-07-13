@@ -16,47 +16,44 @@ import Firebase
 import SideMenu
 
 
-class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
+class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searchDelegate{
     
     var lat = 0.0
     var long = 0.0
-    
-    
     let rootRef = FIRDatabase.database().reference()
     let user = FIRAuth.auth()?.currentUser
-    
     @IBOutlet weak var mapView: MKMapView!
-    
-    
     @IBOutlet weak var addresslabel: UILabel!
-    
-    
-    
-    
     var buttoPressedName: String?
-    
-    
     var get = 0
-    
     var natures = [Nature]()
     var parkings = [Parking]()
     var safetys = [Safety]()
     var services = [Service]()
     
-    
     var zipCode: String?
-    
-    
     var didCall = 0
-    
     let locationManager = CLLocationManager()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        self.get = 1
+            let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+
+        
+        let notification = UILocalNotification()
+        notification.fireDate = NSDate(timeIntervalSinceNow: 4)
+        notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
+        notification.alertAction = "be awesome!"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["CustomField1": "w00t"]
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+
+        
+        
+            self.get = 1
         
         locationManager.requestWhenInUseAuthorization()
         //        locationManager.startUpdatingLocation()
@@ -70,14 +67,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
         self.mapView.addGestureRecognizer(uilgr)
         
         self.mapView.delegate = self
-        
-        //Zoom
-        
-        
-        
-        
-        
-        
+
         
     }
     
@@ -149,16 +139,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
         
         return pinView
     }
-    
-    
-    
-    //
-    //
-    //        pin.canShowCallout = true
-    //        pin.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
-    //        pin.pinTintColor = UIColor.yellowColor()
-    //        return pin
-    //
     
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
@@ -352,20 +332,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
         let condition1 = rootRef.child("Post").child(self.zipCode!).child("UIDeviceRGBColorSpace 0 0 1 1")
         condition1.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
-            
-            
-            
-            
-            var tempArray = tempDic["cordinates"]
-            
-            
-            
+
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
             var tempPhoto = tempDic["photoURL"]
             
-            var tempParking = Parking(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
+            let tempParking = Parking(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
             
             
             self.parkings.append(tempParking)
@@ -380,17 +353,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
             
             
-            
-            
-            var tempArray = tempDic["cordinates"]
-            
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
             var tempPhoto = tempDic["photoURL"]
             
             
-            var tempParking = Nature(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
+            let tempParking = Nature(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
             
             
             
@@ -403,19 +372,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
         let condition3 = rootRef.child("Post").child(self.zipCode!).child("UIDeviceRGBColorSpace 1 0 0 1")
         condition3.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
-            
-            
-            
-            
-            var tempArray = tempDic["cordinates"]
-            
+   
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
             var tempPhoto = tempDic["photoURL"]
             
             
-            var tempParking = Safety(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
+            let tempParking = Safety(tempTitle: tempString![0], tempDes: tempDes![0] , tempLat: tempCor![0] , tempLong: tempCor![1], tempPhoto: tempPhoto![0])
             
             
             
@@ -431,8 +395,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
         condition4.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
             
-            
-            var tempArray = tempDic["cordinates"]
             var tempString = tempDic["title"]
             var tempDes = tempDic["description"]
             var tempCor = tempDic["cordinates"]
@@ -500,7 +462,24 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
             }
             
         }
-        
+     
+        if segue.identifier == "searchIdentifier"{
+            let dvc2 = segue.destinationViewController as! UISideMenuNavigationController
+            let tabChildren = dvc2.childViewControllers
+            
+            for child in tabChildren{
+                
+                if let search = child as? SearchTableViewController{
+                    
+                    search.natures = self.natures
+                    search.safetys = self.safetys
+                    search.parkings = self.parkings
+                    search.services = self.services
+                    search.searchD = self
+                }
+            }
+            
+        }
     }
     
     
@@ -667,8 +646,80 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate{
 
 
   
+    func zoomToResult(name: String){
+        print(name)
+        
+        
+        
+        for item in safetys{
+            
+            if item.title == name{
+                
+                let point = MKPointAnnotation()
+                point.coordinate.longitude = Double(item.long!)!
+                point.coordinate.latitude = Double(item.lat!)!
 
+                self.mapView.setRegion(MKCoordinateRegionMake(point.coordinate, MKCoordinateSpanMake(0.00001, 0.00001)), animated: true)
+                
+            }
+            
+        }
+        
+        
+        for item in parkings{
+            
+            if item.title == name{
+                
+                let point = MKPointAnnotation()
+                point.coordinate.longitude = Double(item.long!)!
+                point.coordinate.latitude = Double(item.lat!)!
+                
+                self.mapView.setRegion(MKCoordinateRegionMake(point.coordinate, MKCoordinateSpanMake(0.00001, 0.00001)), animated: true)
+                
+            }
+            
+        }
+        
+        
+        for item in services{
+            
+            if item.title == name{
+                
+                let point = MKPointAnnotation()
+                point.coordinate.longitude = Double(item.long!)!
+                point.coordinate.latitude = Double(item.lat!)!
+                
+                self.mapView.setRegion(MKCoordinateRegionMake(point.coordinate, MKCoordinateSpanMake(0.00001, 0.00001)), animated: true)
+                
+            }
+            
+        }
+        
+        for item in natures{
+            
+            if item.title == name{
+                
+                let point = MKPointAnnotation()
+                point.coordinate.longitude = Double(item.long!)!
+                point.coordinate.latitude = Double(item.lat!)!
+                
+                self.mapView.setRegion(MKCoordinateRegionMake(point.coordinate, MKCoordinateSpanMake(0.00001, 0.00001)), animated: true)
+                
+            }
+            
+        }
+        
+        
+        
+        
+    }
 
+    
+    @IBAction func userLocationZoomIn(sender: AnyObject) {
+        self.mapView.setRegion(MKCoordinateRegionMake(self.mapView.userLocation.coordinate, MKCoordinateSpanMake(0.005, 0.005)), animated: true)
+    }
+    
+    
     
     
 }//End of the VC Class

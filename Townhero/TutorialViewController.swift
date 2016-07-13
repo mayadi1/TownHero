@@ -20,7 +20,9 @@ class TutorialViewController: UIViewController {
             tutorialPageViewController?.tutorialDelegate = self
         }
     }
-    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
