@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import FBSDKCoreKit
 
 class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var editProfilePicImageView: UIImageView!
