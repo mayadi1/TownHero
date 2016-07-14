@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		184340381D370B8E003957D7 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184340371D370B8E003957D7 /* Map.storyboard */; };
-		1843403A1D370E9A003957D7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184340391D370E9A003957D7 /* Login.storyboard */; };
+		18EEFBAE1D3761D000CEC8B9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EEFBAD1D3761D000CEC8B9 /* Login.storyboard */; };
 		35E363C01D333E3F001DCE56 /* NotificationsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */; };
 		35FBC94E1D33628C00240BB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */; };
 		441669A41D26E21D00493B89 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441669A31D26E21D00493B89 /* MapViewController.swift */; };
@@ -71,8 +71,8 @@
 
 /* Begin PBXFileReference section */
 		184340371D370B8E003957D7 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		184340391D370E9A003957D7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		18EEFBAA1D375F6800CEC8B9 /* TownHero.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = TownHero.entitlements; path = TownHero/TownHero.entitlements; sourceTree = "<group>"; };
+		18EEFBAD1D3761D000CEC8B9 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTVC.swift; sourceTree = "<group>"; };
 		35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 				44FAC7621D30ADBB0079745B /* InfoPin.swift */,
 				44556E031D31BDB200E640FB /* ImageViewController.swift */,
 				44FAC7601D3070520079745B /* Assets.xcassets */,
-				184340391D370E9A003957D7 /* Login.storyboard */,
+				18EEFBAD1D3761D000CEC8B9 /* Login.storyboard */,
 				184340371D370B8E003957D7 /* Map.storyboard */,
 				46729BFE1D34135F009EF063 /* Instructions.storyboard */,
 				44FAC7661D30AFBB0079745B /* InfoPin.storyboard */,
@@ -415,7 +415,7 @@
 				44FAC7611D3070520079745B /* Assets.xcassets in Resources */,
 				44FAC7491D302DA00079745B /* Profile.storyboard in Resources */,
 				46729BFF1D34135F009EF063 /* Instructions.storyboard in Resources */,
-				1843403A1D370E9A003957D7 /* Login.storyboard in Resources */,
+				18EEFBAE1D3761D000CEC8B9 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
