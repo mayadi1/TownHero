@@ -56,7 +56,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aTJ-gM-LXt">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJP-jT-iE7">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJP-jT-iE7">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
                                         <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -68,13 +68,13 @@
                                             <segue destination="OAM-GK-Fl5" kind="presentation" identifier="searchIdentifier" id="t8V-dV-dm7"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, Zip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkw-Gr-eQh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="City, Zip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkw-Gr-eQh">
                                         <rect key="frame" x="80" y="0.0" width="440" height="60"/>
                                         <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="0.80107758620689651" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJe-dZ-Ldt">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJe-dZ-Ldt">
                                         <rect key="frame" x="520" y="0.0" width="80" height="60"/>
                                         <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -393,9 +393,9 @@
         <image name="fun" width="511" height="516"/>
         <image name="location" width="512" height="512"/>
         <image name="safety" width="511" height="516"/>
-        <image name="search-2" width="133" height="60"/>
+        <image name="search-2" width="300" height="300"/>
         <image name="target" width="512" height="512"/>
-        <image name="user" width="128" height="128"/>
+        <image name="user" width="300" height="250"/>
         <image name="whitecircle" width="600" height="600"/>
     </resources>
 </document>
