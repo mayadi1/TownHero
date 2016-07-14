@@ -24,6 +24,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     @IBOutlet weak var verifyPassword: UITextField!
     
+    var chechPhoto: Bool?
     
     var passNameField: String?
     var passAddressField: String?
@@ -34,7 +35,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.chechPhoto = false
         let pushedTap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.selectPhoto(_:)))
         pushedTap.numberOfTapsRequired = 1
         profileImage.addGestureRecognizer(pushedTap)
@@ -53,17 +54,41 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     func selectPhoto(tap: UITapGestureRecognizer) {
         
+        
         self.imagePicker.delegate = self
         self.imagePicker.allowsEditing = true
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-            self.imagePicker.sourceType = .Camera
+        
+        let photoOptionAlertController = UIAlertController(title: "SourceType?", message: nil, preferredStyle: .Alert)
+        
+        let cameraAction = UIAlertAction(title: "Take a Camera Shot", style: .Default, handler: { (UIAlertAction) in
             
-        }else{
+            self.chechPhoto = true
+            self.imagePicker.sourceType = .Camera
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            
+            
+        })
+        
+        let photoLibraryAction = UIAlertAction(title: "Choose from Photo Library", style: .Default, handler: { (UIAlertAction) in
+            
+            self.chechPhoto = true
             self.imagePicker.sourceType = .PhotoLibrary
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) in
+            self.chechPhoto = false
+            
+            // ..
         }
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        
+        photoOptionAlertController.addAction(cameraAction)
+        photoOptionAlertController.addAction(photoLibraryAction)
+        photoOptionAlertController.addAction(cancelAction)
+        
+        self.presentViewController(photoOptionAlertController, animated: true, completion: nil)
     }
-    
     var storageRef: FIRStorageReference{
         return FIRStorage.storage().reference()
         
@@ -76,16 +101,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func finishButtonTapped(sender: AnyObject) {
         
-        print("I am the image picker")
-        print(self.imagePicker)
-        
-        
-        var data = NSData()
-        let newImage = self.ResizeImage(self.profileImage.image!,targetSize: CGSizeMake(390, 390.0))
-        data = UIImageJPEGRepresentation(newImage, 0.1)!
-        
         if passwordField.text == verifyPassword.text {
-            
             
             FIRAuth.auth()?.createUserWithEmail(emailField.text!, password: passwordField.text!) { (user, error) in
                 
@@ -116,31 +132,37 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                             }
                         })
                         
-                        let filePath = "profileImage/\(user!.uid)"
-                        let metadata =  FIRStorageMetadata()
-                        metadata.contentType = "image/jpeg"
-                        
-                        self.storageRef.child(filePath).putData(data, metadata: metadata, completion: { (metadata, error) in
-                            if let error = error{
-                                print("\(error.description)")
-                                return
-                            }
-                            self.fileUrl = metadata?.downloadURLs![0].absoluteString
-                            rootRef.child("Users").child("\(user!.uid)").child("userProfilePic").setValue(self.fileUrl)
-                            let changeRequestPhoto = user!.profileChangeRequest()
-                            changeRequestPhoto.photoURL = NSURL(string: self.fileUrl)
-                            changeRequestPhoto.commitChangesWithCompletion({ (error) in
-                                if let error = error{
-                                    print(error.localizedDescription)
-                                    return
-                                }else{
-                                    print("Profile Updated")
-                                    
-                                }
-                            })
+                        if (self.chechPhoto == true){
+                            var data = NSData()
+                            let newImage = self.ResizeImage(self.profileImage.image!,targetSize: CGSizeMake(390, 390.0))
+                            data = UIImageJPEGRepresentation(newImage, 0.1)!
                             
-                        })
-                        
+                            
+                            let filePath = "profileImage/\(user!.uid)"
+                            let metadata =  FIRStorageMetadata()
+                            metadata.contentType = "image/jpeg"
+                            
+                            self.storageRef.child(filePath).putData(data, metadata: metadata, completion: { (metadata, error) in
+                                if let error = error{
+                                    print("\(error.description)")
+                                    return
+                                }
+                                self.fileUrl = metadata?.downloadURLs![0].absoluteString
+                                rootRef.child("Users").child("\(user!.uid)").child("userProfilePic").setValue(self.fileUrl)
+                                let changeRequestPhoto = user!.profileChangeRequest()
+                                changeRequestPhoto.photoURL = NSURL(string: self.fileUrl)
+                                changeRequestPhoto.commitChangesWithCompletion({ (error) in
+                                    if let error = error{
+                                        print(error.localizedDescription)
+                                        return
+                                    }else{
+                                        print("Profile Updated")
+                                        
+                                    }
+                                })
+                                
+                            })
+                        }
                         let alertController = UIAlertController(title: "Welcome", message: "Sign up completed", preferredStyle: .Alert)
                         
                         
@@ -226,6 +248,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.chechPhoto = false
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

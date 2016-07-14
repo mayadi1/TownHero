@@ -33,6 +33,9 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate,UIImagePick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
+        
         fullNameTextField.delegate = self
         emailTextField.delegate = self
         addressTextField.delegate = self

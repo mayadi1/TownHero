@@ -143,7 +143,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="which best matches your post: safety, environment, parking, or service." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnF-iT-Mvc">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="which best matches your post: Safety, Deals, Fun, or Community." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnF-iT-Mvc">
                                 <rect key="frame" x="105" y="84" width="391" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="fNM-Lz-ncd"/>
@@ -241,8 +241,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Postpin" width="1242" height="2208"/>
-        <image name="mapexample" width="1242" height="2208"/>
-        <image name="notifications" width="1242" height="2208"/>
+        <image name="Postpin" width="750" height="1334"/>
+        <image name="mapexample" width="750" height="1334"/>
+        <image name="notifications" width="750" height="1334"/>
     </resources>
 </document>

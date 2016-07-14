@@ -39,6 +39,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //Local Notification
         //            let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         //            UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
@@ -634,8 +635,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                 let point = MKPointAnnotation()
                 point.coordinate.longitude = Double(item.long!)!
                 point.coordinate.latitude = Double(item.lat!)!
-                
+            
                 self.mapView.setRegion(MKCoordinateRegionMake(point.coordinate, MKCoordinateSpanMake(0.00001, 0.00001)), animated: true)
+                
+                for annotation in self.mapView.annotations{
+                    
+                    if annotation.coordinate.latitude == point.coordinate.latitude && annotation.coordinate.longitude == point.coordinate.longitude{
+                        
+                        self.mapView.selectAnnotation(annotation, animated: true)
+                    }
+                }
                 
             }
             self.userLZoomIn.hidden = true
@@ -651,6 +660,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                 point.coordinate.latitude = Double(item.lat!)!
                 
                 self.mapView.setRegion(MKCoordinateRegionMake(point.coordinate, MKCoordinateSpanMake(0.00001, 0.00001)), animated: true)
+                for annotation in self.mapView.annotations{
+                    
+                    if annotation.coordinate.latitude == point.coordinate.latitude && annotation.coordinate.longitude == point.coordinate.longitude{
+                        
+                        self.mapView.selectAnnotation(annotation, animated: true)
+                    }
+                }
                 
             }
             
@@ -666,6 +682,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                 point.coordinate.latitude = Double(item.lat!)!
                 
                 self.mapView.setRegion(MKCoordinateRegionMake(point.coordinate, MKCoordinateSpanMake(0.00001, 0.00001)), animated: true)
+                for annotation in self.mapView.annotations{
+                    
+                    if annotation.coordinate.latitude == point.coordinate.latitude && annotation.coordinate.longitude == point.coordinate.longitude{
+                        
+                        self.mapView.selectAnnotation(annotation, animated: true)
+                    }
+                }
                 
             }
             
@@ -680,7 +703,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                 point.coordinate.latitude = Double(item.lat!)!
                 
                 self.mapView.setRegion(MKCoordinateRegionMake(point.coordinate, MKCoordinateSpanMake(0.00001, 0.00001)), animated: true)
-                
+                for annotation in self.mapView.annotations{
+                    
+                    if annotation.coordinate.latitude == point.coordinate.latitude && annotation.coordinate.longitude == point.coordinate.longitude{
+                        
+                        self.mapView.selectAnnotation(annotation, animated: true)
+                    }
+                }
             }
             
         }

@@ -271,7 +271,8 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         photoOptionAlertController.addAction(photoLibraryAction)
         photoOptionAlertController.addAction(cancelAction)
         
-        self.presentViewController(photoOptionAlertController, animated: true, completion: nil)    }
+        self.presentViewController(photoOptionAlertController, animated: true, completion: nil)
+    }
     
     var storageRef: FIRStorageReference{
         return FIRStorage.storage().reference()
