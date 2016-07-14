@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		184340381D370B8E003957D7 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184340371D370B8E003957D7 /* Map.storyboard */; };
 		18EEFBAE1D3761D000CEC8B9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EEFBAD1D3761D000CEC8B9 /* Login.storyboard */; };
+		18EEFBB21D37640F00CEC8B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EEFBB11D37640F00CEC8B9 /* MapKit.framework */; };
 		35E363C01D333E3F001DCE56 /* NotificationsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */; };
 		35FBC94E1D33628C00240BB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */; };
 		441669A41D26E21D00493B89 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441669A31D26E21D00493B89 /* MapViewController.swift */; };
@@ -17,7 +18,6 @@
 		446911931D2EB65900EBEC44 /* PinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446911921D2EB65900EBEC44 /* PinDetailViewController.swift */; };
 		449869F91D20898F0023F9B0 /* TownheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449869F81D20898F0023F9B0 /* TownheroTests.swift */; };
 		44986A041D20898F0023F9B0 /* TownheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986A031D20898F0023F9B0 /* TownheroUITests.swift */; };
-		449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E50611D22E738009B8F75 /* MapKit.framework */; };
 		44F95E9B1D2C1EDA0093F3B7 /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9A1D2C1EDA0093F3B7 /* Nature.swift */; };
 		44F95E9D1D2C1EE70093F3B7 /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9C1D2C1EE70093F3B7 /* Parking.swift */; };
 		44F95E9F1D2C1EF20093F3B7 /* Safety.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F95E9E1D2C1EF20093F3B7 /* Safety.swift */; };
@@ -73,6 +73,7 @@
 		184340371D370B8E003957D7 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		18EEFBAA1D375F6800CEC8B9 /* TownHero.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = TownHero.entitlements; path = TownHero/TownHero.entitlements; sourceTree = "<group>"; };
 		18EEFBAD1D3761D000CEC8B9 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		18EEFBB11D37640F00CEC8B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTVC.swift; sourceTree = "<group>"; };
 		35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		449869FF1D20898F0023F9B0 /* TownheroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TownheroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44986A031D20898F0023F9B0 /* TownheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownheroUITests.swift; sourceTree = "<group>"; };
 		44986A051D20898F0023F9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		449E50611D22E738009B8F75 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44F95E9A1D2C1EDA0093F3B7 /* Nature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nature.swift; sourceTree = "<group>"; };
 		44F95E9C1D2C1EE70093F3B7 /* Parking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
 		44F95E9E1D2C1EF20093F3B7 /* Safety.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Safety.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449E50621D22E738009B8F75 /* MapKit.framework in Frameworks */,
+				18EEFBB21D37640F00CEC8B9 /* MapKit.framework in Frameworks */,
 				8387587ED714B588B4570697 /* Pods_Townhero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +262,7 @@
 		83F651AB8E462073CAC7E67A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				449E50611D22E738009B8F75 /* MapKit.framework */,
+				18EEFBB11D37640F00CEC8B9 /* MapKit.framework */,
 				2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */,
 				DB20955ED1F912AFB641A95E /* Pods_TownheroTests.framework */,
 				73ECDDE9047568B277C91E63 /* Pods_TownheroUITests.framework */,
@@ -362,10 +362,13 @@
 						DevelopmentTeam = 6KKRC5GQMV;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.iCloud = {
 								enabled = 0;

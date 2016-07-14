@@ -86,6 +86,8 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate,UIImagePick
                     // UPDATE NAME HAS BEEN CHANGED
                     let verifyNameAlertController = UIAlertController(title: "Edit Name", message: "Name Has Been Updated!", preferredStyle: .Alert)
                     let verifyNameAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                        self.view.endEditing(true)
+
                         // ...
                         // UPDATE NAME IN FB DATABASE
                         let userID: String = (FIRAuth.auth()?.currentUser?.uid)!
@@ -95,6 +97,7 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate,UIImagePick
                     
                     verifyNameAlertController.addAction(verifyNameAction)
                     
+                    self.view.endEditing(true)
                     self.presentViewController(verifyNameAlertController, animated: true, completion: nil)
                     self.view.endEditing(true)
                 }
@@ -169,6 +172,8 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate,UIImagePick
                 
                 let verifyNameAlertController = UIAlertController(title: "Edit Address", message: "Address Has Been Updated!", preferredStyle: .Alert)
                 let verifyNameAction = UIAlertAction(title: "Done", style: .Default, handler: { (UIAlertAction) in
+                    self.view.endEditing(true)
+
                     // ...
                 })
                 

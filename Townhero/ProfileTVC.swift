@@ -61,6 +61,9 @@ class ProfileTVC: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         
+        let currentUser = FIRAuth.auth()?.currentUser
+        self.nameLabel.text = currentUser?.displayName
+
         //        var myValue:NSString = "1"
         //
         //        NSUserDefaults.standardUserDefaults().setObject(myValue, forKey:"Username")
