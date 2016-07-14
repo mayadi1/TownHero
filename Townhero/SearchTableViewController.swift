@@ -133,7 +133,11 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
    
             let cell = tableView.cellForRowAtIndexPath(indexPath)
         self.searchD?.zoomToResult((cell?.textLabel?.text)!)
-  
+        let navController = parentViewController as? UISideMenuNavigationController
+        
+        //dismiss the left side menu
+        navController?.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     

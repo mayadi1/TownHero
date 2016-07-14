@@ -397,6 +397,7 @@ class ProfileTVC: UITableViewController {
         if indexPath.section == 0 && indexPath.row == 0 {
             self.tabBarController?.selectedIndex = 1
             
+            
         }
         
     }
