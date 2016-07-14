@@ -3,7 +3,13 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "THIcon58x58.png",
+      "filename" : "THIcon87x87-2.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "THIcon50x50.png",
       "scale" : "2x"
     },
     {
@@ -15,13 +21,13 @@
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "THIconmedium copy-2.png",
+      "filename" : "THIcon58x58.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "THIconmedium copy-3.png",
+      "filename" : "THIcon58x58-1.png",
       "scale" : "3x"
     },
     {
@@ -39,13 +45,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "THIconmedium copy-4.png",
+      "filename" : "THIcon58x58-2.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "THIconmedium copy-5.png",
+      "filename" : "THIcon87x87-1.png",
       "scale" : "3x"
     },
     {
@@ -57,7 +63,7 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "THIconmedium copy-12.png",
+      "filename" : "THIcon100x100.png",
       "scale" : "2x"
     },
     {
@@ -75,14 +81,20 @@
     {
       "size" : "50x50",
       "idiom" : "ipad",
-      "filename" : "THIcon50x50.png",
+      "filename" : "THIcon120x120.png",
       "scale" : "1x"
     },
     {
       "size" : "50x50",
       "idiom" : "ipad",
-      "filename" : "THIcon100x100.png",
+      "filename" : "THIcon72x72.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "72x72",
+      "idiom" : "ipad",
+      "filename" : "THIcon29x29-1.png",
+      "scale" : "1x"
     },
     {
       "size" : "72x72",
@@ -105,19 +117,17 @@
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "THIconmedium copy-8.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "car",
-      "filename" : "THIcon120x120.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "car",
       "filename" : "THIcon180x180.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "car",
+      "size" : "60x60",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "car",
+      "size" : "60x60",
       "scale" : "3x"
     }
   ],
