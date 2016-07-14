@@ -39,6 +39,11 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        //raise the view when view.edit is true
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        //
+        
         
    
         let pushedTap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.selectPhoto(_:)))
@@ -305,6 +310,31 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
     
     
     
+    //view raise functions
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+            else {
+                
+            }
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+            else {
+                
+            }
+        }
+    }
+    //end of the view raise functions
     
 }//End of PinDetailViewController class
 

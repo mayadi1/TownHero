@@ -9,7 +9,7 @@
 import UIKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var addressField: UITextField!
@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func nextButtonPressed(sender: AnyObject) {
-        if nameField.text!.characters.count > 2 && addressField.text!.characters.count > 4 && zipField.text!.characters.count > 4 {
+        if nameField.text!.characters.count > 2 && addressField.text!.characters.count >= 0 && zipField.text!.characters.count >= 0 {
             
             
             let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
@@ -46,16 +46,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             
             self.presentViewController(createAccountViewController, animated: true, completion: nil)
         } else {
-          
             
-            let alertController = UIAlertController(title: nil, message: "Missing or invalid fields", preferredStyle: .Alert)
+            
+            let alertController = UIAlertController(title: nil, message: "Please enter a valid name", preferredStyle: .Alert)
             
             let cancelAction = UIAlertAction(title: "Try Again", style: .Cancel) { (action) in
             }
-                alertController.addAction(cancelAction)
-        
-                self.presentViewController(alertController, animated: true, completion: nil)
-
+            alertController.addAction(cancelAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
         }
     }
     
@@ -83,23 +83,23 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let dvc = segue.destinationViewController as! CreateAccountViewController
-//        
-//        dvc.passNameField = nameField.text
-//        dvc.passAddressField = addressField.text
-//        dvc.passZipField = zipField.text
-//        
-//    }
-
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //        let dvc = segue.destinationViewController as! CreateAccountViewController
+    //
+    //        dvc.passNameField = nameField.text
+    //        dvc.passAddressField = addressField.text
+    //        dvc.passZipField = zipField.text
+    //
+    //    }
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

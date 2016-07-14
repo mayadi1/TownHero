@@ -8,7 +8,7 @@
         <!--Delegate-->
         <scene sceneID="4Bb-Z9-zAy">
             <objects>
-                <viewController storyboardIdentifier="LoginView" id="B2D-9U-kV7" customClass="LoginViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="B2D-9U-kV7" customClass="LoginViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UU4-qj-0hR"/>
                         <viewControllerLayoutGuide type="bottom" id="EVM-vs-CoP"/>
@@ -208,7 +208,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="CsQ-Kh-Nga">
             <objects>
-                <viewController id="EI1-Ka-oXZ" customClass="SignUpViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EI1-Ka-oXZ" customClass="SignUpViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZFq-mN-CxX"/>
                         <viewControllerLayoutGuide type="bottom" id="ePo-iM-gvK"/>
@@ -217,7 +217,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="05CEC659-FBB1-44AC-957A-894CDA739FF7" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3420AB78-CED4-4F3D-BAD8-F8527D9560B5" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
                                 <rect key="frame" x="240" y="63" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -245,7 +245,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="372" id="7Cv-Fr-rTx"/>
                                     <constraint firstAttribute="height" constant="40" id="t7y-Cd-KRF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -296,22 +296,22 @@
                                     <segue destination="oOw-F1-RHe" kind="show" id="yh3-68-SHE"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFx-7E-JZL">
-                                <rect key="frame" x="468" y="309" width="97" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="PxF-ZS-nl3"/>
-                                    <constraint firstAttribute="height" constant="40" id="pPH-UE-tVo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O3h-yI-cSw">
-                                <rect key="frame" x="35" y="309" width="418" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address (Optional)" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O3h-yI-cSw">
+                                <rect key="frame" x="35" y="309" width="411" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CCo-qF-DDP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP (Optional)" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFx-7E-JZL">
+                                <rect key="frame" x="461" y="309" width="104" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="PxF-ZS-nl3"/>
+                                    <constraint firstAttribute="height" constant="40" id="pPH-UE-tVo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -350,7 +350,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="nba-Fj-oqu">
             <objects>
-                <viewController storyboardIdentifier="CreateLogin" id="oOw-F1-RHe" customClass="CreateAccountViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateLogin" id="oOw-F1-RHe" customClass="CreateAccountViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jjC-H2-y4F"/>
                         <viewControllerLayoutGuide type="bottom" id="W4g-DN-IYq"/>
@@ -529,7 +529,7 @@
         <!--Reset View Controller-->
         <scene sceneID="IEz-hY-vcy">
             <objects>
-                <viewController id="clA-5l-wnd" customClass="ResetViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="clA-5l-wnd" customClass="ResetViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rVQ-QL-B61"/>
                         <viewControllerLayoutGuide type="bottom" id="kSB-v4-Rn3"/>
@@ -638,7 +638,7 @@
         <!--Address View Controller-->
         <scene sceneID="eGX-ik-znJ">
             <objects>
-                <viewController storyboardIdentifier="AddressView" id="RJM-Mo-P3s" customClass="AddressViewController" customModule="Townhero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddressView" id="RJM-Mo-P3s" customClass="AddressViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BfN-2b-dHS"/>
                         <viewControllerLayoutGuide type="bottom" id="RI8-7h-SRg"/>
@@ -667,12 +667,12 @@
                                     <action selector="goBackButtonTapped:" destination="RJM-Mo-P3s" eventType="touchUpInside" id="Qs1-48-fr0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etC-JU-qe3">
-                                <rect key="frame" x="468" y="160" width="97" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP (Optional)" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etC-JU-qe3">
+                                <rect key="frame" x="461" y="160" width="104" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="133" id="5D6-fs-mhW"/>
                                     <constraint firstAttribute="height" constant="40" id="BPM-cL-jeh"/>
-                                    <constraint firstAttribute="width" constant="97" id="PTg-k4-LVw"/>
+                                    <constraint firstAttribute="width" constant="104" id="PTg-k4-LVw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -698,8 +698,8 @@
                                     <action selector="nextButtonTapped:" destination="RJM-Mo-P3s" eventType="touchUpInside" id="YvD-bb-073"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Xd-DG-D6w">
-                                <rect key="frame" x="35" y="160" width="418" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address (Optional)" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Xd-DG-D6w">
+                                <rect key="frame" x="35" y="160" width="411" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="l4W-Ys-AW9"/>
                                 </constraints>
@@ -747,7 +747,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="05CEC659-FBB1-44AC-957A-894CDA739FF7" width="128" height="128">
+        <image name="3420AB78-CED4-4F3D-BAD8-F8527D9560B5" width="128" height="128">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

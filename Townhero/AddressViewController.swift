@@ -12,13 +12,12 @@ import FBSDKLoginKit
 
 class AddressViewController: UIViewController, UITextFieldDelegate{
     
-    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var zipField: UITextField!
-  
+    
     let usersRef = FIRDatabase.database().reference().child("Users")
     
-   
+    
     
     
     
@@ -58,42 +57,42 @@ class AddressViewController: UIViewController, UITextFieldDelegate{
         
         
     }
-
-
-
     
-        
-        
-//        let changeRequest = user?.profileChangeRequest()
-//        
-//        
-//        //changeRequest?.photoURL = self.profileImage.image
-//        
-//        //changeRequest?.displayName = self.addressField.text
-//        
-//        //changeRequest?.displayName = self.emailField.text
-//        
-//        
-//        
-//        changeRequest?.commitChangesWithCompletion({ (error) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                
-
-                
-               
-                
-
+    
+    
+    
+    
+    
+    //        let changeRequest = user?.profileChangeRequest()
+    //
+    //
+    //        //changeRequest?.photoURL = self.profileImage.image
+    //
+    //        //changeRequest?.displayName = self.addressField.text
+    //
+    //        //changeRequest?.displayName = self.emailField.text
+    //
+    //
+    //
+    //        changeRequest?.commitChangesWithCompletion({ (error) in
+    //            if let error = error {
+    //                print(error.localizedDescription)
+    //
+    
+    
+    
+    
+    
     
     @IBAction func goBackButtonTapped(sender: AnyObject) {
-    
+        
         FBSDKAccessToken.setCurrentAccessToken(nil)
         try! FIRAuth.auth()!.signOut()
         
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
-
+    
     
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
@@ -107,5 +106,5 @@ class AddressViewController: UIViewController, UITextFieldDelegate{
     }
     
 }//End of the class
-    
+
 
