@@ -39,6 +39,7 @@ class ProfileTVC: UITableViewController {
     @IBOutlet weak var serviceSwitch: UISwitch!
     
     
+    @IBOutlet weak var showEditProfile: UITableViewCell!
     var delegate: SettingsDelegate?
     var mapdelegate: mapDelegate?
 
@@ -390,6 +391,16 @@ class ProfileTVC: UITableViewController {
         }
         self.mapdelegate?.serviceSwitch!()
     }
+    
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            self.tabBarController?.selectedIndex = 1
+            
+        }
+        
+    }
+    
     
     
 }//End of the ProfileTVC class

@@ -250,7 +250,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Vd-Ar-R0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ALA-Vw-Yvb"/>
             </objects>
-            <point key="canvasLocation" x="11311" y="415"/>
+            <point key="canvasLocation" x="11311" y="401"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gav-nK-8Sh">
@@ -289,7 +289,7 @@
                         <sections>
                             <tableViewSection headerTitle="User Info" id="Sgy-hg-0Nn">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="CellUserID" rowHeight="58" id="axi-TY-oFY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="CellUserID" rowHeight="58" id="axi-TY-oFY">
                                         <rect key="frame" x="0.0" y="94" width="600" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="axi-TY-oFY" id="nl5-jc-70l">
@@ -503,12 +503,13 @@
                         <outlet property="parkingSwitch" destination="sCU-C8-XlW" id="WZN-aH-llT"/>
                         <outlet property="safetySwitch" destination="Fm3-To-DVN" id="gqf-M6-OWH"/>
                         <outlet property="serviceSwitch" destination="MRU-1k-YP7" id="5Sd-yx-6Sr"/>
+                        <outlet property="showEditProfile" destination="axi-TY-oFY" id="rYR-WU-cF6"/>
                         <outlet property="userPic" destination="bFd-ji-6kU" id="F8i-Us-Zi3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCS-4T-jbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10605" y="394"/>
+            <point key="canvasLocation" x="10671" y="385"/>
         </scene>
     </scenes>
     <resources>
