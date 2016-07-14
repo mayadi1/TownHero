@@ -9,16 +9,17 @@
 import UIKit
 import Firebase
 import FirebaseStorage
-import FBSDKCoreKit
 
-class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
+class EditProfileTableVC: UITableViewController, UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var editProfilePicImageView: UIImageView!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     var verifyPasswordTextField: UITextField?
     
-    
+    let imagePicker = UIImagePickerController()
+    var selectedPhoto: UIImage!
+
     
     var check = 0
     let user = FIRAuth.auth()?.currentUser
@@ -38,12 +39,11 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
         
         
         
+        let pushedTap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.selectPhoto(_:)))
+        pushedTap.numberOfTapsRequired = 1
+        editProfilePicImageView.addGestureRecognizer(pushedTap)
         
-        editProfilePicImageView.userInteractionEnabled = true
-        let aSelector: Selector = Selector("TapFunc")
-        let profilePicTapGesture = UITapGestureRecognizer(target: self, action: aSelector)
-        profilePicTapGesture.numberOfTapsRequired = 1
-        editProfilePicImageView.addGestureRecognizer(profilePicTapGesture)
+        
         
         
         addressTextField.placeholder = TownHeroUser.sharedInstance.userAddress
@@ -200,6 +200,9 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
                         // NEED TO HAVE VERIFICATION PASSWORD POP UP AGAIN AFTER EACH FAILED ATTEMPT
                         print(error.localizedDescription)
                         
+                        
+                
+                        //TODO: change UIALerView to UIAlertViewController
                         let passwordFailedAlertController = UIAlertView(title: nil, message: error.localizedDescription, delegate: nil, cancelButtonTitle: "Done")
                         
                         
@@ -229,7 +232,81 @@ class EditProfileTableVC: UITableViewController, UITextFieldDelegate {
     
     
     
+    func selectPhoto(tap: UITapGestureRecognizer) {
+        
+      
+        
+        self.imagePicker.delegate = self
+        self.imagePicker.allowsEditing = true
+        
+        let photoOptionAlertController = UIAlertController(title: "SourceType?", message: nil, preferredStyle: .Alert)
+        
+        let cameraAction = UIAlertAction(title: "Take a Camera Shot", style: .Default, handler: { (UIAlertAction) in
+            
+            self.imagePicker.sourceType = .Camera
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            
+            
+        })
+        
+        let photoLibraryAction = UIAlertAction(title: "Choose from Photo Library", style: .Default, handler: { (UIAlertAction) in
+            self.imagePicker.sourceType = .PhotoLibrary
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) in
+            // ..
+        }
+        
+        photoOptionAlertController.addAction(cameraAction)
+        photoOptionAlertController.addAction(photoLibraryAction)
+        photoOptionAlertController.addAction(cancelAction)
+        
+        self.presentViewController(photoOptionAlertController, animated: true, completion: nil)    }
     
+    var storageRef: FIRStorageReference{
+        return FIRStorage.storage().reference()
+        
+    }
+    
+    
+    func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSizeMake(size.width * heightRatio, size.height * heightRatio)
+        } else {
+            newSize = CGSizeMake(size.width * widthRatio,  size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.drawInRect(rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        self.selectedPhoto = info[UIImagePickerControllerEditedImage] as? UIImage
+        self.editProfilePicImageView.image = selectedPhoto
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     //End of the editProfile Class
 }

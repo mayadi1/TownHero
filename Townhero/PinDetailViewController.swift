@@ -59,9 +59,17 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         swipeDown.direction = UISwipeGestureRecognizerDirection.Down
         self.view.addGestureRecognizer(swipeDown)
         
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(PinDetailViewController.respondToSwipeGesture(_:)))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
         
+        self.geocode()
         
-        
+     
+    }
+    
+    
+    func geocode(){
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: self.lat, longitude: self.long)
         
@@ -85,17 +93,20 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         })
     }
     
-    
-    
     @IBAction func doneButtonPressed(sender: AnyObject) {
         
+        if self.zipCode == nil{
+            self.geocode()
+            
+        }else{
+  
         
         if self.titleTextField.text == "" || self.descriptionTextField.text == "" && (self.view.backgroundColor != UIColor.redColor() || self.view.backgroundColor != UIColor.greenColor() || self.view.backgroundColor != UIColor.blueColor() || self.view.backgroundColor != UIColor.yellowColor()){
             
             let alert = UIAlertController(title: "Alert", message: "You can't report if Title, Description and choice of catalog empty ", preferredStyle: UIAlertControllerStyle.Alert)
             
             let cancel = UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Cancel,  handler: { (UIAlertAction) in
-                
+                self.addImageView.hidden = false
                 return
             })
             
@@ -150,7 +161,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         }
     }
     
-    
+    }
     //Hide Status bar
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -212,12 +223,14 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
             case UISwipeGestureRecognizerDirection.Right:
                 print("Swiped right")
             case UISwipeGestureRecognizerDirection.Down:
-                self.dismissViewControllerAnimated(true, completion: {
-                    
-                })
+             self.dismissKeyboard()
             case UISwipeGestureRecognizerDirection.Left:
                 print("Swiped left")
             case UISwipeGestureRecognizerDirection.Up:
+                self.dismissViewControllerAnimated(true, completion: {
+                    
+                })
+
                 print("Swiped up")
             default:
                 break
@@ -227,7 +240,6 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
     
     func selectPhoto(tap: UITapGestureRecognizer) {
 
-        self.addImageView.hidden = true
       
         self.imagePicker.delegate = self
         self.imagePicker.allowsEditing = true
@@ -235,7 +247,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         let photoOptionAlertController = UIAlertController(title: "SourceType?", message: nil, preferredStyle: .Alert)
         
         let cameraAction = UIAlertAction(title: "Take a Camera Shot", style: .Default, handler: { (UIAlertAction) in
-            
+
             self.imagePicker.sourceType = .Camera
             self.presentViewController(self.imagePicker, animated: true, completion: nil)
             
@@ -243,12 +255,15 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
         })
 
         let photoLibraryAction = UIAlertAction(title: "Choose from Photo Library", style: .Default, handler: { (UIAlertAction) in
+
             self.imagePicker.sourceType = .PhotoLibrary
             self.presentViewController(self.imagePicker, animated: true, completion: nil)
             
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) in
+            self.addImageView.hidden = false
+            
             // ..
         }
         
@@ -292,6 +307,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         self.selectedPhoto = info[UIImagePickerControllerEditedImage] as? UIImage
+        self.addImageView.hidden = true
         self.imageView.image = selectedPhoto
         picker.dismissViewControllerAnimated(true, completion: nil)
         

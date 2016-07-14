@@ -45,9 +45,10 @@ class InfoPin: UIViewController {
         pushedTap.numberOfTapsRequired = 1
         imageView.addGestureRecognizer(pushedTap)
         
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(InfoPin.respondToSwipeGesture(_:)))
-        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
-        self.view.addGestureRecognizer(swipeDown)
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(PinDetailViewController.respondToSwipeGesture(_:)))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
+        
         
         
         if kind == "service"{
@@ -187,12 +188,15 @@ class InfoPin: UIViewController {
             case UISwipeGestureRecognizerDirection.Right:
                 print("Swiped right")
             case UISwipeGestureRecognizerDirection.Down:
-                self.dismissViewControllerAnimated(true, completion: {
-                    
-                })
+                print("Swiped Down")
+
             case UISwipeGestureRecognizerDirection.Left:
                 print("Swiped left")
             case UISwipeGestureRecognizerDirection.Up:
+                self.dismissViewControllerAnimated(true, completion: {
+                    
+                })
+                
                 print("Swiped up")
             default:
                 break

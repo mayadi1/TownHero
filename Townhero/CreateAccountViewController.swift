@@ -76,6 +76,10 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func finishButtonTapped(sender: AnyObject) {
         
+        print("I am the image picker")
+        print(self.imagePicker)
+        
+        
         var data = NSData()
         let newImage = self.ResizeImage(self.profileImage.image!,targetSize: CGSizeMake(390, 390.0))
         data = UIImageJPEGRepresentation(newImage, 0.1)!

@@ -448,7 +448,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
             
             let ptr = segue.destinationViewController as! UISideMenuNavigationController
             
-            print(ptr.childViewControllers)
             let tabBarChildren = ptr.childViewControllers.first?.childViewControllers
             for child in tabBarChildren! {
                 if let profile = child as? ProfileTVC {
@@ -488,7 +487,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         if let myOutput10 = myOutput1 {
             
             if myOutput10 as! String == "0"{
-                print("I am presseD  0")
                 
                 for item in safetys{
                     
@@ -501,7 +499,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                     
                     point.title = item.title
                     point.subtitle = item.des
-                    print(point.pinColor)
                     self.mapView.addAnnotation(point)
                     self.mapView.reloadInputViews()
                     
@@ -528,7 +525,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         if let myOutput10 = myOutput1 {
             
             if myOutput10 as! String == "0"{
-                print("I am presseD  0")
                 
                 for item in parkings{
                     
@@ -541,7 +537,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                     
                     point.title = item.title
                     point.subtitle = item.des
-                    print(point.pinColor)
                     
                     self.mapView.addAnnotation(point)
                     self.mapView.reloadInputViews()
@@ -570,7 +565,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         if let myOutput10 = myOutput1 {
             
             if myOutput10 as! String == "0"{
-                print("I am presseD  0")
                 
                 for item in natures{
                     
@@ -583,7 +577,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                     
                     point.title = item.title
                     point.subtitle = item.des
-                    print(point.pinColor)
                     
                     self.mapView.addAnnotation(point)
                     self.mapView.reloadInputViews()
@@ -609,9 +602,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         
         if let myOutput10 = myOutput1 {
             
-            if myOutput10 as! String == "0"{
-                print("I am presseD  0")
-                
+            if myOutput10 as! String == "0"{                
                 for item in services{
                     self.addMapNotation4(item)
                     
