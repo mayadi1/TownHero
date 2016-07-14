@@ -72,6 +72,7 @@
 /* Begin PBXFileReference section */
 		184340371D370B8E003957D7 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		184340391D370E9A003957D7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		18EEFBAA1D375F6800CEC8B9 /* TownHero.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = TownHero.entitlements; path = TownHero/TownHero.entitlements; sourceTree = "<group>"; };
 		2F4CF66F4A4E08BFC022D7FC /* Pods_Townhero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Townhero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E363BF1D333E3F001DCE56 /* NotificationsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTVC.swift; sourceTree = "<group>"; };
 		35FBC94D1D33628C00240BB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 		449869D71D20898E0023F9B0 = {
 			isa = PBXGroup;
 			children = (
+				18EEFBAA1D375F6800CEC8B9 /* TownHero.entitlements */,
 				449869F71D20898F0023F9B0 /* TownheroTests */,
 				449869E21D20898F0023F9B0 /* Townhero */,
 				44986A021D20898F0023F9B0 /* TownheroUITests */,
@@ -363,6 +365,9 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 0;
 							};
 						};
