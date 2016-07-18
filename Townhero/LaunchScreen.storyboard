@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="THLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kIt-oy-xNs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="THLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kIt-oy-xNs">
                                 <rect key="frame" x="200" y="236" width="200" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="GUs-T9-Nyb"/>

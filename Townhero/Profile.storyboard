@@ -160,76 +160,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Verify your Identity" id="goN-vf-oa8">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="lLr-PC-tyn">
-                                        <rect key="frame" x="0.0" y="356" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lLr-PC-tyn" id="3dF-ey-2NI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9EF-EA-U00">
-                                                    <rect key="frame" x="12" y="3" width="37" height="36"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="37" id="Mjz-yE-BfG"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4g-aJ-doi">
-                                                    <rect key="frame" x="57" y="11" width="65" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="csv-yQ-rzV"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Z4g-aJ-doi" firstAttribute="top" secondItem="3dF-ey-2NI" secondAttribute="topMargin" constant="3" id="EEi-Rf-I9d"/>
-                                                <constraint firstItem="Z4g-aJ-doi" firstAttribute="leading" secondItem="9EF-EA-U00" secondAttribute="trailing" constant="8" symbolic="YES" id="HM0-I0-iu7"/>
-                                                <constraint firstItem="9EF-EA-U00" firstAttribute="top" secondItem="3dF-ey-2NI" secondAttribute="topMargin" constant="-5" id="Mwe-LJ-0Dq"/>
-                                                <constraint firstItem="9EF-EA-U00" firstAttribute="centerY" secondItem="3dF-ey-2NI" secondAttribute="centerY" id="Rc0-qc-huc"/>
-                                                <constraint firstItem="9EF-EA-U00" firstAttribute="leading" secondItem="3dF-ey-2NI" secondAttribute="leadingMargin" constant="4" id="d6z-Bd-Sfr"/>
-                                                <constraint firstItem="9EF-EA-U00" firstAttribute="centerY" secondItem="Z4g-aJ-doi" secondAttribute="centerY" id="g1M-Cb-YRO"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="slM-E7-zMU">
-                                        <rect key="frame" x="0.0" y="400" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="slM-E7-zMU" id="tQz-7c-TMZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0p-kr-Wel">
-                                                    <rect key="frame" x="57" y="11" width="54" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="54" id="PE8-MJ-Dx1"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="K0H-7b-OKN">
-                                                    <rect key="frame" x="14" y="7" width="32" height="29"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="cnE-Hg-qfI"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="K0H-7b-OKN" firstAttribute="leading" secondItem="tQz-7c-TMZ" secondAttribute="leadingMargin" constant="6" id="A8E-xg-Pb9"/>
-                                                <constraint firstItem="h0p-kr-Wel" firstAttribute="top" secondItem="tQz-7c-TMZ" secondAttribute="topMargin" constant="3" id="Djw-n6-EJl"/>
-                                                <constraint firstItem="K0H-7b-OKN" firstAttribute="centerY" secondItem="h0p-kr-Wel" secondAttribute="centerY" id="Hxm-ed-i5F"/>
-                                                <constraint firstItem="K0H-7b-OKN" firstAttribute="top" secondItem="tQz-7c-TMZ" secondAttribute="topMargin" constant="-1" id="fRf-PC-SaF"/>
-                                                <constraint firstItem="h0p-kr-Wel" firstAttribute="leading" secondItem="K0H-7b-OKN" secondAttribute="trailing" constant="11" id="hzX-YW-WGU"/>
-                                                <constraint firstItem="K0H-7b-OKN" firstAttribute="centerY" secondItem="tQz-7c-TMZ" secondAttribute="centerY" id="sCP-cp-Ik5"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="CMh-W8-Ek3" id="wcJ-do-Km1"/>
@@ -402,8 +332,8 @@
                                                         <action selector="envirementSwitchPressed:" destination="U75-nW-bdG" eventType="valueChanged" id="8eE-vX-zfN"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Deals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9n-5r-IzW">
-                                                    <rect key="frame" x="51" y="14" width="77" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9n-5r-IzW">
+                                                    <rect key="frame" x="51" y="14" width="39" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -513,8 +443,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="emailIcon" width="256" height="256"/>
-        <image name="iPhoneIcon" width="256" height="256"/>
         <image name="location_pin_sphere_blue" width="35" height="35"/>
         <image name="location_pin_sphere_light_green" width="35" height="35"/>
         <image name="location_pin_sphere_red" width="35" height="35"/>

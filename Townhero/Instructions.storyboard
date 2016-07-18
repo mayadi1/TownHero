@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="19" y="-1109"/>
         </scene>
-        <!--Login-->
+        <!--EULA-->
         <scene sceneID="BLz-hE-CQi">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="Na0-Ek-3zR" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="EULA" id="Na0-Ek-3zR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLr-c4-DbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="452.5" y="-1010"/>

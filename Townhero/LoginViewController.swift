@@ -179,6 +179,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     
                     if snapshot.exists() {
                         
+                        
+                                            
                         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
                         // Uncomment this when we get feed done and add HomeView as the storyboard id.
                         

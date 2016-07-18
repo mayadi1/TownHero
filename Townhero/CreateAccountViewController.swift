@@ -116,7 +116,8 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                         self.usersRef.child(userID).child("email").setValue(self.emailField.text)
                         self.usersRef.child(userID).child("address").setValue(self.passAddressField!)
                         self.usersRef.child(userID).child("zip").setValue(self.passZipField)
-                        
+                        self.usersRef.child("\(user!.uid)").child("valid").setValue("yes")
+
                         
                         let rootRef = FIRDatabase.database().reference()
                         

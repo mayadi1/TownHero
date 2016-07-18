@@ -48,6 +48,8 @@ class AddressViewController: UIViewController, UITextFieldDelegate{
         usersRef.child("\(user!.uid)").child("name").setValue(user?.displayName)
         usersRef.child("\(user!.uid)").child("zip").setValue(self.zipField.text)
         usersRef.child("\(user!.uid)").child("userProfilePic").setValue(user?.photoURL?.absoluteString)
+        usersRef.child("\(user!.uid)").child("valid").setValue("yes")
+
         
         let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
         

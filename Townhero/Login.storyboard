@@ -5,6 +5,137 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Terms View Controller-->
+        <scene sceneID="xaN-kA-YcV">
+            <objects>
+                <viewController id="OwI-bq-ung" customClass="TermsViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vty-Fm-OSN"/>
+                        <viewControllerLayoutGuide type="bottom" id="r6l-cY-QQV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7aK-Nt-GKO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Ds-LXQ">
+                                <rect key="frame" x="70" y="1050" width="540" height="40"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UEn-YG-KO6"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Go back"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UcG-Hj-7QH">
+                                <rect key="frame" x="0.0" y="20" width="600" height="495"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Privacy
+TownHero may collect and use information about your usage of the TownHero App, including certain types of information from and about your device. TownHero may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the TownHero App.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gem-nr-bvL">
+                                <rect key="frame" x="30" y="533" width="540" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="0.4043372845" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Cn3-uY-91m"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Go back"/>
+                                <connections>
+                                    <action selector="goBackButtonPressed:" destination="OwI-bq-ung" eventType="touchUpInside" id="cja-NP-xQQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="bho-Ds-LXQ" secondAttribute="trailing" constant="-30" id="2vE-Xl-Jpo"/>
+                            <constraint firstAttribute="trailing" secondItem="UcG-Hj-7QH" secondAttribute="trailing" id="AHP-QO-9fH"/>
+                            <constraint firstItem="UcG-Hj-7QH" firstAttribute="leading" secondItem="7aK-Nt-GKO" secondAttribute="leading" id="FPG-Od-iyB"/>
+                            <constraint firstItem="bho-Ds-LXQ" firstAttribute="leading" secondItem="7aK-Nt-GKO" secondAttribute="leadingMargin" constant="50" id="IlI-rM-dxF"/>
+                            <constraint firstItem="gem-nr-bvL" firstAttribute="top" secondItem="UcG-Hj-7QH" secondAttribute="bottom" constant="18" id="Ji1-QJ-hgE"/>
+                            <constraint firstItem="gem-nr-bvL" firstAttribute="leading" secondItem="7aK-Nt-GKO" secondAttribute="leadingMargin" constant="10" id="KYq-cf-MEI"/>
+                            <constraint firstItem="bho-Ds-LXQ" firstAttribute="top" secondItem="r6l-cY-QQV" secondAttribute="bottom" constant="450" id="Py3-CG-T4J"/>
+                            <constraint firstItem="UcG-Hj-7QH" firstAttribute="top" secondItem="vty-Fm-OSN" secondAttribute="bottom" id="aV3-1d-XPC"/>
+                            <constraint firstItem="UcG-Hj-7QH" firstAttribute="centerX" secondItem="gem-nr-bvL" secondAttribute="centerX" id="mzG-BS-Eg7"/>
+                            <constraint firstItem="r6l-cY-QQV" firstAttribute="top" secondItem="gem-nr-bvL" secondAttribute="bottom" constant="27" id="zei-LF-eBR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYl-xE-zMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-821" y="419"/>
+        </scene>
+        <!--Privacy View Controller-->
+        <scene sceneID="O4B-Hg-apF">
+            <objects>
+                <viewController id="D7d-EN-miO" customClass="PrivacyViewController" customModule="TownHero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2bu-td-S3d"/>
+                        <viewControllerLayoutGuide type="bottom" id="bLM-RZ-xCQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xhx-nn-QEW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KUe-zQ-K63">
+                                <rect key="frame" x="0.0" y="20" width="600" height="495"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">
+TownHero App End User License Agreement
+
+Scroll down to accept the license agreement:
+
+This End User License Agreement (“Agreement”) is between you and TownHero and governs use of this app made available through the Apple App Store. By installing the TownHero App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the TownHero App.
+In order to ensure TownHero provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found on top right corner of each post.
+1. Parties
+This Agreement is between you and TownHero only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. TownHero, not Apple, is solely responsible for the TownHero App and its content.
+2. Limited License
+TownHero grants you a limited, non-exclusive, non-transferable, revocable license to use the TownHero App for your personal, non-commercial purposes. You may only use the TownHero App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
+3. Age Restrictions
+By using the TownHero App, you represent and warrant that (a) you are 17 years of age or older and you agree to be bound by this Agreement; (b) if you are under 17 years of age, you have obtained verifiable consent from a parent or legal guardian; and (c) your use of the TownHero App does not violate any applicable law or regulation. Your access to the TownHero App may be terminated without warning if TownHero believes, in its sole discretion, that you are under the age of 17 years and have not obtained verifiable consent from a parent or legal guardian. If you are a parent or legal guardian and you provide your consent to your child’s use of the TownHero App, you agree to be bound by this Agreement in respect to your child’s use of the TownHeroTownHero App.
+4. Objectionable Content Policy
+Content may not be submitted to TownHero, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
+5. Warranty
+TownHero disclaims all warranties about the TownHero App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, TownHero, not Apple, shall be solely responsible for such warranty.
+6. Maintenance and Support
+TownHero does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, TownHero, not Apple, shall be obligated to furnish any such maintenance or support.
+7. Product Claims
+TownHero, not Apple, is responsible for addressing any claims by you relating to the TownHero App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the TownHero App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
+8. Third Party Intellectual Property Claims
+TownHero shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the TownHero App. To the extent TownHero is required to provide indemnification by applicable law, TownHero, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the TownHero App or your use of it infringes any third party intellectual property right.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0N-XC-tqh">
+                                <rect key="frame" x="30" y="533" width="540" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="0.4043372845" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="oyS-6W-urt"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Go back"/>
+                                <connections>
+                                    <action selector="goBackButtonPressed:" destination="D7d-EN-miO" eventType="touchUpInside" id="fSw-II-dcX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0039215686269999999" green="0.36470588240000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="KUe-zQ-K63" firstAttribute="leading" secondItem="xhx-nn-QEW" secondAttribute="leading" id="GLq-Se-oaB"/>
+                            <constraint firstItem="bLM-RZ-xCQ" firstAttribute="top" secondItem="M0N-XC-tqh" secondAttribute="bottom" constant="27" id="WT9-JY-fbH"/>
+                            <constraint firstAttribute="trailing" secondItem="KUe-zQ-K63" secondAttribute="trailing" id="a1Z-fh-OMU"/>
+                            <constraint firstItem="M0N-XC-tqh" firstAttribute="top" secondItem="KUe-zQ-K63" secondAttribute="bottom" constant="18" id="a39-Yt-tK3"/>
+                            <constraint firstItem="M0N-XC-tqh" firstAttribute="leading" secondItem="xhx-nn-QEW" secondAttribute="leadingMargin" constant="10" id="fFH-OM-9Yf"/>
+                            <constraint firstItem="KUe-zQ-K63" firstAttribute="top" secondItem="xhx-nn-QEW" secondAttribute="top" constant="20" id="hyb-dD-ar9"/>
+                            <constraint firstItem="KUe-zQ-K63" firstAttribute="centerX" secondItem="M0N-XC-tqh" secondAttribute="centerX" id="qXQ-mn-d2n"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXa-nm-dL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-821" y="1228"/>
+        </scene>
         <!--Delegate-->
         <scene sceneID="4Bb-Z9-zAy">
             <objects>
@@ -18,7 +149,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DAn-dP-M4S">
-                                <rect key="frame" x="35" y="309" width="530" height="40"/>
+                                <rect key="frame" x="35" y="236" width="530" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vLI-nk-AzP"/>
                                 </constraints>
@@ -26,7 +157,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R05-h2-KZQ">
-                                <rect key="frame" x="35" y="364" width="530" height="40"/>
+                                <rect key="frame" x="35" y="291" width="530" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.51196853939999998" blue="0.60784313729999995" alpha="0.40433728448275863" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0Up-mN-YO1"/>
@@ -39,7 +170,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="__________________      OR      __________________" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l23-z7-N3p">
-                                <rect key="frame" x="35" y="461" width="530" height="30"/>
+                                <rect key="frame" x="35" y="420" width="530" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -58,7 +189,7 @@
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bd-Sa-B4p">
-                                <rect key="frame" x="10" y="407" width="580" height="26"/>
+                                <rect key="frame" x="10" y="334" width="580" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="Forgot your login details? Get help signing in.">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,7 +202,7 @@
                                 <rect key="frame" x="282" y="429" width="37" height="37"/>
                             </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lrL-xn-5jo">
-                                <rect key="frame" x="35" y="254" width="530" height="40"/>
+                                <rect key="frame" x="35" y="181" width="530" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="amr-E5-yvG"/>
                                     <constraint firstAttribute="width" constant="372" id="ntt-cF-pjk"/>
@@ -105,7 +236,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNh-7K-cBO" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="100" y="499" width="400" height="40"/>
+                                <rect key="frame" x="100" y="458" width="400" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kpy-7Q-jOD"/>
                                 </constraints>
@@ -114,46 +245,87 @@
                                     <outlet property="delegate" destination="B2D-9U-kV7" id="pwJ-TB-rR7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TownHero" translatesAutoresizingMaskIntoConstraints="NO" id="giB-TO-0jQ">
-                                <rect key="frame" x="160" y="143" width="281" height="88"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-ey-zyZ">
+                                <rect key="frame" x="164" y="525" width="107" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="9Kr-pp-E31"/>
+                                    <constraint firstAttribute="height" constant="30" id="6Sg-Wb-YS6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="TERMS OF USE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="D7d-EN-miO" kind="presentation" id="J1A-pH-Jb7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfN-nV-fEs">
+                                <rect key="frame" x="326" y="525" width="118" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ses-Mn-1xM"/>
+                                </constraints>
+                                <state key="normal" title="PRIVACY POLICY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OwI-bq-ung" kind="presentation" id="0gh-i3-xQL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1H-L3-GN4">
+                                <rect key="frame" x="290" y="529" width="20" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ABu-cj-RYB"/>
+                                    <constraint firstAttribute="width" constant="20" id="Mtl-Uc-d8o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TownHero" translatesAutoresizingMaskIntoConstraints="NO" id="giB-TO-0jQ">
+                                <rect key="frame" x="160" y="70" width="281" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="9Kr-pp-E31"/>
                                     <constraint firstAttribute="width" constant="281" id="TBd-qb-AyH"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686274509803" green="0.36470588235294116" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="bG8-ey-zyZ" secondAttribute="bottom" constant="45" id="1hf-Ya-4g7"/>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="top" secondItem="DAn-dP-M4S" secondAttribute="bottom" constant="15" id="1yC-wI-0N3"/>
                             <constraint firstItem="DOo-Qa-i79" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="2ON-Lb-w1g"/>
                             <constraint firstItem="l23-z7-N3p" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="35" id="5dT-tN-C3y"/>
                             <constraint firstItem="giB-TO-0jQ" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="6T0-Yw-q2W"/>
                             <constraint firstItem="4Bd-Sa-B4p" firstAttribute="top" secondItem="DAn-dP-M4S" secondAttribute="bottom" constant="47" id="7fa-2G-viK"/>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leadingMargin" constant="94" id="8WE-uQ-r4Y"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="j1H-L3-GN4" secondAttribute="bottom" constant="50" id="9tP-bf-plE"/>
                             <constraint firstItem="DAn-dP-M4S" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="Bdb-js-X81"/>
-                            <constraint firstItem="giB-TO-0jQ" firstAttribute="top" secondItem="UU4-qj-0hR" secondAttribute="bottom" constant="123" id="BmE-dJ-zAC"/>
+                            <constraint firstItem="giB-TO-0jQ" firstAttribute="top" secondItem="UU4-qj-0hR" secondAttribute="bottom" constant="50" id="BmE-dJ-zAC"/>
                             <constraint firstItem="4Bd-Sa-B4p" firstAttribute="top" secondItem="R05-h2-KZQ" secondAttribute="bottom" constant="3" id="Cda-nA-KnW"/>
-                            <constraint firstItem="lrL-xn-5jo" firstAttribute="top" secondItem="giB-TO-0jQ" secondAttribute="bottom" constant="23" id="D3H-19-peR"/>
+                            <constraint firstItem="lrL-xn-5jo" firstAttribute="top" secondItem="giB-TO-0jQ" secondAttribute="bottom" constant="50" id="D3H-19-peR"/>
                             <constraint firstAttribute="trailing" secondItem="dDQ-h0-80n" secondAttribute="trailing" id="DQw-h6-O5H"/>
                             <constraint firstItem="dDQ-h0-80n" firstAttribute="top" secondItem="fNh-7K-cBO" secondAttribute="bottom" constant="18" id="DU8-dY-EwA"/>
                             <constraint firstItem="fNh-7K-cBO" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="Dlz-dU-Mew"/>
                             <constraint firstItem="fNh-7K-cBO" firstAttribute="top" secondItem="l23-z7-N3p" secondAttribute="bottom" constant="8" id="Fdw-Di-P2v"/>
-                            <constraint firstItem="EVM-vs-CoP" firstAttribute="top" secondItem="l23-z7-N3p" secondAttribute="bottom" constant="109" id="HQd-gP-IUK"/>
+                            <constraint firstItem="EVM-vs-CoP" firstAttribute="top" secondItem="l23-z7-N3p" secondAttribute="bottom" constant="150" id="HQd-gP-IUK"/>
+                            <constraint firstItem="j1H-L3-GN4" firstAttribute="leading" secondItem="bG8-ey-zyZ" secondAttribute="trailing" constant="19" id="KKE-vx-HQf"/>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="35" id="OJ1-nR-BQV"/>
                             <constraint firstAttribute="trailing" secondItem="lrL-xn-5jo" secondAttribute="trailing" constant="35" id="Rxx-od-2qF"/>
                             <constraint firstItem="l23-z7-N3p" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="V80-km-dHP"/>
                             <constraint firstAttribute="trailing" secondItem="fNh-7K-cBO" secondAttribute="trailing" constant="100" id="VJl-g3-KKD"/>
                             <constraint firstAttribute="trailing" secondItem="dDQ-h0-80n" secondAttribute="trailing" id="W7S-Xs-ebV"/>
                             <constraint firstItem="dDQ-h0-80n" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" id="X3o-Qr-JPd"/>
+                            <constraint firstItem="CfN-nV-fEs" firstAttribute="leading" secondItem="j1H-L3-GN4" secondAttribute="trailing" constant="16" id="Z7s-B6-uad"/>
                             <constraint firstItem="R05-h2-KZQ" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="bcK-2T-W81"/>
                             <constraint firstItem="fNh-7K-cBO" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="100" id="bhK-vX-9rb"/>
                             <constraint firstItem="DAn-dP-M4S" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="35" id="buK-yi-gAj"/>
                             <constraint firstAttribute="trailing" secondItem="DAn-dP-M4S" secondAttribute="trailing" constant="35" id="dPg-cx-FA3"/>
                             <constraint firstItem="lrL-xn-5jo" firstAttribute="top" secondItem="DOo-Qa-i79" secondAttribute="bottom" constant="-222" id="dgL-2v-voY"/>
+                            <constraint firstItem="j1H-L3-GN4" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="e53-DG-flh"/>
                             <constraint firstItem="4Bd-Sa-B4p" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" id="eh0-J4-1It"/>
                             <constraint firstAttribute="trailing" secondItem="4Bd-Sa-B4p" secondAttribute="trailing" constant="10" id="fp7-Pr-7RE"/>
                             <constraint firstAttribute="bottom" secondItem="4Bd-Sa-B4p" secondAttribute="bottom" constant="207" id="j8J-Ht-6mk"/>
                             <constraint firstItem="EVM-vs-CoP" firstAttribute="top" secondItem="dDQ-h0-80n" secondAttribute="bottom" id="jtW-b6-nZ9"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="CfN-nV-fEs" secondAttribute="bottom" constant="45" id="k6N-JO-WyN"/>
                             <constraint firstItem="fNh-7K-cBO" firstAttribute="centerX" secondItem="XD2-gK-I99" secondAttribute="centerX" constant="0.5" id="kYi-w3-gm8"/>
                             <constraint firstItem="DAn-dP-M4S" firstAttribute="top" secondItem="lrL-xn-5jo" secondAttribute="bottom" constant="15" id="mHB-cj-vnv"/>
                             <constraint firstItem="4Bd-Sa-B4p" firstAttribute="leading" secondItem="XD2-gK-I99" secondAttribute="leading" constant="10" id="mrp-x8-D3w"/>
@@ -207,7 +379,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="E0FA96E5-BFBF-45CF-A92E-A09763A6297B" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C1F12827-1262-4542-A022-1D7F2EABC10F" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
                                 <rect key="frame" x="240" y="63" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -623,7 +795,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqC-0k-EfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="987"/>
+            <point key="canvasLocation" x="70" y="1006"/>
         </scene>
         <!--Address View Controller-->
         <scene sceneID="eGX-ik-znJ">
@@ -737,7 +909,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="E0FA96E5-BFBF-45CF-A92E-A09763A6297B" width="128" height="128">
+        <image name="C1F12827-1262-4542-A022-1D7F2EABC10F" width="128" height="128">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1839,7 +2011,7 @@ AIAAAAEBAAMAAAABAIAAAAECAAMAAAAEAAEAtgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAAB
 AAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABAIAAAAEXAAQAAAABAAEAAAEcAAMAAAAB
 AAEAAAFSAAMAAAABAAIAAAFTAAMAAAAEAAEAvodzAAcAAAxIAAEAxgAAAAAACAAIAAgACAABAAEAAQAB
 AAAMSExpbm8CEAAAbW50clJHQiBYWVogB84AAgAJAAYAMQAAYWNzcE1TRlQAAAAASUVDIHNSR0IAAAAA
-AAAAAAAAAAEAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAARY3BydAAAAVAAAAAzZGVzYwAAAYQAAABsd3RwdAAAAfAAAAAUYmtwdAAAAgQAAAAU
 clhZWgAAAhgAAAAUZ1hZWgAAAiwAAAAUYlhZWgAAAkAAAAAUZG1uZAAAAlQAAABwZG1kZAAAAsQAAACI
 dnVlZAAAA0wAAACGdmlldwAAA9QAAAAkbHVtaQAAA/gAAAAUbWVhcwAABAwAAAAkdGVjaAAABDAAAAAM

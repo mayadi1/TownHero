@@ -14,6 +14,7 @@ import FirebaseStorage
 import FirebaseAuth
 import Firebase
 import SideMenu
+import FBSDKCoreKit
 
 
 class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searchDelegate{
@@ -35,7 +36,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
     var zipCode: String?
     var didCall = 0
     let locationManager = CLLocationManager()
-    
+    let usersRef = FIRDatabase.database().reference().child("Users")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,6 +78,24 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
     //Hide Status bar
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        let condition = self.usersRef.child("\(user!.uid)").child("valid")
+        
+        
+        condition.observeEventType(.Value, withBlock:  { (snapshot) in
+            
+           if snapshot.value as! String != "yes"{
+            FBSDKAccessToken.setCurrentAccessToken(nil)
+            
+            try! FIRAuth.auth()!.signOut()
+            exit(0)
+            
+            }
+        })
+        
     }
     
     
