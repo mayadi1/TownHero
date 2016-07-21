@@ -124,7 +124,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
                         self.zipCode = Zip as String
                         self.didCall = self.didCall + 1
                         if self.didCall == 1 {
-                            self.retrievePosts()}
+                            self.retriveKeys()}
                     }
                 }
             }
@@ -343,9 +343,29 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
     
     
     //Load Posts
-    func retrievePosts() -> Void {
+    
+    
+    func retriveKeys() ->Void{
         
-        let condition1 = rootRef.child("Post").child(self.zipCode!).child("UIDeviceRGBColorSpace 0 0 1 1")
+        
+        
+        let conditionall = rootRef.child("Post")
+        conditionall.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
+            
+          self.retrievePosts(snapshot.key)
+            
+        })
+        
+
+        
+        
+    }
+    
+    func retrievePosts(key: String) -> Void {
+        
+       
+        
+        let condition1 = rootRef.child("Post").child(key).child("UIDeviceRGBColorSpace 0 0 1 1")
         condition1.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
             
@@ -364,7 +384,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         })
         
         
-        let condition2 = rootRef.child("Post").child(self.zipCode!).child("UIDeviceRGBColorSpace 0 1 0 1")
+        let condition2 = rootRef.child("Post").child(key).child("UIDeviceRGBColorSpace 0 1 0 1")
         condition2.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
             
@@ -385,7 +405,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
             self.addMapNotation2(tempParking)
         })
         
-        let condition3 = rootRef.child("Post").child(self.zipCode!).child("UIDeviceRGBColorSpace 1 0 0 1")
+        let condition3 = rootRef.child("Post").child(key).child("UIDeviceRGBColorSpace 1 0 0 1")
         condition3.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
             
@@ -407,7 +427,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, mapDelegate, searc
         
         
         
-        let condition4 = rootRef.child("Post").child(self.zipCode!).child("UIDeviceRGBColorSpace 1 1 0 1")
+        let condition4 = rootRef.child("Post").child(key).child("UIDeviceRGBColorSpace 1 1 0 1")
         condition4.observeEventType(.ChildAdded, withBlock:  { (snapshot) in
             let tempDic: [String: [String]] = snapshot.value as! Dictionary
             
