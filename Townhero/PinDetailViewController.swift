@@ -227,9 +227,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
             case UISwipeGestureRecognizerDirection.Left:
                 print("Swiped left")
             case UISwipeGestureRecognizerDirection.Up:
-                self.dismissViewControllerAnimated(true, completion: {
-                    
-                })
+    
 
                 print("Swiped up")
             default:
