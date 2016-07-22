@@ -81,7 +81,7 @@ TownHero may collect and use information about your usage of the TownHero App, i
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KUe-zQ-K63">
                                 <rect key="frame" x="0.0" y="20" width="600" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">
+                                <string key="text">
 TownHero App End User License Agreement
 
 Scroll down to accept the license agreement:
@@ -103,7 +103,7 @@ TownHero does provide minimal maintenance or support for it but not to the exten
 7. Product Claims
 TownHero, not Apple, is responsible for addressing any claims by you relating to the TownHero App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the TownHero App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
 8. Third Party Intellectual Property Claims
-TownHero shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the TownHero App. To the extent TownHero is required to provide indemnification by applicable law, TownHero, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the TownHero App or your use of it infringes any third party intellectual property right.</mutableString>
+TownHero shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the TownHero App. To the extent TownHero is required to provide indemnification by applicable law, TownHero, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the TownHero App or your use of it infringes any third party intellectual property right.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -379,7 +379,7 @@ TownHero shall not be obligated to indemnify or defend you with respect to any t
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C1F12827-1262-4542-A022-1D7F2EABC10F" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9CFA1302-E87B-4CC0-BA8F-AEC428370483" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-ES-T5x">
                                 <rect key="frame" x="240" y="63" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -909,7 +909,7 @@ TownHero shall not be obligated to indemnify or defend you with respect to any t
         </scene>
     </scenes>
     <resources>
-        <image name="C1F12827-1262-4542-A022-1D7F2EABC10F" width="128" height="128">
+        <image name="9CFA1302-E87B-4CC0-BA8F-AEC428370483" width="128" height="128">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -2011,7 +2011,7 @@ AIAAAAEBAAMAAAABAIAAAAECAAMAAAAEAAEAtgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAAB
 AAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABAIAAAAEXAAQAAAABAAEAAAEcAAMAAAAB
 AAEAAAFSAAMAAAABAAIAAAFTAAMAAAAEAAEAvodzAAcAAAxIAAEAxgAAAAAACAAIAAgACAABAAEAAQAB
 AAAMSExpbm8CEAAAbW50clJHQiBYWVogB84AAgAJAAYAMQAAYWNzcE1TRlQAAAAASUVDIHNSR0IAAAAA
-AAAAAAAAAAAAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAEAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAARY3BydAAAAVAAAAAzZGVzYwAAAYQAAABsd3RwdAAAAfAAAAAUYmtwdAAAAgQAAAAU
 clhZWgAAAhgAAAAUZ1hZWgAAAiwAAAAUYlhZWgAAAkAAAAAUZG1uZAAAAlQAAABwZG1kZAAAAsQAAACI
 dnVlZAAAA0wAAACGdmlldwAAA9QAAAAkbHVtaQAAA/gAAAAUbWVhcwAABAwAAAAkdGVjaAAABDAAAAAM

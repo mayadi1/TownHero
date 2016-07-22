@@ -69,9 +69,18 @@
                                     <constraint firstAttribute="height" constant="40" id="JQO-rh-onw"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Share"/>
+                                <state key="normal" title="Directions"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GW2-ST-SoC">
+                                <rect key="frame" x="0.0" y="0.0" width="74" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="xrT-Yr-ibe"/>
+                                </constraints>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="shareButtonPressed:" destination="Ybe-ON-G53" eventType="touchUpInside" id="lOp-jB-yYy"/>
+                                    <action selector="shareButtonPressed:" destination="Ybe-ON-G53" eventType="touchUpInside" id="abN-ig-57g"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -91,10 +100,13 @@
                             <constraint firstItem="2em-3o-5FK" firstAttribute="top" secondItem="Gft-d6-xZa" secondAttribute="bottom" constant="8" symbolic="YES" id="PJd-Xw-w0y"/>
                             <constraint firstItem="KMd-BY-XwN" firstAttribute="leading" secondItem="Ybx-ZC-vZt" secondAttribute="leadingMargin" constant="10" id="WYd-kv-87a"/>
                             <constraint firstAttribute="bottom" secondItem="8Sd-LV-tC1" secondAttribute="bottom" constant="20" symbolic="YES" id="ZFx-ZY-UOD"/>
+                            <constraint firstItem="GW2-ST-SoC" firstAttribute="leading" secondItem="Ybx-ZC-vZt" secondAttribute="leading" id="aKG-fQ-Uoh"/>
                             <constraint firstItem="Gft-d6-xZa" firstAttribute="top" secondItem="KMd-BY-XwN" secondAttribute="bottom" constant="14" id="afe-aK-kkS"/>
                             <constraint firstItem="KMd-BY-XwN" firstAttribute="centerX" secondItem="Ybx-ZC-vZt" secondAttribute="centerX" id="dfb-JK-MFf"/>
+                            <constraint firstItem="GW2-ST-SoC" firstAttribute="top" secondItem="3cf-1Y-KMi" secondAttribute="top" id="f16-KE-uNw"/>
                             <constraint firstItem="Gft-d6-xZa" firstAttribute="trailing" secondItem="2em-3o-5FK" secondAttribute="trailing" id="fZb-kB-LbH"/>
                             <constraint firstItem="KMd-BY-XwN" firstAttribute="leading" secondItem="Gft-d6-xZa" secondAttribute="leading" id="jbh-9d-z1h"/>
+                            <constraint firstItem="GW2-ST-SoC" firstAttribute="bottom" secondItem="3cf-1Y-KMi" secondAttribute="bottom" id="ln8-0v-lra"/>
                             <constraint firstItem="KMd-BY-XwN" firstAttribute="trailing" secondItem="Gft-d6-xZa" secondAttribute="trailing" id="qUT-Pd-05V"/>
                             <constraint firstItem="3cf-1Y-KMi" firstAttribute="top" secondItem="Ybx-ZC-vZt" secondAttribute="top" id="sMS-nV-WwS"/>
                         </constraints>

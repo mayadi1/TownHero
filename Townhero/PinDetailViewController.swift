@@ -120,7 +120,7 @@ class PinDetailViewController: UIViewController, UITextViewDelegate, UITextField
             //[String: [String]]
             if self.imageView.image != nil{
                 var data = NSData()
-                let newImage = self.ResizeImage(self.imageView.image!,targetSize: CGSizeMake(390, 390.0))
+                let newImage = self.ResizeImage(self.imageView.image!,targetSize: CGSizeMake(420, 500.0))
                 data = UIImageJPEGRepresentation(newImage, 0.1)!
                 
                 let currentDate = NSDate()
