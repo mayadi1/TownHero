@@ -47,6 +47,10 @@ class TutorialViewController: UIViewController {
     func didChangePageControlValue() {
         tutorialPageViewController?.scrollToViewController(index: pageControl.currentPage)
     }
+    // Keeps iPhone in portrait mode, disables landscape.
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
 }
 
 extension TutorialViewController: TutorialPageViewControllerDelegate {
