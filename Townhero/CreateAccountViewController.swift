@@ -283,10 +283,13 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBAction func alreadyHaveAccountPressed(sender: AnyObject) {
         self.view.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
-    
-    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
 }

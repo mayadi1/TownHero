@@ -76,6 +76,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
+    
     @IBAction func alreadyHaveAccountPressed(sender: AnyObject) {
         if((self.presentingViewController) != nil){
             self.dismissViewControllerAnimated(true, completion: nil)

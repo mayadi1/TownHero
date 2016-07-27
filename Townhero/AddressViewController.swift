@@ -106,6 +106,12 @@ class AddressViewController: UIViewController, UITextFieldDelegate{
             currentString.stringByReplacingCharactersInRange(range, withString: string)
         return newString.length <= maxLength
     }
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
     
 }//End of the class
 
