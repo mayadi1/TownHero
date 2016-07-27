@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ybe-ON-G53">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -69,9 +71,22 @@
                                     <constraint firstAttribute="height" constant="40" id="JQO-rh-onw"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Share"/>
+                                <state key="normal" title="Directions"/>
                                 <connections>
-                                    <action selector="shareButtonPressed:" destination="Ybe-ON-G53" eventType="touchUpInside" id="lOp-jB-yYy"/>
+                                    <action selector="directionsButtonPressed:" destination="Ybe-ON-G53" eventType="touchUpInside" id="tfJ-kQ-soV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDu-74-Ozb">
+                                <rect key="frame" x="0.0" y="0.0" width="74" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="ccp-bv-EHi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="18"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="Ybe-ON-G53" eventType="touchUpInside" id="icR-PL-fVK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,6 +97,8 @@
                             <constraint firstItem="2em-3o-5FK" firstAttribute="trailing" secondItem="gwA-HY-Hck" secondAttribute="trailing" id="90X-Xf-Lmn"/>
                             <constraint firstItem="8Sd-LV-tC1" firstAttribute="top" secondItem="gwA-HY-Hck" secondAttribute="bottom" constant="8" symbolic="YES" id="ARs-un-k86"/>
                             <constraint firstItem="2em-3o-5FK" firstAttribute="leading" secondItem="gwA-HY-Hck" secondAttribute="leading" id="CLl-0b-5rt"/>
+                            <constraint firstItem="mDu-74-Ozb" firstAttribute="leading" secondItem="Ybx-ZC-vZt" secondAttribute="leading" id="GnP-9B-g66"/>
+                            <constraint firstItem="mDu-74-Ozb" firstAttribute="firstBaseline" secondItem="3cf-1Y-KMi" secondAttribute="baseline" id="Hbg-B0-FjX"/>
                             <constraint firstItem="gwA-HY-Hck" firstAttribute="trailing" secondItem="8Sd-LV-tC1" secondAttribute="trailing" id="IvA-ex-pVi"/>
                             <constraint firstItem="gwA-HY-Hck" firstAttribute="leading" secondItem="8Sd-LV-tC1" secondAttribute="leading" id="KTI-H8-Hdi"/>
                             <constraint firstItem="KMd-BY-XwN" firstAttribute="top" secondItem="3cf-1Y-KMi" secondAttribute="bottom" constant="2" id="NNd-Jx-RA9"/>
@@ -89,9 +106,11 @@
                             <constraint firstItem="Gft-d6-xZa" firstAttribute="leading" secondItem="2em-3o-5FK" secondAttribute="leading" id="NZy-dp-AW6"/>
                             <constraint firstAttribute="trailing" secondItem="3cf-1Y-KMi" secondAttribute="trailing" id="OTv-kb-UoV"/>
                             <constraint firstItem="2em-3o-5FK" firstAttribute="top" secondItem="Gft-d6-xZa" secondAttribute="bottom" constant="8" symbolic="YES" id="PJd-Xw-w0y"/>
+                            <constraint firstItem="mDu-74-Ozb" firstAttribute="baseline" secondItem="3cf-1Y-KMi" secondAttribute="firstBaseline" id="Vp4-9B-7cg"/>
                             <constraint firstItem="KMd-BY-XwN" firstAttribute="leading" secondItem="Ybx-ZC-vZt" secondAttribute="leadingMargin" constant="10" id="WYd-kv-87a"/>
                             <constraint firstAttribute="bottom" secondItem="8Sd-LV-tC1" secondAttribute="bottom" constant="20" symbolic="YES" id="ZFx-ZY-UOD"/>
                             <constraint firstItem="Gft-d6-xZa" firstAttribute="top" secondItem="KMd-BY-XwN" secondAttribute="bottom" constant="14" id="afe-aK-kkS"/>
+                            <constraint firstItem="mDu-74-Ozb" firstAttribute="top" secondItem="3cf-1Y-KMi" secondAttribute="top" id="cIn-FL-fw8"/>
                             <constraint firstItem="KMd-BY-XwN" firstAttribute="centerX" secondItem="Ybx-ZC-vZt" secondAttribute="centerX" id="dfb-JK-MFf"/>
                             <constraint firstItem="Gft-d6-xZa" firstAttribute="trailing" secondItem="2em-3o-5FK" secondAttribute="trailing" id="fZb-kB-LbH"/>
                             <constraint firstItem="KMd-BY-XwN" firstAttribute="leading" secondItem="Gft-d6-xZa" secondAttribute="leading" id="jbh-9d-z1h"/>

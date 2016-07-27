@@ -27,6 +27,10 @@ class InfoPin: UIViewController {
     var safety: Safety?
     var services: Service?
     
+    
+    var passedLat: String?
+    var passedLong: String?
+    
     var kind: String?
     
     var image: UIImage?
@@ -55,6 +59,8 @@ class InfoPin: UIViewController {
             self.titleTextField.text = services?.title
             self.desTestField.text = services?.des
             self.photoURL = services?.photo
+            self.passedLat = services?.lat
+            self.passedLong = services?.long
             
             if self.photoURL != "No photo yet"{
                 
@@ -73,6 +79,9 @@ class InfoPin: UIViewController {
             self.titleTextField.text = safety?.title
             self.desTestField.text = safety?.des
             self.photoURL = safety?.photo
+            self.passedLat = safety?.lat
+            self.passedLong = safety?.long
+
             
             if self.photoURL != "No photo yet"{
                 
@@ -90,6 +99,9 @@ class InfoPin: UIViewController {
             self.titleTextField.text = parking?.title
             self.desTestField.text = parking?.des
             self.photoURL = parking?.photo
+            self.passedLat = parking?.lat
+            self.passedLong = parking?.long
+
             
             if self.photoURL != "No photo yet"{
                 
@@ -108,6 +120,9 @@ class InfoPin: UIViewController {
             self.titleTextField.text = nature?.title
             self.desTestField.text = nature?.des
             self.photoURL = nature?.photo
+            self.passedLat = nature?.lat
+            self.passedLong = nature?.long
+
             if self.photoURL != "No photo yet"{
                 
                 if let data = NSData(contentsOfURL: NSURL(string: self.photoURL!)!){
@@ -257,4 +272,35 @@ class InfoPin: UIViewController {
         
         
     }
+    @IBAction func directionsButtonPressed(sender: AnyObject) {
+        
+        
+        self.openMapForPlace()
+
+    }
+    
+    func openMapForPlace() {
+        
+        
+        let lat1 : NSString = self.passedLat!
+        let lng1 : NSString = self.passedLong!
+        
+        
+        let latitute:CLLocationDegrees =  lat1.doubleValue
+        let longitute:CLLocationDegrees =  lng1.doubleValue
+        
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitute, longitute)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = self.titleTextField.text
+        mapItem.openInMapsWithLaunchOptions(options)
+        
+    }
+
 }//End of the class
