@@ -107,6 +107,11 @@ class AddressViewController: UIViewController, UITextFieldDelegate{
         return newString.length <= maxLength
     }
     
+    // Keeps iPhone in portrait mode, disables landscape.
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
+
 }//End of the class
 
 

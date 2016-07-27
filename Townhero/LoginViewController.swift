@@ -281,5 +281,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         return true
     }
     
+    // Keeps iPhone in portrait mode, disables landscape.
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
+
+    
 }
 

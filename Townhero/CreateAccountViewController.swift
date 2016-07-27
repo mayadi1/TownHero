@@ -288,5 +288,9 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     }
     
     
-    
+    // Keeps iPhone in portrait mode, disables landscape.
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
+
 }
